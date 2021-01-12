@@ -1,0 +1,29 @@
+name: .NET Core
+
+on:
+  workflow_dispatch:
+
+env:
+  PROJECT_NAME: CamundaClient
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.301
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Install gpr
+      run: dotnet tool install gpr --global
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+    - name: Pack
+      run: dotnet pack -c Release csharp-client/src/$PROJECT_NAME/$PROJECT_NAME.csproj
+    - name: Push to GitHub Packages
+      run: gpr push ./csharp-client/src/${{ env.PROJECT_NAME }}/bin/Release/*.nupkg -k ${{ secrets.GITHUB_TOKEN }}
