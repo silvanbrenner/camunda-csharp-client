@@ -18,11 +18,11 @@ jobs:
       with:
         dotnet-version: 3.1.301
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore ${{ github.workspace }}/csharp-client/src/$PROJECT_NAME.csproj
     - name: Install gpr
       run: dotnet tool install gpr --global
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore ${{ github.workspace }}/csharp-client/src/$PROJECT_NAME.csproj
     - name: Pack
       run: dotnet pack -c Release csharp-client/src/$PROJECT_NAME/$PROJECT_NAME.csproj
     - name: Push to GitHub Packages
