@@ -25,5 +25,3 @@ jobs:
       run: dotnet build --configuration Release --no-restore ${{ github.workspace }}/csharp-client/src/$PROJECT_NAME/$PROJECT_NAME.csproj
     - name: Pack
       run: dotnet pack -c Release ${{ github.workspace }}/csharp-client/src/$PROJECT_NAME/$PROJECT_NAME.csproj
-    - name: Push to GitHub Packages
-      run: gpr push ./csharp-client/src/${{ env.PROJECT_NAME }}/bin/Release/*.nupkg -k ${{ secrets.GITHUB_TOKEN }}
