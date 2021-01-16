@@ -1,4 +1,4 @@
-# CamundaClient.Model.DurationReportResultDto
+# Camunda.OpenApi.Client.Model.DurationReportResultDto
 ## Properties
 
 Name | Type | Description | Notes

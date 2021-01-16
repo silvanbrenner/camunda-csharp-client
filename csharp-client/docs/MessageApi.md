@@ -1,4 +1,4 @@
-# CamundaClient.Api.MessageApi
+# Camunda.OpenApi.Client.Api.MessageApi
 
 All URIs are relative to *http://localhost:8080/engine-rest*
 
@@ -19,9 +19,9 @@ Correlates a message to the process engine to either trigger a message start eve
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {

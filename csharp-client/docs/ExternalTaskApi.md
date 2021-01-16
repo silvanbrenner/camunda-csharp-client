@@ -1,4 +1,4 @@
-# CamundaClient.Api.ExternalTaskApi
+# Camunda.OpenApi.Client.Api.ExternalTaskApi
 
 All URIs are relative to *http://localhost:8080/engine-rest*
 
@@ -35,9 +35,9 @@ Completes an external task by id and updates process variables.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -108,9 +108,9 @@ Extends the timeout of the lock by a given amount of time.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -180,9 +180,9 @@ Fetches and locks a specific number of external tasks for execution by a worker.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -250,9 +250,9 @@ Retrieves an external task by id, corresponding to the `ExternalTask` interface 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -320,9 +320,9 @@ Retrieves the error details in the context of a running external task by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -391,9 +391,9 @@ Queries for the external tasks that fulfill given parameters. Parameters may be 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -509,9 +509,9 @@ Queries for the number of external tasks that fulfill given parameters. Takes th
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -619,9 +619,9 @@ Queries for distinct topic names of external tasks that fulfill given parameters
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -693,9 +693,9 @@ Reports a business error in the context of a running external task by id. The er
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -766,9 +766,9 @@ Reports a failure to execute an external task by id. A number of retries and a t
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -839,9 +839,9 @@ Queries for external tasks that fulfill given parameters in the form of a JSON o
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -913,9 +913,9 @@ Queries for the number of external tasks that fulfill given parameters. This met
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -983,9 +983,9 @@ Sets the priority of an existing external task by id. The default value of a pri
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -1054,9 +1054,9 @@ Sets the number of retries left to execute an external task by id. If retries ar
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -1126,9 +1126,9 @@ Sets the number of retries left to execute external tasks by id synchronously. I
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -1196,9 +1196,9 @@ Sets the number of retries left to execute external tasks by id asynchronously. 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -1267,9 +1267,9 @@ Unlocks an external task by id. Clears the task's lock expiration time and worke
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {

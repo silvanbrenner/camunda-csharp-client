@@ -1,4 +1,4 @@
-# CamundaClient.Api.UserApi
+# Camunda.OpenApi.Client.Api.UserApi
 
 All URIs are relative to *http://localhost:8080/engine-rest*
 
@@ -27,9 +27,9 @@ The `/user` resource supports two custom `OPTIONS` requests, one for the resourc
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -93,9 +93,9 @@ The `/user` resource supports two custom `OPTIONS` requests, one for the resourc
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -163,9 +163,9 @@ Create a new user.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -232,9 +232,9 @@ Deletes a user by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -303,9 +303,9 @@ Queries for the number of deployments that fulfill given parameters. Takes the s
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -394,9 +394,9 @@ Retrieves a user's profile.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -465,9 +465,9 @@ Query for a list of users using a list of parameters. The size of the result set
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -564,9 +564,9 @@ Unlocks a user by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -635,9 +635,9 @@ Updates a user's credentials (password)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {

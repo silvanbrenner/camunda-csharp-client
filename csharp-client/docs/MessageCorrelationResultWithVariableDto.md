@@ -1,4 +1,4 @@
-# CamundaClient.Model.MessageCorrelationResultWithVariableDto
+# Camunda.OpenApi.Client.Model.MessageCorrelationResultWithVariableDto
 The `processInstance` property only has a value if the resultType is set to `ProcessDefinition`. The processInstance with the properties as described in the [get single instance](https://docs.camunda.org/manual/7.14/reference/rest/process-instance/get/) method.  The `execution` property only has a value if the resultType is set to `Execution`. The execution with the properties as described in the [get single execution](https://docs.camunda.org/manual/7.14/reference/rest/execution/get/) method.
 ## Properties
 

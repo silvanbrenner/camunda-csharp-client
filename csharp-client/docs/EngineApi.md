@@ -1,4 +1,4 @@
-# CamundaClient.Api.EngineApi
+# Camunda.OpenApi.Client.Api.EngineApi
 
 All URIs are relative to *http://localhost:8080/engine-rest*
 
@@ -19,9 +19,9 @@ Retrieves the names of all process engines available on your platform. **Note**:
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {

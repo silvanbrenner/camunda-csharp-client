@@ -1,4 +1,4 @@
-# CamundaClient.Model.IdentityLinkDto
+# Camunda.OpenApi.Client.Model.IdentityLinkDto
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# CamundaClient.Api.MetricsApi
+# Camunda.OpenApi.Client.Api.MetricsApi
 
 All URIs are relative to *http://localhost:8080/engine-rest*
 
@@ -20,9 +20,9 @@ Retrieves the `sum` (count) for a given metric.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -93,9 +93,9 @@ Retrieves a list of metrics, aggregated for a given interval.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {

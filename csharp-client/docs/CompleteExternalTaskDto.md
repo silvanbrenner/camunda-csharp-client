@@ -1,4 +1,4 @@
-# CamundaClient.Model.CompleteExternalTaskDto
+# Camunda.OpenApi.Client.Model.CompleteExternalTaskDto
 ## Properties
 
 Name | Type | Description | Notes

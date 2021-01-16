@@ -1,4 +1,4 @@
-# CamundaClient.Model.SetJobRetriesByProcessDto
+# Camunda.OpenApi.Client.Model.SetJobRetriesByProcessDto
 ## Properties
 
 Name | Type | Description | Notes

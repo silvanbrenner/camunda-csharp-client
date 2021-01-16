@@ -1,4 +1,4 @@
-# CamundaClient.Model.CountResultDto
+# Camunda.OpenApi.Client.Model.CountResultDto
 ## Properties
 
 Name | Type | Description | Notes

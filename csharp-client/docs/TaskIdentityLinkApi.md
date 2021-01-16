@@ -1,4 +1,4 @@
-# CamundaClient.Api.TaskIdentityLinkApi
+# Camunda.OpenApi.Client.Api.TaskIdentityLinkApi
 
 All URIs are relative to *http://localhost:8080/engine-rest*
 
@@ -21,9 +21,9 @@ Adds an identity link to a task by id. Can be used to link any user or group to 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -92,9 +92,9 @@ Removes an identity link from a task by id
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -163,9 +163,9 @@ Gets the identity links for a task by id, which are the users and groups that ar
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {

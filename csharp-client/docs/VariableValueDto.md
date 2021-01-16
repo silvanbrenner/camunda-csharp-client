@@ -1,4 +1,4 @@
-# CamundaClient.Model.VariableValueDto
+# Camunda.OpenApi.Client.Model.VariableValueDto
 ## Properties
 
 Name | Type | Description | Notes

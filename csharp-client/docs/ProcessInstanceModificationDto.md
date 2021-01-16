@@ -1,4 +1,4 @@
-# CamundaClient.Model.ProcessInstanceModificationDto
+# Camunda.OpenApi.Client.Model.ProcessInstanceModificationDto
 ## Properties
 
 Name | Type | Description | Notes

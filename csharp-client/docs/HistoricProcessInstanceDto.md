@@ -1,4 +1,4 @@
-# CamundaClient.Model.HistoricProcessInstanceDto
+# Camunda.OpenApi.Client.Model.HistoricProcessInstanceDto
 ## Properties
 
 Name | Type | Description | Notes

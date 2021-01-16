@@ -1,4 +1,4 @@
-# CamundaClient.Model.ExecutionDto
+# Camunda.OpenApi.Client.Model.ExecutionDto
 ## Properties
 
 Name | Type | Description | Notes

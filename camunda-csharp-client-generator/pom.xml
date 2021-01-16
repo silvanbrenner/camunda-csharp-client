@@ -57,7 +57,7 @@
                             <generatorName>csharp-netcore</generatorName>
                             <output>${project.basedir}/../csharp-client</output>
                             <configOptions>
-                                <packageName>CamundaClient</packageName>
+                                <packageName>Camunda.OpenApi.Client</packageName>
                             </configOptions>
                         </configuration>
                     </execution>

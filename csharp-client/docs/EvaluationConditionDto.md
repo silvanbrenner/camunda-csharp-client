@@ -1,4 +1,4 @@
-# CamundaClient.Model.EvaluationConditionDto
+# Camunda.OpenApi.Client.Model.EvaluationConditionDto
 ## Properties
 
 Name | Type | Description | Notes

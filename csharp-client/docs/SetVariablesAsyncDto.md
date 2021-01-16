@@ -1,4 +1,4 @@
-# CamundaClient.Model.SetVariablesAsyncDto
+# Camunda.OpenApi.Client.Model.SetVariablesAsyncDto
 ## Properties
 
 Name | Type | Description | Notes

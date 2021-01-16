@@ -1,4 +1,4 @@
-# CamundaClient.Model.LinkableDto
+# Camunda.OpenApi.Client.Model.LinkableDto
 ## Properties
 
 Name | Type | Description | Notes

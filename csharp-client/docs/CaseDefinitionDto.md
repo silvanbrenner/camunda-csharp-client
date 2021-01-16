@@ -1,4 +1,4 @@
-# CamundaClient.Model.CaseDefinitionDto
+# Camunda.OpenApi.Client.Model.CaseDefinitionDto
 ## Properties
 
 Name | Type | Description | Notes

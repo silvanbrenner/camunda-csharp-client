@@ -1,4 +1,4 @@
-# CamundaClient.Model.TransitionInstanceDto
+# Camunda.OpenApi.Client.Model.TransitionInstanceDto
 A JSON object corresponding to the Activity Instance tree of the given process instance.
 ## Properties
 

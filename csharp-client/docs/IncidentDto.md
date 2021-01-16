@@ -1,4 +1,4 @@
-# CamundaClient.Model.IncidentDto
+# Camunda.OpenApi.Client.Model.IncidentDto
 ## Properties
 
 Name | Type | Description | Notes

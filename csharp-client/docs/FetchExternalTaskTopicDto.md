@@ -1,4 +1,4 @@
-# CamundaClient.Model.FetchExternalTaskTopicDto
+# Camunda.OpenApi.Client.Model.FetchExternalTaskTopicDto
 ## Properties
 
 Name | Type | Description | Notes

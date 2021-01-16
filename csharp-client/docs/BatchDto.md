@@ -1,4 +1,4 @@
-# CamundaClient.Model.BatchDto
+# Camunda.OpenApi.Client.Model.BatchDto
 ## Properties
 
 Name | Type | Description | Notes

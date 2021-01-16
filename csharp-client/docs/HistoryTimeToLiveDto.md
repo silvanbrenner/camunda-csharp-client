@@ -1,4 +1,4 @@
-# CamundaClient.Model.HistoryTimeToLiveDto
+# Camunda.OpenApi.Client.Model.HistoryTimeToLiveDto
 ## Properties
 
 Name | Type | Description | Notes

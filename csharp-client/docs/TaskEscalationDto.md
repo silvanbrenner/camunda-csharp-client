@@ -1,4 +1,4 @@
-# CamundaClient.Model.TaskEscalationDto
+# Camunda.OpenApi.Client.Model.TaskEscalationDto
 ## Properties
 
 Name | Type | Description | Notes

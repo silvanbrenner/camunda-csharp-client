@@ -1,4 +1,4 @@
-# CamundaClient.Model.CompleteTaskDto
+# Camunda.OpenApi.Client.Model.CompleteTaskDto
 ## Properties
 
 Name | Type | Description | Notes

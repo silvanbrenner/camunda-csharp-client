@@ -1,4 +1,4 @@
-# CamundaClient.Model.SchemaLogEntryDto
+# Camunda.OpenApi.Client.Model.SchemaLogEntryDto
 ## Properties
 
 Name | Type | Description | Notes

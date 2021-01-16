@@ -1,4 +1,4 @@
-# CamundaClient.Model.ExternalTaskQueryDto
+# Camunda.OpenApi.Client.Model.ExternalTaskQueryDto
 A JSON object with the following properties:
 ## Properties
 

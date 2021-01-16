@@ -1,4 +1,4 @@
-# CamundaClient.Model.TaskQueryDtoSorting
+# Camunda.OpenApi.Client.Model.TaskQueryDtoSorting
 ## Properties
 
 Name | Type | Description | Notes

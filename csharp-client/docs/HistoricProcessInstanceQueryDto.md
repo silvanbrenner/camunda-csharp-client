@@ -1,4 +1,4 @@
-# CamundaClient.Model.HistoricProcessInstanceQueryDto
+# Camunda.OpenApi.Client.Model.HistoricProcessInstanceQueryDto
 A historic process instance query which defines a group of historic process instances
 ## Properties
 

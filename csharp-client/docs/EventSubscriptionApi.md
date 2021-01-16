@@ -1,4 +1,4 @@
-# CamundaClient.Api.EventSubscriptionApi
+# Camunda.OpenApi.Client.Api.EventSubscriptionApi
 
 All URIs are relative to *http://localhost:8080/engine-rest*
 
@@ -20,9 +20,9 @@ Queries for event subscriptions that fulfill given parameters. The size of the r
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -114,9 +114,9 @@ Queries for the number of event subscriptions that fulfill given parameters. Tak
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {

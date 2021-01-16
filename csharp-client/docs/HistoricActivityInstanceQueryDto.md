@@ -1,4 +1,4 @@
-# CamundaClient.Model.HistoricActivityInstanceQueryDto
+# Camunda.OpenApi.Client.Model.HistoricActivityInstanceQueryDto
 A historic activity instance query which defines a group of historic activity instances
 ## Properties
 

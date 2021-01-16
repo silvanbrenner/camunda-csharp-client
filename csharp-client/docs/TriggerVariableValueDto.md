@@ -1,4 +1,4 @@
-# CamundaClient.Model.TriggerVariableValueDto
+# Camunda.OpenApi.Client.Model.TriggerVariableValueDto
 ## Properties
 
 Name | Type | Description | Notes

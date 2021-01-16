@@ -1,4 +1,4 @@
-# CamundaClient.Model.TaskBpmnErrorDto
+# Camunda.OpenApi.Client.Model.TaskBpmnErrorDto
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# CamundaClient.Model.AuthorizationExceptionDtoAllOf
+# Camunda.OpenApi.Client.Model.AuthorizationExceptionDtoAllOf
 ## Properties
 
 Name | Type | Description | Notes

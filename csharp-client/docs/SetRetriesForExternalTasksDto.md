@@ -1,4 +1,4 @@
-# CamundaClient.Model.SetRetriesForExternalTasksDto
+# Camunda.OpenApi.Client.Model.SetRetriesForExternalTasksDto
 ## Properties
 
 Name | Type | Description | Notes

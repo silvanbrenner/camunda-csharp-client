@@ -1,4 +1,4 @@
-# CamundaClient.Model.ProcessInstanceQueryDtoSorting
+# Camunda.OpenApi.Client.Model.ProcessInstanceQueryDtoSorting
 ## Properties
 
 Name | Type | Description | Notes

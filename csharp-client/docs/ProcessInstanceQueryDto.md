@@ -1,4 +1,4 @@
-# CamundaClient.Model.ProcessInstanceQueryDto
+# Camunda.OpenApi.Client.Model.ProcessInstanceQueryDto
 A process instance query which defines a group of process instances
 ## Properties
 

@@ -1,4 +1,4 @@
-# CamundaClient.Model.ExceptionDto
+# Camunda.OpenApi.Client.Model.ExceptionDto
 ## Properties
 
 Name | Type | Description | Notes

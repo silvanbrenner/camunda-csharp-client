@@ -1,4 +1,4 @@
-# CamundaClient.Model.ExtendLockOnExternalTaskDto
+# Camunda.OpenApi.Client.Model.ExtendLockOnExternalTaskDto
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# CamundaClient.Model.RedeploymentDto
+# Camunda.OpenApi.Client.Model.RedeploymentDto
 A JSON object with the following properties:
 ## Properties
 

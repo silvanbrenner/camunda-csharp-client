@@ -1,4 +1,4 @@
-# CamundaClient.Model.MetricsIntervalResultDto
+# Camunda.OpenApi.Client.Model.MetricsIntervalResultDto
 ## Properties
 
 Name | Type | Description | Notes

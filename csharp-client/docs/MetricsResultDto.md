@@ -1,4 +1,4 @@
-# CamundaClient.Model.MetricsResultDto
+# Camunda.OpenApi.Client.Model.MetricsResultDto
 ## Properties
 
 Name | Type | Description | Notes

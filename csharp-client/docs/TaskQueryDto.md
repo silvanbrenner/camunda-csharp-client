@@ -1,4 +1,4 @@
-# CamundaClient.Model.TaskQueryDto
+# Camunda.OpenApi.Client.Model.TaskQueryDto
 A Task query which defines a group of Tasks.
 ## Properties
 

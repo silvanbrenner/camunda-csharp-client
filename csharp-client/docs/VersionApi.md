@@ -1,4 +1,4 @@
-# CamundaClient.Api.VersionApi
+# Camunda.OpenApi.Client.Api.VersionApi
 
 All URIs are relative to *http://localhost:8080/engine-rest*
 
@@ -19,9 +19,9 @@ Retrieves the version of the Rest API.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {

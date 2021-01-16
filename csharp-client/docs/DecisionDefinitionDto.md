@@ -1,4 +1,4 @@
-# CamundaClient.Model.DecisionDefinitionDto
+# Camunda.OpenApi.Client.Model.DecisionDefinitionDto
 ## Properties
 
 Name | Type | Description | Notes

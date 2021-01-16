@@ -1,4 +1,4 @@
-# CamundaClient.Model.SortTaskQueryParametersDto
+# Camunda.OpenApi.Client.Model.SortTaskQueryParametersDto
 Mandatory when `sortBy` is one of the following values: `processVariable`, `executionVariable`, `taskVariable`, `caseExecutionVariable` or `caseInstanceVariable`. Must be a JSON object with the properties `variable` and `type` where `variable` is a variable name and `type` is the name of a variable value type.
 ## Properties
 

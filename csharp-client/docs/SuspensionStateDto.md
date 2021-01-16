@@ -1,4 +1,4 @@
-# CamundaClient.Model.SuspensionStateDto
+# Camunda.OpenApi.Client.Model.SuspensionStateDto
 ## Properties
 
 Name | Type | Description | Notes

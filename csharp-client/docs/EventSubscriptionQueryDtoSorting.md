@@ -1,4 +1,4 @@
-# CamundaClient.Model.EventSubscriptionQueryDtoSorting
+# Camunda.OpenApi.Client.Model.EventSubscriptionQueryDtoSorting
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# CamundaClient.Model.ParseExceptionDtoAllOf
+# Camunda.OpenApi.Client.Model.ParseExceptionDtoAllOf
 ## Properties
 
 Name | Type | Description | Notes

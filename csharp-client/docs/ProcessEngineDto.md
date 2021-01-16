@@ -1,4 +1,4 @@
-# CamundaClient.Model.ProcessEngineDto
+# Camunda.OpenApi.Client.Model.ProcessEngineDto
 ## Properties
 
 Name | Type | Description | Notes

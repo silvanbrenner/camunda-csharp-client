@@ -1,4 +1,4 @@
-# CamundaClient.Model.FetchExternalTasksDto
+# Camunda.OpenApi.Client.Model.FetchExternalTasksDto
 ## Properties
 
 Name | Type | Description | Notes

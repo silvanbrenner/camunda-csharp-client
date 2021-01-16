@@ -1,4 +1,4 @@
-# CamundaClient.Model.HistoricActivityInstanceDto
+# Camunda.OpenApi.Client.Model.HistoricActivityInstanceDto
 ## Properties
 
 Name | Type | Description | Notes

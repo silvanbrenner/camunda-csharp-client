@@ -1,4 +1,4 @@
-# CamundaClient.Model.DeploymentDtoAllOf
+# Camunda.OpenApi.Client.Model.DeploymentDtoAllOf
 ## Properties
 
 Name | Type | Description | Notes

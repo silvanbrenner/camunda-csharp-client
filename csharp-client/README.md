@@ -1,4 +1,4 @@
-# CamundaClient - the C# library for the Camunda BPM REST API
+# Camunda.OpenApi.Client - the C# library for the Camunda BPM REST API
 
 OpenApi Spec for Camunda BPM REST API.
 
@@ -38,9 +38,9 @@ Generate the DLL using your preferred tool (e.g. `dotnet build`)
 
 Then include the DLL (under the `bin` folder) in the C# project, and use the namespaces:
 ```csharp
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 ```
 <a name="usage"></a>
 ## Usage
@@ -59,9 +59,9 @@ c.Proxy = webProxy;
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {

@@ -1,4 +1,4 @@
-# CamundaClient.Api.SchemaLogApi
+# Camunda.OpenApi.Client.Api.SchemaLogApi
 
 All URIs are relative to *http://localhost:8080/engine-rest*
 
@@ -20,9 +20,9 @@ Queries for schema log entries that fulfill given parameters.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {
@@ -93,9 +93,9 @@ Queries for schema log entries that fulfill given parameters.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using CamundaClient.Api;
-using CamundaClient.Client;
-using CamundaClient.Model;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
 
 namespace Example
 {

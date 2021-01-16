@@ -1,4 +1,4 @@
-# CamundaClient.Model.EventSubscriptionDto
+# Camunda.OpenApi.Client.Model.EventSubscriptionDto
 ## Properties
 
 Name | Type | Description | Notes

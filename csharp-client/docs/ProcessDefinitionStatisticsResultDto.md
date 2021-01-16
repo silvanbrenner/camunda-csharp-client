@@ -1,4 +1,4 @@
-# CamundaClient.Model.ProcessDefinitionStatisticsResultDto
+# Camunda.OpenApi.Client.Model.ProcessDefinitionStatisticsResultDto
 ## Properties
 
 Name | Type | Description | Notes

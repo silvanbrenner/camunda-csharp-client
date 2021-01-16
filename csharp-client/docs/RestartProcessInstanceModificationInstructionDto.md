@@ -1,4 +1,4 @@
-# CamundaClient.Model.RestartProcessInstanceModificationInstructionDto
+# Camunda.OpenApi.Client.Model.RestartProcessInstanceModificationInstructionDto
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# CamundaClient.Model.ExternalTaskFailureDto
+# Camunda.OpenApi.Client.Model.ExternalTaskFailureDto
 ## Properties
 
 Name | Type | Description | Notes

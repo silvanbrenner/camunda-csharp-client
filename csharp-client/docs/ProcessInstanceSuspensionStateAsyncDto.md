@@ -1,4 +1,4 @@
-# CamundaClient.Model.ProcessInstanceSuspensionStateAsyncDto
+# Camunda.OpenApi.Client.Model.ProcessInstanceSuspensionStateAsyncDto
 ## Properties
 
 Name | Type | Description | Notes

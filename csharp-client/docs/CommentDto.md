@@ -1,4 +1,4 @@
-# CamundaClient.Model.CommentDto
+# Camunda.OpenApi.Client.Model.CommentDto
 ## Properties
 
 Name | Type | Description | Notes

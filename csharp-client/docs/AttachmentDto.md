@@ -1,4 +1,4 @@
-# CamundaClient.Model.AttachmentDto
+# Camunda.OpenApi.Client.Model.AttachmentDto
 ## Properties
 
 Name | Type | Description | Notes

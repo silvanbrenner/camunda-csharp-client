@@ -1,4 +1,4 @@
-# CamundaClient.Model.UserIdDto
+# Camunda.OpenApi.Client.Model.UserIdDto
 ## Properties
 
 Name | Type | Description | Notes

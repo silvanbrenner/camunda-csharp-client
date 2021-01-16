@@ -1,4 +1,4 @@
-# CamundaClient.Model.IncidentStatisticsResultDto
+# Camunda.OpenApi.Client.Model.IncidentStatisticsResultDto
 ## Properties
 
 Name | Type | Description | Notes

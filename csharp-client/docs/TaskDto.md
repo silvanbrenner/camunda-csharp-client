@@ -1,4 +1,4 @@
-# CamundaClient.Model.TaskDto
+# Camunda.OpenApi.Client.Model.TaskDto
 ## Properties
 
 Name | Type | Description | Notes

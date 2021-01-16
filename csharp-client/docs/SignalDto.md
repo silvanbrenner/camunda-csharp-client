@@ -1,4 +1,4 @@
-# CamundaClient.Model.SignalDto
+# Camunda.OpenApi.Client.Model.SignalDto
 ## Properties
 
 Name | Type | Description | Notes

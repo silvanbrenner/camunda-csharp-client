@@ -1,4 +1,4 @@
-# CamundaClient.Model.SchemaLogQueryDto
+# Camunda.OpenApi.Client.Model.SchemaLogQueryDto
 ## Properties
 
 Name | Type | Description | Notes

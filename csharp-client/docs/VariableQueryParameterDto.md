@@ -1,4 +1,4 @@
-# CamundaClient.Model.VariableQueryParameterDto
+# Camunda.OpenApi.Client.Model.VariableQueryParameterDto
 ## Properties
 
 Name | Type | Description | Notes

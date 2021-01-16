@@ -1,4 +1,4 @@
-# CamundaClient.Model.SetRemovalTimeToHistoricProcessInstancesDtoAllOf
+# Camunda.OpenApi.Client.Model.SetRemovalTimeToHistoricProcessInstancesDtoAllOf
 ## Properties
 
 Name | Type | Description | Notes

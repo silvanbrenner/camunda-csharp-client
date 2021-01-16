@@ -1,4 +1,4 @@
-# CamundaClient.Model.ResourceReportDto
+# Camunda.OpenApi.Client.Model.ResourceReportDto
 ## Properties
 
 Name | Type | Description | Notes

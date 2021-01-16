@@ -1,4 +1,4 @@
-# CamundaClient.Model.DeleteProcessInstancesDto
+# Camunda.OpenApi.Client.Model.DeleteProcessInstancesDto
 ## Properties
 
 Name | Type | Description | Notes

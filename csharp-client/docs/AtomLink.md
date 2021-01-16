@@ -1,4 +1,4 @@
-# CamundaClient.Model.AtomLink
+# Camunda.OpenApi.Client.Model.AtomLink
 ## Properties
 
 Name | Type | Description | Notes
