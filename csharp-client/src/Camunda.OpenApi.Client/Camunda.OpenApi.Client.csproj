@@ -6,17 +6,19 @@
     <AssemblyName>Camunda.OpenApi.Client</AssemblyName>
     <PackageId>Camunda.OpenApi.Client</PackageId>
     <OutputType>Library</OutputType>
-    <Authors>OpenAPI</Authors>
+    <Authors>Silvan Brenner</Authors>
     <Company>OpenAPI</Company>
     <AssemblyTitle>OpenAPI Library</AssemblyTitle>
-    <Description>A library generated from a OpenAPI doc</Description>
-    <Copyright>No Copyright</Copyright>
+    <Description>Camunda C# Client generated from OpenApi</Description>
+    <Copyright></Copyright>
     <RootNamespace>Camunda.OpenApi.Client</RootNamespace>
     <Version>1.0.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Camunda.OpenApi.Client.xml</DocumentationFile>
-    <RepositoryUrl>https://github.com/GIT_USER_ID/GIT_REPO_ID.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/silvanbrenner/camunda-csharp-client.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Minor update</PackageReleaseNotes>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/silvanbrenner/camunda-csharp-client.git</PackageProjectUrl>
+    <PackageTags>camunda bpmn rest openapi</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
