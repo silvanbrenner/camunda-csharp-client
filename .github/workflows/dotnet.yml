@@ -24,4 +24,6 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore ${{ github.workspace }}/csharp-client/src/$PROJECT_NAME/$PROJECT_NAME.csproj
     - name: Pack
-      run: dotnet pack -c Release ${{ github.workspace }}/csharp-client/src/$PROJECT_NAME/$PROJECT_NAME.csproj
+      run: dotnet pack ${{ github.workspace }}/csharp-client/src/$PROJECT_NAME/$PROJECT_NAME.csproj --output nuget-packages --configuration Release
+    - name: Push with dotnet
+      run: dotnet nuget push nuget-packages/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
