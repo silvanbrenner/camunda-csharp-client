@@ -1,6 +1,13 @@
 # camunda-csharp-client
 Generated C# OpenApi Client for Camunda
 
+Nuget package: https://www.nuget.org/packages/Camunda.OpenApi.Client/
+
+## Versions
+| Camunda Version | Camunda.OpenApi.Client Version |
+|-----------------|--------------------------------|
+| 7.14.0          | 1.0.1                          |
+
 ## Generate Client
 mvn clean package
 
