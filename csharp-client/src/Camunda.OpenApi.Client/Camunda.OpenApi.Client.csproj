@@ -19,6 +19,7 @@
     <PackageReleaseNotes></PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/silvanbrenner/camunda-csharp-client.git</PackageProjectUrl>
     <PackageTags>camunda bpmn rest openapi</PackageTags>
+    <PackageVersion>1.0.1</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
