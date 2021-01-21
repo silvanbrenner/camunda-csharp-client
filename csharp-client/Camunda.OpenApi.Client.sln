@@ -2,9 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camunda.OpenApi.Client", "src\Camunda.OpenApi.Client\Camunda.OpenApi.Client.csproj", "{C6F905BF-182B-4BAA-8662-E34144AC923A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camunda.OpenApi.Client.Test", "src\Camunda.OpenApi.Client.Test\Camunda.OpenApi.Client.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camunda.OpenApi.Client", "src\Camunda.OpenApi.Client\Camunda.OpenApi.Client.csproj", "{44E01AE2-FD01-444A-A39A-1382EC84B655}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,10 +10,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C6F905BF-182B-4BAA-8662-E34144AC923A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6F905BF-182B-4BAA-8662-E34144AC923A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C6F905BF-182B-4BAA-8662-E34144AC923A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C6F905BF-182B-4BAA-8662-E34144AC923A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44E01AE2-FD01-444A-A39A-1382EC84B655}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44E01AE2-FD01-444A-A39A-1382EC84B655}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44E01AE2-FD01-444A-A39A-1382EC84B655}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44E01AE2-FD01-444A-A39A-1382EC84B655}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU

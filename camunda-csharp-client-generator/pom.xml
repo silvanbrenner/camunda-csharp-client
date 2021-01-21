@@ -6,7 +6,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>camunda-csharp-client-generator</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.2</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -17,6 +17,38 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${project.basedir}/../csharp-client/docs</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                        </fileset>
+                        <fileset>
+                            <directory>${project.basedir}/../csharp-client/src/Camunda.OpenApi.Client/Api</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                        </fileset>
+                        <fileset>
+                            <directory>${project.basedir}/../csharp-client/src/Camunda.OpenApi.Client/Client</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                        </fileset>
+                        <fileset>
+                            <directory>${project.basedir}/../csharp-client/src/Camunda.OpenApi.Client/Model</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -56,8 +88,17 @@
                             <inputSpec>${project.basedir}/target/openapi/openapi.json</inputSpec>
                             <generatorName>csharp-netcore</generatorName>
                             <output>${project.basedir}/../csharp-client</output>
+                            <gitHost>github.com</gitHost>
+                            <gitUserId>silvanbrenner</gitUserId>
+                            <gitRepoId>camunda-csharp-client</gitRepoId>
+                            <generateApiTests>false</generateApiTests>
+                            <generateModelTests>false</generateModelTests>
                             <configOptions>
                                 <packageName>Camunda.OpenApi.Client</packageName>
+                                <targetFramework>netstandard2.0</targetFramework>
+                                <optionalProjectFile>false</optionalProjectFile>
+                                <releaseNote></releaseNote>
+                                <licenseId>MIT</licenseId>
                             </configOptions>
                         </configuration>
                     </execution>
