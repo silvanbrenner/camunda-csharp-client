@@ -1,3 +1,5 @@
+![.NET Core](https://github.com/silvanbrenner/camunda-csharp-client/workflows/.NET%20Core/badge.svg?branch=main) ![Nuget](https://img.shields.io/nuget/v/Camunda.OpenApi.Client)
+
 # camunda-csharp-client
 Generated C# OpenApi Client for Camunda
 
