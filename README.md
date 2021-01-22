@@ -1,6 +1,4 @@
-[![Nuget](https://img.shields.io/nuget/v/Camunda.OpenApi.Client) (https://www.nuget.org/packages/Camunda.OpenApi.Client)]
-
-# camunda-csharp-client
+# camunda-csharp-client [![NuGet](https://img.shields.io/nuget/v/Camunda.OpenApi.Client)](https://www.nuget.org/packages/Camunda.OpenApi.Client)
 Generated C# OpenApi Client for Camunda
 
 Nuget package: https://www.nuget.org/packages/Camunda.OpenApi.Client/
