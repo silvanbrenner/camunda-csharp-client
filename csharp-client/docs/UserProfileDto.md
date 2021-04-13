@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.UserProfileDto
+
 ## Properties
 
 Name | Type | Description | Notes

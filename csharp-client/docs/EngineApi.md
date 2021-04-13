@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:8080/engine-rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetProcessEngineNames**](EngineApi.md#getprocessenginenames) | **GET** /engine | 
+[**GetProcessEngineNames**](EngineApi.md#getprocessenginenames) | **GET** /engine | Get List
 
 
 <a name="getprocessenginenames"></a>
 # **GetProcessEngineNames**
 > List&lt;ProcessEngineDto&gt; GetProcessEngineNames ()
 
-
+Get List
 
 Retrieves the names of all process engines available on your platform. **Note**: You cannot prepend `/engine/{name}` to this method.
 
@@ -35,6 +35,7 @@ namespace Example
 
             try
             {
+                // Get List
                 List<ProcessEngineDto> result = apiInstance.GetProcessEngineNames();
                 Debug.WriteLine(result);
             }
@@ -64,6 +65,7 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

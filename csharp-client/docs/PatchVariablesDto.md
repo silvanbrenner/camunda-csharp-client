@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.PatchVariablesDto
+
 ## Properties
 
 Name | Type | Description | Notes

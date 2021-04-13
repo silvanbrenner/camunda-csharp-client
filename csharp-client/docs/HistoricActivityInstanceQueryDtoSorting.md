@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.HistoricActivityInstanceQueryDtoSorting
+
 ## Properties
 
 Name | Type | Description | Notes

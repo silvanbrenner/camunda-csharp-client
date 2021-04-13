@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.ProcessInstanceWithVariablesDtoAllOf
+
 ## Properties
 
 Name | Type | Description | Notes

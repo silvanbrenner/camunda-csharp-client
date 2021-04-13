@@ -4,20 +4,20 @@ All URIs are relative to *http://localhost:8080/engine-rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteTaskLocalVariable**](TaskLocalVariableApi.md#deletetasklocalvariable) | **DELETE** /task/{id}/localVariables/{varName} | 
-[**GetTaskLocalVariable**](TaskLocalVariableApi.md#gettasklocalvariable) | **GET** /task/{id}/localVariables/{varName} | 
-[**GetTaskLocalVariableBinary**](TaskLocalVariableApi.md#gettasklocalvariablebinary) | **GET** /task/{id}/localVariables/{varName}/data | 
-[**GetTaskLocalVariables**](TaskLocalVariableApi.md#gettasklocalvariables) | **GET** /task/{id}/localVariables | 
-[**ModifyTaskLocalVariables**](TaskLocalVariableApi.md#modifytasklocalvariables) | **POST** /task/{id}/localVariables | 
-[**PutTaskLocalVariable**](TaskLocalVariableApi.md#puttasklocalvariable) | **PUT** /task/{id}/localVariables/{varName} | 
-[**SetBinaryTaskLocalVariable**](TaskLocalVariableApi.md#setbinarytasklocalvariable) | **POST** /task/{id}/localVariables/{varName}/data | 
+[**DeleteTaskLocalVariable**](TaskLocalVariableApi.md#deletetasklocalvariable) | **DELETE** /task/{id}/localVariables/{varName} | Delete Local Task Variable
+[**GetTaskLocalVariable**](TaskLocalVariableApi.md#gettasklocalvariable) | **GET** /task/{id}/localVariables/{varName} | Get Local Task Variable
+[**GetTaskLocalVariableBinary**](TaskLocalVariableApi.md#gettasklocalvariablebinary) | **GET** /task/{id}/localVariables/{varName}/data | Get Local Task Variable (Binary)
+[**GetTaskLocalVariables**](TaskLocalVariableApi.md#gettasklocalvariables) | **GET** /task/{id}/localVariables | Get Local Task Variables
+[**ModifyTaskLocalVariables**](TaskLocalVariableApi.md#modifytasklocalvariables) | **POST** /task/{id}/localVariables | Update/Delete Local Task Variables
+[**PutTaskLocalVariable**](TaskLocalVariableApi.md#puttasklocalvariable) | **PUT** /task/{id}/localVariables/{varName} | Update Local Task Variable
+[**SetBinaryTaskLocalVariable**](TaskLocalVariableApi.md#setbinarytasklocalvariable) | **POST** /task/{id}/localVariables/{varName}/data | Update Local Task Variable (Binary)
 
 
 <a name="deletetasklocalvariable"></a>
 # **DeleteTaskLocalVariable**
 > void DeleteTaskLocalVariable (string id, string varName)
 
-
+Delete Local Task Variable
 
 Removes a local variable from a task by id.
 
@@ -43,6 +43,7 @@ namespace Example
 
             try
             {
+                // Delete Local Task Variable
                 apiInstance.DeleteTaskLocalVariable(id, varName);
             }
             catch (ApiException  e)
@@ -76,11 +77,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. |  -  |
-| **500** | Task id is &#x60;null&#x60; or does not exist. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **500** | Task id is &#x60;null&#x60; or does not exist. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -88,7 +90,7 @@ No authorization required
 # **GetTaskLocalVariable**
 > VariableValueDto GetTaskLocalVariable (string id, string varName, bool? deserializeValue = null)
 
-
+Get Local Task Variable
 
 Retrieves a variable from the context of a given task by id.
 
@@ -115,6 +117,7 @@ namespace Example
 
             try
             {
+                // Get Local Task Variable
                 VariableValueDto result = apiInstance.GetTaskLocalVariable(id, varName, deserializeValue);
                 Debug.WriteLine(result);
             }
@@ -150,12 +153,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **404** | Variable with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **500** | Task id is &#x60;null&#x60; or does not exist. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Variable with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **500** | Task id is &#x60;null&#x60; or does not exist. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -163,7 +167,7 @@ No authorization required
 # **GetTaskLocalVariableBinary**
 > System.IO.Stream GetTaskLocalVariableBinary (string id, string varName)
 
-
+Get Local Task Variable (Binary)
 
 Retrieves a binary variable from the context of a given task by id. Applicable for byte array and file variables.
 
@@ -189,6 +193,7 @@ namespace Example
 
             try
             {
+                // Get Local Task Variable (Binary)
                 System.IO.Stream result = apiInstance.GetTaskLocalVariableBinary(id, varName);
                 Debug.WriteLine(result);
             }
@@ -223,12 +228,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/octet-stream, text/plain, application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful.         For binary variables or files without any MIME type information, a byte stream is returned.         File variables with MIME type information are returned as the saved type.         Additionally, for file variables the Content-Disposition header will be set. |  -  |
-| **400** | Variable with given id exists but is not a binary variable.See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **404** | Variable with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Variable with given id exists but is not a binary variable.See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Variable with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -236,7 +242,7 @@ No authorization required
 # **GetTaskLocalVariables**
 > Dictionary&lt;string, VariableValueDto&gt; GetTaskLocalVariables (string id, bool? deserializeValues = null)
 
-
+Get Local Task Variables
 
 Retrieves all variables of a given task by id.
 
@@ -262,6 +268,7 @@ namespace Example
 
             try
             {
+                // Get Local Task Variables
                 Dictionary<string, VariableValueDto> result = apiInstance.GetTaskLocalVariables(id, deserializeValues);
                 Debug.WriteLine(result);
             }
@@ -296,11 +303,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **500** | Task id is &#x60;null&#x60; or does not exist. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **500** | Task id is &#x60;null&#x60; or does not exist. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -308,7 +316,7 @@ No authorization required
 # **ModifyTaskLocalVariables**
 > void ModifyTaskLocalVariables (string id, PatchVariablesDto patchVariablesDto = null)
 
-
+Update/Delete Local Task Variables
 
 Updates or deletes the variables in the context of a task. Updates precede deletions. So, if a variable is updated AND deleted, the deletion overrides the update.
 
@@ -334,6 +342,7 @@ namespace Example
 
             try
             {
+                // Update/Delete Local Task Variables
                 apiInstance.ModifyTaskLocalVariables(id, patchVariablesDto);
             }
             catch (ApiException  e)
@@ -367,12 +376,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. |  -  |
-| **400** | The variable value or type is invalid. For example the value could not be parsed to an &#x60;Integer&#x60; value or the passed variable type is not supported. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **500** | Update or delete could not be executed because the task is &#x60;null&#x60; or does not exist.. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | The variable value or type is invalid. For example the value could not be parsed to an &#x60;Integer&#x60; value or the passed variable type is not supported. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **500** | Update or delete could not be executed because the task is &#x60;null&#x60; or does not exist.. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -380,7 +390,7 @@ No authorization required
 # **PutTaskLocalVariable**
 > void PutTaskLocalVariable (string id, string varName, VariableValueDto variableValueDto = null)
 
-
+Update Local Task Variable
 
 Sets a variable in the context of a given task.
 
@@ -407,6 +417,7 @@ namespace Example
 
             try
             {
+                // Update Local Task Variable
                 apiInstance.PutTaskLocalVariable(id, varName, variableValueDto);
             }
             catch (ApiException  e)
@@ -441,12 +452,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. |  -  |
-| **400** | The variable name, value or type is invalid, for example if the value could not be parsed to an &#x60;Integer&#x60; value or the passed variable type is not supported or a new transient variable has the name that is already persisted. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **500** | The variable name is &#x60;null&#x60;, or the Task id is &#x60;null&#x60; or does not exist. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | The variable name, value or type is invalid, for example if the value could not be parsed to an &#x60;Integer&#x60; value or the passed variable type is not supported or a new transient variable has the name that is already persisted. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **500** | The variable name is &#x60;null&#x60;, or the Task id is &#x60;null&#x60; or does not exist. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -454,7 +466,7 @@ No authorization required
 # **SetBinaryTaskLocalVariable**
 > void SetBinaryTaskLocalVariable (string id, string varName, System.IO.Stream data = null, string valueType = null)
 
-
+Update Local Task Variable (Binary)
 
 Sets the serialized value for a binary variable or the binary value for a file variable.
 
@@ -482,6 +494,7 @@ namespace Example
 
             try
             {
+                // Update Local Task Variable (Binary)
                 apiInstance.SetBinaryTaskLocalVariable(id, varName, data, valueType);
             }
             catch (ApiException  e)
@@ -517,12 +530,13 @@ No authorization required
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. |  -  |
-| **400** | The variable value or type is invalid, for example if no filename is set. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **500** | Variable name is &#x60;null&#x60;, or the Task id is &#x60;null&#x60; or does not exist. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | The variable value or type is invalid, for example if no filename is set. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **500** | Variable name is &#x60;null&#x60;, or the Task id is &#x60;null&#x60; or does not exist. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

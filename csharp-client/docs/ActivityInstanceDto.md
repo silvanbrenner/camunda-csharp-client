@@ -1,5 +1,6 @@
 # Camunda.OpenApi.Client.Model.ActivityInstanceDto
 A JSON object corresponding to the Activity Instance tree of the given process instance.
+
 ## Properties
 
 Name | Type | Description | Notes

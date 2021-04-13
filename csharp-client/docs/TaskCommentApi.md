@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost:8080/engine-rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateComment**](TaskCommentApi.md#createcomment) | **POST** /task/{id}/comment/create | 
-[**GetComment**](TaskCommentApi.md#getcomment) | **GET** /task/{id}/comment/{commentId} | 
-[**GetComments**](TaskCommentApi.md#getcomments) | **GET** /task/{id}/comment | 
+[**CreateComment**](TaskCommentApi.md#createcomment) | **POST** /task/{id}/comment/create | Create
+[**GetComment**](TaskCommentApi.md#getcomment) | **GET** /task/{id}/comment/{commentId} | Get
+[**GetComments**](TaskCommentApi.md#getcomments) | **GET** /task/{id}/comment | Get List
 
 
 <a name="createcomment"></a>
 # **CreateComment**
 > CommentDto CreateComment (string id, CommentDto commentDto = null)
 
-
+Create
 
 Creates a comment for a task by id.
 
@@ -39,6 +39,7 @@ namespace Example
 
             try
             {
+                // Create
                 CommentDto result = apiInstance.CreateComment(id, commentDto);
                 Debug.WriteLine(result);
             }
@@ -73,12 +74,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | The task does not exist or no comment message was submitted. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **403** | The history of the engine is disabled. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | The task does not exist or no comment message was submitted. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **403** | The history of the engine is disabled. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -86,7 +88,7 @@ No authorization required
 # **GetComment**
 > CommentDto GetComment (string id, string commentId)
 
-
+Get
 
 Retrieves a task comment by task id and comment id.
 
@@ -112,6 +114,7 @@ namespace Example
 
             try
             {
+                // Get
                 CommentDto result = apiInstance.GetComment(id, commentId);
                 Debug.WriteLine(result);
             }
@@ -146,11 +149,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **404** | The task or comment with given task and comment id does not exist, or the history of the engine is disabled. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | The task or comment with given task and comment id does not exist, or the history of the engine is disabled. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -158,7 +162,7 @@ No authorization required
 # **GetComments**
 > List&lt;CommentDto&gt; GetComments (string id)
 
-
+Get List
 
 Gets the comments for a task by id.
 
@@ -183,6 +187,7 @@ namespace Example
 
             try
             {
+                // Get List
                 List<CommentDto> result = apiInstance.GetComments(id);
                 Debug.WriteLine(result);
             }
@@ -216,11 +221,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **404** | No task exists for the given task id. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | No task exists for the given task id. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

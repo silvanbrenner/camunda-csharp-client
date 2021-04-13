@@ -1,5 +1,6 @@
 # Camunda.OpenApi.Client.Model.EventSubscriptionQueryDto
 A event subscription query which retrieves a list of event subscriptions
+
 ## Properties
 
 Name | Type | Description | Notes

@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost:8080/engine-rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddAttachment**](TaskAttachmentApi.md#addattachment) | **POST** /task/{id}/attachment/create | 
-[**DeleteAttachment**](TaskAttachmentApi.md#deleteattachment) | **DELETE** /task/{id}/attachment/{attachmentId} | 
-[**GetAttachment**](TaskAttachmentApi.md#getattachment) | **GET** /task/{id}/attachment/{attachmentId} | 
-[**GetAttachmentData**](TaskAttachmentApi.md#getattachmentdata) | **GET** /task/{id}/attachment/{attachmentId}/data | 
-[**GetAttachments**](TaskAttachmentApi.md#getattachments) | **GET** /task/{id}/attachment | 
+[**AddAttachment**](TaskAttachmentApi.md#addattachment) | **POST** /task/{id}/attachment/create | Create
+[**DeleteAttachment**](TaskAttachmentApi.md#deleteattachment) | **DELETE** /task/{id}/attachment/{attachmentId} | Delete
+[**GetAttachment**](TaskAttachmentApi.md#getattachment) | **GET** /task/{id}/attachment/{attachmentId} | Get
+[**GetAttachmentData**](TaskAttachmentApi.md#getattachmentdata) | **GET** /task/{id}/attachment/{attachmentId}/data | Get (Binary)
+[**GetAttachments**](TaskAttachmentApi.md#getattachments) | **GET** /task/{id}/attachment | Get List
 
 
 <a name="addattachment"></a>
 # **AddAttachment**
 > AttachmentDto AddAttachment (string id, string attachmentName = null, string attachmentDescription = null, string attachmentType = null, string url = null, System.IO.Stream content = null)
 
-
+Create
 
 Creates an attachment for a task.
 
@@ -45,6 +45,7 @@ namespace Example
 
             try
             {
+                // Create
                 AttachmentDto result = apiInstance.AddAttachment(id, attachmentName, attachmentDescription, attachmentType, url, content);
                 Debug.WriteLine(result);
             }
@@ -83,6 +84,7 @@ No authorization required
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -96,7 +98,7 @@ No authorization required
 # **DeleteAttachment**
 > void DeleteAttachment (string id, string attachmentId)
 
-
+Delete
 
 Removes an attachment from a task by id.
 
@@ -122,6 +124,7 @@ namespace Example
 
             try
             {
+                // Delete
                 apiInstance.DeleteAttachment(id, attachmentId);
             }
             catch (ApiException  e)
@@ -155,6 +158,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -168,7 +172,7 @@ No authorization required
 # **GetAttachment**
 > AttachmentDto GetAttachment (string id, string attachmentId)
 
-
+Get
 
 Retrieves a task attachment by task id and attachment id.
 
@@ -194,6 +198,7 @@ namespace Example
 
             try
             {
+                // Get
                 AttachmentDto result = apiInstance.GetAttachment(id, attachmentId);
                 Debug.WriteLine(result);
             }
@@ -228,6 +233,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -240,7 +246,7 @@ No authorization required
 # **GetAttachmentData**
 > System.IO.Stream GetAttachmentData (string id, string attachmentId)
 
-
+Get (Binary)
 
 Retrieves the binary content of a task attachment by task id and attachment id.
 
@@ -266,6 +272,7 @@ namespace Example
 
             try
             {
+                // Get (Binary)
                 System.IO.Stream result = apiInstance.GetAttachmentData(id, attachmentId);
                 Debug.WriteLine(result);
             }
@@ -300,6 +307,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/octet-stream, text/plain, application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -312,7 +320,7 @@ No authorization required
 # **GetAttachments**
 > List&lt;AttachmentDto&gt; GetAttachments (string id)
 
-
+Get List
 
 Gets the attachments for a task.
 
@@ -337,6 +345,7 @@ namespace Example
 
             try
             {
+                // Get List
                 List<AttachmentDto> result = apiInstance.GetAttachments(id);
                 Debug.WriteLine(result);
             }
@@ -369,6 +378,7 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

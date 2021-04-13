@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.TaskDto
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -7,9 +8,9 @@ Name | Type | Description | Notes
 **Name** | **string** | The task name. | [optional] 
 **Assignee** | **string** | The assignee&#39;s id. | [optional] 
 **Owner** | **string** | The owner&#39;s id. | [optional] 
-**Created** | **DateTime** | The date the task was created on. [Default format](https://docs.camunda.org/manual/7.14/reference/rest/overview/date-format/) &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;. | [optional] 
-**Due** | **DateTime?** | The task&#39;s due date. [Default format](https://docs.camunda.org/manual/7.14/reference/rest/overview/date-format/) &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;. | [optional] 
-**FollowUp** | **DateTime?** | The follow-up date for the task. [Default format](https://docs.camunda.org/manual/7.14/reference/rest/overview/date-format/) &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;. | [optional] 
+**Created** | **DateTime?** | The date the task was created on. [Default format](https://docs.camunda.org/manual/7.15/reference/rest/overview/date-format/) &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;. | [optional] 
+**Due** | **DateTime?** | The task&#39;s due date. [Default format](https://docs.camunda.org/manual/7.15/reference/rest/overview/date-format/) &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;. | [optional] 
+**FollowUp** | **DateTime?** | The follow-up date for the task. [Default format](https://docs.camunda.org/manual/7.15/reference/rest/overview/date-format/) &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;. | [optional] 
 **DelegationState** | **string** | The task&#39;s delegation state. Possible values are &#x60;PENDING&#x60; and &#x60;RESOLVED&#x60;. | [optional] 
 **Description** | **string** | The task&#39;s description. | [optional] 
 **ExecutionId** | **string** | The id of the execution the task belongs to. | [optional] 

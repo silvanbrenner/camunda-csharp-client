@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.DeleteHistoricProcessInstancesDto
+
 ## Properties
 
 Name | Type | Description | Notes

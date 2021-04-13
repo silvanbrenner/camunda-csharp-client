@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.ExternalTaskQueryDtoSorting
+
 ## Properties
 
 Name | Type | Description | Notes

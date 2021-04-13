@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.TelemetryConfigurationDto
+
 ## Properties
 
 Name | Type | Description | Notes

@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**GetUsers**](UserApi.md#getusers) | **GET** /user | Get List
 [**UnlockUser**](UserApi.md#unlockuser) | **POST** /user/{id}/unlock | Unlock User
 [**UpdateCredentials**](UserApi.md#updatecredentials) | **PUT** /user/{id}/credentials | Update Credentials
+[**UpdateProfile**](UserApi.md#updateprofile) | **PUT** /user/{id}/profile | Update User Profile
 
 
 <a name="availableoperations"></a>
@@ -21,7 +22,7 @@ Method | HTTP request | Description
 
 Options
 
-The `/user` resource supports two custom `OPTIONS` requests, one for the resource as such and one for individual user instances. The `OPTIONS` request allows checking for the set of available operations that the currently authenticated user can perform on the /user resource. If the user can perform an operation or not may depend on various things, including the user's authorizations to interact with this resource and the internal configuration of the process engine.
+The `/user` resource supports two custom `OPTIONS` requests, one for the resource as such and one for individual user instances. The `OPTIONS` request allows checking for the set of available operations that the currently authenticated user can perform on the /user resource. If the user can perform an operation or not may depend on various things, including the user's authorizations to interact with this resource and the internal configuration of the process engine. `OPTIONS /user` returns available interactions on the resource.
 
 ### Example
 ```csharp
@@ -74,6 +75,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -87,7 +89,7 @@ No authorization required
 
 Options
 
-The `/user` resource supports two custom `OPTIONS` requests, one for the resource as such and one for individual user instances. The `OPTIONS` request allows checking for the set of available operations that the currently authenticated user can perform on the /user resource. If the user can perform an operation or not may depend on various things, including the user's authorizations to interact with this resource and the internal configuration of the process engine.
+The `/user` resource supports two custom `OPTIONS` requests, one for the resource as such and one for individual user instances. The `OPTIONS` request allows checking for the set of available operations that the currently authenticated user can perform on the /user resource. If the user can perform an operation or not may depend on various things, including the user's authorizations to interact with this resource and the internal configuration of the process engine. `OPTIONS /user/{id}` returns available interactions on a resource instance.
 
 ### Example
 ```csharp
@@ -143,6 +145,7 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -213,6 +216,7 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: Not defined
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -282,12 +286,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. |  -  |
 | **403** | Identity service is read-only (Cannot modify users / groups / memberships). |  -  |
-| **404** | A Deployment with the provided id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | A Deployment with the provided id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -297,7 +302,7 @@ No authorization required
 
 Get List Count
 
-Queries for the number of deployments that fulfill given parameters. Takes the same parameters as the [Get Users](https://docs.camunda.org/manual/7.14/reference/rest/user/get-query/) method.
+Queries for the number of deployments that fulfill given parameters. Takes the same parameters as the [Get Users](https://docs.camunda.org/manual/7.15/reference/rest/user/get-query/) method.
 
 ### Example
 ```csharp
@@ -374,17 +379,18 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example, if an invalid operator for variable comparison is used. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example, if an invalid operator for variable comparison is used. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getuserprofile"></a>
 # **GetUserProfile**
-> List&lt;UserProfileDto&gt; GetUserProfile (string id)
+> UserProfileDto GetUserProfile (string id)
 
 Get Profile
 
@@ -412,7 +418,7 @@ namespace Example
             try
             {
                 // Get Profile
-                List<UserProfileDto> result = apiInstance.GetUserProfile(id);
+                UserProfileDto result = apiInstance.GetUserProfile(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -434,7 +440,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;UserProfileDto&gt;**](UserProfileDto.md)
+[**UserProfileDto**](UserProfileDto.md)
 
 ### Authorization
 
@@ -445,11 +451,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **404** | Execution with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Execution with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -459,7 +466,7 @@ No authorization required
 
 Get List
 
-Query for a list of users using a list of parameters. The size of the result set can be retrieved by using the Get User Count method. [Get User Count](https://docs.camunda.org/manual/7.14/reference/rest/user/get-query-count/) method.
+Query for a list of users using a list of parameters. The size of the result set can be retrieved by using the Get User Count method. [Get User Count](https://docs.camunda.org/manual/7.15/reference/rest/user/get-query-count/) method.
 
 ### Example
 ```csharp
@@ -544,11 +551,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;, or if an invalid operator for variable comparison is used. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;, or if an invalid operator for variable comparison is used. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -614,12 +622,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. |  -  |
 | **403** | The user who performed the operation is not a Camunda admin user. |  -  |
-| **404** | User cannot be found. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | User cannot be found. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -692,6 +701,7 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -699,7 +709,82 @@ No authorization required
 | **403** | Identity service is read-only (Cannot modify users / groups / memberships). |  -  |
 | **400** | The authenticated user password does not match |  -  |
 | **404** | If the corresponding user cannot be found |  -  |
-| **500** | The user could not be updated due to an internal server error. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **500** | The user could not be updated due to an internal server error. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updateprofile"></a>
+# **UpdateProfile**
+> void UpdateProfile (string id, UserProfileDto userProfileDto = null)
+
+Update User Profile
+
+Updates the profile information of an already existing user.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
+
+namespace Example
+{
+    public class UpdateProfileExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:8080/engine-rest";
+            var apiInstance = new UserApi(config);
+            var id = id_example;  // string | The id of the user.
+            var userProfileDto = new UserProfileDto(); // UserProfileDto |  (optional) 
+
+            try
+            {
+                // Update User Profile
+                apiInstance.UpdateProfile(id, userProfileDto);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UpdateProfile: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| The id of the user. | 
+ **userProfileDto** | [**UserProfileDto**](UserProfileDto.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Request successful. This method returns no content. |  -  |
+| **403** | Identity service is read-only (Cannot modify users / groups / memberships). |  -  |
+| **404** | If the user with the requested Id cannot be found. |  -  |
+| **500** | The user could not be updated due to an internal server error. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -4,15 +4,87 @@ All URIs are relative to *http://localhost:8080/engine-rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetMetrics**](MetricsApi.md#getmetrics) | **GET** /metrics/{metrics-name}/sum | 
-[**Interval**](MetricsApi.md#interval) | **GET** /metrics | 
+[**DeleteTaskMetrics**](MetricsApi.md#deletetaskmetrics) | **DELETE** /metrics/task-worker | Delete Task Worker Metrics
+[**GetMetrics**](MetricsApi.md#getmetrics) | **GET** /metrics/{metrics-name}/sum | Get Sum
+[**Interval**](MetricsApi.md#interval) | **GET** /metrics | Get Metrics in Interval
 
+
+<a name="deletetaskmetrics"></a>
+# **DeleteTaskMetrics**
+> void DeleteTaskMetrics (DateTime? date = null)
+
+Delete Task Worker Metrics
+
+Deletes all task worker metrics prior to the given date or all if no date is provided.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
+
+namespace Example
+{
+    public class DeleteTaskMetricsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:8080/engine-rest";
+            var apiInstance = new MetricsApi(config);
+            var date = 2013-10-20T19:20:30+01:00;  // DateTime? | The date prior to which all task worker metrics should be deleted. (optional) 
+
+            try
+            {
+                // Delete Task Worker Metrics
+                apiInstance.DeleteTaskMetrics(date);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling MetricsApi.DeleteTaskMetrics: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **date** | **DateTime?**| The date prior to which all task worker metrics should be deleted. | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Request successful. |  -  |
+| **403** | If the user who performs the operation is not a &lt;b&gt;camunda-admin&lt;/b&gt; user. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getmetrics"></a>
 # **GetMetrics**
 > MetricsResultDto GetMetrics (string metricsName, DateTime? startDate = null, DateTime? endDate = null)
 
-
+Get Sum
 
 Retrieves the `sum` (count) for a given metric.
 
@@ -39,6 +111,7 @@ namespace Example
 
             try
             {
+                // Get Sum
                 MetricsResultDto result = apiInstance.GetMetrics(metricsName, startDate, endDate);
                 Debug.WriteLine(result);
             }
@@ -74,6 +147,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -85,7 +159,7 @@ No authorization required
 # **Interval**
 > List&lt;MetricsIntervalResultDto&gt; Interval (string name = null, string reporter = null, DateTime? startDate = null, DateTime? endDate = null, int? firstResult = null, int? maxResults = null, string interval = null, string aggregateByReporter = null)
 
-
+Get Metrics in Interval
 
 Retrieves a list of metrics, aggregated for a given interval.
 
@@ -107,7 +181,7 @@ namespace Example
             config.BasePath = "http://localhost:8080/engine-rest";
             var apiInstance = new MetricsApi(config);
             var name = name_example;  // string | The name of the metric. (optional) 
-            var reporter = reporter_example;  // string | The name of the reporter (host), on which the metrics was logged. This will have value provided by the [hostname configuration property](https://docs.camunda.org/manual/7.14/reference/deployment-descriptors/tags/process-engine/#hostname). (optional) 
+            var reporter = reporter_example;  // string | The name of the reporter (host), on which the metrics was logged. This will have value provided by the [hostname configuration property](https://docs.camunda.org/manual/7.15/reference/deployment-descriptors/tags/process-engine/#hostname). (optional) 
             var startDate = 2013-10-20T19:20:30+01:00;  // DateTime? | The start date (inclusive). (optional) 
             var endDate = 2013-10-20T19:20:30+01:00;  // DateTime? | The end date (exclusive). (optional) 
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
@@ -117,6 +191,7 @@ namespace Example
 
             try
             {
+                // Get Metrics in Interval
                 List<MetricsIntervalResultDto> result = apiInstance.Interval(name, reporter, startDate, endDate, firstResult, maxResults, interval, aggregateByReporter);
                 Debug.WriteLine(result);
             }
@@ -136,7 +211,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| The name of the metric. | [optional] 
- **reporter** | **string**| The name of the reporter (host), on which the metrics was logged. This will have value provided by the [hostname configuration property](https://docs.camunda.org/manual/7.14/reference/deployment-descriptors/tags/process-engine/#hostname). | [optional] 
+ **reporter** | **string**| The name of the reporter (host), on which the metrics was logged. This will have value provided by the [hostname configuration property](https://docs.camunda.org/manual/7.15/reference/deployment-descriptors/tags/process-engine/#hostname). | [optional] 
  **startDate** | **DateTime?**| The start date (inclusive). | [optional] 
  **endDate** | **DateTime?**| The end date (exclusive). | [optional] 
  **firstResult** | **int?**| Pagination of results. Specifies the index of the first result to return. | [optional] 
@@ -156,6 +231,7 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

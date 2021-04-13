@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.ResourceOptionsDto
+
 ## Properties
 
 Name | Type | Description | Notes

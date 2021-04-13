@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.ActivityStatisticsResultDto
+
 ## Properties
 
 Name | Type | Description | Notes

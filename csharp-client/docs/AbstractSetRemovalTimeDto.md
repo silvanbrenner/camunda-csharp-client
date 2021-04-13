@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.AbstractSetRemovalTimeDto
+
 ## Properties
 
 Name | Type | Description | Notes

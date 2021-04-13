@@ -1,5 +1,6 @@
 # Camunda.OpenApi.Client.Model.ExternalTaskDto
 An External Task object with the following properties
+
 ## Properties
 
 Name | Type | Description | Notes

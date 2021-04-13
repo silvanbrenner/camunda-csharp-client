@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.SchemaLogQueryDtoSorting
+
 ## Properties
 
 Name | Type | Description | Notes

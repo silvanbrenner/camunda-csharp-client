@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.HistoricProcessInstanceQueryDtoSorting
+
 ## Properties
 
 Name | Type | Description | Notes

@@ -4,30 +4,104 @@ All URIs are relative to *http://localhost:8080/engine-rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CompleteExternalTaskResource**](ExternalTaskApi.md#completeexternaltaskresource) | **POST** /external-task/{id}/complete | 
-[**ExtendLock**](ExternalTaskApi.md#extendlock) | **POST** /external-task/{id}/extendLock | 
-[**FetchAndLock**](ExternalTaskApi.md#fetchandlock) | **POST** /external-task/fetchAndLock | 
-[**GetExternalTask**](ExternalTaskApi.md#getexternaltask) | **GET** /external-task/{id} | 
-[**GetExternalTaskErrorDetails**](ExternalTaskApi.md#getexternaltaskerrordetails) | **GET** /external-task/{id}/errorDetails | 
-[**GetExternalTasks**](ExternalTaskApi.md#getexternaltasks) | **GET** /external-task | 
-[**GetExternalTasksCount**](ExternalTaskApi.md#getexternaltaskscount) | **GET** /external-task/count | 
-[**GetTopicNames**](ExternalTaskApi.md#gettopicnames) | **GET** /external-task/topic-names | 
-[**HandleExternalTaskBpmnError**](ExternalTaskApi.md#handleexternaltaskbpmnerror) | **POST** /external-task/{id}/bpmnError | 
-[**HandleFailure**](ExternalTaskApi.md#handlefailure) | **POST** /external-task/{id}/failure | 
-[**QueryExternalTasks**](ExternalTaskApi.md#queryexternaltasks) | **POST** /external-task | 
-[**QueryExternalTasksCount**](ExternalTaskApi.md#queryexternaltaskscount) | **POST** /external-task/count | 
-[**SetExternalTaskResourcePriority**](ExternalTaskApi.md#setexternaltaskresourcepriority) | **PUT** /external-task/{id}/priority | 
-[**SetExternalTaskResourceRetries**](ExternalTaskApi.md#setexternaltaskresourceretries) | **PUT** /external-task/{id}/retries | 
-[**SetExternalTaskRetries**](ExternalTaskApi.md#setexternaltaskretries) | **PUT** /external-task/retries | 
-[**SetExternalTaskRetriesAsyncOperation**](ExternalTaskApi.md#setexternaltaskretriesasyncoperation) | **POST** /external-task/retries-async | 
-[**Unlock**](ExternalTaskApi.md#unlock) | **POST** /external-task/{id}/unlock | 
+[**CallLock**](ExternalTaskApi.md#calllock) | **POST** /external-task/{id}/lock | 
+[**CompleteExternalTaskResource**](ExternalTaskApi.md#completeexternaltaskresource) | **POST** /external-task/{id}/complete | Complete
+[**ExtendLock**](ExternalTaskApi.md#extendlock) | **POST** /external-task/{id}/extendLock | Extend Lock
+[**FetchAndLock**](ExternalTaskApi.md#fetchandlock) | **POST** /external-task/fetchAndLock | Fetch and Lock
+[**GetExternalTask**](ExternalTaskApi.md#getexternaltask) | **GET** /external-task/{id} | Get
+[**GetExternalTaskErrorDetails**](ExternalTaskApi.md#getexternaltaskerrordetails) | **GET** /external-task/{id}/errorDetails | Get Error Details
+[**GetExternalTasks**](ExternalTaskApi.md#getexternaltasks) | **GET** /external-task | Get List
+[**GetExternalTasksCount**](ExternalTaskApi.md#getexternaltaskscount) | **GET** /external-task/count | Get List Count
+[**GetTopicNames**](ExternalTaskApi.md#gettopicnames) | **GET** /external-task/topic-names | Get External Task Topic Names
+[**HandleExternalTaskBpmnError**](ExternalTaskApi.md#handleexternaltaskbpmnerror) | **POST** /external-task/{id}/bpmnError | Handle BPMN Error
+[**HandleFailure**](ExternalTaskApi.md#handlefailure) | **POST** /external-task/{id}/failure | Handle Failure
+[**QueryExternalTasks**](ExternalTaskApi.md#queryexternaltasks) | **POST** /external-task | Get List (POST)
+[**QueryExternalTasksCount**](ExternalTaskApi.md#queryexternaltaskscount) | **POST** /external-task/count | Get List Count (POST)
+[**SetExternalTaskResourcePriority**](ExternalTaskApi.md#setexternaltaskresourcepriority) | **PUT** /external-task/{id}/priority | Set Priority
+[**SetExternalTaskResourceRetries**](ExternalTaskApi.md#setexternaltaskresourceretries) | **PUT** /external-task/{id}/retries | Set Retries
+[**SetExternalTaskRetries**](ExternalTaskApi.md#setexternaltaskretries) | **PUT** /external-task/retries | Set Retries Sync
+[**SetExternalTaskRetriesAsyncOperation**](ExternalTaskApi.md#setexternaltaskretriesasyncoperation) | **POST** /external-task/retries-async | Set Retries Async
+[**Unlock**](ExternalTaskApi.md#unlock) | **POST** /external-task/{id}/unlock | Unlock
 
+
+<a name="calllock"></a>
+# **CallLock**
+> void CallLock (string id, LockExternalTaskDto lockExternalTaskDto = null)
+
+
+
+Lock an external task by a given id for a specified worker and amount of time.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
+
+namespace Example
+{
+    public class CallLockExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:8080/engine-rest";
+            var apiInstance = new ExternalTaskApi(config);
+            var id = id_example;  // string | The id of the external task.
+            var lockExternalTaskDto = new LockExternalTaskDto(); // LockExternalTaskDto |  (optional) 
+
+            try
+            {
+                apiInstance.CallLock(id, lockExternalTaskDto);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ExternalTaskApi.CallLock: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| The id of the external task. | 
+ **lockExternalTaskDto** | [**LockExternalTaskDto**](LockExternalTaskDto.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Request successful. |  -  |
+| **400** | In case the lock duration is negative or the external task is already locked by a different worker, an exception of type &#x60;InvalidRequestException&#x60; is returned. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task, e.g., due to a caught BPMN boundary event. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="completeexternaltaskresource"></a>
 # **CompleteExternalTaskResource**
 > void CompleteExternalTaskResource (string id, CompleteExternalTaskDto completeExternalTaskDto = null)
 
-
+Complete
 
 Completes an external task by id and updates process variables.
 
@@ -53,6 +127,7 @@ namespace Example
 
             try
             {
+                // Complete
                 apiInstance.CompleteExternalTaskResource(id, completeExternalTaskDto);
             }
             catch (ApiException  e)
@@ -86,13 +161,14 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. |  -  |
-| **400** | Returned if the task&#39;s most recent lock was not acquired by the provided worker. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **404** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task, e.g., due to a caught BPMN boundary event. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **500** | Returned if the corresponding process instance could not be resumed successfully. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if the task&#39;s most recent lock was not acquired by the provided worker. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task, e.g., due to a caught BPMN boundary event. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **500** | Returned if the corresponding process instance could not be resumed successfully. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -100,7 +176,7 @@ No authorization required
 # **ExtendLock**
 > void ExtendLock (string id, ExtendLockOnExternalTaskDto extendLockOnExternalTaskDto = null)
 
-
+Extend Lock
 
 Extends the timeout of the lock by a given amount of time.
 
@@ -126,6 +202,7 @@ namespace Example
 
             try
             {
+                // Extend Lock
                 apiInstance.ExtendLock(id, extendLockOnExternalTaskDto);
             }
             catch (ApiException  e)
@@ -159,12 +236,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. |  -  |
-| **400** | In case the new lock duration is negative or the external task is not locked by the given worker or not  locked at all, an exception of type &#x60;InvalidRequestException&#x60; is returned. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **404** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task, e.g., due to a caught BPMN boundary event. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | In case the new lock duration is negative or the external task is not locked by the given worker or not  locked at all, an exception of type &#x60;InvalidRequestException&#x60; is returned. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task, e.g., due to a caught BPMN boundary event. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -172,7 +250,7 @@ No authorization required
 # **FetchAndLock**
 > List&lt;LockedExternalTaskDto&gt; FetchAndLock (FetchExternalTasksDto fetchExternalTasksDto = null)
 
-
+Fetch and Lock
 
 Fetches and locks a specific number of external tasks for execution by a worker. Query can be restricted to specific task topics and for each task topic an individual lock time can be provided.
 
@@ -197,6 +275,7 @@ namespace Example
 
             try
             {
+                // Fetch and Lock
                 List<LockedExternalTaskDto> result = apiInstance.FetchAndLock(fetchExternalTasksDto);
                 Debug.WriteLine(result);
             }
@@ -230,11 +309,12 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Bad Request. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Bad Request. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -242,7 +322,7 @@ No authorization required
 # **GetExternalTask**
 > ExternalTaskDto GetExternalTask (string id)
 
-
+Get
 
 Retrieves an external task by id, corresponding to the `ExternalTask` interface in the engine.
 
@@ -267,6 +347,7 @@ namespace Example
 
             try
             {
+                // Get
                 ExternalTaskDto result = apiInstance.GetExternalTask(id);
                 Debug.WriteLine(result);
             }
@@ -300,11 +381,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **404** | External task with the given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | External task with the given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -312,7 +394,7 @@ No authorization required
 # **GetExternalTaskErrorDetails**
 > string GetExternalTaskErrorDetails (string id)
 
-
+Get Error Details
 
 Retrieves the error details in the context of a running external task by id.
 
@@ -337,6 +419,7 @@ namespace Example
 
             try
             {
+                // Get Error Details
                 string result = apiInstance.GetExternalTaskErrorDetails(id);
                 Debug.WriteLine(result);
             }
@@ -370,12 +453,13 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
 | **204** | Request successful. In case the external task has no error details. |  -  |
-| **500** | An external task with the given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **500** | An external task with the given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -383,9 +467,9 @@ No authorization required
 # **GetExternalTasks**
 > List&lt;ExternalTaskDto&gt; GetExternalTasks (string externalTaskId = null, string externalTaskIdIn = null, string topicName = null, string workerId = null, bool? locked = null, bool? notLocked = null, bool? withRetriesLeft = null, bool? noRetriesLeft = null, DateTime? lockExpirationAfter = null, DateTime? lockExpirationBefore = null, string activityId = null, string activityIdIn = null, string executionId = null, string processInstanceId = null, string processInstanceIdIn = null, string processDefinitionId = null, string tenantIdIn = null, bool? active = null, bool? suspended = null, long? priorityHigherThanOrEquals = null, long? priorityLowerThanOrEquals = null, string sortBy = null, string sortOrder = null, int? firstResult = null, int? maxResults = null)
 
+Get List
 
-
-Queries for the external tasks that fulfill given parameters. Parameters may be static as well as dynamic runtime properties of executions. The size of the result set can be retrieved by using the [Get External Task Count](https://docs.camunda.org/manual/7.14/reference/rest/external-task/get-query-count/) method.
+Queries for the external tasks that fulfill given parameters. Parameters may be static as well as dynamic runtime properties of executions. The size of the result set can be retrieved by using the [Get External Task Count](https://docs.camunda.org/manual/7.15/reference/rest/external-task/get-query-count/) method.
 
 ### Example
 ```csharp
@@ -412,8 +496,8 @@ namespace Example
             var notLocked = true;  // bool? | Only include external tasks that are currently not locked (i.e., they have no lock or it has expired). Value may only be `true`, as `false` matches any external task. (optional) 
             var withRetriesLeft = true;  // bool? | Only include external tasks that have a positive (&gt; 0) number of retries (or `null`). Value may only be `true`, as `false` matches any external task. (optional) 
             var noRetriesLeft = true;  // bool? | Only include external tasks that have 0 retries. Value may only be `true`, as `false` matches any external task. (optional) 
-            var lockExpirationAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to external tasks that have a lock that expires after a given date. By [default](https://docs.camunda.org/manual/7.14/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
-            var lockExpirationBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to external tasks that have a lock that expires before a given date. By [default](https://docs.camunda.org/manual/7.14/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
+            var lockExpirationAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to external tasks that have a lock that expires after a given date. By [default](https://docs.camunda.org/manual/7.15/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
+            var lockExpirationBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to external tasks that have a lock that expires before a given date. By [default](https://docs.camunda.org/manual/7.15/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
             var activityId = activityId_example;  // string | Filter by the id of the activity that an external task is created for. (optional) 
             var activityIdIn = activityIdIn_example;  // string | Filter by the comma-separated list of ids of the activities that an external task is created for. (optional) 
             var executionId = executionId_example;  // string | Filter by the id of the execution that an external task belongs to. (optional) 
@@ -432,6 +516,7 @@ namespace Example
 
             try
             {
+                // Get List
                 List<ExternalTaskDto> result = apiInstance.GetExternalTasks(externalTaskId, externalTaskIdIn, topicName, workerId, locked, notLocked, withRetriesLeft, noRetriesLeft, lockExpirationAfter, lockExpirationBefore, activityId, activityIdIn, executionId, processInstanceId, processInstanceIdIn, processDefinitionId, tenantIdIn, active, suspended, priorityHigherThanOrEquals, priorityLowerThanOrEquals, sortBy, sortOrder, firstResult, maxResults);
                 Debug.WriteLine(result);
             }
@@ -458,8 +543,8 @@ Name | Type | Description  | Notes
  **notLocked** | **bool?**| Only include external tasks that are currently not locked (i.e., they have no lock or it has expired). Value may only be &#x60;true&#x60;, as &#x60;false&#x60; matches any external task. | [optional] 
  **withRetriesLeft** | **bool?**| Only include external tasks that have a positive (&amp;gt; 0) number of retries (or &#x60;null&#x60;). Value may only be &#x60;true&#x60;, as &#x60;false&#x60; matches any external task. | [optional] 
  **noRetriesLeft** | **bool?**| Only include external tasks that have 0 retries. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; matches any external task. | [optional] 
- **lockExpirationAfter** | **DateTime?**| Restrict to external tasks that have a lock that expires after a given date. By [default](https://docs.camunda.org/manual/7.14/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
- **lockExpirationBefore** | **DateTime?**| Restrict to external tasks that have a lock that expires before a given date. By [default](https://docs.camunda.org/manual/7.14/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+ **lockExpirationAfter** | **DateTime?**| Restrict to external tasks that have a lock that expires after a given date. By [default](https://docs.camunda.org/manual/7.15/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+ **lockExpirationBefore** | **DateTime?**| Restrict to external tasks that have a lock that expires before a given date. By [default](https://docs.camunda.org/manual/7.15/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
  **activityId** | **string**| Filter by the id of the activity that an external task is created for. | [optional] 
  **activityIdIn** | **string**| Filter by the comma-separated list of ids of the activities that an external task is created for. | [optional] 
  **executionId** | **string**| Filter by the id of the execution that an external task belongs to. | [optional] 
@@ -489,11 +574,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -501,9 +587,9 @@ No authorization required
 # **GetExternalTasksCount**
 > CountResultDto GetExternalTasksCount (string externalTaskId = null, string externalTaskIdIn = null, string topicName = null, string workerId = null, bool? locked = null, bool? notLocked = null, bool? withRetriesLeft = null, bool? noRetriesLeft = null, DateTime? lockExpirationAfter = null, DateTime? lockExpirationBefore = null, string activityId = null, string activityIdIn = null, string executionId = null, string processInstanceId = null, string processInstanceIdIn = null, string processDefinitionId = null, string tenantIdIn = null, bool? active = null, bool? suspended = null, long? priorityHigherThanOrEquals = null, long? priorityLowerThanOrEquals = null)
 
+Get List Count
 
-
-Queries for the number of external tasks that fulfill given parameters. Takes the same parameters as the [Get External Tasks](https://docs.camunda.org/manual/7.14/reference/rest/external-task/get-query/) method.
+Queries for the number of external tasks that fulfill given parameters. Takes the same parameters as the [Get External Tasks](https://docs.camunda.org/manual/7.15/reference/rest/external-task/get-query/) method.
 
 ### Example
 ```csharp
@@ -530,8 +616,8 @@ namespace Example
             var notLocked = true;  // bool? | Only include external tasks that are currently not locked (i.e., they have no lock or it has expired). Value may only be `true`, as `false` matches any external task. (optional) 
             var withRetriesLeft = true;  // bool? | Only include external tasks that have a positive (&gt; 0) number of retries (or `null`). Value may only be `true`, as `false` matches any external task. (optional) 
             var noRetriesLeft = true;  // bool? | Only include external tasks that have 0 retries. Value may only be `true`, as `false` matches any external task. (optional) 
-            var lockExpirationAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to external tasks that have a lock that expires after a given date. By [default](https://docs.camunda.org/manual/7.14/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
-            var lockExpirationBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to external tasks that have a lock that expires before a given date. By [default](https://docs.camunda.org/manual/7.14/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
+            var lockExpirationAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to external tasks that have a lock that expires after a given date. By [default](https://docs.camunda.org/manual/7.15/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
+            var lockExpirationBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to external tasks that have a lock that expires before a given date. By [default](https://docs.camunda.org/manual/7.15/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
             var activityId = activityId_example;  // string | Filter by the id of the activity that an external task is created for. (optional) 
             var activityIdIn = activityIdIn_example;  // string | Filter by the comma-separated list of ids of the activities that an external task is created for. (optional) 
             var executionId = executionId_example;  // string | Filter by the id of the execution that an external task belongs to. (optional) 
@@ -546,6 +632,7 @@ namespace Example
 
             try
             {
+                // Get List Count
                 CountResultDto result = apiInstance.GetExternalTasksCount(externalTaskId, externalTaskIdIn, topicName, workerId, locked, notLocked, withRetriesLeft, noRetriesLeft, lockExpirationAfter, lockExpirationBefore, activityId, activityIdIn, executionId, processInstanceId, processInstanceIdIn, processDefinitionId, tenantIdIn, active, suspended, priorityHigherThanOrEquals, priorityLowerThanOrEquals);
                 Debug.WriteLine(result);
             }
@@ -572,8 +659,8 @@ Name | Type | Description  | Notes
  **notLocked** | **bool?**| Only include external tasks that are currently not locked (i.e., they have no lock or it has expired). Value may only be &#x60;true&#x60;, as &#x60;false&#x60; matches any external task. | [optional] 
  **withRetriesLeft** | **bool?**| Only include external tasks that have a positive (&amp;gt; 0) number of retries (or &#x60;null&#x60;). Value may only be &#x60;true&#x60;, as &#x60;false&#x60; matches any external task. | [optional] 
  **noRetriesLeft** | **bool?**| Only include external tasks that have 0 retries. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; matches any external task. | [optional] 
- **lockExpirationAfter** | **DateTime?**| Restrict to external tasks that have a lock that expires after a given date. By [default](https://docs.camunda.org/manual/7.14/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
- **lockExpirationBefore** | **DateTime?**| Restrict to external tasks that have a lock that expires before a given date. By [default](https://docs.camunda.org/manual/7.14/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+ **lockExpirationAfter** | **DateTime?**| Restrict to external tasks that have a lock that expires after a given date. By [default](https://docs.camunda.org/manual/7.15/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+ **lockExpirationBefore** | **DateTime?**| Restrict to external tasks that have a lock that expires before a given date. By [default](https://docs.camunda.org/manual/7.15/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
  **activityId** | **string**| Filter by the id of the activity that an external task is created for. | [optional] 
  **activityIdIn** | **string**| Filter by the comma-separated list of ids of the activities that an external task is created for. | [optional] 
  **executionId** | **string**| Filter by the id of the execution that an external task belongs to. | [optional] 
@@ -599,11 +686,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -611,7 +699,7 @@ No authorization required
 # **GetTopicNames**
 > List&lt;string&gt; GetTopicNames (bool? withLockedTasks = null, bool? withUnlockedTasks = null, bool? withRetriesLeft = null)
 
-
+Get External Task Topic Names
 
 Queries for distinct topic names of external tasks that fulfill given parameters. Query can be restricted to only tasks with retries left, tasks that are locked, or tasks that are unlocked. The parameters withLockedTasks and withUnlockedTasks are exclusive. Setting them both to true will return an empty list. Providing no parameters will return a list of all distinct topic names with external tasks.
 
@@ -638,6 +726,7 @@ namespace Example
 
             try
             {
+                // Get External Task Topic Names
                 List<string> result = apiInstance.GetTopicNames(withLockedTasks, withUnlockedTasks, withRetriesLeft);
                 Debug.WriteLine(result);
             }
@@ -673,6 +762,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -685,7 +775,7 @@ No authorization required
 # **HandleExternalTaskBpmnError**
 > void HandleExternalTaskBpmnError (string id, ExternalTaskBpmnError externalTaskBpmnError = null)
 
-
+Handle BPMN Error
 
 Reports a business error in the context of a running external task by id. The error code must be specified to identify the BPMN error handler.
 
@@ -711,6 +801,7 @@ namespace Example
 
             try
             {
+                // Handle BPMN Error
                 apiInstance.HandleExternalTaskBpmnError(id, externalTaskBpmnError);
             }
             catch (ApiException  e)
@@ -744,13 +835,14 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. |  -  |
-| **400** | Returned if the task&#39;s most recent lock was not acquired by the provided worker.  See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **404** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task, e.g., due to a caught BPMN boundary event.  See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **500** | Returned if the corresponding process instance could not be resumed successfully.  See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if the task&#39;s most recent lock was not acquired by the provided worker.  See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task, e.g., due to a caught BPMN boundary event.  See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **500** | Returned if the corresponding process instance could not be resumed successfully.  See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -758,7 +850,7 @@ No authorization required
 # **HandleFailure**
 > void HandleFailure (string id, ExternalTaskFailureDto externalTaskFailureDto = null)
 
-
+Handle Failure
 
 Reports a failure to execute an external task by id. A number of retries and a timeout until the task can be retried can be specified. If retries are set to 0, an incident for this task is created.
 
@@ -784,6 +876,7 @@ namespace Example
 
             try
             {
+                // Handle Failure
                 apiInstance.HandleFailure(id, externalTaskFailureDto);
             }
             catch (ApiException  e)
@@ -817,13 +910,14 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. |  -  |
-| **400** | Returned if the task&#39;s most recent lock was not acquired by the provided worker. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **404** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task, e.g., due to a caught BPMN boundary event. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **500** | Returned if the corresponding process instance could not be resumed successfully. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if the task&#39;s most recent lock was not acquired by the provided worker. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task, e.g., due to a caught BPMN boundary event. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **500** | Returned if the corresponding process instance could not be resumed successfully. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -831,9 +925,9 @@ No authorization required
 # **QueryExternalTasks**
 > List&lt;ExternalTaskDto&gt; QueryExternalTasks (int? firstResult = null, int? maxResults = null, ExternalTaskQueryDto externalTaskQueryDto = null)
 
+Get List (POST)
 
-
-Queries for external tasks that fulfill given parameters in the form of a JSON object.  This method is slightly more powerful than the [Get External Tasks](https://docs.camunda.org/manual/7.14/reference/rest/external-task/get-query/) method because it allows to specify a hierarchical result sorting.
+Queries for external tasks that fulfill given parameters in the form of a JSON object.  This method is slightly more powerful than the [Get External Tasks](https://docs.camunda.org/manual/7.15/reference/rest/external-task/get-query/) method because it allows to specify a hierarchical result sorting.
 
 ### Example
 ```csharp
@@ -858,6 +952,7 @@ namespace Example
 
             try
             {
+                // Get List (POST)
                 List<ExternalTaskDto> result = apiInstance.QueryExternalTasks(firstResult, maxResults, externalTaskQueryDto);
                 Debug.WriteLine(result);
             }
@@ -893,11 +988,12 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. The Response is a JSON array of external task objects. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -905,9 +1001,9 @@ No authorization required
 # **QueryExternalTasksCount**
 > CountResultDto QueryExternalTasksCount (ExternalTaskQueryDto externalTaskQueryDto = null)
 
+Get List Count (POST)
 
-
-Queries for the number of external tasks that fulfill given parameters. This method takes the same message body as the [Get External Tasks (POST)](https://docs.camunda.org/manual/7.14/reference/rest/external-task/post-query/) method.
+Queries for the number of external tasks that fulfill given parameters. This method takes the same message body as the [Get External Tasks (POST)](https://docs.camunda.org/manual/7.15/reference/rest/external-task/post-query/) method.
 
 ### Example
 ```csharp
@@ -930,6 +1026,7 @@ namespace Example
 
             try
             {
+                // Get List Count (POST)
                 CountResultDto result = apiInstance.QueryExternalTasksCount(externalTaskQueryDto);
                 Debug.WriteLine(result);
             }
@@ -963,11 +1060,12 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -975,7 +1073,7 @@ No authorization required
 # **SetExternalTaskResourcePriority**
 > void SetExternalTaskResourcePriority (string id, PriorityDto priorityDto = null)
 
-
+Set Priority
 
 Sets the priority of an existing external task by id. The default value of a priority is 0.
 
@@ -1001,6 +1099,7 @@ namespace Example
 
             try
             {
+                // Set Priority
                 apiInstance.SetExternalTaskResourcePriority(id, priorityDto);
             }
             catch (ApiException  e)
@@ -1034,11 +1133,12 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. |  -  |
-| **404** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task, e.g., due to a caught BPMN boundary event. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task, e.g., due to a caught BPMN boundary event. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1046,7 +1146,7 @@ No authorization required
 # **SetExternalTaskResourceRetries**
 > void SetExternalTaskResourceRetries (string id, RetriesDto retriesDto = null)
 
-
+Set Retries
 
 Sets the number of retries left to execute an external task by id. If retries are set to 0, an  incident is created.
 
@@ -1072,6 +1172,7 @@ namespace Example
 
             try
             {
+                // Set Retries
                 apiInstance.SetExternalTaskResourceRetries(id, retriesDto);
             }
             catch (ApiException  e)
@@ -1105,12 +1206,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. |  -  |
-| **400** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task, e.g., due to a caught BPMN boundary event. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **404** | In case the number of retries is negative or null, an exception of type &#x60;InvalidRequestException&#x60; is returned. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task, e.g., due to a caught BPMN boundary event. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | In case the number of retries is negative or null, an exception of type &#x60;InvalidRequestException&#x60; is returned. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1118,7 +1220,7 @@ No authorization required
 # **SetExternalTaskRetries**
 > void SetExternalTaskRetries (SetRetriesForExternalTasksDto setRetriesForExternalTasksDto = null)
 
-
+Set Retries Sync
 
 Sets the number of retries left to execute external tasks by id synchronously. If retries are set to 0,  an incident is created.
 
@@ -1143,6 +1245,7 @@ namespace Example
 
             try
             {
+                // Set Retries Sync
                 apiInstance.SetExternalTaskRetries(setRetriesForExternalTasksDto);
             }
             catch (ApiException  e)
@@ -1175,12 +1278,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. |  -  |
-| **400** | In case the number of retries is negative or null, an exception of type &#x60;InvalidRequestException&#x60; is returned. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **404** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task,  e.g., due to a caught BPMN boundary event. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | In case the number of retries is negative or null, an exception of type &#x60;InvalidRequestException&#x60; is returned. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task,  e.g., due to a caught BPMN boundary event. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1188,7 +1292,7 @@ No authorization required
 # **SetExternalTaskRetriesAsyncOperation**
 > BatchDto SetExternalTaskRetriesAsyncOperation (SetRetriesForExternalTasksDto setRetriesForExternalTasksDto = null)
 
-
+Set Retries Async
 
 Sets the number of retries left to execute external tasks by id asynchronously. If retries are set to 0, an incident is created.
 
@@ -1213,6 +1317,7 @@ namespace Example
 
             try
             {
+                // Set Retries Async
                 BatchDto result = apiInstance.SetExternalTaskRetriesAsyncOperation(setRetriesForExternalTasksDto);
                 Debug.WriteLine(result);
             }
@@ -1246,12 +1351,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | If neither externalTaskIds nor externalTaskQuery are present or externalTaskIds contains null value or  the number of retries is negative or null, an exception of type &#x60;InvalidRequestException&#x60; is returned. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **404** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task,  e.g., due to a caught BPMN boundary event. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | If neither externalTaskIds nor externalTaskQuery are present or externalTaskIds contains null value or  the number of retries is negative or null, an exception of type &#x60;InvalidRequestException&#x60; is returned. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task,  e.g., due to a caught BPMN boundary event. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1259,7 +1365,7 @@ No authorization required
 # **Unlock**
 > void Unlock (string id)
 
-
+Unlock
 
 Unlocks an external task by id. Clears the task's lock expiration time and worker id.
 
@@ -1284,6 +1390,7 @@ namespace Example
 
             try
             {
+                // Unlock
                 apiInstance.Unlock(id);
             }
             catch (ApiException  e)
@@ -1316,11 +1423,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. |  -  |
-| **404** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task, e.g., due to a caught BPMN boundary event. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Returned if the task does not exist. This could indicate a wrong task id as well as a cancelled task, e.g., due to a caught BPMN boundary event. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

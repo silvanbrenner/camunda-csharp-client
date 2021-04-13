@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.TriggerVariableValueDtoAllOf
+
 ## Properties
 
 Name | Type | Description | Notes

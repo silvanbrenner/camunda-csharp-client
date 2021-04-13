@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.LockedExternalTaskDto
+
 ## Properties
 
 Name | Type | Description | Notes

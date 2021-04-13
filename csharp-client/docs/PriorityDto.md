@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.PriorityDto
+
 ## Properties
 
 Name | Type | Description | Notes

@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost:8080/engine-rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetSchemaLog**](SchemaLogApi.md#getschemalog) | **GET** /schema/log | 
-[**QuerySchemaLog**](SchemaLogApi.md#queryschemalog) | **POST** /schema/log | 
+[**GetSchemaLog**](SchemaLogApi.md#getschemalog) | **GET** /schema/log | Get List
+[**QuerySchemaLog**](SchemaLogApi.md#queryschemalog) | **POST** /schema/log | Get List (POST)
 
 
 <a name="getschemalog"></a>
 # **GetSchemaLog**
 > List&lt;SchemaLogEntryDto&gt; GetSchemaLog (string version = null, int? firstResult = null, int? maxResults = null)
 
-
+Get List
 
 Queries for schema log entries that fulfill given parameters.
 
@@ -39,6 +39,7 @@ namespace Example
 
             try
             {
+                // Get List
                 List<SchemaLogEntryDto> result = apiInstance.GetSchemaLog(version, firstResult, maxResults);
                 Debug.WriteLine(result);
             }
@@ -74,6 +75,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -85,7 +87,7 @@ No authorization required
 # **QuerySchemaLog**
 > List&lt;SchemaLogEntryDto&gt; QuerySchemaLog (int? firstResult = null, int? maxResults = null, SchemaLogQueryDto schemaLogQueryDto = null)
 
-
+Get List (POST)
 
 Queries for schema log entries that fulfill given parameters.
 
@@ -112,6 +114,7 @@ namespace Example
 
             try
             {
+                // Get List (POST)
                 List<SchemaLogEntryDto> result = apiInstance.QuerySchemaLog(firstResult, maxResults, schemaLogQueryDto);
                 Debug.WriteLine(result);
             }
@@ -146,6 +149,7 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

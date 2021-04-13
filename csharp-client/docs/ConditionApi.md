@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost:8080/engine-rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**EvaluateCondition**](ConditionApi.md#evaluatecondition) | **POST** /condition | 
+[**EvaluateCondition**](ConditionApi.md#evaluatecondition) | **POST** /condition | Evaluate
 
 
 <a name="evaluatecondition"></a>
 # **EvaluateCondition**
 > List&lt;ProcessInstanceDto&gt; EvaluateCondition (EvaluationConditionDto evaluationConditionDto = null)
 
+Evaluate
 
-
-Triggers evaluation of conditions for conditional start event(s).  Internally this maps to the engines condition evaluation builder method ConditionEvaluationBuilder#evaluateStartConditions().  For more information see the [Conditional Start Events](https://docs.camunda.org/manual/7.14/reference/bpmn20/events/conditional-events/#conditional-start-event) section of the [BPMN 2.0 Implementation Reference](https://docs.camunda.org/manual/7.14/reference/bpmn20/).
+Triggers evaluation of conditions for conditional start event(s).  Internally this maps to the engines condition evaluation builder method ConditionEvaluationBuilder#evaluateStartConditions().  For more information see the [Conditional Start Events](https://docs.camunda.org/manual/7.15/reference/bpmn20/events/conditional-events/#conditional-start-event) section of the [BPMN 2.0 Implementation Reference](https://docs.camunda.org/manual/7.15/reference/bpmn20/).
 
 ### Example
 ```csharp
@@ -36,6 +36,7 @@ namespace Example
 
             try
             {
+                // Evaluate
                 List<ProcessInstanceDto> result = apiInstance.EvaluateCondition(evaluationConditionDto);
                 Debug.WriteLine(result);
             }
@@ -68,6 +69,7 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

@@ -4,37 +4,37 @@ All URIs are relative to *http://localhost:8080/engine-rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteAsyncHistoricQueryBased**](ProcessInstanceApi.md#deleteasynchistoricquerybased) | **POST** /process-instance/delete-historic-query-based | 
-[**DeleteProcessInstance**](ProcessInstanceApi.md#deleteprocessinstance) | **DELETE** /process-instance/{id} | 
-[**DeleteProcessInstanceVariable**](ProcessInstanceApi.md#deleteprocessinstancevariable) | **DELETE** /process-instance/{id}/variables/{varName} | 
-[**DeleteProcessInstancesAsyncOperation**](ProcessInstanceApi.md#deleteprocessinstancesasyncoperation) | **POST** /process-instance/delete | 
-[**GetActivityInstanceTree**](ProcessInstanceApi.md#getactivityinstancetree) | **GET** /process-instance/{id}/activity-instances | 
+[**DeleteAsyncHistoricQueryBased**](ProcessInstanceApi.md#deleteasynchistoricquerybased) | **POST** /process-instance/delete-historic-query-based | Delete Async Historic Query Based (POST)
+[**DeleteProcessInstance**](ProcessInstanceApi.md#deleteprocessinstance) | **DELETE** /process-instance/{id} | Delete
+[**DeleteProcessInstanceVariable**](ProcessInstanceApi.md#deleteprocessinstancevariable) | **DELETE** /process-instance/{id}/variables/{varName} | Delete Process Variable
+[**DeleteProcessInstancesAsyncOperation**](ProcessInstanceApi.md#deleteprocessinstancesasyncoperation) | **POST** /process-instance/delete | Delete Async (POST)
+[**GetActivityInstanceTree**](ProcessInstanceApi.md#getactivityinstancetree) | **GET** /process-instance/{id}/activity-instances | Get Activity Instance
 [**GetProcessInstance**](ProcessInstanceApi.md#getprocessinstance) | **GET** /process-instance/{id} | Get Process Instance
-[**GetProcessInstanceVariable**](ProcessInstanceApi.md#getprocessinstancevariable) | **GET** /process-instance/{id}/variables/{varName} | 
-[**GetProcessInstanceVariableBinary**](ProcessInstanceApi.md#getprocessinstancevariablebinary) | **GET** /process-instance/{id}/variables/{varName}/data | 
-[**GetProcessInstanceVariables**](ProcessInstanceApi.md#getprocessinstancevariables) | **GET** /process-instance/{id}/variables | 
-[**GetProcessInstances**](ProcessInstanceApi.md#getprocessinstances) | **GET** /process-instance | 
-[**GetProcessInstancesCount**](ProcessInstanceApi.md#getprocessinstancescount) | **GET** /process-instance/count | 
-[**ModifyProcessInstance**](ProcessInstanceApi.md#modifyprocessinstance) | **POST** /process-instance/{id}/modification | 
-[**ModifyProcessInstanceAsyncOperation**](ProcessInstanceApi.md#modifyprocessinstanceasyncoperation) | **POST** /process-instance/{id}/modification-async | 
-[**ModifyProcessInstanceVariables**](ProcessInstanceApi.md#modifyprocessinstancevariables) | **POST** /process-instance/{id}/variables | 
-[**QueryProcessInstances**](ProcessInstanceApi.md#queryprocessinstances) | **POST** /process-instance | 
-[**QueryProcessInstancesCount**](ProcessInstanceApi.md#queryprocessinstancescount) | **POST** /process-instance/count | 
-[**SetProcessInstanceVariable**](ProcessInstanceApi.md#setprocessinstancevariable) | **PUT** /process-instance/{id}/variables/{varName} | 
-[**SetProcessInstanceVariableBinary**](ProcessInstanceApi.md#setprocessinstancevariablebinary) | **POST** /process-instance/{id}/variables/{varName}/data | 
-[**SetRetriesByProcess**](ProcessInstanceApi.md#setretriesbyprocess) | **POST** /process-instance/job-retries | 
-[**SetRetriesByProcessHistoricQueryBased**](ProcessInstanceApi.md#setretriesbyprocesshistoricquerybased) | **POST** /process-instance/job-retries-historic-query-based | 
-[**SetVariablesAsyncOperation**](ProcessInstanceApi.md#setvariablesasyncoperation) | **POST** /process-instance/variables-async | 
-[**UpdateSuspensionState**](ProcessInstanceApi.md#updatesuspensionstate) | **PUT** /process-instance/suspended | 
-[**UpdateSuspensionStateAsyncOperation**](ProcessInstanceApi.md#updatesuspensionstateasyncoperation) | **POST** /process-instance/suspended-async | 
-[**UpdateSuspensionStateById**](ProcessInstanceApi.md#updatesuspensionstatebyid) | **PUT** /process-instance/{id}/suspended | 
+[**GetProcessInstanceVariable**](ProcessInstanceApi.md#getprocessinstancevariable) | **GET** /process-instance/{id}/variables/{varName} | Get Process Variable
+[**GetProcessInstanceVariableBinary**](ProcessInstanceApi.md#getprocessinstancevariablebinary) | **GET** /process-instance/{id}/variables/{varName}/data | Get Process Variable (Binary)
+[**GetProcessInstanceVariables**](ProcessInstanceApi.md#getprocessinstancevariables) | **GET** /process-instance/{id}/variables | Get Process Variables
+[**GetProcessInstances**](ProcessInstanceApi.md#getprocessinstances) | **GET** /process-instance | Get List
+[**GetProcessInstancesCount**](ProcessInstanceApi.md#getprocessinstancescount) | **GET** /process-instance/count | Get List Count
+[**ModifyProcessInstance**](ProcessInstanceApi.md#modifyprocessinstance) | **POST** /process-instance/{id}/modification | Modify Process Instance Execution State
+[**ModifyProcessInstanceAsyncOperation**](ProcessInstanceApi.md#modifyprocessinstanceasyncoperation) | **POST** /process-instance/{id}/modification-async | Modify Process Instance Execution State Async
+[**ModifyProcessInstanceVariables**](ProcessInstanceApi.md#modifyprocessinstancevariables) | **POST** /process-instance/{id}/variables | Update/Delete Process Variables
+[**QueryProcessInstances**](ProcessInstanceApi.md#queryprocessinstances) | **POST** /process-instance | Get List (POST)
+[**QueryProcessInstancesCount**](ProcessInstanceApi.md#queryprocessinstancescount) | **POST** /process-instance/count | Get List Count (POST)
+[**SetProcessInstanceVariable**](ProcessInstanceApi.md#setprocessinstancevariable) | **PUT** /process-instance/{id}/variables/{varName} | Update Process Variable
+[**SetProcessInstanceVariableBinary**](ProcessInstanceApi.md#setprocessinstancevariablebinary) | **POST** /process-instance/{id}/variables/{varName}/data | Update Process Variable (Binary)
+[**SetRetriesByProcess**](ProcessInstanceApi.md#setretriesbyprocess) | **POST** /process-instance/job-retries | Set Job Retries Async (POST)
+[**SetRetriesByProcessHistoricQueryBased**](ProcessInstanceApi.md#setretriesbyprocesshistoricquerybased) | **POST** /process-instance/job-retries-historic-query-based | Set Job Retries Async Historic Query Based (POST)
+[**SetVariablesAsyncOperation**](ProcessInstanceApi.md#setvariablesasyncoperation) | **POST** /process-instance/variables-async | Set Variables Async (POST)
+[**UpdateSuspensionState**](ProcessInstanceApi.md#updatesuspensionstate) | **PUT** /process-instance/suspended | Activate/Suspend In Group
+[**UpdateSuspensionStateAsyncOperation**](ProcessInstanceApi.md#updatesuspensionstateasyncoperation) | **POST** /process-instance/suspended-async | Activate/Suspend In Batch
+[**UpdateSuspensionStateById**](ProcessInstanceApi.md#updatesuspensionstatebyid) | **PUT** /process-instance/{id}/suspended | Activate/Suspend Process Instance By Id
 
 
 <a name="deleteasynchistoricquerybased"></a>
 # **DeleteAsyncHistoricQueryBased**
 > BatchDto DeleteAsyncHistoricQueryBased (DeleteProcessInstancesDto deleteProcessInstancesDto = null)
 
-
+Delete Async Historic Query Based (POST)
 
 Deletes a set of process instances asynchronously (batch) based on a historic process instance query.
 
@@ -59,6 +59,7 @@ namespace Example
 
             try
             {
+                // Delete Async Historic Query Based (POST)
                 BatchDto result = apiInstance.DeleteAsyncHistoricQueryBased(deleteProcessInstancesDto);
                 Debug.WriteLine(result);
             }
@@ -92,6 +93,7 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -104,7 +106,7 @@ No authorization required
 # **DeleteProcessInstance**
 > void DeleteProcessInstance (string id, bool? skipCustomListeners = null, bool? skipIoMappings = null, bool? skipSubprocesses = null, bool? failIfNotExists = null)
 
-
+Delete
 
 Deletes a running process instance by id.
 
@@ -133,6 +135,7 @@ namespace Example
 
             try
             {
+                // Delete
                 apiInstance.DeleteProcessInstance(id, skipCustomListeners, skipIoMappings, skipSubprocesses, failIfNotExists);
             }
             catch (ApiException  e)
@@ -169,6 +172,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -181,7 +185,7 @@ No authorization required
 # **DeleteProcessInstanceVariable**
 > void DeleteProcessInstanceVariable (string id, string varName)
 
-
+Delete Process Variable
 
 Deletes a variable of a process instance by id.
 
@@ -207,6 +211,7 @@ namespace Example
 
             try
             {
+                // Delete Process Variable
                 apiInstance.DeleteProcessInstanceVariable(id, varName);
             }
             catch (ApiException  e)
@@ -240,6 +245,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -251,7 +257,7 @@ No authorization required
 # **DeleteProcessInstancesAsyncOperation**
 > BatchDto DeleteProcessInstancesAsyncOperation (DeleteProcessInstancesDto deleteProcessInstancesDto = null)
 
-
+Delete Async (POST)
 
 Deletes multiple process instances asynchronously (batch).
 
@@ -276,6 +282,7 @@ namespace Example
 
             try
             {
+                // Delete Async (POST)
                 BatchDto result = apiInstance.DeleteProcessInstancesAsyncOperation(deleteProcessInstancesDto);
                 Debug.WriteLine(result);
             }
@@ -309,6 +316,7 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -321,7 +329,7 @@ No authorization required
 # **GetActivityInstanceTree**
 > ActivityInstanceDto GetActivityInstanceTree (string id)
 
-
+Get Activity Instance
 
 Retrieves an Activity Instance (Tree) for a given process instance by id.
 
@@ -346,6 +354,7 @@ namespace Example
 
             try
             {
+                // Get Activity Instance
                 ActivityInstanceDto result = apiInstance.GetActivityInstanceTree(id);
                 Debug.WriteLine(result);
             }
@@ -378,6 +387,7 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -450,11 +460,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **404** | Process instance with given id does not exist. See the  [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format.  |  -  |
+| **404** | Process instance with given id does not exist. See the  [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format.  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -462,7 +473,7 @@ No authorization required
 # **GetProcessInstanceVariable**
 > VariableValueDto GetProcessInstanceVariable (string id, string varName, bool? deserializeValue = null)
 
-
+Get Process Variable
 
 Retrieves a variable of a given process instance by id.
 
@@ -489,6 +500,7 @@ namespace Example
 
             try
             {
+                // Get Process Variable
                 VariableValueDto result = apiInstance.GetProcessInstanceVariable(id, varName, deserializeValue);
                 Debug.WriteLine(result);
             }
@@ -524,6 +536,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -536,7 +549,7 @@ No authorization required
 # **GetProcessInstanceVariableBinary**
 > System.IO.Stream GetProcessInstanceVariableBinary (string id, string varName)
 
-
+Get Process Variable (Binary)
 
 Retrieves the content of a Process Variable by the Process Instance id and the Process Variable name. Applicable for byte array or file Process Variables.
 
@@ -562,6 +575,7 @@ namespace Example
 
             try
             {
+                // Get Process Variable (Binary)
                 System.IO.Stream result = apiInstance.GetProcessInstanceVariableBinary(id, varName);
                 Debug.WriteLine(result);
             }
@@ -596,6 +610,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/octet-stream, text/plain, application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -607,9 +622,9 @@ No authorization required
 
 <a name="getprocessinstancevariables"></a>
 # **GetProcessInstanceVariables**
-> Dictionary&lt;string, VariableValueDto&gt; GetProcessInstanceVariables (string id, bool? deserializeValue = null)
+> Dictionary&lt;string, VariableValueDto&gt; GetProcessInstanceVariables (string id, bool? deserializeValues = null)
 
-
+Get Process Variables
 
 Retrieves all variables of a given process instance by id.
 
@@ -631,11 +646,12 @@ namespace Example
             config.BasePath = "http://localhost:8080/engine-rest";
             var apiInstance = new ProcessInstanceApi(config);
             var id = id_example;  // string | The id of the process instance to retrieve the variables from.
-            var deserializeValue = true;  // bool? | Determines whether serializable variable values (typically variables that store custom Java objects) should be deserialized on server side (default true).  If set to true, a serializable variable will be deserialized on server side and transformed to JSON using [Jackson's](https://github.com/FasterXML/jackson) POJO/bean property introspection feature. Note that this requires the Java classes of the variable value to be on the REST API's classpath.  If set to false, a serializable variable will be returned in its serialized format. For example, a variable that is serialized as XML will be returned as a JSON string containing XML.  Note: While true is the default value for reasons of backward compatibility, we recommend setting this parameter to false when developing web applications that are independent of the Java process applications deployed to the engine. (optional)  (default to true)
+            var deserializeValues = true;  // bool? | Determines whether serializable variable values (typically variables that store custom Java objects) should be deserialized on server side (default true).  If set to true, a serializable variable will be deserialized on server side and transformed to JSON using [Jackson's](https://github.com/FasterXML/jackson) POJO/bean property introspection feature. Note that this requires the Java classes of the variable value to be on the REST API's classpath.  If set to false, a serializable variable will be returned in its serialized format. For example, a variable that is serialized as XML will be returned as a JSON string containing XML.  Note: While true is the default value for reasons of backward compatibility, we recommend setting this parameter to false when developing web applications that are independent of the Java process applications deployed to the engine. (optional)  (default to true)
 
             try
             {
-                Dictionary<string, VariableValueDto> result = apiInstance.GetProcessInstanceVariables(id, deserializeValue);
+                // Get Process Variables
+                Dictionary<string, VariableValueDto> result = apiInstance.GetProcessInstanceVariables(id, deserializeValues);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -654,7 +670,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the process instance to retrieve the variables from. | 
- **deserializeValue** | **bool?**| Determines whether serializable variable values (typically variables that store custom Java objects) should be deserialized on server side (default true).  If set to true, a serializable variable will be deserialized on server side and transformed to JSON using [Jackson&#39;s](https://github.com/FasterXML/jackson) POJO/bean property introspection feature. Note that this requires the Java classes of the variable value to be on the REST API&#39;s classpath.  If set to false, a serializable variable will be returned in its serialized format. For example, a variable that is serialized as XML will be returned as a JSON string containing XML.  Note: While true is the default value for reasons of backward compatibility, we recommend setting this parameter to false when developing web applications that are independent of the Java process applications deployed to the engine. | [optional] [default to true]
+ **deserializeValues** | **bool?**| Determines whether serializable variable values (typically variables that store custom Java objects) should be deserialized on server side (default true).  If set to true, a serializable variable will be deserialized on server side and transformed to JSON using [Jackson&#39;s](https://github.com/FasterXML/jackson) POJO/bean property introspection feature. Note that this requires the Java classes of the variable value to be on the REST API&#39;s classpath.  If set to false, a serializable variable will be returned in its serialized format. For example, a variable that is serialized as XML will be returned as a JSON string containing XML.  Note: While true is the default value for reasons of backward compatibility, we recommend setting this parameter to false when developing web applications that are independent of the Java process applications deployed to the engine. | [optional] [default to true]
 
 ### Return type
 
@@ -669,6 +685,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -681,7 +698,7 @@ No authorization required
 # **GetProcessInstances**
 > List&lt;ProcessInstanceDto&gt; GetProcessInstances (string sortBy = null, string sortOrder = null, int? firstResult = null, int? maxResults = null, string processInstanceIds = null, string businessKey = null, string businessKeyLike = null, string caseInstanceId = null, string processDefinitionId = null, string processDefinitionKey = null, string processDefinitionKeyIn = null, string processDefinitionKeyNotIn = null, string deploymentId = null, string superProcessInstance = null, string subProcessInstance = null, string superCaseInstance = null, string subCaseInstance = null, bool? active = null, bool? suspended = null, bool? withIncident = null, string incidentId = null, string incidentType = null, string incidentMessage = null, string incidentMessageLike = null, string tenantIdIn = null, bool? withoutTenantId = null, bool? processDefinitionWithoutTenantId = null, string activityIdIn = null, bool? rootProcessInstances = null, bool? leafProcessInstances = null, string variables = null, bool? variableNamesIgnoreCase = null, bool? variableValuesIgnoreCase = null)
 
-
+Get List
 
 Queries for process instances that fulfill given parameters. Parameters may be static as well as dynamic runtime properties of process instances. The size of the result set can be retrieved by using the Get Instance Count method.
 
@@ -723,7 +740,7 @@ namespace Example
             var suspended = true;  // bool? | Only include suspended process instances. Value may only be true, as false is the default behavior. (optional)  (default to false)
             var withIncident = true;  // bool? | Filter by presence of incidents. Selects only process instances that have an incident. (optional)  (default to false)
             var incidentId = incidentId_example;  // string | Filter by the incident id. (optional) 
-            var incidentType = incidentType_example;  // string | Filter by the incident type. See the [User Guide](https://docs.camunda.org/manual/7.14/user-guide/process-engine/incidents/#incident-types) for a list of incident types. (optional) 
+            var incidentType = incidentType_example;  // string | Filter by the incident type. See the [User Guide](https://docs.camunda.org/manual/7.15/user-guide/process-engine/incidents/#incident-types) for a list of incident types. (optional) 
             var incidentMessage = incidentMessage_example;  // string | Filter by the incident message. Exact match. (optional) 
             var incidentMessageLike = incidentMessageLike_example;  // string | Filter by the incident message that the parameter is a substring of. (optional) 
             var tenantIdIn = tenantIdIn_example;  // string | Filter by a comma-separated list of tenant ids. A process instance must have one of the given tenant ids. (optional) 
@@ -738,6 +755,7 @@ namespace Example
 
             try
             {
+                // Get List
                 List<ProcessInstanceDto> result = apiInstance.GetProcessInstances(sortBy, sortOrder, firstResult, maxResults, processInstanceIds, businessKey, businessKeyLike, caseInstanceId, processDefinitionId, processDefinitionKey, processDefinitionKeyIn, processDefinitionKeyNotIn, deploymentId, superProcessInstance, subProcessInstance, superCaseInstance, subCaseInstance, active, suspended, withIncident, incidentId, incidentType, incidentMessage, incidentMessageLike, tenantIdIn, withoutTenantId, processDefinitionWithoutTenantId, activityIdIn, rootProcessInstances, leafProcessInstances, variables, variableNamesIgnoreCase, variableValuesIgnoreCase);
                 Debug.WriteLine(result);
             }
@@ -777,7 +795,7 @@ Name | Type | Description  | Notes
  **suspended** | **bool?**| Only include suspended process instances. Value may only be true, as false is the default behavior. | [optional] [default to false]
  **withIncident** | **bool?**| Filter by presence of incidents. Selects only process instances that have an incident. | [optional] [default to false]
  **incidentId** | **string**| Filter by the incident id. | [optional] 
- **incidentType** | **string**| Filter by the incident type. See the [User Guide](https://docs.camunda.org/manual/7.14/user-guide/process-engine/incidents/#incident-types) for a list of incident types. | [optional] 
+ **incidentType** | **string**| Filter by the incident type. See the [User Guide](https://docs.camunda.org/manual/7.15/user-guide/process-engine/incidents/#incident-types) for a list of incident types. | [optional] 
  **incidentMessage** | **string**| Filter by the incident message. Exact match. | [optional] 
  **incidentMessageLike** | **string**| Filter by the incident message that the parameter is a substring of. | [optional] 
  **tenantIdIn** | **string**| Filter by a comma-separated list of tenant ids. A process instance must have one of the given tenant ids. | [optional] 
@@ -803,6 +821,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -815,7 +834,7 @@ No authorization required
 # **GetProcessInstancesCount**
 > CountResultDto GetProcessInstancesCount (string processInstanceIds = null, string businessKey = null, string businessKeyLike = null, string caseInstanceId = null, string processDefinitionId = null, string processDefinitionKey = null, string processDefinitionKeyIn = null, string processDefinitionKeyNotIn = null, string deploymentId = null, string superProcessInstance = null, string subProcessInstance = null, string superCaseInstance = null, string subCaseInstance = null, bool? active = null, bool? suspended = null, bool? withIncident = null, string incidentId = null, string incidentType = null, string incidentMessage = null, string incidentMessageLike = null, string tenantIdIn = null, bool? withoutTenantId = null, bool? processDefinitionWithoutTenantId = null, string activityIdIn = null, bool? rootProcessInstances = null, bool? leafProcessInstances = null, string variables = null, bool? variableNamesIgnoreCase = null, bool? variableValuesIgnoreCase = null)
 
-
+Get List Count
 
 Queries for the number of process instances that fulfill given parameters.
 
@@ -853,7 +872,7 @@ namespace Example
             var suspended = true;  // bool? | Only include suspended process instances. Value may only be true, as false is the default behavior. (optional)  (default to false)
             var withIncident = true;  // bool? | Filter by presence of incidents. Selects only process instances that have an incident. (optional)  (default to false)
             var incidentId = incidentId_example;  // string | Filter by the incident id. (optional) 
-            var incidentType = incidentType_example;  // string | Filter by the incident type. See the [User Guide](https://docs.camunda.org/manual/7.14/user-guide/process-engine/incidents/#incident-types) for a list of incident types. (optional) 
+            var incidentType = incidentType_example;  // string | Filter by the incident type. See the [User Guide](https://docs.camunda.org/manual/7.15/user-guide/process-engine/incidents/#incident-types) for a list of incident types. (optional) 
             var incidentMessage = incidentMessage_example;  // string | Filter by the incident message. Exact match. (optional) 
             var incidentMessageLike = incidentMessageLike_example;  // string | Filter by the incident message that the parameter is a substring of. (optional) 
             var tenantIdIn = tenantIdIn_example;  // string | Filter by a comma-separated list of tenant ids. A process instance must have one of the given tenant ids. (optional) 
@@ -868,6 +887,7 @@ namespace Example
 
             try
             {
+                // Get List Count
                 CountResultDto result = apiInstance.GetProcessInstancesCount(processInstanceIds, businessKey, businessKeyLike, caseInstanceId, processDefinitionId, processDefinitionKey, processDefinitionKeyIn, processDefinitionKeyNotIn, deploymentId, superProcessInstance, subProcessInstance, superCaseInstance, subCaseInstance, active, suspended, withIncident, incidentId, incidentType, incidentMessage, incidentMessageLike, tenantIdIn, withoutTenantId, processDefinitionWithoutTenantId, activityIdIn, rootProcessInstances, leafProcessInstances, variables, variableNamesIgnoreCase, variableValuesIgnoreCase);
                 Debug.WriteLine(result);
             }
@@ -903,7 +923,7 @@ Name | Type | Description  | Notes
  **suspended** | **bool?**| Only include suspended process instances. Value may only be true, as false is the default behavior. | [optional] [default to false]
  **withIncident** | **bool?**| Filter by presence of incidents. Selects only process instances that have an incident. | [optional] [default to false]
  **incidentId** | **string**| Filter by the incident id. | [optional] 
- **incidentType** | **string**| Filter by the incident type. See the [User Guide](https://docs.camunda.org/manual/7.14/user-guide/process-engine/incidents/#incident-types) for a list of incident types. | [optional] 
+ **incidentType** | **string**| Filter by the incident type. See the [User Guide](https://docs.camunda.org/manual/7.15/user-guide/process-engine/incidents/#incident-types) for a list of incident types. | [optional] 
  **incidentMessage** | **string**| Filter by the incident message. Exact match. | [optional] 
  **incidentMessageLike** | **string**| Filter by the incident message that the parameter is a substring of. | [optional] 
  **tenantIdIn** | **string**| Filter by a comma-separated list of tenant ids. A process instance must have one of the given tenant ids. | [optional] 
@@ -929,6 +949,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -941,7 +962,7 @@ No authorization required
 # **ModifyProcessInstance**
 > void ModifyProcessInstance (string id, ProcessInstanceModificationDto processInstanceModificationDto = null)
 
-
+Modify Process Instance Execution State
 
 Submits a list of modification instructions to change a process instance's execution state. A modification instruction is one of the following:  * Starting execution before an activity * Starting execution after an activity on its single outgoing sequence flow * Starting execution on a specific sequence flow * Canceling an activity instance, transition instance, or all instances (activity or transition) for an activity  Instructions are executed immediately and in the order they are provided in this request's body. Variables can be provided with every starting instruction.  The exact semantics of modification can be read about in the [User guide](https://docs.camunda.org/manual/develop/user-guide/process-engine/process-instance-modification/).
 
@@ -967,6 +988,7 @@ namespace Example
 
             try
             {
+                // Modify Process Instance Execution State
                 apiInstance.ModifyProcessInstance(id, processInstanceModificationDto);
             }
             catch (ApiException  e)
@@ -1000,6 +1022,7 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -1013,9 +1036,9 @@ No authorization required
 # **ModifyProcessInstanceAsyncOperation**
 > BatchDto ModifyProcessInstanceAsyncOperation (string id, ProcessInstanceModificationDto processInstanceModificationDto = null)
 
+Modify Process Instance Execution State Async
 
-
-Submits a list of modification instructions to change a process instance's execution state async. A modification instruction is one of the following:  * Starting execution before an activity * Starting execution after an activity on its single outgoing sequence flow * Starting execution on a specific sequence flow * Cancelling an activity instance, transition instance, or all instances (activity or transition) for an activity  Instructions are executed asynchronous and in the order they are provided in this request's body. Variables can be provided with every starting instruction.  The exact semantics of modification can be read about in the [User guide](https://docs.camunda.org/manual/7.14/user-guide/process-engine/process-instance-modification/).
+Submits a list of modification instructions to change a process instance's execution state async. A modification instruction is one of the following:  * Starting execution before an activity * Starting execution after an activity on its single outgoing sequence flow * Starting execution on a specific sequence flow * Cancelling an activity instance, transition instance, or all instances (activity or transition) for an activity  Instructions are executed asynchronous and in the order they are provided in this request's body. Variables can be provided with every starting instruction.  The exact semantics of modification can be read about in the [User guide](https://docs.camunda.org/manual/7.15/user-guide/process-engine/process-instance-modification/).
 
 ### Example
 ```csharp
@@ -1039,6 +1062,7 @@ namespace Example
 
             try
             {
+                // Modify Process Instance Execution State Async
                 BatchDto result = apiInstance.ModifyProcessInstanceAsyncOperation(id, processInstanceModificationDto);
                 Debug.WriteLine(result);
             }
@@ -1073,6 +1097,7 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -1087,7 +1112,7 @@ No authorization required
 # **ModifyProcessInstanceVariables**
 > void ModifyProcessInstanceVariables (string id, PatchVariablesDto patchVariablesDto = null)
 
-
+Update/Delete Process Variables
 
 Updates or deletes the variables of a process instance by id. Updates precede deletions. So, if a variable is updated AND deleted, the deletion overrides the update.
 
@@ -1113,6 +1138,7 @@ namespace Example
 
             try
             {
+                // Update/Delete Process Variables
                 apiInstance.ModifyProcessInstanceVariables(id, patchVariablesDto);
             }
             catch (ApiException  e)
@@ -1146,6 +1172,7 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -1159,7 +1186,7 @@ No authorization required
 # **QueryProcessInstances**
 > List&lt;ProcessInstanceDto&gt; QueryProcessInstances (int? firstResult = null, int? maxResults = null, ProcessInstanceQueryDto processInstanceQueryDto = null)
 
-
+Get List (POST)
 
 Queries for process instances that fulfill given parameters through a JSON object. This method is slightly more powerful than the Get Instances method because it allows filtering by multiple process variables of types `string`, `number` or `boolean`.
 
@@ -1186,6 +1213,7 @@ namespace Example
 
             try
             {
+                // Get List (POST)
                 List<ProcessInstanceDto> result = apiInstance.QueryProcessInstances(firstResult, maxResults, processInstanceQueryDto);
                 Debug.WriteLine(result);
             }
@@ -1221,6 +1249,7 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -1233,7 +1262,7 @@ No authorization required
 # **QueryProcessInstancesCount**
 > CountResultDto QueryProcessInstancesCount (ProcessInstanceQueryDto processInstanceQueryDto = null)
 
-
+Get List Count (POST)
 
 Queries for the number of process instances that fulfill the given parameters. This method takes the same message body as the Get Instances (POST) method and therefore it is slightly more powerful than the Get Instance Count method.
 
@@ -1258,6 +1287,7 @@ namespace Example
 
             try
             {
+                // Get List Count (POST)
                 CountResultDto result = apiInstance.QueryProcessInstancesCount(processInstanceQueryDto);
                 Debug.WriteLine(result);
             }
@@ -1291,6 +1321,7 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -1303,7 +1334,7 @@ No authorization required
 # **SetProcessInstanceVariable**
 > void SetProcessInstanceVariable (string id, string varName, VariableValueDto variableValueDto = null)
 
-
+Update Process Variable
 
 Sets a variable of a given process instance by id.
 
@@ -1330,6 +1361,7 @@ namespace Example
 
             try
             {
+                // Update Process Variable
                 apiInstance.SetProcessInstanceVariable(id, varName, variableValueDto);
             }
             catch (ApiException  e)
@@ -1364,6 +1396,7 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -1376,7 +1409,7 @@ No authorization required
 # **SetProcessInstanceVariableBinary**
 > void SetProcessInstanceVariableBinary (string id, string varName, System.IO.Stream data = null, string valueType = null)
 
-
+Update Process Variable (Binary)
 
 Sets the serialized value for a binary variable or the binary value for a file variable.
 
@@ -1404,6 +1437,7 @@ namespace Example
 
             try
             {
+                // Update Process Variable (Binary)
                 apiInstance.SetProcessInstanceVariableBinary(id, varName, data, valueType);
             }
             catch (ApiException  e)
@@ -1439,6 +1473,7 @@ No authorization required
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -1451,7 +1486,7 @@ No authorization required
 # **SetRetriesByProcess**
 > BatchDto SetRetriesByProcess (SetJobRetriesByProcessDto setJobRetriesByProcessDto = null)
 
-
+Set Job Retries Async (POST)
 
 Create a batch to set retries of jobs associated with given processes asynchronously.
 
@@ -1476,6 +1511,7 @@ namespace Example
 
             try
             {
+                // Set Job Retries Async (POST)
                 BatchDto result = apiInstance.SetRetriesByProcess(setJobRetriesByProcessDto);
                 Debug.WriteLine(result);
             }
@@ -1509,6 +1545,7 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -1521,7 +1558,7 @@ No authorization required
 # **SetRetriesByProcessHistoricQueryBased**
 > BatchDto SetRetriesByProcessHistoricQueryBased (SetJobRetriesByProcessDto setJobRetriesByProcessDto = null)
 
-
+Set Job Retries Async Historic Query Based (POST)
 
 Create a batch to set retries of jobs asynchronously based on a historic process instance query.
 
@@ -1546,6 +1583,7 @@ namespace Example
 
             try
             {
+                // Set Job Retries Async Historic Query Based (POST)
                 BatchDto result = apiInstance.SetRetriesByProcessHistoricQueryBased(setJobRetriesByProcessDto);
                 Debug.WriteLine(result);
             }
@@ -1579,6 +1617,7 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -1591,7 +1630,7 @@ No authorization required
 # **SetVariablesAsyncOperation**
 > BatchDto SetVariablesAsyncOperation (SetVariablesAsyncDto setVariablesAsyncDto = null)
 
-
+Set Variables Async (POST)
 
 Update or create runtime process variables in the root scope of process instances.
 
@@ -1616,6 +1655,7 @@ namespace Example
 
             try
             {
+                // Set Variables Async (POST)
                 BatchDto result = apiInstance.SetVariablesAsyncOperation(setVariablesAsyncDto);
                 Debug.WriteLine(result);
             }
@@ -1649,12 +1689,13 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
 | **400** | Bad Request * The variable value or type is invalid, for example if the value could not be parsed to an Integer value or the passed variable type is not supported * If none of &#x60;processInstanceIds&#x60;, &#x60;processInstanceQuery&#x60; and &#x60;historicProcessInstanceQuery&#x60; is given * If no or an empty array of &#x60;variables&#x60; is given * If no process instance ids where found * If a transient variable is set * If the engine config flag &#x60;javaSerializationFormatEnabled&#x60; is &#x60;false&#x60; and a Java serialized variable is given |  -  |
-| **403** | Returned if the user is not allowed to create the batch.  See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **403** | Returned if the user is not allowed to create the batch.  See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1662,7 +1703,7 @@ No authorization required
 # **UpdateSuspensionState**
 > void UpdateSuspensionState (ProcessInstanceSuspensionStateDto processInstanceSuspensionStateDto = null)
 
-
+Activate/Suspend In Group
 
 Activates or suspends process instances by providing certain criteria:  # Activate/Suspend Process Instance By Process Definition Id * `suspend` * `processDefinitionId`  # Activate/Suspend Process Instance By Process Definition Key  * `suspend` * `processDefinitionKey` * `processDefinitionTenantId` * `processDefinitionWithoutTenantId`  # Activate/Suspend Process Instance In Group * `suspend` * `processInstanceIds` * `processInstanceQuery` * `historicProcessInstanceQuery`
 
@@ -1687,6 +1728,7 @@ namespace Example
 
             try
             {
+                // Activate/Suspend In Group
                 apiInstance.UpdateSuspensionState(processInstanceSuspensionStateDto);
             }
             catch (ApiException  e)
@@ -1719,6 +1761,7 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -1731,7 +1774,7 @@ No authorization required
 # **UpdateSuspensionStateAsyncOperation**
 > BatchDto UpdateSuspensionStateAsyncOperation (ProcessInstanceSuspensionStateAsyncDto processInstanceSuspensionStateAsyncDto = null)
 
-
+Activate/Suspend In Batch
 
 Activates or suspends process instances asynchronously with a list of process instance ids, a process instance query, and/or a historical process instance query.
 
@@ -1756,6 +1799,7 @@ namespace Example
 
             try
             {
+                // Activate/Suspend In Batch
                 BatchDto result = apiInstance.UpdateSuspensionStateAsyncOperation(processInstanceSuspensionStateAsyncDto);
                 Debug.WriteLine(result);
             }
@@ -1789,6 +1833,7 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -1801,7 +1846,7 @@ No authorization required
 # **UpdateSuspensionStateById**
 > void UpdateSuspensionStateById (string id, SuspensionStateDto suspensionStateDto = null)
 
-
+Activate/Suspend Process Instance By Id
 
 Activates or suspends a given process instance by id.
 
@@ -1827,6 +1872,7 @@ namespace Example
 
             try
             {
+                // Activate/Suspend Process Instance By Id
                 apiInstance.UpdateSuspensionStateById(id, suspensionStateDto);
             }
             catch (ApiException  e)
@@ -1859,6 +1905,7 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

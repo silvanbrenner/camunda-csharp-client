@@ -1,5 +1,6 @@
 # Camunda.OpenApi.Client.Model.ActivityInstanceIncidentDto
 An activity instance, incident pair.
+
 ## Properties
 
 Name | Type | Description | Notes

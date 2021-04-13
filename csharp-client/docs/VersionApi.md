@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:8080/engine-rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetRestAPIVersion**](VersionApi.md#getrestapiversion) | **GET** /version | 
+[**GetRestAPIVersion**](VersionApi.md#getrestapiversion) | **GET** /version | Get Rest API version
 
 
 <a name="getrestapiversion"></a>
 # **GetRestAPIVersion**
 > VersionDto GetRestAPIVersion ()
 
-
+Get Rest API version
 
 Retrieves the version of the Rest API.
 
@@ -35,6 +35,7 @@ namespace Example
 
             try
             {
+                // Get Rest API version
                 VersionDto result = apiInstance.GetRestAPIVersion();
                 Debug.WriteLine(result);
             }
@@ -64,6 +65,7 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

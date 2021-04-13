@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.VersionDto
+
 ## Properties
 
 Name | Type | Description | Notes

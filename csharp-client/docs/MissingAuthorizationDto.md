@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.MissingAuthorizationDto
+
 ## Properties
 
 Name | Type | Description | Notes

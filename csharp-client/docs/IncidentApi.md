@@ -4,11 +4,84 @@ All URIs are relative to *http://localhost:8080/engine-rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**ClearIncidentAnnotation**](IncidentApi.md#clearincidentannotation) | **DELETE** /incident/{id}/annotation | Clear Incident Annotation
 [**GetIncident**](IncidentApi.md#getincident) | **GET** /incident/{id} | Get Incident
 [**GetIncidents**](IncidentApi.md#getincidents) | **GET** /incident | Get List
 [**GetIncidentsCount**](IncidentApi.md#getincidentscount) | **GET** /incident/count | Get List Count
 [**ResolveIncident**](IncidentApi.md#resolveincident) | **DELETE** /incident/{id} | Resolve Incident
+[**SetIncidentAnnotation**](IncidentApi.md#setincidentannotation) | **PUT** /incident/{id}/annotation | Set Incident Annotation
 
+
+<a name="clearincidentannotation"></a>
+# **ClearIncidentAnnotation**
+> void ClearIncidentAnnotation (string id)
+
+Clear Incident Annotation
+
+Clears the annotation of an incident with given id.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
+
+namespace Example
+{
+    public class ClearIncidentAnnotationExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:8080/engine-rest";
+            var apiInstance = new IncidentApi(config);
+            var id = id_example;  // string | The id of the incident to clear the annotation at.
+
+            try
+            {
+                // Clear Incident Annotation
+                apiInstance.ClearIncidentAnnotation(id);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling IncidentApi.ClearIncidentAnnotation: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| The id of the incident to clear the annotation at. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Request successful. |  -  |
+| **400** | Returned if no incident can be found for the given id. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getincident"></a>
 # **GetIncident**
@@ -73,6 +146,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -87,7 +161,7 @@ No authorization required
 
 Get List
 
-Queries for incidents that fulfill given parameters. The size of the result set can be retrieved by using the [Get Incident Count](https://docs.camunda.org/manual/7.14/reference/rest/incident/get-query-count/) method.
+Queries for incidents that fulfill given parameters. The size of the result set can be retrieved by using the [Get Incident Count](https://docs.camunda.org/manual/7.15/reference/rest/incident/get-query-count/) method.
 
 ### Example
 ```csharp
@@ -107,7 +181,7 @@ namespace Example
             config.BasePath = "http://localhost:8080/engine-rest";
             var apiInstance = new IncidentApi(config);
             var incidentId = incidentId_example;  // string | Restricts to incidents that have the given id. (optional) 
-            var incidentType = incidentType_example;  // string | Restricts to incidents that belong to the given incident type. See the [User Guide](https://docs.camunda.org/manual/7.14/user-guide/process-engine/incidents/#incident-types) for a list of incident types. (optional) 
+            var incidentType = incidentType_example;  // string | Restricts to incidents that belong to the given incident type. See the [User Guide](https://docs.camunda.org/manual/7.15/user-guide/process-engine/incidents/#incident-types) for a list of incident types. (optional) 
             var incidentMessage = incidentMessage_example;  // string | Restricts to incidents that have the given incident message. (optional) 
             var incidentMessageLike = incidentMessageLike_example;  // string | Restricts to incidents that incidents message is a substring of the given value. The string can include the wildcard character '%' to express like-strategy: starts with (`string%`), ends with (`%string`) or contains (`%string%`). (optional) 
             var processDefinitionId = processDefinitionId_example;  // string | Restricts to incidents that belong to a process definition with the given id. (optional) 
@@ -148,7 +222,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **incidentId** | **string**| Restricts to incidents that have the given id. | [optional] 
- **incidentType** | **string**| Restricts to incidents that belong to the given incident type. See the [User Guide](https://docs.camunda.org/manual/7.14/user-guide/process-engine/incidents/#incident-types) for a list of incident types. | [optional] 
+ **incidentType** | **string**| Restricts to incidents that belong to the given incident type. See the [User Guide](https://docs.camunda.org/manual/7.15/user-guide/process-engine/incidents/#incident-types) for a list of incident types. | [optional] 
  **incidentMessage** | **string**| Restricts to incidents that have the given incident message. | [optional] 
  **incidentMessageLike** | **string**| Restricts to incidents that incidents message is a substring of the given value. The string can include the wildcard character &#39;%&#39; to express like-strategy: starts with (&#x60;string%&#x60;), ends with (&#x60;%string&#x60;) or contains (&#x60;%string%&#x60;). | [optional] 
  **processDefinitionId** | **string**| Restricts to incidents that belong to a process definition with the given id. | [optional] 
@@ -180,11 +254,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -194,7 +269,7 @@ No authorization required
 
 Get List Count
 
-Queries for the number of incidents that fulfill given parameters. Takes the same parameters as the [Get Incidents](https://docs.camunda.org/manual/7.14/reference/rest/incident/get-query/) method.
+Queries for the number of incidents that fulfill given parameters. Takes the same parameters as the [Get Incidents](https://docs.camunda.org/manual/7.15/reference/rest/incident/get-query/) method.
 
 ### Example
 ```csharp
@@ -214,7 +289,7 @@ namespace Example
             config.BasePath = "http://localhost:8080/engine-rest";
             var apiInstance = new IncidentApi(config);
             var incidentId = incidentId_example;  // string | Restricts to incidents that have the given id. (optional) 
-            var incidentType = incidentType_example;  // string | Restricts to incidents that belong to the given incident type. See the [User Guide](https://docs.camunda.org/manual/7.14/user-guide/process-engine/incidents/#incident-types) for a list of incident types. (optional) 
+            var incidentType = incidentType_example;  // string | Restricts to incidents that belong to the given incident type. See the [User Guide](https://docs.camunda.org/manual/7.15/user-guide/process-engine/incidents/#incident-types) for a list of incident types. (optional) 
             var incidentMessage = incidentMessage_example;  // string | Restricts to incidents that have the given incident message. (optional) 
             var incidentMessageLike = incidentMessageLike_example;  // string | Restricts to incidents that incidents message is a substring of the given value. The string can include the wildcard character '%' to express like-strategy: starts with (`string%`), ends with (`%string`) or contains (`%string%`). (optional) 
             var processDefinitionId = processDefinitionId_example;  // string | Restricts to incidents that belong to a process definition with the given id. (optional) 
@@ -253,7 +328,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **incidentId** | **string**| Restricts to incidents that have the given id. | [optional] 
- **incidentType** | **string**| Restricts to incidents that belong to the given incident type. See the [User Guide](https://docs.camunda.org/manual/7.14/user-guide/process-engine/incidents/#incident-types) for a list of incident types. | [optional] 
+ **incidentType** | **string**| Restricts to incidents that belong to the given incident type. See the [User Guide](https://docs.camunda.org/manual/7.15/user-guide/process-engine/incidents/#incident-types) for a list of incident types. | [optional] 
  **incidentMessage** | **string**| Restricts to incidents that have the given incident message. | [optional] 
  **incidentMessageLike** | **string**| Restricts to incidents that incidents message is a substring of the given value. The string can include the wildcard character &#39;%&#39; to express like-strategy: starts with (&#x60;string%&#x60;), ends with (&#x60;%string&#x60;) or contains (&#x60;%string%&#x60;). | [optional] 
  **processDefinitionId** | **string**| Restricts to incidents that belong to a process definition with the given id. | [optional] 
@@ -283,11 +358,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -353,12 +429,86 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. |  -  |
 | **404** | Returned if an incident with given id does not exist. |  -  |
-| **400** | Returned if an incident is not related to any execution or an incident is of type &#x60;failedJob&#x60; or &#x60;failedExternalTask&#x60;. To resolve such an incident, please refer to the [Incident Types](https://docs.camunda.org/manual/7.14/user-guide/process-engine/incidents/#incident-types) section. |  -  |
+| **400** | Returned if an incident is not related to any execution or an incident is of type &#x60;failedJob&#x60; or &#x60;failedExternalTask&#x60;. To resolve such an incident, please refer to the [Incident Types](https://docs.camunda.org/manual/7.15/user-guide/process-engine/incidents/#incident-types) section. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setincidentannotation"></a>
+# **SetIncidentAnnotation**
+> void SetIncidentAnnotation (string id, AnnotationDto annotationDto = null)
+
+Set Incident Annotation
+
+Sets the annotation of an incident with given id.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Camunda.OpenApi.Client.Api;
+using Camunda.OpenApi.Client.Client;
+using Camunda.OpenApi.Client.Model;
+
+namespace Example
+{
+    public class SetIncidentAnnotationExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:8080/engine-rest";
+            var apiInstance = new IncidentApi(config);
+            var id = id_example;  // string | The id of the incident to clear the annotation at.
+            var annotationDto = new AnnotationDto(); // AnnotationDto |  (optional) 
+
+            try
+            {
+                // Set Incident Annotation
+                apiInstance.SetIncidentAnnotation(id, annotationDto);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling IncidentApi.SetIncidentAnnotation: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| The id of the incident to clear the annotation at. | 
+ **annotationDto** | [**AnnotationDto**](AnnotationDto.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Request successful. |  -  |
+| **400** | Returned if no incident can be found for the given id. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

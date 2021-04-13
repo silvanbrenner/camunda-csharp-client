@@ -1,4 +1,5 @@
 # Camunda.OpenApi.Client.Model.ExternalTaskBpmnErrorAllOf
+
 ## Properties
 
 Name | Type | Description | Notes

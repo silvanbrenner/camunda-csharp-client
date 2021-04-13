@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost:8080/engine-rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetEventSubscriptions**](EventSubscriptionApi.md#geteventsubscriptions) | **GET** /event-subscription | 
-[**GetEventSubscriptionsCount**](EventSubscriptionApi.md#geteventsubscriptionscount) | **GET** /event-subscription/count | 
+[**GetEventSubscriptions**](EventSubscriptionApi.md#geteventsubscriptions) | **GET** /event-subscription | Get List
+[**GetEventSubscriptionsCount**](EventSubscriptionApi.md#geteventsubscriptionscount) | **GET** /event-subscription/count | Get List Count
 
 
 <a name="geteventsubscriptions"></a>
 # **GetEventSubscriptions**
 > List&lt;EventSubscriptionDto&gt; GetEventSubscriptions (string eventSubscriptionId = null, string eventName = null, string eventType = null, string executionId = null, string processInstanceId = null, string activityId = null, string tenantIdIn = null, bool? withoutTenantId = null, bool? includeEventSubscriptionsWithoutTenantId = null, string sortBy = null, string sortOrder = null, int? firstResult = null, int? maxResults = null)
 
+Get List
 
-
-Queries for event subscriptions that fulfill given parameters. The size of the result set can be retrieved by using the [Get Event Subscriptions count](https://docs.camunda.org/manual/7.14/reference/rest/event-subscription/get-query-count/) method.
+Queries for event subscriptions that fulfill given parameters. The size of the result set can be retrieved by using the [Get Event Subscriptions count](https://docs.camunda.org/manual/7.15/reference/rest/event-subscription/get-query-count/) method.
 
 ### Example
 ```csharp
@@ -49,6 +49,7 @@ namespace Example
 
             try
             {
+                // Get List
                 List<EventSubscriptionDto> result = apiInstance.GetEventSubscriptions(eventSubscriptionId, eventName, eventType, executionId, processInstanceId, activityId, tenantIdIn, withoutTenantId, includeEventSubscriptionsWithoutTenantId, sortBy, sortOrder, firstResult, maxResults);
                 Debug.WriteLine(result);
             }
@@ -94,11 +95,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Bad Request Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Bad Request Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -106,9 +108,9 @@ No authorization required
 # **GetEventSubscriptionsCount**
 > CountResultDto GetEventSubscriptionsCount (string eventSubscriptionId = null, string eventName = null, string eventType = null, string executionId = null, string processInstanceId = null, string activityId = null, string tenantIdIn = null, bool? withoutTenantId = null, bool? includeEventSubscriptionsWithoutTenantId = null)
 
+Get List Count
 
-
-Queries for the number of event subscriptions that fulfill given parameters. Takes the same parameters as the [Get Event Subscriptions](https://docs.camunda.org/manual/7.14/reference/rest/event-subscription/get-query/) method.
+Queries for the number of event subscriptions that fulfill given parameters. Takes the same parameters as the [Get Event Subscriptions](https://docs.camunda.org/manual/7.15/reference/rest/event-subscription/get-query/) method.
 
 ### Example
 ```csharp
@@ -139,6 +141,7 @@ namespace Example
 
             try
             {
+                // Get List Count
                 CountResultDto result = apiInstance.GetEventSubscriptionsCount(eventSubscriptionId, eventName, eventType, executionId, processInstanceId, activityId, tenantIdIn, withoutTenantId, includeEventSubscriptionsWithoutTenantId);
                 Debug.WriteLine(result);
             }
@@ -180,11 +183,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid. See the [Introduction](https://docs.camunda.org/manual/7.14/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
