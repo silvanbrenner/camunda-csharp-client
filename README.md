@@ -8,6 +8,7 @@ Nuget package: https://www.nuget.org/packages/Camunda.OpenApi.Client/
 |-----------------|--------------------------------|
 | 7.14.0          | 1.0.1                          |
 | 7.15.0          | 1.1.0                          |
+| 7.16.0          | 1.2.0                          |
 
 ## Example
 ```csharp

@@ -12,12 +12,12 @@
     <Description>A library generated from a OpenAPI doc</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>Camunda.OpenApi.Client</RootNamespace>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Camunda.OpenApi.Client.xml</DocumentationFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/silvanbrenner/camunda-csharp-client.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageVersion>1.1.0</PackageVersion>
+    <PackageVersion>1.2.0</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>

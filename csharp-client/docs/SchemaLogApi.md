@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getschemalog"></a>
 # **GetSchemaLog**
-> List&lt;SchemaLogEntryDto&gt; GetSchemaLog (string version = null, int? firstResult = null, int? maxResults = null)
+> List&lt;SchemaLogEntryDto&gt; GetSchemaLog (string version = null, string sortBy = null, string sortOrder = null, int? firstResult = null, int? maxResults = null)
 
 Get List
 
@@ -34,13 +34,15 @@ namespace Example
             config.BasePath = "http://localhost:8080/engine-rest";
             var apiInstance = new SchemaLogApi(config);
             var version = version_example;  // string | Only return schema log entries with a specific version. (optional) 
+            var sortBy = sortBy_example;  // string | Sort the results lexicographically by a given criterion. Must be used in conjunction with the sortOrder parameter. (optional) 
+            var sortOrder = sortOrder_example;  // string | Sort the results in a given order. Values may be asc for ascending order or desc for descending order. Must be used in conjunction with the sortBy parameter. (optional) 
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
             var maxResults = 56;  // int? | Pagination of results. Specifies the maximum number of results to return. Will return less results if there are no more results left. (optional) 
 
             try
             {
                 // Get List
-                List<SchemaLogEntryDto> result = apiInstance.GetSchemaLog(version, firstResult, maxResults);
+                List<SchemaLogEntryDto> result = apiInstance.GetSchemaLog(version, sortBy, sortOrder, firstResult, maxResults);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -59,6 +61,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **version** | **string**| Only return schema log entries with a specific version. | [optional] 
+ **sortBy** | **string**| Sort the results lexicographically by a given criterion. Must be used in conjunction with the sortOrder parameter. | [optional] 
+ **sortOrder** | **string**| Sort the results in a given order. Values may be asc for ascending order or desc for descending order. Must be used in conjunction with the sortBy parameter. | [optional] 
  **firstResult** | **int?**| Pagination of results. Specifies the index of the first result to return. | [optional] 
  **maxResults** | **int?**| Pagination of results. Specifies the maximum number of results to return. Will return less results if there are no more results left. | [optional] 
 

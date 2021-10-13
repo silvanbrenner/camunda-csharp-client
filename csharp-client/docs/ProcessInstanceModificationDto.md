@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SkipCustomListeners** | **bool?** | Skip execution listener invocation for activities that are started or ended as part of this request. | [optional] 
-**SkipIoMappings** | **bool?** | Skip execution of [input/output variable mappings](https://docs.camunda.org/manual/7.15/user-guide/process-engine/variables/#input-output-variable-mapping) for activities that are started or ended as part of this request. | [optional] 
+**SkipIoMappings** | **bool?** | Skip execution of [input/output variable mappings](https://docs.camunda.org/manual/7.16/user-guide/process-engine/variables/#input-output-variable-mapping) for activities that are started or ended as part of this request. | [optional] 
 **Instructions** | [**List&lt;ProcessInstanceModificationInstructionDto&gt;**](ProcessInstanceModificationInstructionDto.md) | JSON array of modification instructions. The instructions are executed in the order they are in. | [optional] 
 **Annotation** | **string** | An arbitrary text annotation set by a user for auditing reasons. | [optional] 
 

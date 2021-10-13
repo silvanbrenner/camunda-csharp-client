@@ -17,13 +17,13 @@ Name | Type | Description | Notes
 **Assignee** | **string** | The assignee of the task that is associated to this activity instance. Is only set if the activity is a user task. | [optional] 
 **CalledProcessInstanceId** | **string** | The id of the called process instance. Is only set if the activity is a call activity and the called instance a process instance. | [optional] 
 **CalledCaseInstanceId** | **string** | The id of the called case instance. Is only set if the activity is a call activity and the called instance a case instance. | [optional] 
-**StartTime** | **DateTime?** | The time the instance was started. By [default](https://docs.camunda.org/manual/7.15/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
-**EndTime** | **DateTime?** | The time the instance ended. By [default](https://docs.camunda.org/manual/7.15/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+**StartTime** | **DateTime?** | The time the instance was started. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+**EndTime** | **DateTime?** | The time the instance ended. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
 **DurationInMillis** | **long?** | The time the instance took to finish (in milliseconds). | [optional] 
 **Canceled** | **bool?** | If &#x60;true&#x60;, this activity instance is canceled. | [optional] 
 **CompleteScope** | **bool?** | If &#x60;true&#x60;, this activity instance did complete a BPMN 2.0 scope. | [optional] 
 **TenantId** | **string** | The tenant id of the activity instance. | [optional] 
-**RemovalTime** | **DateTime?** | The time after which the activity instance should be removed by the History Cleanup job. By [default](https://docs.camunda.org/manual/7.15/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+**RemovalTime** | **DateTime?** | The time after which the activity instance should be removed by the History Cleanup job. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
 **RootProcessInstanceId** | **string** | The process instance id of the root process instance that initiated the process containing this activity instance. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

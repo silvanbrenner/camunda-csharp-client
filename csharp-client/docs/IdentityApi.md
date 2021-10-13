@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Validate Password
 
-A password policy consists of a list of rules that new passwords must follow to be policy compliant. A password can be checked for compliancy via this end point. More information on password policies in Camunda can be found in the password policy [user guide](https://docs.camunda.org/manual/7.15/user-guide/process-engine/password-policy/) and in the [security instructions](https://docs.camunda.org/manual/7.15/user-guide/security/).
+A password policy consists of a list of rules that new passwords must follow to be policy compliant. A password can be checked for compliancy via this end point. More information on password policies in Camunda can be found in the password policy [user guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/password-policy/) and in the [security instructions](https://docs.camunda.org/manual/7.16/user-guide/security/).
 
 ### Example
 ```csharp
@@ -150,7 +150,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | If the &#x60;userId&#x60; query parameter is missing. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | If the &#x60;userId&#x60; query parameter is missing. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -160,7 +160,7 @@ No authorization required
 
 Get Password Policy
 
-A password policy consists of a list of rules that new passwords must follow to be policy compliant. This end point returns a JSON representation of the list of policy rules. More information on password policies in Camunda can be found in the password policy [user guide](https://docs.camunda.org/manual/7.15/user-guide/process-engine/password-policy/) and in the [security instructions](https://docs.camunda.org/manual/7.15/user-guide/security/).
+A password policy consists of a list of rules that new passwords must follow to be policy compliant. This end point returns a JSON representation of the list of policy rules. More information on password policies in Camunda can be found in the password policy [user guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/password-policy/) and in the [security instructions](https://docs.camunda.org/manual/7.16/user-guide/security/).
 
 ### Example
 ```csharp

@@ -292,7 +292,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **204** | Request successful. |  -  |
 | **403** | Identity service is read-only (Cannot modify users / groups / memberships). |  -  |
-| **404** | A Deployment with the provided id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | A Deployment with the provided id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -302,7 +302,7 @@ No authorization required
 
 Get List Count
 
-Queries for the number of deployments that fulfill given parameters. Takes the same parameters as the [Get Users](https://docs.camunda.org/manual/7.15/reference/rest/user/get-query/) method.
+Queries for the number of deployments that fulfill given parameters. Takes the same parameters as the [Get Users](https://docs.camunda.org/manual/7.16/reference/rest/user/get-query/) method.
 
 ### Example
 ```csharp
@@ -384,7 +384,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example, if an invalid operator for variable comparison is used. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example, if an invalid operator for variable comparison is used. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -456,7 +456,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **404** | Execution with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Execution with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -466,7 +466,7 @@ No authorization required
 
 Get List
 
-Query for a list of users using a list of parameters. The size of the result set can be retrieved by using the Get User Count method. [Get User Count](https://docs.camunda.org/manual/7.15/reference/rest/user/get-query-count/) method.
+Query for a list of users using a list of parameters. The size of the result set can be retrieved by using the Get User Count method. [Get User Count](https://docs.camunda.org/manual/7.16/reference/rest/user/get-query-count/) method.
 
 ### Example
 ```csharp
@@ -556,7 +556,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;, or if an invalid operator for variable comparison is used. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;, or if an invalid operator for variable comparison is used. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -628,13 +628,13 @@ No authorization required
 |-------------|-------------|------------------|
 | **204** | Request successful. |  -  |
 | **403** | The user who performed the operation is not a Camunda admin user. |  -  |
-| **404** | User cannot be found. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | User cannot be found. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="updatecredentials"></a>
 # **UpdateCredentials**
-> Object UpdateCredentials (string id, string password, string authenticatedUserPassword, UserCredentialsDto userCredentialsDto = null)
+> void UpdateCredentials (string id, UserCredentialsDto userCredentialsDto = null)
 
 Update Credentials
 
@@ -658,15 +658,12 @@ namespace Example
             config.BasePath = "http://localhost:8080/engine-rest";
             var apiInstance = new UserApi(config);
             var id = id_example;  // string | The id of the user to be updated.
-            var password = password_example;  // string | The users new password.
-            var authenticatedUserPassword = authenticatedUserPassword_example;  // string | The password of the authenticated user who changes the password of the user (i.e., the user with passed id as path parameter).
             var userCredentialsDto = new UserCredentialsDto(); // UserCredentialsDto |  (optional) 
 
             try
             {
                 // Update Credentials
-                Object result = apiInstance.UpdateCredentials(id, password, authenticatedUserPassword, userCredentialsDto);
-                Debug.WriteLine(result);
+                apiInstance.UpdateCredentials(id, userCredentialsDto);
             }
             catch (ApiException  e)
             {
@@ -684,13 +681,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the user to be updated. | 
- **password** | **string**| The users new password. | 
- **authenticatedUserPassword** | **string**| The password of the authenticated user who changes the password of the user (i.e., the user with passed id as path parameter). | 
  **userCredentialsDto** | [**UserCredentialsDto**](UserCredentialsDto.md)|  | [optional] 
 
 ### Return type
 
-**Object**
+void (empty response body)
 
 ### Authorization
 
@@ -705,11 +700,11 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Request successful. |  -  |
+| **204** | Request successful. This method returns no content. |  -  |
 | **403** | Identity service is read-only (Cannot modify users / groups / memberships). |  -  |
 | **400** | The authenticated user password does not match |  -  |
 | **404** | If the corresponding user cannot be found |  -  |
-| **500** | The user could not be updated due to an internal server error. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **500** | The user could not be updated due to an internal server error. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -784,7 +779,7 @@ No authorization required
 | **204** | Request successful. This method returns no content. |  -  |
 | **403** | Identity service is read-only (Cannot modify users / groups / memberships). |  -  |
 | **404** | If the user with the requested Id cannot be found. |  -  |
-| **500** | The user could not be updated due to an internal server error. See the [Introduction](https://docs.camunda.org/manual/7.15/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **500** | The user could not be updated due to an internal server error. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
