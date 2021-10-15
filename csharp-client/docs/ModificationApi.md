@@ -20,6 +20,7 @@ Executes a modification synchronously for multiple process instances. To modify 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -32,7 +33,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ModificationApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ModificationApi(httpClient, config, httpClientHandler);
             var modificationDto = new ModificationDto(); // ModificationDto |  (optional) 
 
             try
@@ -91,6 +95,7 @@ Executes a modification asynchronously for multiple process instances. To execut
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -103,7 +108,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ModificationApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ModificationApi(httpClient, config, httpClientHandler);
             var modificationDto = new ModificationDto(); // ModificationDto |  (optional) 
 
             try

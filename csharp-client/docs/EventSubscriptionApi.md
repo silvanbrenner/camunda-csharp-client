@@ -20,6 +20,7 @@ Queries for event subscriptions that fulfill given parameters. The size of the r
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -32,7 +33,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new EventSubscriptionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new EventSubscriptionApi(httpClient, config, httpClientHandler);
             var eventSubscriptionId = eventSubscriptionId_example;  // string | Only select subscription with the given id. (optional) 
             var eventName = eventName_example;  // string | Only select subscriptions for events with the given name. (optional) 
             var eventType = eventType_example;  // string | Only select subscriptions for events with the given type. Valid values: `message`, `signal`, `compensate` and `conditional`. (optional) 
@@ -116,6 +120,7 @@ Queries for the number of event subscriptions that fulfill given parameters. Tak
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -128,7 +133,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new EventSubscriptionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new EventSubscriptionApi(httpClient, config, httpClientHandler);
             var eventSubscriptionId = eventSubscriptionId_example;  // string | Only select subscription with the given id. (optional) 
             var eventName = eventName_example;  // string | Only select subscriptions for events with the given name. (optional) 
             var eventType = eventType_example;  // string | Only select subscriptions for events with the given type. Valid values: `message`, `signal`, `compensate` and `conditional`. (optional) 

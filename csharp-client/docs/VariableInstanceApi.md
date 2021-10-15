@@ -24,6 +24,7 @@ Retrieves a variable by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -36,7 +37,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new VariableInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new VariableInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the variable instance.
             var deserializeValue = true;  // bool? | Determines whether serializable variable values (typically variables that store custom Java objects) should be deserialized on server side (default `true`).  If set to `true`, a serializable variable will be deserialized on server side and transformed to JSON using [Jackson's](https://github.com/FasterXML/jackson) POJO/bean property introspection feature. Note that this requires the Java classes of the variable value to be on the REST API's classpath.  If set to `false`, a serializable variable will be returned in its serialized format. For example, a variable that is serialized as XML will be returned as a JSON string containing XML.  **Note:**  While `true` is the default value for reasons of backward compatibility, we recommend setting this parameter to `false` when developing web applications that are independent of the Java process applications deployed to the engine. (optional) 
 
@@ -88,7 +92,7 @@ No authorization required
 
 <a name="getvariableinstancebinary"></a>
 # **GetVariableInstanceBinary**
-> System.IO.Stream GetVariableInstanceBinary (string id)
+> FileParameter GetVariableInstanceBinary (string id)
 
 Get Variable Instance (Binary)
 
@@ -98,6 +102,7 @@ Retrieves the content of a variable by id. Applicable for byte array and file va
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -110,13 +115,16 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new VariableInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new VariableInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the variable instance.
 
             try
             {
                 // Get Variable Instance (Binary)
-                System.IO.Stream result = apiInstance.GetVariableInstanceBinary(id);
+                FileParameter result = apiInstance.GetVariableInstanceBinary(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -138,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -171,6 +179,7 @@ Query for variable instances that fulfill given parameters. Parameters may be th
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -183,7 +192,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new VariableInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new VariableInstanceApi(httpClient, config, httpClientHandler);
             var variableName = variableName_example;  // string | Filter by variable instance name. (optional) 
             var variableNameLike = variableNameLike_example;  // string | Filter by the variable instance name. The parameter can include the wildcard `%` to express like-strategy such as: starts with (`%`name), ends with (name`%`) or contains (`%`name`%`). (optional) 
             var processInstanceIdIn = processInstanceIdIn_example;  // string | Only include variable instances which belong to one of the passed and comma-separated process instance ids. (optional) 
@@ -279,6 +291,7 @@ Query for the number of variable instances that fulfill given parameters. Takes 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -291,7 +304,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new VariableInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new VariableInstanceApi(httpClient, config, httpClientHandler);
             var variableName = variableName_example;  // string | Filter by variable instance name. (optional) 
             var variableNameLike = variableNameLike_example;  // string | Filter by the variable instance name. The parameter can include the wildcard `%` to express like-strategy such as: starts with (`%`name), ends with (name`%`) or contains (`%`name`%`). (optional) 
             var processInstanceIdIn = processInstanceIdIn_example;  // string | Only include variable instances which belong to one of the passed and comma-separated process instance ids. (optional) 
@@ -381,6 +397,7 @@ Query for variable instances that fulfill given parameters through a JSON object
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -393,7 +410,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new VariableInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new VariableInstanceApi(httpClient, config, httpClientHandler);
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
             var maxResults = 56;  // int? | Pagination of results. Specifies the maximum number of results to return. Will return less results if there are no more results left. (optional) 
             var deserializeValues = true;  // bool? | Determines whether serializable variable values (typically variables that store custom Java objects) should be deserialized on server side (default `true`).  If set to `true`, a serializable variable will be deserialized on server side and transformed to JSON using [Jackson's](https://github.com/FasterXML/jackson) POJO/bean property introspection feature. Note that this requires the Java classes of the variable value to be on the REST API's classpath.  If set to `false`, a serializable variable will be returned in its serialized format. For example, a variable that is serialized as XML will be returned as a JSON string containing XML.  **Note:** While `true` is the default value for reasons of backward compatibility, we recommend setting this parameter to `false` when developing web applications that are independent of the Java process applications deployed to the engine. (optional) 
@@ -459,6 +479,7 @@ Query for the number of variable instances that fulfill given parameters. This m
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -471,7 +492,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new VariableInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new VariableInstanceApi(httpClient, config, httpClientHandler);
             var variableInstanceQueryDto = new VariableInstanceQueryDto(); // VariableInstanceQueryDto |  (optional) 
 
             try

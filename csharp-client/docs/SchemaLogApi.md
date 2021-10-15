@@ -20,6 +20,7 @@ Queries for schema log entries that fulfill given parameters.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -32,7 +33,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new SchemaLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new SchemaLogApi(httpClient, config, httpClientHandler);
             var version = version_example;  // string | Only return schema log entries with a specific version. (optional) 
             var sortBy = sortBy_example;  // string | Sort the results lexicographically by a given criterion. Must be used in conjunction with the sortOrder parameter. (optional) 
             var sortOrder = sortOrder_example;  // string | Sort the results in a given order. Values may be asc for ascending order or desc for descending order. Must be used in conjunction with the sortBy parameter. (optional) 
@@ -99,6 +103,7 @@ Queries for schema log entries that fulfill given parameters.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -111,7 +116,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new SchemaLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new SchemaLogApi(httpClient, config, httpClientHandler);
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
             var maxResults = 56;  // int? | Pagination of results. Specifies the maximum number of results to return. Will return less results if there are no more results left. (optional) 
             var schemaLogQueryDto = new SchemaLogQueryDto(); // SchemaLogQueryDto |  (optional) 

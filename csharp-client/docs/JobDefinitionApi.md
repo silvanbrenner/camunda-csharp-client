@@ -27,6 +27,7 @@ Retrieves a job definition by id, according to the `JobDefinition` interface in 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -39,7 +40,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new JobDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new JobDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the job definition to be retrieved.
 
             try
@@ -99,6 +103,7 @@ Queries for job definitions that fulfill given parameters. The size of the resul
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -111,7 +116,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new JobDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new JobDefinitionApi(httpClient, config, httpClientHandler);
             var jobDefinitionId = jobDefinitionId_example;  // string | Filter by job definition id. (optional) 
             var activityIdIn = activityIdIn_example;  // string | Only include job definitions which belong to one of the passed and comma-separated activity ids. (optional) 
             var processDefinitionId = processDefinitionId_example;  // string | Only include job definitions which exist for the given process definition id. (optional) 
@@ -201,6 +209,7 @@ Queries for the number of job definitions that fulfill given parameters. Takes t
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -213,7 +222,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new JobDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new JobDefinitionApi(httpClient, config, httpClientHandler);
             var jobDefinitionId = jobDefinitionId_example;  // string | Filter by job definition id. (optional) 
             var activityIdIn = activityIdIn_example;  // string | Only include job definitions which belong to one of the passed and comma-separated activity ids. (optional) 
             var processDefinitionId = processDefinitionId_example;  // string | Only include job definitions which exist for the given process definition id. (optional) 
@@ -295,6 +307,7 @@ Queries for job definitions that fulfill given parameters. This method is slight
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -307,7 +320,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new JobDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new JobDefinitionApi(httpClient, config, httpClientHandler);
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
             var maxResults = 56;  // int? | Pagination of results. Specifies the maximum number of results to return. Will return less results if there are no more results left. (optional) 
             var jobDefinitionQueryDto = new JobDefinitionQueryDto(); // JobDefinitionQueryDto |  (optional) 
@@ -371,6 +387,7 @@ Queries for the number of job definitions that fulfill given parameters. This me
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -383,7 +400,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new JobDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new JobDefinitionApi(httpClient, config, httpClientHandler);
             var jobDefinitionQueryDto = new JobDefinitionQueryDto(); // JobDefinitionQueryDto |  (optional) 
 
             try
@@ -443,6 +463,7 @@ Sets an overriding execution priority for jobs with the given definition id. Opt
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -455,7 +476,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new JobDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new JobDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the job definition to be updated.
             var jobDefinitionPriorityDto = new JobDefinitionPriorityDto(); // JobDefinitionPriorityDto |  (optional) 
 
@@ -517,6 +541,7 @@ Sets the number of retries of all **failed** jobs associated with the given job 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -529,7 +554,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new JobDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new JobDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the job definition to be updated.
             var retriesDto = new RetriesDto(); // RetriesDto |  (optional) 
 
@@ -590,6 +618,7 @@ Activates or suspends a given job definition by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -602,7 +631,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new JobDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new JobDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the job definition to activate or suspend.
             var jobDefinitionSuspensionStateDto = new JobDefinitionSuspensionStateDto(); // JobDefinitionSuspensionStateDto |  (optional) 
 
@@ -663,6 +695,7 @@ Activates or suspends job definitions with the given process definition id or pr
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -675,7 +708,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new JobDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new JobDefinitionApi(httpClient, config, httpClientHandler);
             var jobDefinitionsSuspensionStateDto = new JobDefinitionsSuspensionStateDto(); // JobDefinitionsSuspensionStateDto |  (optional) 
 
             try

@@ -24,6 +24,7 @@ Clears the annotation of an incident with given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -36,7 +37,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new IncidentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new IncidentApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the incident to clear the annotation at.
 
             try
@@ -95,6 +99,7 @@ Retrieves an incident by ID.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -107,7 +112,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new IncidentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new IncidentApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the incident to be retrieved.
 
             try
@@ -167,6 +175,7 @@ Queries for incidents that fulfill given parameters. The size of the result set 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -179,7 +188,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new IncidentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new IncidentApi(httpClient, config, httpClientHandler);
             var incidentId = incidentId_example;  // string | Restricts to incidents that have the given id. (optional) 
             var incidentType = incidentType_example;  // string | Restricts to incidents that belong to the given incident type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/incidents/#incident-types) for a list of incident types. (optional) 
             var incidentMessage = incidentMessage_example;  // string | Restricts to incidents that have the given incident message. (optional) 
@@ -279,6 +291,7 @@ Queries for the number of incidents that fulfill given parameters. Takes the sam
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -291,7 +304,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new IncidentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new IncidentApi(httpClient, config, httpClientHandler);
             var incidentId = incidentId_example;  // string | Restricts to incidents that have the given id. (optional) 
             var incidentType = incidentType_example;  // string | Restricts to incidents that belong to the given incident type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/incidents/#incident-types) for a list of incident types. (optional) 
             var incidentMessage = incidentMessage_example;  // string | Restricts to incidents that have the given incident message. (optional) 
@@ -383,6 +399,7 @@ Resolves an incident with given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -395,7 +412,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new IncidentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new IncidentApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the incident to be resolved.
 
             try
@@ -455,6 +475,7 @@ Sets the annotation of an incident with given id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -467,7 +488,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new IncidentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new IncidentApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the incident to clear the annotation at.
             var annotationDto = new AnnotationDto(); // AnnotationDto |  (optional) 
 

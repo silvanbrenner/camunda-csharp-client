@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="addattachment"></a>
 # **AddAttachment**
-> AttachmentDto AddAttachment (string id, string attachmentName = null, string attachmentDescription = null, string attachmentType = null, string url = null, System.IO.Stream content = null)
+> AttachmentDto AddAttachment (string id, string attachmentName = null, string attachmentDescription = null, string attachmentType = null, string url = null, FileParameter content = null)
 
 Create
 
@@ -23,6 +23,7 @@ Creates an attachment for a task.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -35,13 +36,16 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskAttachmentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskAttachmentApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to add the attachment to.
             var attachmentName = attachmentName_example;  // string | The name of the attachment. (optional) 
             var attachmentDescription = attachmentDescription_example;  // string | The description of the attachment. (optional) 
             var attachmentType = attachmentType_example;  // string | The type of the attachment. (optional) 
             var url = url_example;  // string | The url to the remote content of the attachment. (optional) 
-            var content = BINARY_DATA_HERE;  // System.IO.Stream | The content of the attachment. (optional) 
+            var content = BINARY_DATA_HERE;  // FileParameter | The content of the attachment. (optional) 
 
             try
             {
@@ -69,7 +73,7 @@ Name | Type | Description  | Notes
  **attachmentDescription** | **string**| The description of the attachment. | [optional] 
  **attachmentType** | **string**| The type of the attachment. | [optional] 
  **url** | **string**| The url to the remote content of the attachment. | [optional] 
- **content** | **System.IO.Stream****System.IO.Stream**| The content of the attachment. | [optional] 
+ **content** | **FileParameter****FileParameter**| The content of the attachment. | [optional] 
 
 ### Return type
 
@@ -106,6 +110,7 @@ Removes an attachment from a task by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -118,7 +123,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskAttachmentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskAttachmentApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task.
             var attachmentId = attachmentId_example;  // string | The id of the attachment to be removed.
 
@@ -180,6 +188,7 @@ Retrieves a task attachment by task id and attachment id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -192,7 +201,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskAttachmentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskAttachmentApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task.
             var attachmentId = attachmentId_example;  // string | The id of the attachment to be retrieved.
 
@@ -244,7 +256,7 @@ No authorization required
 
 <a name="getattachmentdata"></a>
 # **GetAttachmentData**
-> System.IO.Stream GetAttachmentData (string id, string attachmentId)
+> FileParameter GetAttachmentData (string id, string attachmentId)
 
 Get (Binary)
 
@@ -254,6 +266,7 @@ Retrieves the binary content of a task attachment by task id and attachment id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -266,14 +279,17 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskAttachmentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskAttachmentApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task.
             var attachmentId = attachmentId_example;  // string | The id of the attachment to be retrieved.
 
             try
             {
                 // Get (Binary)
-                System.IO.Stream result = apiInstance.GetAttachmentData(id, attachmentId);
+                FileParameter result = apiInstance.GetAttachmentData(id, attachmentId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -296,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -328,6 +344,7 @@ Gets the attachments for a task.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -340,7 +357,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskAttachmentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskAttachmentApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to retrieve the attachments for.
 
             try

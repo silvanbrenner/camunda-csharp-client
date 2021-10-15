@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using FileParameter = Camunda.OpenApi.Client.Client.FileParameter;
 using OpenAPIDateConverter = Camunda.OpenApi.Client.Client.OpenAPIDateConverter;
 
 namespace Camunda.OpenApi.Client.Model
@@ -48,7 +49,7 @@ namespace Camunda.OpenApi.Client.Model
             this.Key = key;
             this.Name = name;
             this.Category = category;
-            this.Version = version;
+            this._Version = version;
             this.Resource = resource;
             this.DeploymentId = deploymentId;
             this.TenantId = tenantId;
@@ -87,7 +88,7 @@ namespace Camunda.OpenApi.Client.Model
         /// </summary>
         /// <value>The version of the decision requirements definition that the engine assigned to it.</value>
         [DataMember(Name = "version", EmitDefaultValue = true)]
-        public int? Version { get; set; }
+        public int? _Version { get; set; }
 
         /// <summary>
         /// The file name of the decision requirements definition.
@@ -122,7 +123,7 @@ namespace Camunda.OpenApi.Client.Model
             sb.Append("  Key: ").Append(Key).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Category: ").Append(Category).Append("\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
+            sb.Append("  _Version: ").Append(_Version).Append("\n");
             sb.Append("  Resource: ").Append(Resource).Append("\n");
             sb.Append("  DeploymentId: ").Append(DeploymentId).Append("\n");
             sb.Append("  TenantId: ").Append(TenantId).Append("\n");
@@ -181,9 +182,9 @@ namespace Camunda.OpenApi.Client.Model
                     this.Category.Equals(input.Category))
                 ) && 
                 (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
+                    this._Version == input._Version ||
+                    (this._Version != null &&
+                    this._Version.Equals(input._Version))
                 ) && 
                 (
                     this.Resource == input.Resource ||
@@ -219,8 +220,8 @@ namespace Camunda.OpenApi.Client.Model
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Category != null)
                     hashCode = hashCode * 59 + this.Category.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this._Version != null)
+                    hashCode = hashCode * 59 + this._Version.GetHashCode();
                 if (this.Resource != null)
                     hashCode = hashCode * 59 + this.Resource.GetHashCode();
                 if (this.DeploymentId != null)

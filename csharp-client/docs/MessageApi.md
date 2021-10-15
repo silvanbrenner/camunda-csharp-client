@@ -19,6 +19,7 @@ Correlates a message to the process engine to either trigger a message start eve
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -31,7 +32,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new MessageApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new MessageApi(httpClient, config, httpClientHandler);
             var correlationMessageDto = new CorrelationMessageDto(); // CorrelationMessageDto |  (optional) 
 
             try

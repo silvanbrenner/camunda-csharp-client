@@ -20,6 +20,7 @@ Retrieves a report about a decision definition and finished decision instances r
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -32,7 +33,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricDecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricDecisionDefinitionApi(httpClient, config, httpClientHandler);
             var decisionDefinitionIdIn = decisionDefinitionIdIn_example;  // string | Filter by decision definition ids. Must be a comma-separated list of decision definition ids. (optional) 
             var decisionDefinitionKeyIn = decisionDefinitionKeyIn_example;  // string | Filter by decision definition keys. Must be a comma-separated list of decision definition keys. (optional) 
             var tenantIdIn = tenantIdIn_example;  // string | Filter by a comma-separated list of tenant ids. A decision definition must have one of the given tenant  ids. (optional) 
@@ -108,6 +112,7 @@ Queries for the number of report results about a decision definition and finishe
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -120,7 +125,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricDecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricDecisionDefinitionApi(httpClient, config, httpClientHandler);
             var decisionDefinitionIdIn = decisionDefinitionIdIn_example;  // string | Filter by decision definition ids. Must be a comma-separated list of decision definition ids. (optional) 
             var decisionDefinitionKeyIn = decisionDefinitionKeyIn_example;  // string | Filter by decision definition keys. Must be a comma-separated list of decision definition keys. (optional) 
             var tenantIdIn = tenantIdIn_example;  // string | Filter by a comma-separated list of tenant ids. A decision definition must have one of the given tenant  ids. (optional) 

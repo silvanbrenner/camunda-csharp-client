@@ -24,6 +24,7 @@ Retrieves a historic job log by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -36,7 +37,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricJobLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricJobLogApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the log entry.
 
             try
@@ -96,6 +100,7 @@ Queries for historic job logs that fulfill the given parameters. The size of the
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -108,7 +113,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricJobLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricJobLogApi(httpClient, config, httpClientHandler);
             var logId = logId_example;  // string | Filter by historic job log id. (optional) 
             var jobId = jobId_example;  // string | Filter by job id. (optional) 
             var jobExceptionMessage = jobExceptionMessage_example;  // string | Filter by job exception message. (optional) 
@@ -218,6 +226,7 @@ Queries for the number of historic job logs that fulfill the given parameters. T
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -230,7 +239,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricJobLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricJobLogApi(httpClient, config, httpClientHandler);
             var logId = logId_example;  // string | Filter by historic job log id. (optional) 
             var jobId = jobId_example;  // string | Filter by job id. (optional) 
             var jobExceptionMessage = jobExceptionMessage_example;  // string | Filter by job exception message. (optional) 
@@ -332,6 +344,7 @@ Retrieves the corresponding exception stacktrace to the passed historic job log 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -344,7 +357,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricJobLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricJobLogApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the historic job log to get the exception stacktrace for.
 
             try
@@ -404,6 +420,7 @@ Queries for historic job logs that fulfill the given parameters. This method is 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -416,7 +433,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricJobLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricJobLogApi(httpClient, config, httpClientHandler);
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
             var maxResults = 56;  // int? | Pagination of results. Specifies the maximum number of results to return. Will return less results if there are no more results left. (optional) 
             var historicJobLogQueryDto = new HistoricJobLogQueryDto(); // HistoricJobLogQueryDto |  (optional) 
@@ -480,6 +500,7 @@ Queries for the number of historic job logs that fulfill the given parameters. T
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -492,7 +513,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricJobLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricJobLogApi(httpClient, config, httpClientHandler);
             var historicJobLogQueryDto = new HistoricJobLogQueryDto(); // HistoricJobLogQueryDto |  (optional) 
 
             try

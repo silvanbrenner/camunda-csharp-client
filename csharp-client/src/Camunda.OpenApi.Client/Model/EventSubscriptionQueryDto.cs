@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using FileParameter = Camunda.OpenApi.Client.Client.FileParameter;
 using OpenAPIDateConverter = Camunda.OpenApi.Client.Client.OpenAPIDateConverter;
 
 namespace Camunda.OpenApi.Client.Model
@@ -63,6 +64,7 @@ namespace Camunda.OpenApi.Client.Model
             Conditional = 4
 
         }
+
 
         /// <summary>
         /// The type of the event subscription.

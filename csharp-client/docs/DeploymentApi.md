@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="createdeployment"></a>
 # **CreateDeployment**
-> DeploymentWithDefinitionsDto CreateDeployment (string tenantId = null, string deploymentSource = null, bool? deployChangedOnly = null, bool? enableDuplicateFiltering = null, string deploymentName = null, DateTime? deploymentActivationTime = null, System.IO.Stream data = null)
+> DeploymentWithDefinitionsDto CreateDeployment (string tenantId = null, string deploymentSource = null, bool? deployChangedOnly = null, bool? enableDuplicateFiltering = null, string deploymentName = null, DateTime? deploymentActivationTime = null, FileParameter data = null)
 
 Create
 
@@ -27,6 +27,7 @@ Creates a deployment.  **Security Consideration**  Deployments can contain custo
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -39,14 +40,17 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DeploymentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DeploymentApi(httpClient, config, httpClientHandler);
             var tenantId = tenantId_example;  // string | The tenant id for the deployment to be created. (optional) 
             var deploymentSource = deploymentSource_example;  // string | The source for the deployment to be created. (optional) 
             var deployChangedOnly = true;  // bool? | A flag indicating whether the process engine should perform duplicate checking on a per-resource basis. If set to true, only those resources that have actually changed are deployed. Checks are made against resources included previous deployments of the same name and only against the latest versions of those resources. If set to true, the option enable-duplicate-filtering is overridden and set to true. (optional)  (default to false)
             var enableDuplicateFiltering = true;  // bool? | A flag indicating whether the process engine should perform duplicate checking for the deployment or not. This allows you to check if a deployment with the same name and the same resouces already exists and if true, not create a new deployment but instead return the existing deployment. The default value is false. (optional)  (default to false)
             var deploymentName = deploymentName_example;  // string | The name for the deployment to be created. (optional) 
             var deploymentActivationTime = 2013-10-20T19:20:30+01:00;  // DateTime? | Sets the date on which the process definitions contained in this deployment will be activated. This means that all process definitions will be deployed as usual, but they will be suspended from the start until the given activation date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
-            var data = BINARY_DATA_HERE;  // System.IO.Stream | The binary data to create the deployment resource. It is possible to have more than one form part with different form part names for the binary data to create a deployment. (optional) 
+            var data = BINARY_DATA_HERE;  // FileParameter | The binary data to create the deployment resource. It is possible to have more than one form part with different form part names for the binary data to create a deployment. (optional) 
 
             try
             {
@@ -75,7 +79,7 @@ Name | Type | Description  | Notes
  **enableDuplicateFiltering** | **bool?**| A flag indicating whether the process engine should perform duplicate checking for the deployment or not. This allows you to check if a deployment with the same name and the same resouces already exists and if true, not create a new deployment but instead return the existing deployment. The default value is false. | [optional] [default to false]
  **deploymentName** | **string**| The name for the deployment to be created. | [optional] 
  **deploymentActivationTime** | **DateTime?**| Sets the date on which the process definitions contained in this deployment will be activated. This means that all process definitions will be deployed as usual, but they will be suspended from the start until the given activation date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
- **data** | **System.IO.Stream****System.IO.Stream**| The binary data to create the deployment resource. It is possible to have more than one form part with different form part names for the binary data to create a deployment. | [optional] 
+ **data** | **FileParameter****FileParameter**| The binary data to create the deployment resource. It is possible to have more than one form part with different form part names for the binary data to create a deployment. | [optional] 
 
 ### Return type
 
@@ -111,6 +115,7 @@ Deletes a deployment by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -123,7 +128,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DeploymentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DeploymentApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the deployment to be deleted.
             var cascade = true;  // bool? | `true`, if all process instances, historic process instances and jobs for this deployment should be deleted. (optional)  (default to false)
             var skipCustomListeners = true;  // bool? | `true`, if only the built-in ExecutionListeners should be notified with the end event. (optional)  (default to false)
@@ -188,6 +196,7 @@ Retrieves a deployment by id, according to the `Deployment` interface of the eng
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -200,7 +209,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DeploymentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DeploymentApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the deployment.
 
             try
@@ -260,6 +272,7 @@ Retrieves a deployment resource by resource id for the given deployment.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -272,7 +285,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DeploymentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DeploymentApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the deployment
             var resourceId = resourceId_example;  // string | The id of the deployment resource
 
@@ -324,7 +340,7 @@ No authorization required
 
 <a name="getdeploymentresourcedata"></a>
 # **GetDeploymentResourceData**
-> System.IO.Stream GetDeploymentResourceData (string id, string resourceId)
+> FileParameter GetDeploymentResourceData (string id, string resourceId)
 
 Get Resource (Binary)
 
@@ -334,6 +350,7 @@ Retrieves the binary content of a deployment resource for the given deployment b
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -346,14 +363,17 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DeploymentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DeploymentApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the deployment.
             var resourceId = resourceId_example;  // string | The id of the deployment resource.
 
             try
             {
                 // Get Resource (Binary)
-                System.IO.Stream result = apiInstance.GetDeploymentResourceData(id, resourceId);
+                FileParameter result = apiInstance.GetDeploymentResourceData(id, resourceId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -376,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -408,6 +428,7 @@ Retrieves all deployment resources of a given deployment.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -420,7 +441,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DeploymentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DeploymentApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the deployment to retrieve the deployment resources for.
 
             try
@@ -480,6 +504,7 @@ Queries for deployments that fulfill given parameters. Parameters may be the pro
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -492,7 +517,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DeploymentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DeploymentApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | Filter by deployment id (optional) 
             var name = name_example;  // string | Filter by the deployment name. Exact match. (optional) 
             var nameLike = nameLike_example;  // string | Filter by the deployment name that the parameter is a substring of. The parameter can include the wildcard `%` to express like-strategy such as: starts with (`%`name), ends with (name`%`) or contains (`%`name`%`). (optional) 
@@ -578,6 +606,7 @@ Queries for the number of deployments that fulfill given parameters. Takes the s
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -590,7 +619,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DeploymentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DeploymentApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | Filter by deployment id (optional) 
             var name = name_example;  // string | Filter by the deployment name. Exact match. (optional) 
             var nameLike = nameLike_example;  // string | Filter by the deployment name that the parameter is a substring of. The parameter can include the wildcard `%` to express like-strategy such as: starts with (`%`name), ends with (name`%`) or contains (`%`name`%`). (optional) 
@@ -668,6 +700,7 @@ Re-deploys an existing deployment.  The deployment resources to re-deploy can be
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -680,7 +713,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DeploymentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DeploymentApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the deployment to re-deploy.
             var redeploymentDto = new RedeploymentDto(); // RedeploymentDto |  (optional) 
 

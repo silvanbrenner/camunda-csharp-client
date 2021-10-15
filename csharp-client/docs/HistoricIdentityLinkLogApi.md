@@ -20,6 +20,7 @@ Queries for historic identity link logs that fulfill given parameters. The size 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -32,7 +33,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricIdentityLinkLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricIdentityLinkLogApi(httpClient, config, httpClientHandler);
             var type = type_example;  // string | Restricts to identity links that have the given type (candidate/assignee/owner). (optional) 
             var userId = userId_example;  // string | Restricts to identity links that have the given user id. (optional) 
             var groupId = groupId_example;  // string | Restricts to identity links that have the given group id. (optional) 
@@ -122,6 +126,7 @@ Queries for the number of historic identity link logs that fulfill the given par
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -134,7 +139,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricIdentityLinkLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricIdentityLinkLogApi(httpClient, config, httpClientHandler);
             var type = type_example;  // string | Restricts to identity links that have the given type (candidate/assignee/owner). (optional) 
             var userId = userId_example;  // string | Restricts to identity links that have the given user id. (optional) 
             var groupId = groupId_example;  // string | Restricts to identity links that have the given group id. (optional) 

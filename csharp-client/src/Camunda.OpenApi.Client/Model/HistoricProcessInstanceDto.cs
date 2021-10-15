@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using FileParameter = Camunda.OpenApi.Client.Client.FileParameter;
 using OpenAPIDateConverter = Camunda.OpenApi.Client.Client.OpenAPIDateConverter;
 
 namespace Camunda.OpenApi.Client.Model
@@ -69,6 +70,7 @@ namespace Camunda.OpenApi.Client.Model
             INTERNALLYTERMINATED = 5
 
         }
+
 
         /// <summary>
         /// Last state of the process instance, possible values are:  &#x60;ACTIVE&#x60; - running process instance  &#x60;SUSPENDED&#x60; - suspended process instances  &#x60;COMPLETED&#x60; - completed through normal end event  &#x60;EXTERNALLY_TERMINATED&#x60; - terminated externally, for instance through REST API  &#x60;INTERNALLY_TERMINATED&#x60; - terminated internally, for instance by terminating boundary event

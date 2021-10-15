@@ -35,6 +35,7 @@ Evaluates a given decision and returns the result. The input values of the decis
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -47,7 +48,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the decision definition to be evaluated.
             var evaluateDecisionDto = new EvaluateDecisionDto(); // EvaluateDecisionDto |  (optional) 
 
@@ -109,6 +113,7 @@ Evaluates the latest version of the decision definition which belongs to no tena
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -121,7 +126,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the decision definition (the latest version thereof) to be evaluated.
             var evaluateDecisionDto = new EvaluateDecisionDto(); // EvaluateDecisionDto |  (optional) 
 
@@ -183,6 +191,7 @@ Evaluates the latest version of the decision definition for tenant. The input va
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -195,7 +204,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the decision definition (the latest version thereof) to be evaluated.
             var tenantId = tenantId_example;  // string | The id of the tenant the decision definition belongs to.
             var evaluateDecisionDto = new EvaluateDecisionDto(); // EvaluateDecisionDto |  (optional) 
@@ -259,6 +271,7 @@ Retrieves a decision definition by id, according to the `DecisionDefinition` int
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -271,7 +284,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the decision definition to be retrieved.
 
             try
@@ -331,6 +347,7 @@ Retrieves the latest version of the decision definition which belongs to no tena
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -343,7 +360,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the decision definition (the latest version thereof) to be retrieved.
 
             try
@@ -403,6 +423,7 @@ Retrieves the latest version of the decision definition for tenant
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -415,7 +436,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the decision definition (the latest version thereof) to be retrieved.
             var tenantId = tenantId_example;  // string | The id of the tenant the decision definition belongs to.
 
@@ -467,7 +491,7 @@ No authorization required
 
 <a name="getdecisiondefinitiondiagram"></a>
 # **GetDecisionDefinitionDiagram**
-> System.IO.Stream GetDecisionDefinitionDiagram (string id)
+> FileParameter GetDecisionDefinitionDiagram (string id)
 
 Get Diagram
 
@@ -477,6 +501,7 @@ Retrieves the diagram of a decision definition.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -489,13 +514,16 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition.
 
             try
             {
                 // Get Diagram
-                System.IO.Stream result = apiInstance.GetDecisionDefinitionDiagram(id);
+                FileParameter result = apiInstance.GetDecisionDefinitionDiagram(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -517,7 +545,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -540,7 +568,7 @@ No authorization required
 
 <a name="getdecisiondefinitiondiagrambykey"></a>
 # **GetDecisionDefinitionDiagramByKey**
-> System.IO.Stream GetDecisionDefinitionDiagramByKey (string key)
+> FileParameter GetDecisionDefinitionDiagramByKey (string key)
 
 Get Diagram By Key
 
@@ -550,6 +578,7 @@ Returns the diagram for the latest version of the decision definition which belo
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -562,13 +591,16 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the decision definition (the latest version thereof) to be retrieved.
 
             try
             {
                 // Get Diagram By Key
-                System.IO.Stream result = apiInstance.GetDecisionDefinitionDiagramByKey(key);
+                FileParameter result = apiInstance.GetDecisionDefinitionDiagramByKey(key);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -590,7 +622,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -613,7 +645,7 @@ No authorization required
 
 <a name="getdecisiondefinitiondiagrambykeyandtenant"></a>
 # **GetDecisionDefinitionDiagramByKeyAndTenant**
-> System.IO.Stream GetDecisionDefinitionDiagramByKeyAndTenant (string key, string tenantId)
+> FileParameter GetDecisionDefinitionDiagramByKeyAndTenant (string key, string tenantId)
 
 Get Diagram By Key And Tenant
 
@@ -623,6 +655,7 @@ Returns the XML of the latest version of the decision definition for tenant.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -635,14 +668,17 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the decision definition (the latest version thereof) to be retrieved.
             var tenantId = tenantId_example;  // string | The id of the tenant the decision definition belongs to.
 
             try
             {
                 // Get Diagram By Key And Tenant
-                System.IO.Stream result = apiInstance.GetDecisionDefinitionDiagramByKeyAndTenant(key, tenantId);
+                FileParameter result = apiInstance.GetDecisionDefinitionDiagramByKeyAndTenant(key, tenantId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -665,7 +701,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -698,6 +734,7 @@ Retrieves the DMN XML of a decision definition.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -710,7 +747,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the decision definition.
 
             try
@@ -770,6 +810,7 @@ Retrieves the XML for the latest version of the decision definition which belong
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -782,7 +823,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the decision definition (the latest version thereof).
 
             try
@@ -842,6 +886,7 @@ Retrieves the XML of the latest version of the decision definition for tenant
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -854,7 +899,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the decision definition (the latest version thereof).
             var tenantId = tenantId_example;  // string | The id of the tenant the decision definition belongs to.
 
@@ -916,6 +964,7 @@ Queries for decision definitions that fulfill given parameters. Parameters may b
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -928,7 +977,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionDefinitionApi(httpClient, config, httpClientHandler);
             var sortBy = sortBy_example;  // string | Sort the results lexicographically by a given criterion. Must be used in conjunction with the sortOrder parameter. (optional) 
             var sortOrder = sortOrder_example;  // string | Sort the results in a given order. Values may be asc for ascending order or desc for descending order. Must be used in conjunction with the sortBy parameter. (optional) 
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
@@ -1040,6 +1092,7 @@ Requests the number of decision definitions that fulfill the query criteria. Tak
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1052,7 +1105,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionDefinitionApi(httpClient, config, httpClientHandler);
             var decisionDefinitionId = decisionDefinitionId_example;  // string | Filter by decision definition id. (optional) 
             var decisionDefinitionIdIn = decisionDefinitionIdIn_example;  // string | Filter by decision definition ids. (optional) 
             var name = name_example;  // string | Filter by decision definition name. (optional) 
@@ -1156,6 +1212,7 @@ Updates history time to live for decision definition. The field is used within [
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1168,7 +1225,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the decision definition to change history time to live.
             var historyTimeToLiveDto = new HistoryTimeToLiveDto(); // HistoryTimeToLiveDto |  (optional) 
 
@@ -1230,6 +1290,7 @@ Updates the latest version of the decision definition which belongs to no tenant
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1242,7 +1303,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the decision definitions to change history time to live.
             var historyTimeToLiveDto = new HistoryTimeToLiveDto(); // HistoryTimeToLiveDto |  (optional) 
 
@@ -1304,6 +1368,7 @@ Updates the latest version of the decision definition for tenant. The field is u
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1316,7 +1381,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the decision definitions to change history time to live.
             var tenantId = tenantId_example;  // string | The id of the tenant the decision definition belongs to.
             var historyTimeToLiveDto = new HistoryTimeToLiveDto(); // HistoryTimeToLiveDto |  (optional) 

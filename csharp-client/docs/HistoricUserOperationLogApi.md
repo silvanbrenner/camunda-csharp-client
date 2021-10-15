@@ -22,6 +22,7 @@ Clear the annotation which was previously set for auditing reasons.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -34,7 +35,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricUserOperationLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricUserOperationLogApi(httpClient, config, httpClientHandler);
             var operationId = operationId_example;  // string | The operation id of the operation log to be updated.
 
             try
@@ -93,6 +97,7 @@ Queries for the number of user operation log entries that fulfill the given para
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -105,7 +110,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricUserOperationLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricUserOperationLogApi(httpClient, config, httpClientHandler);
             var deploymentId = deploymentId_example;  // string | Filter by deployment id. (optional) 
             var processDefinitionId = processDefinitionId_example;  // string | Filter by process definition id. (optional) 
             var processDefinitionKey = processDefinitionKey_example;  // string | Filter by process definition key. (optional) 
@@ -209,6 +217,7 @@ Queries for user operation log entries that fulfill the given parameters. The si
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -221,7 +230,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricUserOperationLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricUserOperationLogApi(httpClient, config, httpClientHandler);
             var deploymentId = deploymentId_example;  // string | Filter by deployment id. (optional) 
             var processDefinitionId = processDefinitionId_example;  // string | Filter by process definition id. (optional) 
             var processDefinitionKey = processDefinitionKey_example;  // string | Filter by process definition key. (optional) 
@@ -333,6 +345,7 @@ Set an annotation for auditing reasons.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -345,7 +358,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricUserOperationLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricUserOperationLogApi(httpClient, config, httpClientHandler);
             var operationId = operationId_example;  // string | The operation id of the operation log to be updated.
             var annotationDto = new AnnotationDto(); // AnnotationDto |  (optional) 
 

@@ -31,7 +31,7 @@ namespace Camunda.OpenApi.Client.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.0.0";
+        public const string Version = "1.2.1";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -67,7 +67,7 @@ namespace Camunda.OpenApi.Client.Client
         /// Defines the base path of the target API server.
         /// Example: http://localhost:3000/v1/
         /// </summary>
-        private String _basePath;
+        private string _basePath;
 
         /// <summary>
         /// Gets or sets the API key based on the authentication name.
@@ -101,7 +101,7 @@ namespace Camunda.OpenApi.Client.Client
         public Configuration()
         {
             Proxy = null;
-            UserAgent = "OpenAPI-Generator/1.0.0/csharp";
+            UserAgent = "OpenAPI-Generator/1.2.1/csharp";
             BasePath = "http://localhost:8080/engine-rest";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -512,13 +512,13 @@ namespace Camunda.OpenApi.Client.Client
         /// <summary>
         /// Returns a string with essential information for debugging.
         /// </summary>
-        public static String ToDebugReport()
+        public static string ToDebugReport()
         {
-            String report = "C# SDK (Camunda.OpenApi.Client) Debug Report:\n";
+            string report = "C# SDK (Camunda.OpenApi.Client) Debug Report:\n";
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 7.16.0\n";
-            report += "    SDK Package Version: 1.0.0\n";
+            report += "    SDK Package Version: 1.2.1\n";
 
             return report;
         }

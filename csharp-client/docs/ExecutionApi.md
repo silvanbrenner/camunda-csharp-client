@@ -34,6 +34,7 @@ Creates a custom incident with given properties.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -46,7 +47,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExecutionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExecutionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the execution to create a new incident for.
             var createIncidentDto = new CreateIncidentDto(); // CreateIncidentDto |  (optional) 
 
@@ -108,6 +112,7 @@ Deletes a variable in the context of a given execution by id. Deletion does not 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -120,7 +125,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExecutionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExecutionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the execution to delete the variable from.
             var varName = varName_example;  // string | The name of the variable to delete.
 
@@ -180,6 +188,7 @@ Retrieves an execution by id, according to the `Execution` interface in the engi
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -192,7 +201,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExecutionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExecutionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the execution to be retrieved.
 
             try
@@ -252,6 +264,7 @@ Queries for the executions that fulfill given parameters. Parameters may be stat
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -264,7 +277,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExecutionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExecutionApi(httpClient, config, httpClientHandler);
             var businessKey = businessKey_example;  // string | Filter by the business key of the process instances the executions belong to. (optional) 
             var processDefinitionId = processDefinitionId_example;  // string | Filter by the process definition the executions run on. (optional) 
             var processDefinitionKey = processDefinitionKey_example;  // string | Filter by the key of the process definition the executions run on. (optional) 
@@ -366,6 +382,7 @@ Queries for the number of executions that fulfill given parameters. Takes the sa
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -378,7 +395,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExecutionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExecutionApi(httpClient, config, httpClientHandler);
             var businessKey = businessKey_example;  // string | Filter by the business key of the process instances the executions belong to. (optional) 
             var processDefinitionId = processDefinitionId_example;  // string | Filter by the process definition the executions run on. (optional) 
             var processDefinitionKey = processDefinitionKey_example;  // string | Filter by the key of the process definition the executions run on. (optional) 
@@ -472,6 +492,7 @@ Retrieves a variable from the context of a given execution by id. Does not trave
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -484,7 +505,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExecutionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExecutionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the execution to retrieve the variable from.
             var varName = varName_example;  // string | The name of the variable to get.
             var deserializeValue = true;  // bool? | Determines whether serializable variable values (typically variables that store custom Java objects) should be deserialized on server side (default `true`).  If set to `true`, a serializable variable will be deserialized on server side and transformed to JSON using [Jackson's](https://github.com/FasterXML/jackson) POJO/bean property introspection feature. Note that this requires the Java classes of the variable value to be on the REST API's classpath. If set to `false`, a serializable variable will be returned in its serialized format. For example, a variable that is serialized as XML will be returned as a JSON string containing XML.  **Note:** While `true` is the default value for reasons of backward compatibility, we recommend setting this parameter to `false` when developing web applications that are independent of the Java process applications deployed to the engine. (optional) 
@@ -538,7 +562,7 @@ No authorization required
 
 <a name="getlocalexecutionvariablebinary"></a>
 # **GetLocalExecutionVariableBinary**
-> System.IO.Stream GetLocalExecutionVariableBinary (string id, string varName)
+> FileParameter GetLocalExecutionVariableBinary (string id, string varName)
 
 Get Local Execution Variable (Binary)
 
@@ -548,6 +572,7 @@ Retrieves a binary variable from the context of a given execution by id. Does no
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -560,14 +585,17 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExecutionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExecutionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the execution to retrieve the variable from.
             var varName = varName_example;  // string | The name of the variable to get.
 
             try
             {
                 // Get Local Execution Variable (Binary)
-                System.IO.Stream result = apiInstance.GetLocalExecutionVariableBinary(id, varName);
+                FileParameter result = apiInstance.GetLocalExecutionVariableBinary(id, varName);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -590,7 +618,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -623,6 +651,7 @@ Retrieves all variables of a given execution by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -635,7 +664,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExecutionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExecutionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the execution to retrieve the variables from.
             var deserializeValues = true;  // bool? | Determines whether serializable variable values (typically variables that store custom Java objects) should be deserialized on server side (default `true`).  If set to `true`, a serializable variable will be deserialized on server side and transformed to JSON using [Jackson's](https://github.com/FasterXML/jackson) POJO/bean property introspection feature. Note that this requires the Java classes of the variable value to be on the REST API's classpath.  If set to `false`, a serializable variable will be returned in its serialized format. For example, a variable that is serialized as XML will be returned as a JSON string containing XML.  **Note:** While `true` is the default value for reasons of backward compatibility, we recommend setting this parameter to `false` when developing web applications that are independent of the Java process applications deployed to the engine. (optional) 
 
@@ -697,6 +729,7 @@ Retrieves a message event subscription for a given execution by id and a message
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -709,7 +742,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExecutionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExecutionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the execution that holds the subscription.
             var messageName = messageName_example;  // string | The name of the message that the subscription corresponds to.
 
@@ -771,6 +807,7 @@ Updates or deletes the variables in the context of an execution by id. The updat
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -783,7 +820,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExecutionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExecutionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the execution to set variables for.
             var patchVariablesDto = new PatchVariablesDto(); // PatchVariablesDto |  (optional) 
 
@@ -845,6 +885,7 @@ Sets a variable in the context of a given execution by id. Update does not propa
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -857,7 +898,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExecutionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExecutionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the execution to set the variable for.
             var varName = varName_example;  // string | The name of the variable to set.
             var variableValueDto = new VariableValueDto(); // VariableValueDto |  (optional) 
@@ -920,6 +964,7 @@ Queries for executions that fulfill given parameters through a JSON object. This
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -932,7 +977,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExecutionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExecutionApi(httpClient, config, httpClientHandler);
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
             var maxResults = 56;  // int? | Pagination of results. Specifies the maximum number of results to return. Will return less results if there are no more results left. (optional) 
             var executionQueryDto = new ExecutionQueryDto(); // ExecutionQueryDto |  (optional) 
@@ -996,6 +1044,7 @@ Queries for the number of executions that fulfill given parameters. This method 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1008,7 +1057,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExecutionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExecutionApi(httpClient, config, httpClientHandler);
             var executionQueryDto = new ExecutionQueryDto(); // ExecutionQueryDto |  (optional) 
 
             try
@@ -1058,7 +1110,7 @@ No authorization required
 
 <a name="setlocalexecutionvariablebinary"></a>
 # **SetLocalExecutionVariableBinary**
-> void SetLocalExecutionVariableBinary (string id, string varName, System.IO.Stream data = null, string valueType = null)
+> void SetLocalExecutionVariableBinary (string id, string varName, FileParameter data = null, string valueType = null)
 
 Post Local Execution Variable (Binary)
 
@@ -1068,6 +1120,7 @@ Sets the serialized value for a binary variable or the binary value for a file v
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1080,10 +1133,13 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExecutionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExecutionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the execution to set the variable for.
             var varName = varName_example;  // string | The name of the variable to set.
-            var data = BINARY_DATA_HERE;  // System.IO.Stream | The binary data to be set. For File variables, this multipart can contain the filename, binary value and MIME type of the file variable to be set Only the filename is mandatory. (optional) 
+            var data = BINARY_DATA_HERE;  // FileParameter | The binary data to be set. For File variables, this multipart can contain the filename, binary value and MIME type of the file variable to be set Only the filename is mandatory. (optional) 
             var valueType = valueType_example;  // string | The name of the variable type. Either Bytes for a byte array variable or File for a file variable. (optional) 
 
             try
@@ -1108,7 +1164,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the execution to set the variable for. | 
  **varName** | **string**| The name of the variable to set. | 
- **data** | **System.IO.Stream****System.IO.Stream**| The binary data to be set. For File variables, this multipart can contain the filename, binary value and MIME type of the file variable to be set Only the filename is mandatory. | [optional] 
+ **data** | **FileParameter****FileParameter**| The binary data to be set. For File variables, this multipart can contain the filename, binary value and MIME type of the file variable to be set Only the filename is mandatory. | [optional] 
  **valueType** | **string**| The name of the variable type. Either Bytes for a byte array variable or File for a file variable. | [optional] 
 
 ### Return type
@@ -1145,6 +1201,7 @@ Signals an execution by id. Can for example be used to explicitly skip user task
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1157,7 +1214,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExecutionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExecutionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the execution to signal.
             var executionTriggerDto = new ExecutionTriggerDto(); // ExecutionTriggerDto |  (optional) 
 
@@ -1218,6 +1278,7 @@ Delivers a message to a specific execution by id, to trigger an existing message
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1230,7 +1291,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExecutionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExecutionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the execution to submit the message to.
             var messageName = messageName_example;  // string | The name of the message that the addressed subscription corresponds to.
             var executionTriggerDto = new ExecutionTriggerDto(); // ExecutionTriggerDto |  (optional) 

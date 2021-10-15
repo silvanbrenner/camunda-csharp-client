@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **FailedActivityId** | **string** | The id of the activity on which the last exception occurred. | [optional] 
 **CauseIncidentId** | **string** | The id of the associated cause incident which has been triggered. | [optional] 
 **RootCauseIncidentId** | **string** | The id of the associated root cause incident which has been triggered. | [optional] 
-**Configuration** | **string** | The payload of this incident. | [optional] 
+**_Configuration** | **string** | The payload of this incident. | [optional] 
 **TenantId** | **string** | The id of the tenant this incident is associated with. | [optional] 
 **IncidentMessage** | **string** | The message of this incident. | [optional] 
 **JobDefinitionId** | **string** | The job definition id the incident is associated with. | [optional] 

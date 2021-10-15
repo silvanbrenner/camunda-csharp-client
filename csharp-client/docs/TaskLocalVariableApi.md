@@ -25,6 +25,7 @@ Removes a local variable from a task by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -37,7 +38,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskLocalVariableApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskLocalVariableApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to delete the variable from.
             var varName = varName_example;  // string | The name of the variable to be removed.
 
@@ -98,6 +102,7 @@ Retrieves a variable from the context of a given task by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -110,7 +115,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskLocalVariableApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskLocalVariableApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to retrieve the variable from.
             var varName = varName_example;  // string | The name of the variable to get
             var deserializeValue = true;  // bool? | Determines whether serializable variable values (typically variables that store custom Java objects) should be deserialized on the server side (default `true`).  If set to `true`, a serializable variable will be deserialized on server side and transformed to JSON using [Jackson's](https://github.com/FasterXML/jackson) POJO/bean property introspection feature. Note that this requires the Java classes of the variable value to be on the REST API's classpath.  If set to `false`, a serializable variable will be returned in its serialized format. For example, a variable that is serialized as XML will be returned as a JSON string containing XML.  Note: While `true` is the default value for reasons of backward compatibility, we recommend setting this parameter to `false` when developing web applications that are independent of the Java process applications deployed to the engine. (optional)  (default to true)
@@ -165,7 +173,7 @@ No authorization required
 
 <a name="gettasklocalvariablebinary"></a>
 # **GetTaskLocalVariableBinary**
-> System.IO.Stream GetTaskLocalVariableBinary (string id, string varName)
+> FileParameter GetTaskLocalVariableBinary (string id, string varName)
 
 Get Local Task Variable (Binary)
 
@@ -175,6 +183,7 @@ Retrieves a binary variable from the context of a given task by id. Applicable f
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -187,14 +196,17 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskLocalVariableApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskLocalVariableApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to retrieve the variable for.
             var varName = varName_example;  // string | The name of the variable to retrieve.
 
             try
             {
                 // Get Local Task Variable (Binary)
-                System.IO.Stream result = apiInstance.GetTaskLocalVariableBinary(id, varName);
+                FileParameter result = apiInstance.GetTaskLocalVariableBinary(id, varName);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -217,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -250,6 +262,7 @@ Retrieves all variables of a given task by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -262,7 +275,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskLocalVariableApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskLocalVariableApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to retrieve the variables from.
             var deserializeValues = true;  // bool? | Determines whether serializable variable values (typically variables that store custom Java objects) should be deserialized on the server side (default `true`).  If set to `true`, a serializable variable will be deserialized on server side and transformed to JSON using [Jackson's](https://github.com/FasterXML/jackson) POJO/bean property introspection feature. Note that this requires the Java classes of the variable value to be on the REST API's classpath.  If set to `false`, a serializable variable will be returned in its serialized format. For example, a variable that is serialized as XML will be returned as a JSON string containing XML.  **Note:** While `true` is the default value for reasons of backward compatibility, we recommend setting this parameter to `false` when developing web applications that are independent of the Java process applications deployed to the engine. (optional)  (default to true)
 
@@ -324,6 +340,7 @@ Updates or deletes the variables in the context of a task. Updates precede delet
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -336,7 +353,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskLocalVariableApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskLocalVariableApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to set variables for.
             var patchVariablesDto = new PatchVariablesDto(); // PatchVariablesDto |  (optional) 
 
@@ -398,6 +418,7 @@ Sets a variable in the context of a given task.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -410,7 +431,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskLocalVariableApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskLocalVariableApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to set the variable for.
             var varName = varName_example;  // string | The name of the variable to set.
             var variableValueDto = new VariableValueDto(); // VariableValueDto |  (optional) 
@@ -464,7 +488,7 @@ No authorization required
 
 <a name="setbinarytasklocalvariable"></a>
 # **SetBinaryTaskLocalVariable**
-> void SetBinaryTaskLocalVariable (string id, string varName, System.IO.Stream data = null, string valueType = null)
+> void SetBinaryTaskLocalVariable (string id, string varName, FileParameter data = null, string valueType = null)
 
 Update Local Task Variable (Binary)
 
@@ -474,6 +498,7 @@ Sets the serialized value for a binary variable or the binary value for a file v
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -486,10 +511,13 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskLocalVariableApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskLocalVariableApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to retrieve the variable for.
             var varName = varName_example;  // string | The name of the variable to retrieve.
-            var data = BINARY_DATA_HERE;  // System.IO.Stream | The binary data to be set. For File variables, this multipart can contain the filename, binary value and MIME type of the file variable to be set Only the filename is mandatory. (optional) 
+            var data = BINARY_DATA_HERE;  // FileParameter | The binary data to be set. For File variables, this multipart can contain the filename, binary value and MIME type of the file variable to be set Only the filename is mandatory. (optional) 
             var valueType = valueType_example;  // string | The name of the variable type. Either Bytes for a byte array variable or File for a file variable. (optional) 
 
             try
@@ -514,7 +542,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the task to retrieve the variable for. | 
  **varName** | **string**| The name of the variable to retrieve. | 
- **data** | **System.IO.Stream****System.IO.Stream**| The binary data to be set. For File variables, this multipart can contain the filename, binary value and MIME type of the file variable to be set Only the filename is mandatory. | [optional] 
+ **data** | **FileParameter****FileParameter**| The binary data to be set. For File variables, this multipart can contain the filename, binary value and MIME type of the file variable to be set Only the filename is mandatory. | [optional] 
  **valueType** | **string**| The name of the variable type. Either Bytes for a byte array variable or File for a file variable. | [optional] 
 
 ### Return type

@@ -36,6 +36,7 @@ Lock an external task by a given id for a specified worker and amount of time.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -48,7 +49,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the external task.
             var lockExternalTaskDto = new LockExternalTaskDto(); // LockExternalTaskDto |  (optional) 
 
@@ -109,6 +113,7 @@ Completes an external task by id and updates process variables.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -121,7 +126,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to complete.
             var completeExternalTaskDto = new CompleteExternalTaskDto(); // CompleteExternalTaskDto |  (optional) 
 
@@ -184,6 +192,7 @@ Extends the timeout of the lock by a given amount of time.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -196,7 +205,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the external task.
             var extendLockOnExternalTaskDto = new ExtendLockOnExternalTaskDto(); // ExtendLockOnExternalTaskDto |  (optional) 
 
@@ -258,6 +270,7 @@ Fetches and locks a specific number of external tasks for execution by a worker.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -270,7 +283,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var fetchExternalTasksDto = new FetchExternalTasksDto(); // FetchExternalTasksDto |  (optional) 
 
             try
@@ -330,6 +346,7 @@ Retrieves an external task by id, corresponding to the `ExternalTask` interface 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -342,7 +359,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the external task to be retrieved.
 
             try
@@ -402,6 +422,7 @@ Retrieves the error details in the context of a running external task by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -414,7 +435,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the external task for which the error details should be retrieved.
 
             try
@@ -475,6 +499,7 @@ Queries for the external tasks that fulfill given parameters. Parameters may be 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -487,7 +512,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var externalTaskId = externalTaskId_example;  // string | Filter by an external task's id. (optional) 
             var externalTaskIdIn = externalTaskIdIn_example;  // string | Filter by the comma-separated list of external task ids. (optional) 
             var topicName = topicName_example;  // string | Filter by an external task topic. (optional) 
@@ -595,6 +623,7 @@ Queries for the number of external tasks that fulfill given parameters. Takes th
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -607,7 +636,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var externalTaskId = externalTaskId_example;  // string | Filter by an external task's id. (optional) 
             var externalTaskIdIn = externalTaskIdIn_example;  // string | Filter by the comma-separated list of external task ids. (optional) 
             var topicName = topicName_example;  // string | Filter by an external task topic. (optional) 
@@ -707,6 +739,7 @@ Queries for distinct topic names of external tasks that fulfill given parameters
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -719,7 +752,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var withLockedTasks = true;  // bool? | Only include external tasks that are currently locked (i.e., they have a lock time and it has not expired). Value may only be `true`, as `false` matches any external task. (optional) 
             var withUnlockedTasks = true;  // bool? | Only include external tasks that are currently not locked (i.e., they have no lock or it has expired). Value may only be `true`, as `false` matches any external task. (optional) 
             var withRetriesLeft = true;  // bool? | Only include external tasks that have a positive (&gt; 0) number of retries (or `null`). Value may only be `true`, as `false` matches any external task. (optional) 
@@ -783,6 +819,7 @@ Reports a business error in the context of a running external task by id. The er
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -795,7 +832,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the external task in which context a BPMN error is reported.
             var externalTaskBpmnError = new ExternalTaskBpmnError(); // ExternalTaskBpmnError |  (optional) 
 
@@ -858,6 +898,7 @@ Reports a failure to execute an external task by id. A number of retries and a t
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -870,7 +911,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the external task to report a failure for.
             var externalTaskFailureDto = new ExternalTaskFailureDto(); // ExternalTaskFailureDto |  (optional) 
 
@@ -933,6 +977,7 @@ Queries for external tasks that fulfill given parameters in the form of a JSON o
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -945,7 +990,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
             var maxResults = 56;  // int? | Pagination of results. Specifies the maximum number of results to return. Will return less results if there are no more results left. (optional) 
             var externalTaskQueryDto = new ExternalTaskQueryDto(); // ExternalTaskQueryDto |  (optional) 
@@ -1009,6 +1057,7 @@ Queries for the number of external tasks that fulfill given parameters. This met
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1021,7 +1070,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var externalTaskQueryDto = new ExternalTaskQueryDto(); // ExternalTaskQueryDto |  (optional) 
 
             try
@@ -1081,6 +1133,7 @@ Sets the priority of an existing external task by id. The default value of a pri
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1093,7 +1146,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the external task to set the priority for.
             var priorityDto = new PriorityDto(); // PriorityDto |  (optional) 
 
@@ -1154,6 +1210,7 @@ Sets the number of retries left to execute an external task by id. If retries ar
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1166,7 +1223,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the external task to set the number of retries for.
             var retriesDto = new RetriesDto(); // RetriesDto |  (optional) 
 
@@ -1228,6 +1288,7 @@ Sets the number of retries left to execute external tasks by id synchronously. I
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1240,7 +1301,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var setRetriesForExternalTasksDto = new SetRetriesForExternalTasksDto(); // SetRetriesForExternalTasksDto |  (optional) 
 
             try
@@ -1300,6 +1364,7 @@ Sets the number of retries left to execute external tasks by id asynchronously. 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1312,7 +1377,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var setRetriesForExternalTasksDto = new SetRetriesForExternalTasksDto(); // SetRetriesForExternalTasksDto |  (optional) 
 
             try
@@ -1373,6 +1441,7 @@ Unlocks an external task by id. Clears the task's lock expiration time and worke
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1385,7 +1454,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ExternalTaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ExternalTaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the external task to unlock.
 
             try

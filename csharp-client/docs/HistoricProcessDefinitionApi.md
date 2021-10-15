@@ -21,6 +21,7 @@ Retrieves a report about a process definition and finished process instances rel
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -33,7 +34,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricProcessDefinitionApi(httpClient, config, httpClientHandler);
             var processDefinitionIdIn = processDefinitionIdIn_example;  // string | Filter by process definition ids. Must be a comma-separated list of process definition ids. (optional) 
             var processDefinitionKeyIn = processDefinitionKeyIn_example;  // string | Filter by process definition keys. Must be a comma-separated list of process definition keys. (optional) 
             var tenantIdIn = tenantIdIn_example;  // string | Filter by a comma-separated list of tenant ids. A process definition must have one of the given  tenant ids. (optional) 
@@ -109,6 +113,7 @@ Queries for the number of report results about a process definition and finished
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -121,7 +126,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricProcessDefinitionApi(httpClient, config, httpClientHandler);
             var processDefinitionIdIn = processDefinitionIdIn_example;  // string | Filter by process definition ids. Must be a comma-separated list of process definition ids. (optional) 
             var processDefinitionKeyIn = processDefinitionKeyIn_example;  // string | Filter by process definition keys. Must be a comma-separated list of process definition keys. (optional) 
             var tenantIdIn = tenantIdIn_example;  // string | Filter by a comma-separated list of tenant ids. A process definition must have one of the given  tenant ids. (optional) 
@@ -189,6 +197,7 @@ Retrieves historic statistics of a given process definition, grouped by activiti
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -201,7 +210,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricProcessDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition.
             var canceled = true;  // bool? | Whether to include the number of canceled activity instances in the result or not. Valid values are `true` or `false`. Default: `false`. (optional) 
             var finished = true;  // bool? | Whether to include the number of finished activity instances in the result or not. Valid values are `true` or `false`. Default: `false`. (optional) 

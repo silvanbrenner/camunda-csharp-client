@@ -340,8 +340,8 @@ src/Camunda.OpenApi.Client/Client/ApiResponse.cs
 src/Camunda.OpenApi.Client/Client/ClientUtils.cs
 src/Camunda.OpenApi.Client/Client/Configuration.cs
 src/Camunda.OpenApi.Client/Client/ExceptionFactory.cs
+src/Camunda.OpenApi.Client/Client/FileParameter.cs
 src/Camunda.OpenApi.Client/Client/GlobalConfiguration.cs
-src/Camunda.OpenApi.Client/Client/HttpMethod.cs
 src/Camunda.OpenApi.Client/Client/IApiAccessor.cs
 src/Camunda.OpenApi.Client/Client/IAsynchronousClient.cs
 src/Camunda.OpenApi.Client/Client/IReadableConfiguration.cs
@@ -350,6 +350,7 @@ src/Camunda.OpenApi.Client/Client/Multimap.cs
 src/Camunda.OpenApi.Client/Client/OpenAPIDateConverter.cs
 src/Camunda.OpenApi.Client/Client/RequestOptions.cs
 src/Camunda.OpenApi.Client/Client/RetryConfiguration.cs
+src/Camunda.OpenApi.Client/Client/WebRequestPathBuilder.cs
 src/Camunda.OpenApi.Client/Model/AbstractOpenAPISchema.cs
 src/Camunda.OpenApi.Client/Model/AbstractSetRemovalTimeDto.cs
 src/Camunda.OpenApi.Client/Model/ActivityInstanceDto.cs

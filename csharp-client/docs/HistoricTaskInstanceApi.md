@@ -23,6 +23,7 @@ Retrieves a report of completed tasks. When the report type is set to `count`, t
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -35,7 +36,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricTaskInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricTaskInstanceApi(httpClient, config, httpClientHandler);
             var reportType = reportType_example;  // string | **Mandatory.** Specifies the kind of the report to execute. To retrieve a report about the duration of process instances the value must be set to `duration`. For a report of the completed tasks in a specific timespan the value must be set to `count`. (optional) 
             var periodUnit = periodUnit_example;  // string | When the report type is set to `duration`, this parameter is **mandatory**. Specifies the granularity of the report. Valid values are `month` and `quarter`. (optional) 
             var completedBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to tasks that were completed before the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
@@ -103,6 +107,7 @@ Queries for historic tasks that fulfill the given parameters. The size of the re
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -115,7 +120,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricTaskInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricTaskInstanceApi(httpClient, config, httpClientHandler);
             var taskId = taskId_example;  // string | Filter by task id. (optional) 
             var taskParentTaskId = taskParentTaskId_example;  // string | Filter by parent task id. (optional) 
             var processInstanceId = processInstanceId_example;  // string | Filter by process instance id. (optional) 
@@ -297,6 +305,7 @@ Queries for the number of historic tasks that fulfill the given parameters. Take
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -309,7 +318,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricTaskInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricTaskInstanceApi(httpClient, config, httpClientHandler);
             var taskId = taskId_example;  // string | Filter by task id. (optional) 
             var taskParentTaskId = taskParentTaskId_example;  // string | Filter by parent task id. (optional) 
             var processInstanceId = processInstanceId_example;  // string | Filter by process instance id. (optional) 
@@ -483,6 +495,7 @@ Queries for historic tasks that fulfill the given parameters. This method is sli
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -495,7 +508,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricTaskInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricTaskInstanceApi(httpClient, config, httpClientHandler);
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
             var maxResults = 56;  // int? | Pagination of results. Specifies the maximum number of results to return. Will return less results if there are no more results left. (optional) 
             var historicTaskInstanceQueryDto = new HistoricTaskInstanceQueryDto(); // HistoricTaskInstanceQueryDto |  (optional) 
@@ -559,6 +575,7 @@ Queries for the number of historic tasks that fulfill the given parameters. Take
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -571,7 +588,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricTaskInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricTaskInstanceApi(httpClient, config, httpClientHandler);
             var historicTaskInstanceQueryDto = new HistoricTaskInstanceQueryDto(); // HistoricTaskInstanceQueryDto |  (optional) 
 
             try

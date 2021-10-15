@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Category** | **string** | The category of the process definition. | [optional] 
 **Description** | **string** | The description of the process definition. | [optional] 
 **Name** | **string** | The name of the process definition. | [optional] 
-**Version** | **int?** | The version of the process definition that the engine assigned to it. | [optional] 
+**_Version** | **int?** | The version of the process definition that the engine assigned to it. | [optional] 
 **Resource** | **string** | The file name of the process definition. | [optional] 
 **DeploymentId** | **string** | The deployment id of the process definition. | [optional] 
 **Diagram** | **string** | The file name of the process definition diagram, if it exists. | [optional] 

@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using FileParameter = Camunda.OpenApi.Client.Client.FileParameter;
 using OpenAPIDateConverter = Camunda.OpenApi.Client.Client.OpenAPIDateConverter;
 
 namespace Camunda.OpenApi.Client.Model
@@ -37,7 +38,7 @@ namespace Camunda.OpenApi.Client.Model
         /// <param name="version">The version of the Rest API..</param>
         public VersionDto(string version = default(string))
         {
-            this.Version = version;
+            this._Version = version;
         }
 
         /// <summary>
@@ -45,7 +46,7 @@ namespace Camunda.OpenApi.Client.Model
         /// </summary>
         /// <value>The version of the Rest API.</value>
         [DataMember(Name = "version", EmitDefaultValue = true)]
-        public string Version { get; set; }
+        public string _Version { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -55,7 +56,7 @@ namespace Camunda.OpenApi.Client.Model
         {
             var sb = new StringBuilder();
             sb.Append("class VersionDto {\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
+            sb.Append("  _Version: ").Append(_Version).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,9 +92,9 @@ namespace Camunda.OpenApi.Client.Model
 
             return 
                 (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
+                    this._Version == input._Version ||
+                    (this._Version != null &&
+                    this._Version.Equals(input._Version))
                 );
         }
 
@@ -106,8 +107,8 @@ namespace Camunda.OpenApi.Client.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this._Version != null)
+                    hashCode = hashCode * 59 + this._Version.GetHashCode();
                 return hashCode;
             }
         }

@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Net.Mime;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -170,8 +171,8 @@ namespace Camunda.OpenApi.Client.Api
         /// </remarks>
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The id of the process definition.</param>
-        /// <returns>System.IO.Stream</returns>
-        System.IO.Stream GetDecisionDefinitionDiagram(string id);
+        /// <returns>FileParameter</returns>
+        FileParameter GetDecisionDefinitionDiagram(string id);
 
         /// <summary>
         /// Get Diagram
@@ -181,8 +182,8 @@ namespace Camunda.OpenApi.Client.Api
         /// </remarks>
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The id of the process definition.</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> GetDecisionDefinitionDiagramWithHttpInfo(string id);
+        /// <returns>ApiResponse of FileParameter</returns>
+        ApiResponse<FileParameter> GetDecisionDefinitionDiagramWithHttpInfo(string id);
         /// <summary>
         /// Get Diagram By Key
         /// </summary>
@@ -191,8 +192,8 @@ namespace Camunda.OpenApi.Client.Api
         /// </remarks>
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">The key of the decision definition (the latest version thereof) to be retrieved.</param>
-        /// <returns>System.IO.Stream</returns>
-        System.IO.Stream GetDecisionDefinitionDiagramByKey(string key);
+        /// <returns>FileParameter</returns>
+        FileParameter GetDecisionDefinitionDiagramByKey(string key);
 
         /// <summary>
         /// Get Diagram By Key
@@ -202,8 +203,8 @@ namespace Camunda.OpenApi.Client.Api
         /// </remarks>
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">The key of the decision definition (the latest version thereof) to be retrieved.</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> GetDecisionDefinitionDiagramByKeyWithHttpInfo(string key);
+        /// <returns>ApiResponse of FileParameter</returns>
+        ApiResponse<FileParameter> GetDecisionDefinitionDiagramByKeyWithHttpInfo(string key);
         /// <summary>
         /// Get Diagram By Key And Tenant
         /// </summary>
@@ -213,8 +214,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">The key of the decision definition (the latest version thereof) to be retrieved.</param>
         /// <param name="tenantId">The id of the tenant the decision definition belongs to.</param>
-        /// <returns>System.IO.Stream</returns>
-        System.IO.Stream GetDecisionDefinitionDiagramByKeyAndTenant(string key, string tenantId);
+        /// <returns>FileParameter</returns>
+        FileParameter GetDecisionDefinitionDiagramByKeyAndTenant(string key, string tenantId);
 
         /// <summary>
         /// Get Diagram By Key And Tenant
@@ -225,8 +226,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">The key of the decision definition (the latest version thereof) to be retrieved.</param>
         /// <param name="tenantId">The id of the tenant the decision definition belongs to.</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> GetDecisionDefinitionDiagramByKeyAndTenantWithHttpInfo(string key, string tenantId);
+        /// <returns>ApiResponse of FileParameter</returns>
+        ApiResponse<FileParameter> GetDecisionDefinitionDiagramByKeyAndTenantWithHttpInfo(string key, string tenantId);
         /// <summary>
         /// Get XML By Id
         /// </summary>
@@ -667,8 +668,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The id of the process definition.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> GetDecisionDefinitionDiagramAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of FileParameter</returns>
+        System.Threading.Tasks.Task<FileParameter> GetDecisionDefinitionDiagramAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Diagram
@@ -679,8 +680,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The id of the process definition.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetDecisionDefinitionDiagramWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (FileParameter)</returns>
+        System.Threading.Tasks.Task<ApiResponse<FileParameter>> GetDecisionDefinitionDiagramWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Diagram By Key
         /// </summary>
@@ -690,8 +691,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">The key of the decision definition (the latest version thereof) to be retrieved.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> GetDecisionDefinitionDiagramByKeyAsync(string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of FileParameter</returns>
+        System.Threading.Tasks.Task<FileParameter> GetDecisionDefinitionDiagramByKeyAsync(string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Diagram By Key
@@ -702,8 +703,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">The key of the decision definition (the latest version thereof) to be retrieved.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetDecisionDefinitionDiagramByKeyWithHttpInfoAsync(string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (FileParameter)</returns>
+        System.Threading.Tasks.Task<ApiResponse<FileParameter>> GetDecisionDefinitionDiagramByKeyWithHttpInfoAsync(string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Diagram By Key And Tenant
         /// </summary>
@@ -714,8 +715,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="key">The key of the decision definition (the latest version thereof) to be retrieved.</param>
         /// <param name="tenantId">The id of the tenant the decision definition belongs to.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> GetDecisionDefinitionDiagramByKeyAndTenantAsync(string key, string tenantId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of FileParameter</returns>
+        System.Threading.Tasks.Task<FileParameter> GetDecisionDefinitionDiagramByKeyAndTenantAsync(string key, string tenantId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Diagram By Key And Tenant
@@ -727,8 +728,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="key">The key of the decision definition (the latest version thereof) to be retrieved.</param>
         /// <param name="tenantId">The id of the tenant the decision definition belongs to.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetDecisionDefinitionDiagramByKeyAndTenantWithHttpInfoAsync(string key, string tenantId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (FileParameter)</returns>
+        System.Threading.Tasks.Task<ApiResponse<FileParameter>> GetDecisionDefinitionDiagramByKeyAndTenantWithHttpInfoAsync(string key, string tenantId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get XML By Id
         /// </summary>
@@ -1033,12 +1034,14 @@ namespace Camunda.OpenApi.Client.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class DecisionDefinitionApi : IDecisionDefinitionApi
+    public partial class DecisionDefinitionApi : IDisposable, IDecisionDefinitionApi
     {
         private Camunda.OpenApi.Client.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DecisionDefinitionApi"/> class.
+        /// **IMPORTANT** This will also create an istance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHander</see>.
         /// </summary>
         /// <returns></returns>
         public DecisionDefinitionApi() : this((string)null)
@@ -1047,24 +1050,31 @@ namespace Camunda.OpenApi.Client.Api
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DecisionDefinitionApi"/> class.
+        /// **IMPORTANT** This will also create an istance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHander</see>.
         /// </summary>
+        /// <param name="basePath">The target service's base path in URL format.</param>
+        /// <exception cref="ArgumentException"></exception>
         /// <returns></returns>
-        public DecisionDefinitionApi(String basePath)
+        public DecisionDefinitionApi(string basePath)
         {
             this.Configuration = Camunda.OpenApi.Client.Client.Configuration.MergeConfigurations(
                 Camunda.OpenApi.Client.Client.GlobalConfiguration.Instance,
                 new Camunda.OpenApi.Client.Client.Configuration { BasePath = basePath }
             );
-            this.Client = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.Client =  this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
             this.ExceptionFactory = Camunda.OpenApi.Client.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DecisionDefinitionApi"/> class
-        /// using Configuration object
+        /// Initializes a new instance of the <see cref="DecisionDefinitionApi"/> class using Configuration object.
+        /// **IMPORTANT** This will also create an istance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHander</see>.
         /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
+        /// <param name="configuration">An instance of Configuration.</param>
+        /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
         public DecisionDefinitionApi(Camunda.OpenApi.Client.Client.Configuration configuration)
         {
@@ -1074,8 +1084,78 @@ namespace Camunda.OpenApi.Client.Api
                 Camunda.OpenApi.Client.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.Client = this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
+            ExceptionFactory = Camunda.OpenApi.Client.Client.Configuration.DefaultExceptionFactory;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DecisionDefinitionApi"/> class.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public DecisionDefinitionApi(HttpClient client, HttpClientHandler handler = null) : this(client, (string)null, handler)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DecisionDefinitionApi"/> class.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="basePath">The target service's base path in URL format.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public DecisionDefinitionApi(HttpClient client, string basePath, HttpClientHandler handler = null)
+        {
+            if (client == null) throw new ArgumentNullException("client");
+
+            this.Configuration = Camunda.OpenApi.Client.Client.Configuration.MergeConfigurations(
+                Camunda.OpenApi.Client.Client.GlobalConfiguration.Instance,
+                new Camunda.OpenApi.Client.Client.Configuration { BasePath = basePath }
+            );
+            this.ApiClient = new Camunda.OpenApi.Client.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.Client =  this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
+            this.ExceptionFactory = Camunda.OpenApi.Client.Client.Configuration.DefaultExceptionFactory;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DecisionDefinitionApi"/> class using Configuration object.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="configuration">An instance of Configuration.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public DecisionDefinitionApi(HttpClient client, Camunda.OpenApi.Client.Client.Configuration configuration, HttpClientHandler handler = null)
+        {
+            if (configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+
+            this.Configuration = Camunda.OpenApi.Client.Client.Configuration.MergeConfigurations(
+                Camunda.OpenApi.Client.Client.GlobalConfiguration.Instance,
+                configuration
+            );
+            this.ApiClient = new Camunda.OpenApi.Client.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.Client = this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
             ExceptionFactory = Camunda.OpenApi.Client.Client.Configuration.DefaultExceptionFactory;
         }
 
@@ -1086,6 +1166,7 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public DecisionDefinitionApi(Camunda.OpenApi.Client.Client.ISynchronousClient client, Camunda.OpenApi.Client.Client.IAsynchronousClient asyncClient, Camunda.OpenApi.Client.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
@@ -1097,6 +1178,19 @@ namespace Camunda.OpenApi.Client.Api
             this.Configuration = configuration;
             this.ExceptionFactory = Camunda.OpenApi.Client.Client.Configuration.DefaultExceptionFactory;
         }
+
+        /// <summary>
+        /// Disposes resources if they were created by us
+        /// </summary>
+        public void Dispose()
+        {
+            this.ApiClient?.Dispose();
+        }
+
+        /// <summary>
+        /// Holds the ApiClient if created
+        /// </summary>
+        public Camunda.OpenApi.Client.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
@@ -1112,7 +1206,7 @@ namespace Camunda.OpenApi.Client.Api
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        public String GetBasePath()
+        public string GetBasePath()
         {
             return this.Configuration.BasePath;
         }
@@ -1167,12 +1261,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1229,12 +1323,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1290,12 +1384,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1352,12 +1446,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1419,12 +1513,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1488,12 +1582,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1548,11 +1642,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1606,11 +1700,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1663,11 +1757,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1721,11 +1815,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1784,11 +1878,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1849,11 +1943,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1886,10 +1980,10 @@ namespace Camunda.OpenApi.Client.Api
         /// </summary>
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The id of the process definition.</param>
-        /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream GetDecisionDefinitionDiagram(string id)
+        /// <returns>FileParameter</returns>
+        public FileParameter GetDecisionDefinitionDiagram(string id)
         {
-            Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream> localVarResponse = GetDecisionDefinitionDiagramWithHttpInfo(id);
+            Camunda.OpenApi.Client.Client.ApiResponse<FileParameter> localVarResponse = GetDecisionDefinitionDiagramWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -1898,8 +1992,8 @@ namespace Camunda.OpenApi.Client.Api
         /// </summary>
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The id of the process definition.</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        public Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream> GetDecisionDefinitionDiagramWithHttpInfo(string id)
+        /// <returns>ApiResponse of FileParameter</returns>
+        public Camunda.OpenApi.Client.Client.ApiResponse<FileParameter> GetDecisionDefinitionDiagramWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1907,11 +2001,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/octet-stream",
                 "*/*",
                 "application/json"
@@ -1927,7 +2021,7 @@ namespace Camunda.OpenApi.Client.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<System.IO.Stream>("/decision-definition/{id}/diagram", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<FileParameter>("/decision-definition/{id}/diagram", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1944,10 +2038,10 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The id of the process definition.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> GetDecisionDefinitionDiagramAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of FileParameter</returns>
+        public async System.Threading.Tasks.Task<FileParameter> GetDecisionDefinitionDiagramAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream> localVarResponse = await GetDecisionDefinitionDiagramWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            Camunda.OpenApi.Client.Client.ApiResponse<FileParameter> localVarResponse = await GetDecisionDefinitionDiagramWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1957,8 +2051,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The id of the process definition.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream>> GetDecisionDefinitionDiagramWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (FileParameter)</returns>
+        public async System.Threading.Tasks.Task<Camunda.OpenApi.Client.Client.ApiResponse<FileParameter>> GetDecisionDefinitionDiagramWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1967,11 +2061,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/octet-stream",
                 "*/*",
                 "application/json"
@@ -1989,7 +2083,7 @@ namespace Camunda.OpenApi.Client.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<System.IO.Stream>("/decision-definition/{id}/diagram", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<FileParameter>("/decision-definition/{id}/diagram", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2005,10 +2099,10 @@ namespace Camunda.OpenApi.Client.Api
         /// </summary>
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">The key of the decision definition (the latest version thereof) to be retrieved.</param>
-        /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream GetDecisionDefinitionDiagramByKey(string key)
+        /// <returns>FileParameter</returns>
+        public FileParameter GetDecisionDefinitionDiagramByKey(string key)
         {
-            Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream> localVarResponse = GetDecisionDefinitionDiagramByKeyWithHttpInfo(key);
+            Camunda.OpenApi.Client.Client.ApiResponse<FileParameter> localVarResponse = GetDecisionDefinitionDiagramByKeyWithHttpInfo(key);
             return localVarResponse.Data;
         }
 
@@ -2017,8 +2111,8 @@ namespace Camunda.OpenApi.Client.Api
         /// </summary>
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">The key of the decision definition (the latest version thereof) to be retrieved.</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        public Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream> GetDecisionDefinitionDiagramByKeyWithHttpInfo(string key)
+        /// <returns>ApiResponse of FileParameter</returns>
+        public Camunda.OpenApi.Client.Client.ApiResponse<FileParameter> GetDecisionDefinitionDiagramByKeyWithHttpInfo(string key)
         {
             // verify the required parameter 'key' is set
             if (key == null)
@@ -2026,11 +2120,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/octet-stream",
                 "*/*",
                 "application/json"
@@ -2046,7 +2140,7 @@ namespace Camunda.OpenApi.Client.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<System.IO.Stream>("/decision-definition/key/{key}/diagram", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<FileParameter>("/decision-definition/key/{key}/diagram", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2063,10 +2157,10 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">The key of the decision definition (the latest version thereof) to be retrieved.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> GetDecisionDefinitionDiagramByKeyAsync(string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of FileParameter</returns>
+        public async System.Threading.Tasks.Task<FileParameter> GetDecisionDefinitionDiagramByKeyAsync(string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream> localVarResponse = await GetDecisionDefinitionDiagramByKeyWithHttpInfoAsync(key, cancellationToken).ConfigureAwait(false);
+            Camunda.OpenApi.Client.Client.ApiResponse<FileParameter> localVarResponse = await GetDecisionDefinitionDiagramByKeyWithHttpInfoAsync(key, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2076,8 +2170,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">The key of the decision definition (the latest version thereof) to be retrieved.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream>> GetDecisionDefinitionDiagramByKeyWithHttpInfoAsync(string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (FileParameter)</returns>
+        public async System.Threading.Tasks.Task<Camunda.OpenApi.Client.Client.ApiResponse<FileParameter>> GetDecisionDefinitionDiagramByKeyWithHttpInfoAsync(string key, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'key' is set
             if (key == null)
@@ -2086,11 +2180,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/octet-stream",
                 "*/*",
                 "application/json"
@@ -2108,7 +2202,7 @@ namespace Camunda.OpenApi.Client.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<System.IO.Stream>("/decision-definition/key/{key}/diagram", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<FileParameter>("/decision-definition/key/{key}/diagram", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2125,10 +2219,10 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">The key of the decision definition (the latest version thereof) to be retrieved.</param>
         /// <param name="tenantId">The id of the tenant the decision definition belongs to.</param>
-        /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream GetDecisionDefinitionDiagramByKeyAndTenant(string key, string tenantId)
+        /// <returns>FileParameter</returns>
+        public FileParameter GetDecisionDefinitionDiagramByKeyAndTenant(string key, string tenantId)
         {
-            Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream> localVarResponse = GetDecisionDefinitionDiagramByKeyAndTenantWithHttpInfo(key, tenantId);
+            Camunda.OpenApi.Client.Client.ApiResponse<FileParameter> localVarResponse = GetDecisionDefinitionDiagramByKeyAndTenantWithHttpInfo(key, tenantId);
             return localVarResponse.Data;
         }
 
@@ -2138,8 +2232,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">The key of the decision definition (the latest version thereof) to be retrieved.</param>
         /// <param name="tenantId">The id of the tenant the decision definition belongs to.</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        public Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream> GetDecisionDefinitionDiagramByKeyAndTenantWithHttpInfo(string key, string tenantId)
+        /// <returns>ApiResponse of FileParameter</returns>
+        public Camunda.OpenApi.Client.Client.ApiResponse<FileParameter> GetDecisionDefinitionDiagramByKeyAndTenantWithHttpInfo(string key, string tenantId)
         {
             // verify the required parameter 'key' is set
             if (key == null)
@@ -2151,11 +2245,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/octet-stream",
                 "*/*",
                 "application/json"
@@ -2172,7 +2266,7 @@ namespace Camunda.OpenApi.Client.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<System.IO.Stream>("/decision-definition/key/{key}/tenant-id/{tenant-id}/diagram", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<FileParameter>("/decision-definition/key/{key}/tenant-id/{tenant-id}/diagram", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2190,10 +2284,10 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="key">The key of the decision definition (the latest version thereof) to be retrieved.</param>
         /// <param name="tenantId">The id of the tenant the decision definition belongs to.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> GetDecisionDefinitionDiagramByKeyAndTenantAsync(string key, string tenantId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of FileParameter</returns>
+        public async System.Threading.Tasks.Task<FileParameter> GetDecisionDefinitionDiagramByKeyAndTenantAsync(string key, string tenantId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream> localVarResponse = await GetDecisionDefinitionDiagramByKeyAndTenantWithHttpInfoAsync(key, tenantId, cancellationToken).ConfigureAwait(false);
+            Camunda.OpenApi.Client.Client.ApiResponse<FileParameter> localVarResponse = await GetDecisionDefinitionDiagramByKeyAndTenantWithHttpInfoAsync(key, tenantId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2204,8 +2298,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="key">The key of the decision definition (the latest version thereof) to be retrieved.</param>
         /// <param name="tenantId">The id of the tenant the decision definition belongs to.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream>> GetDecisionDefinitionDiagramByKeyAndTenantWithHttpInfoAsync(string key, string tenantId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (FileParameter)</returns>
+        public async System.Threading.Tasks.Task<Camunda.OpenApi.Client.Client.ApiResponse<FileParameter>> GetDecisionDefinitionDiagramByKeyAndTenantWithHttpInfoAsync(string key, string tenantId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'key' is set
             if (key == null)
@@ -2218,11 +2312,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/octet-stream",
                 "*/*",
                 "application/json"
@@ -2241,7 +2335,7 @@ namespace Camunda.OpenApi.Client.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<System.IO.Stream>("/decision-definition/key/{key}/tenant-id/{tenant-id}/diagram", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<FileParameter>("/decision-definition/key/{key}/tenant-id/{tenant-id}/diagram", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2278,11 +2372,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2336,11 +2430,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2393,11 +2487,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2451,11 +2545,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2514,11 +2608,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2579,11 +2673,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2685,11 +2779,11 @@ namespace Camunda.OpenApi.Client.Api
         {
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2898,11 +2992,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3102,11 +3196,11 @@ namespace Camunda.OpenApi.Client.Api
         {
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3291,11 +3385,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3440,12 +3534,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3501,12 +3595,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3561,12 +3655,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3622,12 +3716,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3688,12 +3782,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3756,12 +3850,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 

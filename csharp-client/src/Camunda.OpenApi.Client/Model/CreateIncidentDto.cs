@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using FileParameter = Camunda.OpenApi.Client.Client.FileParameter;
 using OpenAPIDateConverter = Camunda.OpenApi.Client.Client.OpenAPIDateConverter;
 
 namespace Camunda.OpenApi.Client.Model
@@ -40,7 +41,7 @@ namespace Camunda.OpenApi.Client.Model
         public CreateIncidentDto(string incidentType = default(string), string configuration = default(string), string message = default(string))
         {
             this.IncidentType = incidentType;
-            this.Configuration = configuration;
+            this._Configuration = configuration;
             this.Message = message;
         }
 
@@ -56,7 +57,7 @@ namespace Camunda.OpenApi.Client.Model
         /// </summary>
         /// <value>A configuration for the new incident.</value>
         [DataMember(Name = "configuration", EmitDefaultValue = true)]
-        public string Configuration { get; set; }
+        public string _Configuration { get; set; }
 
         /// <summary>
         /// A message for the new incident.
@@ -74,7 +75,7 @@ namespace Camunda.OpenApi.Client.Model
             var sb = new StringBuilder();
             sb.Append("class CreateIncidentDto {\n");
             sb.Append("  IncidentType: ").Append(IncidentType).Append("\n");
-            sb.Append("  Configuration: ").Append(Configuration).Append("\n");
+            sb.Append("  _Configuration: ").Append(_Configuration).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -116,9 +117,9 @@ namespace Camunda.OpenApi.Client.Model
                     this.IncidentType.Equals(input.IncidentType))
                 ) && 
                 (
-                    this.Configuration == input.Configuration ||
-                    (this.Configuration != null &&
-                    this.Configuration.Equals(input.Configuration))
+                    this._Configuration == input._Configuration ||
+                    (this._Configuration != null &&
+                    this._Configuration.Equals(input._Configuration))
                 ) && 
                 (
                     this.Message == input.Message ||
@@ -138,8 +139,8 @@ namespace Camunda.OpenApi.Client.Model
                 int hashCode = 41;
                 if (this.IncidentType != null)
                     hashCode = hashCode * 59 + this.IncidentType.GetHashCode();
-                if (this.Configuration != null)
-                    hashCode = hashCode * 59 + this.Configuration.GetHashCode();
+                if (this._Configuration != null)
+                    hashCode = hashCode * 59 + this._Configuration.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
                 return hashCode;

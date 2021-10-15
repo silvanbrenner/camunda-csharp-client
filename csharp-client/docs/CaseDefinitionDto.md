@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Key** | **string** | The key of the case definition, i.e., the id of the CMMN 2.0 XML case definition. | [optional] 
 **Category** | **string** | The category of the case definition. | [optional] 
 **Name** | **string** | The name of the case definition. | [optional] 
-**Version** | **int?** | The version of the case definition that the engine assigned to it. | [optional] 
+**_Version** | **int?** | The version of the case definition that the engine assigned to it. | [optional] 
 **Resource** | **string** | The file name of the case definition. | [optional] 
 **DeploymentId** | **string** | The deployment id of the case definition. | [optional] 
 **TenantId** | **string** | The tenant id of the case definition. | [optional] 

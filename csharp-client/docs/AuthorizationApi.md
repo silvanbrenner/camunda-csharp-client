@@ -27,6 +27,7 @@ The OPTIONS request allows you to check for the set of available operations that
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -39,7 +40,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new AuthorizationApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AuthorizationApi(httpClient, config, httpClientHandler);
 
             try
             {
@@ -94,6 +98,7 @@ The OPTIONS request allows you to check for the set of available operations that
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -106,7 +111,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new AuthorizationApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AuthorizationApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the authorization to be retrieved.
 
             try
@@ -165,6 +173,7 @@ Creates a new authorization.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -177,7 +186,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new AuthorizationApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AuthorizationApi(httpClient, config, httpClientHandler);
             var authorizationCreateDto = new AuthorizationCreateDto(); // AuthorizationCreateDto |  (optional) 
 
             try
@@ -239,6 +251,7 @@ Deletes an authorization by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -251,7 +264,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new AuthorizationApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AuthorizationApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the authorization to be deleted.
 
             try
@@ -311,6 +327,7 @@ Retrieves an authorization by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -323,7 +340,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new AuthorizationApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AuthorizationApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the authorization to be retrieved.
 
             try
@@ -383,6 +403,7 @@ Queries for authorizations using a list of parameters and retrieves the count.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -395,7 +416,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new AuthorizationApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AuthorizationApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | Filter by the id of the authorization. (optional) 
             var type = 56;  // int? | Filter by authorization type. (0=global, 1=grant, 2=revoke). See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/authorization-service/#authorization-type) for more information about authorization types. (optional) 
             var userIdIn = userIdIn_example;  // string | Filter by a comma-separated list of userIds. (optional) 
@@ -465,6 +489,7 @@ Performs an authorization check for the currently authenticated user.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -477,7 +502,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new AuthorizationApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AuthorizationApi(httpClient, config, httpClientHandler);
             var permissionName = permissionName_example;  // string | String value representing the permission name to check for.
             var resourceName = resourceName_example;  // string | String value for the name of the resource to check permissions for.
             var resourceType = 56;  // int | An integer representing the resource type to check permissions for. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/authorization-service/#resources) for a list of integer representations of resource types.
@@ -548,6 +576,7 @@ Queries for a list of authorizations using a list of parameters. The size of the
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -560,7 +589,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new AuthorizationApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AuthorizationApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | Filter by the id of the authorization. (optional) 
             var type = 56;  // int? | Filter by authorization type. (0=global, 1=grant, 2=revoke). See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/authorization-service/#authorization-type) for more information about authorization types. (optional) 
             var userIdIn = userIdIn_example;  // string | Filter by a comma-separated list of userIds. (optional) 
@@ -638,6 +670,7 @@ Updates an authorization by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -650,7 +683,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new AuthorizationApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AuthorizationApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the authorization to be updated.
             var authorizationUpdateDto = new AuthorizationUpdateDto(); // AuthorizationUpdateDto |  (optional) 
 

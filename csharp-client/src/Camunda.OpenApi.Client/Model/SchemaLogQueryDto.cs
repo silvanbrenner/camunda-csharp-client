@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using FileParameter = Camunda.OpenApi.Client.Client.FileParameter;
 using OpenAPIDateConverter = Camunda.OpenApi.Client.Client.OpenAPIDateConverter;
 
 namespace Camunda.OpenApi.Client.Model
@@ -38,7 +39,7 @@ namespace Camunda.OpenApi.Client.Model
         /// <param name="sorting">A JSON array of criteria to sort the result by. Each element of the array is                       a JSON object that specifies one ordering. The position in the array                       identifies the rank of an ordering, i.e., whether it is primary, secondary,                       etc. .</param>
         public SchemaLogQueryDto(string version = default(string), List<SchemaLogQueryDtoSorting> sorting = default(List<SchemaLogQueryDtoSorting>))
         {
-            this.Version = version;
+            this._Version = version;
             this.Sorting = sorting;
         }
 
@@ -47,7 +48,7 @@ namespace Camunda.OpenApi.Client.Model
         /// </summary>
         /// <value>The version of the schema.</value>
         [DataMember(Name = "version", EmitDefaultValue = true)]
-        public string Version { get; set; }
+        public string _Version { get; set; }
 
         /// <summary>
         /// A JSON array of criteria to sort the result by. Each element of the array is                       a JSON object that specifies one ordering. The position in the array                       identifies the rank of an ordering, i.e., whether it is primary, secondary,                       etc. 
@@ -64,7 +65,7 @@ namespace Camunda.OpenApi.Client.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SchemaLogQueryDto {\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
+            sb.Append("  _Version: ").Append(_Version).Append("\n");
             sb.Append("  Sorting: ").Append(Sorting).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -101,9 +102,9 @@ namespace Camunda.OpenApi.Client.Model
 
             return 
                 (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
+                    this._Version == input._Version ||
+                    (this._Version != null &&
+                    this._Version.Equals(input._Version))
                 ) && 
                 (
                     this.Sorting == input.Sorting ||
@@ -122,8 +123,8 @@ namespace Camunda.OpenApi.Client.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this._Version != null)
+                    hashCode = hashCode * 59 + this._Version.GetHashCode();
                 if (this.Sorting != null)
                     hashCode = hashCode * 59 + this.Sorting.GetHashCode();
                 return hashCode;

@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Net.Mime;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -217,8 +218,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The id of the process instance to retrieve the variable for.</param>
         /// <param name="varName">The name of the variable to retrieve.</param>
-        /// <returns>System.IO.Stream</returns>
-        System.IO.Stream GetProcessInstanceVariableBinary(string id, string varName);
+        /// <returns>FileParameter</returns>
+        FileParameter GetProcessInstanceVariableBinary(string id, string varName);
 
         /// <summary>
         /// Get Process Variable (Binary)
@@ -229,8 +230,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The id of the process instance to retrieve the variable for.</param>
         /// <param name="varName">The name of the variable to retrieve.</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> GetProcessInstanceVariableBinaryWithHttpInfo(string id, string varName);
+        /// <returns>ApiResponse of FileParameter</returns>
+        ApiResponse<FileParameter> GetProcessInstanceVariableBinaryWithHttpInfo(string id, string varName);
         /// <summary>
         /// Get Process Variables
         /// </summary>
@@ -568,7 +569,7 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="data">The binary data to be set. For File variables, this multipart can contain the filename, binary value and MIME type of the file variable to be set Only the filename is mandatory. (optional)</param>
         /// <param name="valueType">The name of the variable type. Either Bytes for a byte array variable or File for a file variable. (optional)</param>
         /// <returns></returns>
-        void SetProcessInstanceVariableBinary(string id, string varName, System.IO.Stream data = default(System.IO.Stream), string valueType = default(string));
+        void SetProcessInstanceVariableBinary(string id, string varName, FileParameter data = default(FileParameter), string valueType = default(string));
 
         /// <summary>
         /// Update Process Variable (Binary)
@@ -582,7 +583,7 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="data">The binary data to be set. For File variables, this multipart can contain the filename, binary value and MIME type of the file variable to be set Only the filename is mandatory. (optional)</param>
         /// <param name="valueType">The name of the variable type. Either Bytes for a byte array variable or File for a file variable. (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> SetProcessInstanceVariableBinaryWithHttpInfo(string id, string varName, System.IO.Stream data = default(System.IO.Stream), string valueType = default(string));
+        ApiResponse<Object> SetProcessInstanceVariableBinaryWithHttpInfo(string id, string varName, FileParameter data = default(FileParameter), string valueType = default(string));
         /// <summary>
         /// Set Job Retries Async (POST)
         /// </summary>
@@ -928,8 +929,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="id">The id of the process instance to retrieve the variable for.</param>
         /// <param name="varName">The name of the variable to retrieve.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> GetProcessInstanceVariableBinaryAsync(string id, string varName, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of FileParameter</returns>
+        System.Threading.Tasks.Task<FileParameter> GetProcessInstanceVariableBinaryAsync(string id, string varName, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Process Variable (Binary)
@@ -941,8 +942,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="id">The id of the process instance to retrieve the variable for.</param>
         /// <param name="varName">The name of the variable to retrieve.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetProcessInstanceVariableBinaryWithHttpInfoAsync(string id, string varName, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (FileParameter)</returns>
+        System.Threading.Tasks.Task<ApiResponse<FileParameter>> GetProcessInstanceVariableBinaryWithHttpInfoAsync(string id, string varName, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Process Variables
         /// </summary>
@@ -1299,7 +1300,7 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="valueType">The name of the variable type. Either Bytes for a byte array variable or File for a file variable. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SetProcessInstanceVariableBinaryAsync(string id, string varName, System.IO.Stream data = default(System.IO.Stream), string valueType = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task SetProcessInstanceVariableBinaryAsync(string id, string varName, FileParameter data = default(FileParameter), string valueType = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Process Variable (Binary)
@@ -1314,7 +1315,7 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="valueType">The name of the variable type. Either Bytes for a byte array variable or File for a file variable. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SetProcessInstanceVariableBinaryWithHttpInfoAsync(string id, string varName, System.IO.Stream data = default(System.IO.Stream), string valueType = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SetProcessInstanceVariableBinaryWithHttpInfoAsync(string id, string varName, FileParameter data = default(FileParameter), string valueType = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Set Job Retries Async (POST)
         /// </summary>
@@ -1469,12 +1470,14 @@ namespace Camunda.OpenApi.Client.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class ProcessInstanceApi : IProcessInstanceApi
+    public partial class ProcessInstanceApi : IDisposable, IProcessInstanceApi
     {
         private Camunda.OpenApi.Client.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProcessInstanceApi"/> class.
+        /// **IMPORTANT** This will also create an istance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHander</see>.
         /// </summary>
         /// <returns></returns>
         public ProcessInstanceApi() : this((string)null)
@@ -1483,24 +1486,31 @@ namespace Camunda.OpenApi.Client.Api
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProcessInstanceApi"/> class.
+        /// **IMPORTANT** This will also create an istance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHander</see>.
         /// </summary>
+        /// <param name="basePath">The target service's base path in URL format.</param>
+        /// <exception cref="ArgumentException"></exception>
         /// <returns></returns>
-        public ProcessInstanceApi(String basePath)
+        public ProcessInstanceApi(string basePath)
         {
             this.Configuration = Camunda.OpenApi.Client.Client.Configuration.MergeConfigurations(
                 Camunda.OpenApi.Client.Client.GlobalConfiguration.Instance,
                 new Camunda.OpenApi.Client.Client.Configuration { BasePath = basePath }
             );
-            this.Client = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.Client =  this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
             this.ExceptionFactory = Camunda.OpenApi.Client.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProcessInstanceApi"/> class
-        /// using Configuration object
+        /// Initializes a new instance of the <see cref="ProcessInstanceApi"/> class using Configuration object.
+        /// **IMPORTANT** This will also create an istance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHander</see>.
         /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
+        /// <param name="configuration">An instance of Configuration.</param>
+        /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
         public ProcessInstanceApi(Camunda.OpenApi.Client.Client.Configuration configuration)
         {
@@ -1510,8 +1520,78 @@ namespace Camunda.OpenApi.Client.Api
                 Camunda.OpenApi.Client.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.Client = this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
+            ExceptionFactory = Camunda.OpenApi.Client.Client.Configuration.DefaultExceptionFactory;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProcessInstanceApi"/> class.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public ProcessInstanceApi(HttpClient client, HttpClientHandler handler = null) : this(client, (string)null, handler)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProcessInstanceApi"/> class.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="basePath">The target service's base path in URL format.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public ProcessInstanceApi(HttpClient client, string basePath, HttpClientHandler handler = null)
+        {
+            if (client == null) throw new ArgumentNullException("client");
+
+            this.Configuration = Camunda.OpenApi.Client.Client.Configuration.MergeConfigurations(
+                Camunda.OpenApi.Client.Client.GlobalConfiguration.Instance,
+                new Camunda.OpenApi.Client.Client.Configuration { BasePath = basePath }
+            );
+            this.ApiClient = new Camunda.OpenApi.Client.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.Client =  this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
+            this.ExceptionFactory = Camunda.OpenApi.Client.Client.Configuration.DefaultExceptionFactory;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProcessInstanceApi"/> class using Configuration object.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="configuration">An instance of Configuration.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public ProcessInstanceApi(HttpClient client, Camunda.OpenApi.Client.Client.Configuration configuration, HttpClientHandler handler = null)
+        {
+            if (configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+
+            this.Configuration = Camunda.OpenApi.Client.Client.Configuration.MergeConfigurations(
+                Camunda.OpenApi.Client.Client.GlobalConfiguration.Instance,
+                configuration
+            );
+            this.ApiClient = new Camunda.OpenApi.Client.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.Client = this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
             ExceptionFactory = Camunda.OpenApi.Client.Client.Configuration.DefaultExceptionFactory;
         }
 
@@ -1522,6 +1602,7 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public ProcessInstanceApi(Camunda.OpenApi.Client.Client.ISynchronousClient client, Camunda.OpenApi.Client.Client.IAsynchronousClient asyncClient, Camunda.OpenApi.Client.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
@@ -1533,6 +1614,19 @@ namespace Camunda.OpenApi.Client.Api
             this.Configuration = configuration;
             this.ExceptionFactory = Camunda.OpenApi.Client.Client.Configuration.DefaultExceptionFactory;
         }
+
+        /// <summary>
+        /// Disposes resources if they were created by us
+        /// </summary>
+        public void Dispose()
+        {
+            this.ApiClient?.Dispose();
+        }
+
+        /// <summary>
+        /// Holds the ApiClient if created
+        /// </summary>
+        public Camunda.OpenApi.Client.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
@@ -1548,7 +1642,7 @@ namespace Camunda.OpenApi.Client.Api
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        public String GetBasePath()
+        public string GetBasePath()
         {
             return this.Configuration.BasePath;
         }
@@ -1597,12 +1691,12 @@ namespace Camunda.OpenApi.Client.Api
         {
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1652,12 +1746,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1706,12 +1800,12 @@ namespace Camunda.OpenApi.Client.Api
         {
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1761,12 +1855,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1826,11 +1920,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1907,11 +2001,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1985,11 +2079,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = Camunda.OpenApi.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -2048,11 +2142,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 
@@ -2101,12 +2195,12 @@ namespace Camunda.OpenApi.Client.Api
         {
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2156,12 +2250,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2214,11 +2308,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2272,11 +2366,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2329,11 +2423,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2387,11 +2481,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2452,11 +2546,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2523,11 +2617,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2565,10 +2659,10 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The id of the process instance to retrieve the variable for.</param>
         /// <param name="varName">The name of the variable to retrieve.</param>
-        /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream GetProcessInstanceVariableBinary(string id, string varName)
+        /// <returns>FileParameter</returns>
+        public FileParameter GetProcessInstanceVariableBinary(string id, string varName)
         {
-            Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream> localVarResponse = GetProcessInstanceVariableBinaryWithHttpInfo(id, varName);
+            Camunda.OpenApi.Client.Client.ApiResponse<FileParameter> localVarResponse = GetProcessInstanceVariableBinaryWithHttpInfo(id, varName);
             return localVarResponse.Data;
         }
 
@@ -2578,8 +2672,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The id of the process instance to retrieve the variable for.</param>
         /// <param name="varName">The name of the variable to retrieve.</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        public Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream> GetProcessInstanceVariableBinaryWithHttpInfo(string id, string varName)
+        /// <returns>ApiResponse of FileParameter</returns>
+        public Camunda.OpenApi.Client.Client.ApiResponse<FileParameter> GetProcessInstanceVariableBinaryWithHttpInfo(string id, string varName)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2591,11 +2685,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/octet-stream",
                 "text/plain",
                 "application/json"
@@ -2612,7 +2706,7 @@ namespace Camunda.OpenApi.Client.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<System.IO.Stream>("/process-instance/{id}/variables/{varName}/data", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<FileParameter>("/process-instance/{id}/variables/{varName}/data", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2630,10 +2724,10 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="id">The id of the process instance to retrieve the variable for.</param>
         /// <param name="varName">The name of the variable to retrieve.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> GetProcessInstanceVariableBinaryAsync(string id, string varName, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of FileParameter</returns>
+        public async System.Threading.Tasks.Task<FileParameter> GetProcessInstanceVariableBinaryAsync(string id, string varName, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream> localVarResponse = await GetProcessInstanceVariableBinaryWithHttpInfoAsync(id, varName, cancellationToken).ConfigureAwait(false);
+            Camunda.OpenApi.Client.Client.ApiResponse<FileParameter> localVarResponse = await GetProcessInstanceVariableBinaryWithHttpInfoAsync(id, varName, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2644,8 +2738,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="id">The id of the process instance to retrieve the variable for.</param>
         /// <param name="varName">The name of the variable to retrieve.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream>> GetProcessInstanceVariableBinaryWithHttpInfoAsync(string id, string varName, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (FileParameter)</returns>
+        public async System.Threading.Tasks.Task<Camunda.OpenApi.Client.Client.ApiResponse<FileParameter>> GetProcessInstanceVariableBinaryWithHttpInfoAsync(string id, string varName, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2658,11 +2752,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/octet-stream",
                 "text/plain",
                 "application/json"
@@ -2681,7 +2775,7 @@ namespace Camunda.OpenApi.Client.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<System.IO.Stream>("/process-instance/{id}/variables/{varName}/data", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<FileParameter>("/process-instance/{id}/variables/{varName}/data", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2720,11 +2814,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2784,11 +2878,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2905,11 +2999,11 @@ namespace Camunda.OpenApi.Client.Api
         {
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3154,11 +3248,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3394,11 +3488,11 @@ namespace Camunda.OpenApi.Client.Api
         {
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3619,11 +3713,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3792,12 +3886,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3853,12 +3947,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3914,12 +4008,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -3976,12 +4070,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4036,12 +4130,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4097,12 +4191,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4156,12 +4250,12 @@ namespace Camunda.OpenApi.Client.Api
         {
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4223,12 +4317,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4285,12 +4379,12 @@ namespace Camunda.OpenApi.Client.Api
         {
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4340,12 +4434,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4405,12 +4499,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4473,12 +4567,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4516,7 +4610,7 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="data">The binary data to be set. For File variables, this multipart can contain the filename, binary value and MIME type of the file variable to be set Only the filename is mandatory. (optional)</param>
         /// <param name="valueType">The name of the variable type. Either Bytes for a byte array variable or File for a file variable. (optional)</param>
         /// <returns></returns>
-        public void SetProcessInstanceVariableBinary(string id, string varName, System.IO.Stream data = default(System.IO.Stream), string valueType = default(string))
+        public void SetProcessInstanceVariableBinary(string id, string varName, FileParameter data = default(FileParameter), string valueType = default(string))
         {
             SetProcessInstanceVariableBinaryWithHttpInfo(id, varName, data, valueType);
         }
@@ -4530,7 +4624,7 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="data">The binary data to be set. For File variables, this multipart can contain the filename, binary value and MIME type of the file variable to be set Only the filename is mandatory. (optional)</param>
         /// <param name="valueType">The name of the variable type. Either Bytes for a byte array variable or File for a file variable. (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Camunda.OpenApi.Client.Client.ApiResponse<Object> SetProcessInstanceVariableBinaryWithHttpInfo(string id, string varName, System.IO.Stream data = default(System.IO.Stream), string valueType = default(string))
+        public Camunda.OpenApi.Client.Client.ApiResponse<Object> SetProcessInstanceVariableBinaryWithHttpInfo(string id, string varName, FileParameter data = default(FileParameter), string valueType = default(string))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4542,12 +4636,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "multipart/form-data"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4591,7 +4685,7 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="valueType">The name of the variable type. Either Bytes for a byte array variable or File for a file variable. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SetProcessInstanceVariableBinaryAsync(string id, string varName, System.IO.Stream data = default(System.IO.Stream), string valueType = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task SetProcessInstanceVariableBinaryAsync(string id, string varName, FileParameter data = default(FileParameter), string valueType = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             await SetProcessInstanceVariableBinaryWithHttpInfoAsync(id, varName, data, valueType, cancellationToken).ConfigureAwait(false);
         }
@@ -4606,7 +4700,7 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="valueType">The name of the variable type. Either Bytes for a byte array variable or File for a file variable. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Camunda.OpenApi.Client.Client.ApiResponse<Object>> SetProcessInstanceVariableBinaryWithHttpInfoAsync(string id, string varName, System.IO.Stream data = default(System.IO.Stream), string valueType = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Camunda.OpenApi.Client.Client.ApiResponse<Object>> SetProcessInstanceVariableBinaryWithHttpInfoAsync(string id, string varName, FileParameter data = default(FileParameter), string valueType = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4619,12 +4713,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "multipart/form-data"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4682,12 +4776,12 @@ namespace Camunda.OpenApi.Client.Api
         {
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4737,12 +4831,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4791,12 +4885,12 @@ namespace Camunda.OpenApi.Client.Api
         {
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4846,12 +4940,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4900,12 +4994,12 @@ namespace Camunda.OpenApi.Client.Api
         {
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -4955,12 +5049,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -5008,12 +5102,12 @@ namespace Camunda.OpenApi.Client.Api
         {
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -5062,12 +5156,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -5116,12 +5210,12 @@ namespace Camunda.OpenApi.Client.Api
         {
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -5171,12 +5265,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -5230,12 +5324,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = Camunda.OpenApi.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -5290,12 +5384,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 

@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using FileParameter = Camunda.OpenApi.Client.Client.FileParameter;
 using OpenAPIDateConverter = Camunda.OpenApi.Client.Client.OpenAPIDateConverter;
 
 namespace Camunda.OpenApi.Client.Model
@@ -61,7 +62,7 @@ namespace Camunda.OpenApi.Client.Model
             this.FailedActivityId = failedActivityId;
             this.CauseIncidentId = causeIncidentId;
             this.RootCauseIncidentId = rootCauseIncidentId;
-            this.Configuration = configuration;
+            this._Configuration = configuration;
             this.TenantId = tenantId;
             this.IncidentMessage = incidentMessage;
             this.JobDefinitionId = jobDefinitionId;
@@ -143,7 +144,7 @@ namespace Camunda.OpenApi.Client.Model
         /// </summary>
         /// <value>The payload of this incident.</value>
         [DataMember(Name = "configuration", EmitDefaultValue = true)]
-        public string Configuration { get; set; }
+        public string _Configuration { get; set; }
 
         /// <summary>
         /// The id of the tenant this incident is associated with.
@@ -191,7 +192,7 @@ namespace Camunda.OpenApi.Client.Model
             sb.Append("  FailedActivityId: ").Append(FailedActivityId).Append("\n");
             sb.Append("  CauseIncidentId: ").Append(CauseIncidentId).Append("\n");
             sb.Append("  RootCauseIncidentId: ").Append(RootCauseIncidentId).Append("\n");
-            sb.Append("  Configuration: ").Append(Configuration).Append("\n");
+            sb.Append("  _Configuration: ").Append(_Configuration).Append("\n");
             sb.Append("  TenantId: ").Append(TenantId).Append("\n");
             sb.Append("  IncidentMessage: ").Append(IncidentMessage).Append("\n");
             sb.Append("  JobDefinitionId: ").Append(JobDefinitionId).Append("\n");
@@ -281,9 +282,9 @@ namespace Camunda.OpenApi.Client.Model
                     this.RootCauseIncidentId.Equals(input.RootCauseIncidentId))
                 ) && 
                 (
-                    this.Configuration == input.Configuration ||
-                    (this.Configuration != null &&
-                    this.Configuration.Equals(input.Configuration))
+                    this._Configuration == input._Configuration ||
+                    (this._Configuration != null &&
+                    this._Configuration.Equals(input._Configuration))
                 ) && 
                 (
                     this.TenantId == input.TenantId ||
@@ -336,8 +337,8 @@ namespace Camunda.OpenApi.Client.Model
                     hashCode = hashCode * 59 + this.CauseIncidentId.GetHashCode();
                 if (this.RootCauseIncidentId != null)
                     hashCode = hashCode * 59 + this.RootCauseIncidentId.GetHashCode();
-                if (this.Configuration != null)
-                    hashCode = hashCode * 59 + this.Configuration.GetHashCode();
+                if (this._Configuration != null)
+                    hashCode = hashCode * 59 + this._Configuration.GetHashCode();
                 if (this.TenantId != null)
                     hashCode = hashCode * 59 + this.TenantId.GetHashCode();
                 if (this.IncidentMessage != null)

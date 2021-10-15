@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>ch.silvanbrenner</groupId>
     <artifactId>camunda-csharp-client-generator</artifactId>
     <version>1.0.2</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <openapi-generator-version>5.1.0</openapi-generator-version>
+        <openapi-generator-version>5.2.1</openapi-generator-version>
         <camunda-version>7.16.0</camunda-version>
     </properties>
 
@@ -20,6 +20,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
+                <version>3.1.0</version>
                 <configuration>
                     <filesets>
                         <fileset>
@@ -52,6 +53,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.2</version>
                 <executions>
                     <execution>
                         <id>unpack</id>
@@ -93,8 +95,10 @@
                             <gitRepoId>camunda-csharp-client</gitRepoId>
                             <generateApiTests>false</generateApiTests>
                             <generateModelTests>false</generateModelTests>
+                            <library>httpclient</library>
                             <configOptions>
                                 <packageName>Camunda.OpenApi.Client</packageName>
+                                <packageVersion>1.2.1</packageVersion>
                                 <targetFramework>netstandard2.0</targetFramework>
                                 <optionalProjectFile>false</optionalProjectFile>
                                 <releaseNote></releaseNote>

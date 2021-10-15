@@ -64,6 +64,7 @@ Deletes a running process instance by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -76,7 +77,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition to be deleted.
             var cascade = true;  // bool? | `true`, if all process instances, historic process instances and jobs for this process definition should be deleted. (optional) 
             var skipCustomListeners = true;  // bool? | `true`, if only the built-in ExecutionListeners should be notified with the end event. (optional)  (default to false)
@@ -141,6 +145,7 @@ Deletes process definitions by a given key which belong to no tenant id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -153,7 +158,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definitions to be deleted.
             var cascade = true;  // bool? | `true`, if all process instances, historic process instances and jobs for this process definition should be deleted. (optional) 
             var skipCustomListeners = true;  // bool? | `true`, if only the built-in ExecutionListeners should be notified with the end event. (optional)  (default to false)
@@ -219,6 +227,7 @@ Deletes process definitions by a given key and which belong to a tenant id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -231,7 +240,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definitions to be deleted.
             var tenantId = tenantId_example;  // string | The id of the tenant the process definitions belong to.
             var cascade = true;  // bool? | `true`, if all process instances, historic process instances and jobs for this process definition should be deleted. (optional) 
@@ -299,6 +311,7 @@ Retrieves runtime statistics of a given process definition, grouped by activitie
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -311,7 +324,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition.
             var failedJobs = true;  // bool? | Whether to include the number of failed jobs in the result or not. Valid values are `true` or `false`. (optional) 
             var incidents = true;  // bool? | Valid values for this property are `true` or `false`. If this property has been set to `true` the result will include the corresponding number of incidents for each occurred incident type. If it is set to `false`, the incidents will not be included in the result. Cannot be used in combination with `incidentsForType`. (optional) 
@@ -378,6 +394,7 @@ Retrieves runtime statistics of the latest version of the given process definiti
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -390,7 +407,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) to be retrieved.
             var failedJobs = true;  // bool? | Whether to include the number of failed jobs in the result or not. Valid values are `true` or `false`. (optional) 
             var incidents = true;  // bool? | Valid values for this property are `true` or `false`. If this property has been set to `true` the result will include the corresponding number of incidents for each occurred incident type. If it is set to `false`, the incidents will not be included in the result. Cannot be used in combination with `incidentsForType`. (optional) 
@@ -457,6 +477,7 @@ Retrieves runtime statistics of the latest version of the given process definiti
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -469,7 +490,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) to be retrieved.
             var tenantId = tenantId_example;  // string | The id of the tenant the process definition belongs to.
             var failedJobs = true;  // bool? | Whether to include the number of failed jobs in the result or not. Valid values are `true` or `false`. (optional) 
@@ -528,7 +552,7 @@ No authorization required
 
 <a name="getdeployedstartform"></a>
 # **GetDeployedStartForm**
-> System.IO.Stream GetDeployedStartForm (string id)
+> FileParameter GetDeployedStartForm (string id)
 
 Get Deployed Start Form
 
@@ -538,6 +562,7 @@ Retrieves the deployed form that can be referenced from a start event. For furth
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -550,13 +575,16 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition to get the deployed start form for.
 
             try
             {
                 // Get Deployed Start Form
-                System.IO.Stream result = apiInstance.GetDeployedStartForm(id);
+                FileParameter result = apiInstance.GetDeployedStartForm(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -578,7 +606,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -602,7 +630,7 @@ No authorization required
 
 <a name="getdeployedstartformbykey"></a>
 # **GetDeployedStartFormByKey**
-> System.IO.Stream GetDeployedStartFormByKey (string key)
+> FileParameter GetDeployedStartFormByKey (string key)
 
 Get Deployed Start Form
 
@@ -612,6 +640,7 @@ Retrieves the deployed form that can be referenced from a start event. For furth
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -624,13 +653,16 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) to be retrieved.
 
             try
             {
                 // Get Deployed Start Form
-                System.IO.Stream result = apiInstance.GetDeployedStartFormByKey(key);
+                FileParameter result = apiInstance.GetDeployedStartFormByKey(key);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -652,7 +684,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -676,7 +708,7 @@ No authorization required
 
 <a name="getdeployedstartformbykeyandtenantid"></a>
 # **GetDeployedStartFormByKeyAndTenantId**
-> System.IO.Stream GetDeployedStartFormByKeyAndTenantId (string key, string tenantId)
+> FileParameter GetDeployedStartFormByKeyAndTenantId (string key, string tenantId)
 
 Get Deployed Start Form
 
@@ -686,6 +718,7 @@ Retrieves the deployed form that can be referenced from a start event. For furth
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -698,14 +731,17 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) to be retrieved.
             var tenantId = tenantId_example;  // string | The id of the tenant the process definitions belong to.
 
             try
             {
                 // Get Deployed Start Form
-                System.IO.Stream result = apiInstance.GetDeployedStartFormByKeyAndTenantId(key, tenantId);
+                FileParameter result = apiInstance.GetDeployedStartFormByKeyAndTenantId(key, tenantId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -728,7 +764,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -762,6 +798,7 @@ Retrieves the latest version of the process definition for tenant according to t
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -774,7 +811,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) to be retrieved.
             var tenantId = tenantId_example;  // string | The id of the tenant the process definition belongs to.
 
@@ -836,6 +876,7 @@ Retrieves a process definition according to the `ProcessDefinition` interface in
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -848,7 +889,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition to be retrieved.
 
             try
@@ -908,6 +952,7 @@ Retrieves the BPMN 2.0 XML of a process definition.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -920,7 +965,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition.
 
             try
@@ -982,6 +1030,7 @@ Retrieves latest version the BPMN 2.0 XML of a process definition.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -994,7 +1043,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) whose XML should be retrieved.
 
             try
@@ -1055,6 +1107,7 @@ Retrieves latest version the BPMN 2.0 XML of a process definition. Returns the X
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1067,7 +1120,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) whose XML should be retrieved.
             var tenantId = tenantId_example;  // string | The id of the tenant the process definition belongs to.
 
@@ -1130,6 +1186,7 @@ Retrieves the latest version of the process definition which belongs to no tenan
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1142,7 +1199,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) to be retrieved.
 
             try
@@ -1192,7 +1252,7 @@ No authorization required
 
 <a name="getprocessdefinitiondiagram"></a>
 # **GetProcessDefinitionDiagram**
-> System.IO.Stream GetProcessDefinitionDiagram (string id)
+> FileParameter GetProcessDefinitionDiagram (string id)
 
 Get Diagram
 
@@ -1202,6 +1262,7 @@ Retrieves the diagram of a process definition.  If the process definition's depl
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1214,13 +1275,16 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition.
 
             try
             {
                 // Get Diagram
-                System.IO.Stream result = apiInstance.GetProcessDefinitionDiagram(id);
+                FileParameter result = apiInstance.GetProcessDefinitionDiagram(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1242,7 +1306,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -1265,7 +1329,7 @@ No authorization required
 
 <a name="getprocessdefinitiondiagrambykey"></a>
 # **GetProcessDefinitionDiagramByKey**
-> System.IO.Stream GetProcessDefinitionDiagramByKey (string key)
+> FileParameter GetProcessDefinitionDiagramByKey (string key)
 
 Get Diagram
 
@@ -1275,6 +1339,7 @@ Retrieves the diagram for the latest version of the process definition which bel
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1287,13 +1352,16 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition.
 
             try
             {
                 // Get Diagram
-                System.IO.Stream result = apiInstance.GetProcessDefinitionDiagramByKey(key);
+                FileParameter result = apiInstance.GetProcessDefinitionDiagramByKey(key);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1315,7 +1383,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -1338,7 +1406,7 @@ No authorization required
 
 <a name="getprocessdefinitiondiagrambykeyandtenantid"></a>
 # **GetProcessDefinitionDiagramByKeyAndTenantId**
-> System.IO.Stream GetProcessDefinitionDiagramByKeyAndTenantId (string key, string tenantId)
+> FileParameter GetProcessDefinitionDiagramByKeyAndTenantId (string key, string tenantId)
 
 Get Diagram
 
@@ -1348,6 +1416,7 @@ Retrieves the diagram for the latest version of the process definition for tenan
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1360,14 +1429,17 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition.
             var tenantId = tenantId_example;  // string | The id of the tenant the process definition belongs to.
 
             try
             {
                 // Get Diagram
-                System.IO.Stream result = apiInstance.GetProcessDefinitionDiagramByKeyAndTenantId(key, tenantId);
+                FileParameter result = apiInstance.GetProcessDefinitionDiagramByKeyAndTenantId(key, tenantId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1390,7 +1462,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -1423,6 +1495,7 @@ Retrieves runtime statistics of the process engine, grouped by process definitio
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1435,7 +1508,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var failedJobs = true;  // bool? | Whether to include the number of failed jobs in the result or not. Valid values are `true` or `false`. (optional) 
             var incidents = true;  // bool? | Valid values for this property are `true` or `false`. If this property has been set to `true` the result will include the corresponding number of incidents for each occurred incident type. If it is set to `false`, the incidents will not be included in the result. Cannot be used in combination with `incidentsForType`. (optional) 
             var incidentsForType = incidentsForType_example;  // string | If this property has been set with any incident type (i.e., a string value) the result will only include the number of incidents for the assigned incident type. Cannot be used in combination with `incidents`. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/incidents/#incident-types) for a list of incident types. (optional) 
@@ -1501,6 +1577,7 @@ Queries for process definitions that fulfill given parameters. Parameters may be
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1513,7 +1590,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var processDefinitionId = processDefinitionId_example;  // string | Filter by process definition id. (optional) 
             var processDefinitionIdIn = processDefinitionIdIn_example;  // string | Filter by a comma-separated list of process definition ids. (optional) 
             var name = name_example;  // string | Filter by process definition name. (optional) 
@@ -1643,6 +1723,7 @@ Requests the number of process definitions that fulfill the query criteria. Take
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1655,7 +1736,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var processDefinitionId = processDefinitionId_example;  // string | Filter by process definition id. (optional) 
             var processDefinitionIdIn = processDefinitionIdIn_example;  // string | Filter by a comma-separated list of process definition ids. (optional) 
             var name = name_example;  // string | Filter by process definition name. (optional) 
@@ -1767,7 +1851,7 @@ No authorization required
 
 <a name="getrenderedstartform"></a>
 # **GetRenderedStartForm**
-> System.IO.Stream GetRenderedStartForm (string id)
+> FileParameter GetRenderedStartForm (string id)
 
 Get Rendered Start Form
 
@@ -1777,6 +1861,7 @@ Retrieves the rendered form for a process definition. This method can be used to
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1789,13 +1874,16 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition to get the rendered start form for.
 
             try
             {
                 // Get Rendered Start Form
-                System.IO.Stream result = apiInstance.GetRenderedStartForm(id);
+                FileParameter result = apiInstance.GetRenderedStartForm(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1817,7 +1905,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -1840,7 +1928,7 @@ No authorization required
 
 <a name="getrenderedstartformbykey"></a>
 # **GetRenderedStartFormByKey**
-> System.IO.Stream GetRenderedStartFormByKey (string key)
+> FileParameter GetRenderedStartFormByKey (string key)
 
 Get Rendered Start Form
 
@@ -1850,6 +1938,7 @@ Retrieves  the rendered form for the latest version of the process definition wh
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1862,13 +1951,16 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) to be retrieved.
 
             try
             {
                 // Get Rendered Start Form
-                System.IO.Stream result = apiInstance.GetRenderedStartFormByKey(key);
+                FileParameter result = apiInstance.GetRenderedStartFormByKey(key);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1890,7 +1982,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -1913,7 +2005,7 @@ No authorization required
 
 <a name="getrenderedstartformbykeyandtenantid"></a>
 # **GetRenderedStartFormByKeyAndTenantId**
-> System.IO.Stream GetRenderedStartFormByKeyAndTenantId (string key, string tenantId)
+> FileParameter GetRenderedStartFormByKeyAndTenantId (string key, string tenantId)
 
 Get Rendered Start Form
 
@@ -1923,6 +2015,7 @@ Retrieves  the rendered form for the latest version of the process definition fo
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1935,14 +2028,17 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) to be retrieved.
             var tenantId = tenantId_example;  // string | The id of the tenant the process definition belongs to.
 
             try
             {
                 // Get Rendered Start Form
-                System.IO.Stream result = apiInstance.GetRenderedStartFormByKeyAndTenantId(key, tenantId);
+                FileParameter result = apiInstance.GetRenderedStartFormByKeyAndTenantId(key, tenantId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1965,7 +2061,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -1998,6 +2094,7 @@ Retrieves the key of the start form for a process definition. The form key corre
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -2010,7 +2107,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition to get the start form key for.
 
             try
@@ -2071,6 +2171,7 @@ Retrieves the key of the start form for the latest version of the process defini
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -2083,7 +2184,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) for which the form key is to be retrieved.
 
             try
@@ -2144,6 +2248,7 @@ Retrieves the key of the start form for the latest version of the process defini
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -2156,7 +2261,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) for which the form key is to be retrieved.
             var tenantId = tenantId_example;  // string | The id of the tenant the process definition belongs to.
 
@@ -2219,6 +2327,7 @@ Retrieves the start form variables for a process definition (only if they are de
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -2231,7 +2340,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition to retrieve the variables for.
             var variableNames = variableNames_example;  // string | A comma-separated list of variable names. Allows restricting the list of requested variables to the variable names in the list. It is best practice to restrict the list of variables to the variables actually required by the form in order to minimize fetching of data. If the query parameter is ommitted all variables are fetched. If the query parameter contains non-existent variable names, the variable names are ignored. (optional) 
             var deserializeValues = true;  // bool? | Determines whether serializable variable values (typically variables that store custom Java objects) should be deserialized on server side (default true).  If set to true, a serializable variable will be deserialized on server side and transformed to JSON using [Jackson's](http://jackson.codehaus.org/) POJO/bean property introspection feature. Note that this requires the Java classes of the variable value to be on the REST API's classpath.  If set to false, a serializable variable will be returned in its serialized format. For example, a variable that is serialized as XML will be returned as a JSON string containing XML.  **Note**: While true is the default value for reasons of backward compatibility, we recommend setting this parameter to false when developing web applications that are independent of the Java process applications deployed to the engine. (optional)  (default to true)
@@ -2295,6 +2407,7 @@ Retrieves the start form variables for the latest process definition which belon
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -2307,7 +2420,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) to be retrieved.
             var variableNames = variableNames_example;  // string | A comma-separated list of variable names. Allows restricting the list of requested variables to the variable names in the list. It is best practice to restrict the list of variables to the variables actually required by the form in order to minimize fetching of data. If the query parameter is ommitted all variables are fetched. If the query parameter contains non-existent variable names, the variable names are ignored. (optional) 
             var deserializeValues = true;  // bool? | Determines whether serializable variable values (typically variables that store custom Java objects) should be deserialized on server side (default true).  If set to true, a serializable variable will be deserialized on server side and transformed to JSON using [Jackson's](http://jackson.codehaus.org/) POJO/bean property introspection feature. Note that this requires the Java classes of the variable value to be on the REST API's classpath.  If set to false, a serializable variable will be returned in its serialized format. For example, a variable that is serialized as XML will be returned as a JSON string containing XML.  **Note**: While true is the default value for reasons of backward compatibility, we recommend setting this parameter to false when developing web applications that are independent of the Java process applications deployed to the engine. (optional)  (default to true)
@@ -2371,6 +2487,7 @@ Retrieves the start form variables for the latest process definition for a tenan
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -2383,7 +2500,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) to be retrieved.
             var tenantId = tenantId_example;  // string | The id of the tenant the process definition belongs to.
             var variableNames = variableNames_example;  // string | A comma-separated list of variable names. Allows restricting the list of requested variables to the variable names in the list. It is best practice to restrict the list of variables to the variables actually required by the form in order to minimize fetching of data. If the query parameter is ommitted all variables are fetched. If the query parameter contains non-existent variable names, the variable names are ignored. (optional) 
@@ -2449,6 +2569,7 @@ For the given process, returns a list of called process definitions correspondin
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -2461,7 +2582,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition.
 
             try
@@ -2521,6 +2645,7 @@ Restarts process instances that were canceled or terminated synchronously. Can a
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -2533,7 +2658,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition of the process instances to restart.
             var restartProcessInstanceDto = new RestartProcessInstanceDto(); // RestartProcessInstanceDto |  (optional) 
 
@@ -2595,6 +2723,7 @@ Restarts process instances that were canceled or terminated asynchronously. Can 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -2607,7 +2736,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition of the process instances to restart.
             var restartProcessInstanceDto = new RestartProcessInstanceDto(); // RestartProcessInstanceDto |  (optional) 
 
@@ -2670,6 +2802,7 @@ Instantiates a given process definition. Process variables and business key may 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -2682,7 +2815,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition to be retrieved.
             var startProcessInstanceDto = new StartProcessInstanceDto(); // StartProcessInstanceDto |  (optional) 
 
@@ -2745,6 +2881,7 @@ Instantiates a given process definition, starts the latest version of the proces
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -2757,7 +2894,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) to be retrieved.
             var startProcessInstanceDto = new StartProcessInstanceDto(); // StartProcessInstanceDto |  (optional) 
 
@@ -2820,6 +2960,7 @@ Instantiates a given process definition, starts the latest version of the proces
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -2832,7 +2973,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) to be retrieved.
             var tenantId = tenantId_example;  // string | The id of the tenant the process definition belongs to.
             var startProcessInstanceDto = new StartProcessInstanceDto(); // StartProcessInstanceDto |  (optional) 
@@ -2897,6 +3041,7 @@ Starts a process instance using a set of process variables and the business key.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -2909,7 +3054,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition to submit the form for.
             var startProcessInstanceFormDto = new StartProcessInstanceFormDto(); // StartProcessInstanceFormDto |  (optional) 
 
@@ -2973,6 +3121,7 @@ Starts the latest version of the process definition which belongs to no tenant u
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -2985,7 +3134,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition to submit the form for.
             var startProcessInstanceFormDto = new StartProcessInstanceFormDto(); // StartProcessInstanceFormDto |  (optional) 
 
@@ -3049,6 +3201,7 @@ Starts the latest version of the process definition for a tenant using a set of 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -3061,7 +3214,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition to submit the form for.
             var tenantId = tenantId_example;  // string | The id of the tenant the process definition belongs to.
             var startProcessInstanceFormDto = new StartProcessInstanceFormDto(); // StartProcessInstanceFormDto |  (optional) 
@@ -3127,6 +3283,7 @@ Updates history time to live for process definition. The field is used within [H
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -3139,7 +3296,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition to change history time to live.
             var historyTimeToLiveDto = new HistoryTimeToLiveDto(); // HistoryTimeToLiveDto |  (optional) 
 
@@ -3201,6 +3361,7 @@ Updates history time to live for the latest version of the process definition wh
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -3213,7 +3374,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition to change history time to live.
             var historyTimeToLiveDto = new HistoryTimeToLiveDto(); // HistoryTimeToLiveDto |  (optional) 
 
@@ -3275,6 +3439,7 @@ Updates history time to live for the latest version of the process definition fo
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -3287,7 +3452,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition to change history time to live.
             var tenantId = tenantId_example;  // string | The id of the tenant the process definition belongs to.
             var historyTimeToLiveDto = new HistoryTimeToLiveDto(); // HistoryTimeToLiveDto |  (optional) 
@@ -3351,6 +3519,7 @@ Activates or suspends process definitions with the given process definition key.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -3363,7 +3532,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var processDefinitionSuspensionStateDto = new ProcessDefinitionSuspensionStateDto(); // ProcessDefinitionSuspensionStateDto | **Note**: Unallowed property is `processDefinitionId`. (optional) 
 
             try
@@ -3423,6 +3595,7 @@ Activates or suspends a given process definition by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -3435,7 +3608,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process definition to activate or suspend.
             var processDefinitionSuspensionStateDto = new ProcessDefinitionSuspensionStateDto(); // ProcessDefinitionSuspensionStateDto | **Note**: Unallowed properties are `processDefinitionId` and `processDefinitionKey`. (optional) 
 
@@ -3497,6 +3673,7 @@ Activates or suspends a given process definition by latest version of process de
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -3509,7 +3686,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) to be activated/suspended.
             var processDefinitionSuspensionStateDto = new ProcessDefinitionSuspensionStateDto(); // ProcessDefinitionSuspensionStateDto | **Note**: Unallowed properties are `processDefinitionId` and `processDefinitionKey`. (optional) 
 
@@ -3571,6 +3751,7 @@ Activates or suspends a given process definition by the latest version of the pr
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -3583,7 +3764,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the process definition (the latest version thereof) to be activated/suspended.
             var tenantId = tenantId_example;  // string | The id of the tenant the process definition belongs to.
             var processDefinitionSuspensionStateDto = new ProcessDefinitionSuspensionStateDto(); // ProcessDefinitionSuspensionStateDto | **Note**: Unallowed properties are `processDefinitionId` and `processDefinitionKey`. (optional) 

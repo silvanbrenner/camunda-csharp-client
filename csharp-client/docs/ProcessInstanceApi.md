@@ -43,6 +43,7 @@ Correlates a message asynchronously to executions that are waiting for this mess
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -55,7 +56,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var correlationMessageAsyncDto = new CorrelationMessageAsyncDto(); // CorrelationMessageAsyncDto |  (optional) 
 
             try
@@ -116,6 +120,7 @@ Deletes a set of process instances asynchronously (batch) based on a historic pr
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -128,7 +133,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var deleteProcessInstancesDto = new DeleteProcessInstancesDto(); // DeleteProcessInstancesDto | **Unallowed property**: `processInstanceQuery` (optional) 
 
             try
@@ -188,6 +196,7 @@ Deletes a running process instance by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -200,7 +209,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process instance to be deleted.
             var skipCustomListeners = true;  // bool? | If set to true, the custom listeners will be skipped. (optional)  (default to false)
             var skipIoMappings = true;  // bool? | If set to true, the input/output mappings will be skipped. (optional)  (default to false)
@@ -267,6 +279,7 @@ Deletes a variable of a process instance by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -279,7 +292,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process instance to delete the variable from.
             var varName = varName_example;  // string | The name of the variable to delete.
 
@@ -339,6 +355,7 @@ Deletes multiple process instances asynchronously (batch).
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -351,7 +368,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var deleteProcessInstancesDto = new DeleteProcessInstancesDto(); // DeleteProcessInstancesDto | **Unallowed property**: `historicProcessInstanceQuery` (optional) 
 
             try
@@ -411,6 +431,7 @@ Retrieves an Activity Instance (Tree) for a given process instance by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -423,7 +444,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process instance for which the activity instance should be retrieved.
 
             try
@@ -483,6 +507,7 @@ Retrieves a process instance by id, according to the `ProcessInstance` interface
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -495,7 +520,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process instance to be retrieved.
 
             try
@@ -555,6 +583,7 @@ Retrieves a variable of a given process instance by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -567,7 +596,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process instance to retrieve the variable for.
             var varName = varName_example;  // string | The name of the variable to retrieve.
             var deserializeValue = true;  // bool? | Determines whether serializable variable values (typically variables that store custom Java objects) should be deserialized on server side (default true).  If set to true, a serializable variable will be deserialized on server side and transformed to JSON using [Jackson's](https://github.com/FasterXML/jackson) POJO/bean property introspection feature. Note that this requires the Java classes of the variable value to be on the REST API's classpath.  If set to false, a serializable variable will be returned in its serialized format. For example, a variable that is serialized as XML will be returned as a JSON string containing XML.  Note: While true is the default value for reasons of backward compatibility, we recommend setting this parameter to false when developing web applications that are independent of the Java process applications deployed to the engine. (optional)  (default to true)
@@ -621,7 +653,7 @@ No authorization required
 
 <a name="getprocessinstancevariablebinary"></a>
 # **GetProcessInstanceVariableBinary**
-> System.IO.Stream GetProcessInstanceVariableBinary (string id, string varName)
+> FileParameter GetProcessInstanceVariableBinary (string id, string varName)
 
 Get Process Variable (Binary)
 
@@ -631,6 +663,7 @@ Retrieves the content of a Process Variable by the Process Instance id and the P
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -643,14 +676,17 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process instance to retrieve the variable for.
             var varName = varName_example;  // string | The name of the variable to retrieve.
 
             try
             {
                 // Get Process Variable (Binary)
-                System.IO.Stream result = apiInstance.GetProcessInstanceVariableBinary(id, varName);
+                FileParameter result = apiInstance.GetProcessInstanceVariableBinary(id, varName);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -673,7 +709,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -706,6 +742,7 @@ Retrieves all variables of a given process instance by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -718,7 +755,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process instance to retrieve the variables from.
             var deserializeValues = true;  // bool? | Determines whether serializable variable values (typically variables that store custom Java objects) should be deserialized on server side (default true).  If set to true, a serializable variable will be deserialized on server side and transformed to JSON using [Jackson's](https://github.com/FasterXML/jackson) POJO/bean property introspection feature. Note that this requires the Java classes of the variable value to be on the REST API's classpath.  If set to false, a serializable variable will be returned in its serialized format. For example, a variable that is serialized as XML will be returned as a JSON string containing XML.  Note: While true is the default value for reasons of backward compatibility, we recommend setting this parameter to false when developing web applications that are independent of the Java process applications deployed to the engine. (optional)  (default to true)
 
@@ -780,6 +820,7 @@ Queries for process instances that fulfill given parameters. Parameters may be s
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -792,7 +833,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var sortBy = sortBy_example;  // string | Sort the results lexicographically by a given criterion. Must be used in conjunction with the sortOrder parameter. (optional) 
             var sortOrder = sortOrder_example;  // string | Sort the results in a given order. Values may be asc for ascending order or desc for descending order. Must be used in conjunction with the sortBy parameter. (optional) 
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
@@ -916,6 +960,7 @@ Queries for the number of process instances that fulfill given parameters.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -928,7 +973,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var processInstanceIds = processInstanceIds_example;  // string | Filter by a comma-separated list of process instance ids. (optional) 
             var businessKey = businessKey_example;  // string | Filter by process instance business key. (optional) 
             var businessKeyLike = businessKeyLike_example;  // string | Filter by process instance business key that the parameter is a substring of. (optional) 
@@ -1044,6 +1092,7 @@ Submits a list of modification instructions to change a process instance's execu
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1056,7 +1105,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process instance to modify.
             var processInstanceModificationDto = new ProcessInstanceModificationDto(); // ProcessInstanceModificationDto |  (optional) 
 
@@ -1118,6 +1170,7 @@ Submits a list of modification instructions to change a process instance's execu
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1130,7 +1183,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process instance to modify.
             var processInstanceModificationDto = new ProcessInstanceModificationDto(); // ProcessInstanceModificationDto |  (optional) 
 
@@ -1194,6 +1250,7 @@ Updates or deletes the variables of a process instance by id. Updates precede de
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1206,7 +1263,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process instance to set variables for.
             var patchVariablesDto = new PatchVariablesDto(); // PatchVariablesDto |  (optional) 
 
@@ -1268,6 +1328,7 @@ Queries for process instances that fulfill given parameters through a JSON objec
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1280,7 +1341,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
             var maxResults = 56;  // int? | Pagination of results. Specifies the maximum number of results to return. Will return less results if there are no more results left. (optional) 
             var processInstanceQueryDto = new ProcessInstanceQueryDto(); // ProcessInstanceQueryDto |  (optional) 
@@ -1344,6 +1408,7 @@ Queries for the number of process instances that fulfill the given parameters. T
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1356,7 +1421,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var processInstanceQueryDto = new ProcessInstanceQueryDto(); // ProcessInstanceQueryDto |  (optional) 
 
             try
@@ -1416,6 +1484,7 @@ Sets a variable of a given process instance by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1428,7 +1497,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process instance to set the variable for.
             var varName = varName_example;  // string | The name of the variable to set.
             var variableValueDto = new VariableValueDto(); // VariableValueDto |  (optional) 
@@ -1481,7 +1553,7 @@ No authorization required
 
 <a name="setprocessinstancevariablebinary"></a>
 # **SetProcessInstanceVariableBinary**
-> void SetProcessInstanceVariableBinary (string id, string varName, System.IO.Stream data = null, string valueType = null)
+> void SetProcessInstanceVariableBinary (string id, string varName, FileParameter data = null, string valueType = null)
 
 Update Process Variable (Binary)
 
@@ -1491,6 +1563,7 @@ Sets the serialized value for a binary variable or the binary value for a file v
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1503,10 +1576,13 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process instance to retrieve the variable for.
             var varName = varName_example;  // string | The name of the variable to retrieve.
-            var data = BINARY_DATA_HERE;  // System.IO.Stream | The binary data to be set. For File variables, this multipart can contain the filename, binary value and MIME type of the file variable to be set Only the filename is mandatory. (optional) 
+            var data = BINARY_DATA_HERE;  // FileParameter | The binary data to be set. For File variables, this multipart can contain the filename, binary value and MIME type of the file variable to be set Only the filename is mandatory. (optional) 
             var valueType = valueType_example;  // string | The name of the variable type. Either Bytes for a byte array variable or File for a file variable. (optional) 
 
             try
@@ -1531,7 +1607,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the process instance to retrieve the variable for. | 
  **varName** | **string**| The name of the variable to retrieve. | 
- **data** | **System.IO.Stream****System.IO.Stream**| The binary data to be set. For File variables, this multipart can contain the filename, binary value and MIME type of the file variable to be set Only the filename is mandatory. | [optional] 
+ **data** | **FileParameter****FileParameter**| The binary data to be set. For File variables, this multipart can contain the filename, binary value and MIME type of the file variable to be set Only the filename is mandatory. | [optional] 
  **valueType** | **string**| The name of the variable type. Either Bytes for a byte array variable or File for a file variable. | [optional] 
 
 ### Return type
@@ -1568,6 +1644,7 @@ Create a batch to set retries of jobs associated with given processes asynchrono
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1580,7 +1657,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var setJobRetriesByProcessDto = new SetJobRetriesByProcessDto(); // SetJobRetriesByProcessDto | Please note that if both processInstances and processInstanceQuery are provided, then the resulting execution will be performed on the union of these sets. **Unallowed property**: `historicProcessInstanceQuery` (optional) 
 
             try
@@ -1640,6 +1720,7 @@ Create a batch to set retries of jobs asynchronously based on a historic process
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1652,7 +1733,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var setJobRetriesByProcessDto = new SetJobRetriesByProcessDto(); // SetJobRetriesByProcessDto | Please note that if both processInstances and historicProcessInstanceQuery are provided, then the resulting execution will be performed on the union of these sets. **Unallowed property**: `processInstanceQuery` (optional) 
 
             try
@@ -1712,6 +1796,7 @@ Update or create runtime process variables in the root scope of process instance
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1724,7 +1809,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var setVariablesAsyncDto = new SetVariablesAsyncDto(); // SetVariablesAsyncDto |  (optional) 
 
             try
@@ -1785,6 +1873,7 @@ Activates or suspends process instances by providing certain criteria:  # Activa
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1797,7 +1886,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var processInstanceSuspensionStateDto = new ProcessInstanceSuspensionStateDto(); // ProcessInstanceSuspensionStateDto |  (optional) 
 
             try
@@ -1856,6 +1948,7 @@ Activates or suspends process instances asynchronously with a list of process in
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1868,7 +1961,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var processInstanceSuspensionStateAsyncDto = new ProcessInstanceSuspensionStateAsyncDto(); // ProcessInstanceSuspensionStateAsyncDto |  (optional) 
 
             try
@@ -1928,6 +2024,7 @@ Activates or suspends a given process instance by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1940,7 +2037,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new ProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProcessInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process instance to activate or suspend.
             var suspensionStateDto = new SuspensionStateDto(); // SuspensionStateDto |  (optional) 
 

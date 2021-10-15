@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using FileParameter = Camunda.OpenApi.Client.Client.FileParameter;
 using OpenAPIDateConverter = Camunda.OpenApi.Client.Client.OpenAPIDateConverter;
 
 namespace Camunda.OpenApi.Client.Model
@@ -41,7 +42,7 @@ namespace Camunda.OpenApi.Client.Model
         {
             this.Id = id;
             this.Timestamp = timestamp;
-            this.Version = version;
+            this._Version = version;
         }
 
         /// <summary>
@@ -63,7 +64,7 @@ namespace Camunda.OpenApi.Client.Model
         /// </summary>
         /// <value>The version of the schema.</value>
         [DataMember(Name = "version", EmitDefaultValue = true)]
-        public string Version { get; set; }
+        public string _Version { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -75,7 +76,7 @@ namespace Camunda.OpenApi.Client.Model
             sb.Append("class SchemaLogEntryDto {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
+            sb.Append("  _Version: ").Append(_Version).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -121,9 +122,9 @@ namespace Camunda.OpenApi.Client.Model
                     this.Timestamp.Equals(input.Timestamp))
                 ) && 
                 (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
+                    this._Version == input._Version ||
+                    (this._Version != null &&
+                    this._Version.Equals(input._Version))
                 );
         }
 
@@ -140,8 +141,8 @@ namespace Camunda.OpenApi.Client.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Timestamp != null)
                     hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this._Version != null)
+                    hashCode = hashCode * 59 + this._Version.GetHashCode();
                 return hashCode;
             }
         }

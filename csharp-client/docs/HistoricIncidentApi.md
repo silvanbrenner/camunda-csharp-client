@@ -20,6 +20,7 @@ Queries for historic incidents that fulfill given parameters. The size of the re
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -32,7 +33,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricIncidentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricIncidentApi(httpClient, config, httpClientHandler);
             var incidentId = incidentId_example;  // string | Restricts to incidents that have the given id. (optional) 
             var incidentType = incidentType_example;  // string | Restricts to incidents that belong to the given incident type. See the [User Guide](/manual/develop/user-guide/process-engine/incidents/#incident-types) for a list of incident types. (optional) 
             var incidentMessage = incidentMessage_example;  // string | Restricts to incidents that have the given incident message. (optional) 
@@ -144,6 +148,7 @@ Queries for the number of historic incidents that fulfill the given parameters. 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -156,7 +161,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricIncidentApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricIncidentApi(httpClient, config, httpClientHandler);
             var incidentId = incidentId_example;  // string | Restricts to incidents that have the given id. (optional) 
             var incidentType = incidentType_example;  // string | Restricts to incidents that belong to the given incident type. See the [User Guide](/manual/develop/user-guide/process-engine/incidents/#incident-types) for a list of incident types. (optional) 
             var incidentMessage = incidentMessage_example;  // string | Restricts to incidents that have the given incident message. (optional) 

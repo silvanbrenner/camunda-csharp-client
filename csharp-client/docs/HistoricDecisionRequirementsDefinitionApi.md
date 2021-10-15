@@ -19,6 +19,7 @@ Retrieves evaluation statistics of a given decision requirements definition.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -31,7 +32,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricDecisionRequirementsDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricDecisionRequirementsDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the decision requirements definition.
             var decisionInstanceId = decisionInstanceId_example;  // string | Restrict query results to be based only on specific evaluation instance of a given decision requirements definition. (optional) 
 

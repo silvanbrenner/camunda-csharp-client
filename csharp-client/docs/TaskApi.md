@@ -39,6 +39,7 @@ Claims a task for a specific user.  **Note:** The difference with the [Set Assig
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -51,7 +52,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to claim.
             var userIdDto = new UserIdDto(); // UserIdDto | Provide the id of the user that claims the task. (optional) 
 
@@ -112,6 +116,7 @@ Completes a task and updates process variables.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -124,7 +129,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to complete.
             var completeTaskDto = new CompleteTaskDto(); // CompleteTaskDto |  (optional) 
 
@@ -188,6 +196,7 @@ Creates a new task.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -200,7 +209,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var taskDto = new TaskDto(); // TaskDto |  (optional) 
 
             try
@@ -259,6 +271,7 @@ Delegates a task to another user.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -271,7 +284,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to delegate.
             var userIdDto = new UserIdDto(); // UserIdDto | Provide the id of the user that the task should be delegated to. (optional) 
 
@@ -332,6 +348,7 @@ Removes a task by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -344,7 +361,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to be removed.
 
             try
@@ -394,7 +414,7 @@ No authorization required
 
 <a name="getdeployedform"></a>
 # **GetDeployedForm**
-> System.IO.Stream GetDeployedForm (string id)
+> FileParameter GetDeployedForm (string id)
 
 Get Deployed Form
 
@@ -404,6 +424,7 @@ Retrieves the deployed form that is referenced from a given task. For further in
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -416,13 +437,16 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to get the deployed form for.
 
             try
             {
                 // Get Deployed Form
-                System.IO.Stream result = apiInstance.GetDeployedForm(id);
+                FileParameter result = apiInstance.GetDeployedForm(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -444,7 +468,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -478,6 +502,7 @@ Retrieves the form key for a task. The form key corresponds to the `FormData#for
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -490,7 +515,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to retrieve the form for.
 
             try
@@ -550,6 +578,7 @@ Retrieves the form variables for a task. The form variables take form data speci
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -562,7 +591,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to retrieve the variables for.
             var variableNames = variableNames_example;  // string | A comma-separated list of variable names. Allows restricting the list of requested variables to the variable names in the list. It is best practice to restrict the list of variables to the variables actually required by the form in order to minimize fetching of data. If the query parameter is ommitted all variables are fetched. If the query parameter contains non-existent variable names, the variable names are ignored. (optional) 
             var deserializeValues = true;  // bool? | Determines whether serializable variable values (typically variables that store custom Java objects) should be deserialized on server side (default true).  If set to true, a serializable variable will be deserialized on server side and transformed to JSON using [Jackson's](http://jackson.codehaus.org/) POJO/bean property introspection feature. Note that this requires the Java classes of the variable value to be on the REST API's classpath.  If set to false, a serializable variable will be returned in its serialized format. For example, a variable that is serialized as XML will be returned as a JSON string containing XML.  Note: While true is the default value for reasons of backward compatibility, we recommend setting this parameter to false when developing web applications that are independent of the Java process applications deployed to the engine. (optional)  (default to true)
@@ -616,7 +648,7 @@ No authorization required
 
 <a name="getrenderedform"></a>
 # **GetRenderedForm**
-> System.IO.Stream GetRenderedForm (string id)
+> FileParameter GetRenderedForm (string id)
 
 Get Rendered Form
 
@@ -626,6 +658,7 @@ Retrieves the rendered form for a task. This method can be used to get the HTML 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -638,13 +671,16 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to get the rendered form for.
 
             try
             {
                 // Get Rendered Form
-                System.IO.Stream result = apiInstance.GetRenderedForm(id);
+                FileParameter result = apiInstance.GetRenderedForm(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -666,7 +702,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -698,6 +734,7 @@ Retrieves a task by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -710,7 +747,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to be retrieved.
 
             try
@@ -770,6 +810,7 @@ Queries for tasks that fulfill a given filter. The size of the result set can be
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -782,7 +823,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var taskId = taskId_example;  // string | Restrict to task with the given id. (optional) 
             var taskIdIn = taskIdIn_example;  // string | Restrict to tasks with any of the given ids. (optional) 
             var processInstanceId = processInstanceId_example;  // string | Restrict to tasks that belong to process instances with the given id. (optional) 
@@ -1030,6 +1074,7 @@ Retrieves the number of tasks that fulfill a provided filter. Corresponds to the
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1042,7 +1087,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var taskId = taskId_example;  // string | Restrict to task with the given id. (optional) 
             var taskIdIn = taskIdIn_example;  // string | Restrict to tasks with any of the given ids. (optional) 
             var processInstanceId = processInstanceId_example;  // string | Restrict to tasks that belong to process instances with the given id. (optional) 
@@ -1282,6 +1330,7 @@ Reports a business error in the context of a running task by id. The error code 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1294,7 +1343,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task a BPMN error is reported for.
             var taskBpmnErrorDto = new TaskBpmnErrorDto(); // TaskBpmnErrorDto |  (optional) 
 
@@ -1357,6 +1409,7 @@ Reports an escalation in the context of a running task by id. The escalation cod
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1369,7 +1422,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task in which context a BPMN escalation is reported.
             var taskEscalationDto = new TaskEscalationDto(); // TaskEscalationDto |  (optional) 
 
@@ -1432,6 +1488,7 @@ Queries for tasks that fulfill a given filter. This method is slightly more powe
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1444,7 +1501,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
             var maxResults = 56;  // int? | Pagination of results. Specifies the maximum number of results to return. Will return less results if there are no more results left. (optional) 
             var taskQueryDto = new TaskQueryDto(); // TaskQueryDto |  (optional) 
@@ -1508,6 +1568,7 @@ Retrieves the number of tasks that fulfill the given filter. Corresponds to the 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1520,7 +1581,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var taskQueryDto = new TaskQueryDto(); // TaskQueryDto |  (optional) 
 
             try
@@ -1580,6 +1644,7 @@ Resolves a task and updates execution variables.  Resolving a task marks that th
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1592,7 +1657,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to resolve.
             var completeTaskDto = new CompleteTaskDto(); // CompleteTaskDto |  (optional) 
 
@@ -1654,6 +1722,7 @@ Changes the assignee of a task to a specific user.  **Note:** The difference wit
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1666,7 +1735,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to set the assignee for.
             var userIdDto = new UserIdDto(); // UserIdDto | Provide the id of the user that will be the assignee of the task. (optional) 
 
@@ -1727,6 +1799,7 @@ Completes a task and updates process variables using a form submit. There are tw
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1739,7 +1812,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to submit the form for.
             var completeTaskDto = new CompleteTaskDto(); // CompleteTaskDto |  (optional) 
 
@@ -1803,6 +1879,7 @@ Resets a task's assignee. If successful, the task is not assigned to a user.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1815,7 +1892,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to unclaim.
 
             try
@@ -1874,6 +1954,7 @@ Updates a task.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -1886,7 +1967,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to be updated.
             var taskDto = new TaskDto(); // TaskDto |  (optional) 
 

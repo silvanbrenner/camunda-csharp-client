@@ -22,6 +22,7 @@ Executes a migration plan synchronously for multiple process instances. To execu
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -34,7 +35,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new MigrationApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new MigrationApi(httpClient, config, httpClientHandler);
             var migrationExecutionDto = new MigrationExecutionDto(); // MigrationExecutionDto |  (optional) 
 
             try
@@ -93,6 +97,7 @@ Executes a migration plan asynchronously (batch) for multiple process instances.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -105,7 +110,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new MigrationApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new MigrationApi(httpClient, config, httpClientHandler);
             var migrationExecutionDto = new MigrationExecutionDto(); // MigrationExecutionDto |  (optional) 
 
             try
@@ -165,6 +173,7 @@ Generates a migration plan for two process definitions. The generated migration 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -177,7 +186,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new MigrationApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new MigrationApi(httpClient, config, httpClientHandler);
             var migrationPlanGenerationDto = new MigrationPlanGenerationDto(); // MigrationPlanGenerationDto |  (optional) 
 
             try
@@ -237,6 +249,7 @@ Validates a migration plan statically without executing it. This corresponds to 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -249,7 +262,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new MigrationApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new MigrationApi(httpClient, config, httpClientHandler);
             var migrationPlanDto = new MigrationPlanDto(); // MigrationPlanDto |  (optional) 
 
             try

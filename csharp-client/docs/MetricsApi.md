@@ -21,6 +21,7 @@ Deletes all task worker metrics prior to the given date or all if no date is pro
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -33,7 +34,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new MetricsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new MetricsApi(httpClient, config, httpClientHandler);
             var date = 2013-10-20T19:20:30+01:00;  // DateTime? | The date prior to which all task worker metrics should be deleted. (optional) 
 
             try
@@ -92,6 +96,7 @@ Retrieves the `sum` (count) for a given metric.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -104,7 +109,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new MetricsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new MetricsApi(httpClient, config, httpClientHandler);
             var metricsName = metricsName_example;  // string | The name of the metric.
             var startDate = 2013-10-20T19:20:30+01:00;  // DateTime? | The start date (inclusive). (optional) 
             var endDate = 2013-10-20T19:20:30+01:00;  // DateTime? | The end date (exclusive). (optional) 
@@ -167,6 +175,7 @@ Retrieves a list of metrics, aggregated for a given interval.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -179,7 +188,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new MetricsApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new MetricsApi(httpClient, config, httpClientHandler);
             var name = name_example;  // string | The name of the metric. (optional) 
             var reporter = reporter_example;  // string | The name of the reporter (host), on which the metrics was logged. This will have value provided by the [hostname configuration property](https://docs.camunda.org/manual/7.16/reference/deployment-descriptors/tags/process-engine/#hostname). (optional) 
             var startDate = 2013-10-20T19:20:30+01:00;  // DateTime? | The start date (inclusive). (optional) 

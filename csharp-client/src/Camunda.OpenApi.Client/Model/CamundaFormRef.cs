@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using FileParameter = Camunda.OpenApi.Client.Client.FileParameter;
 using OpenAPIDateConverter = Camunda.OpenApi.Client.Client.OpenAPIDateConverter;
 
 namespace Camunda.OpenApi.Client.Model
@@ -41,7 +42,7 @@ namespace Camunda.OpenApi.Client.Model
         {
             this.Key = key;
             this.Binding = binding;
-            this.Version = version;
+            this._Version = version;
         }
 
         /// <summary>
@@ -63,7 +64,7 @@ namespace Camunda.OpenApi.Client.Model
         /// </summary>
         /// <value>The specific version of a Camunda Form. This property is only set if &#x60;binding&#x60; is &#x60;version&#x60;.</value>
         [DataMember(Name = "version", EmitDefaultValue = true)]
-        public int? Version { get; set; }
+        public int? _Version { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -75,7 +76,7 @@ namespace Camunda.OpenApi.Client.Model
             sb.Append("class CamundaFormRef {\n");
             sb.Append("  Key: ").Append(Key).Append("\n");
             sb.Append("  Binding: ").Append(Binding).Append("\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
+            sb.Append("  _Version: ").Append(_Version).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -121,9 +122,9 @@ namespace Camunda.OpenApi.Client.Model
                     this.Binding.Equals(input.Binding))
                 ) && 
                 (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
+                    this._Version == input._Version ||
+                    (this._Version != null &&
+                    this._Version.Equals(input._Version))
                 );
         }
 
@@ -140,8 +141,8 @@ namespace Camunda.OpenApi.Client.Model
                     hashCode = hashCode * 59 + this.Key.GetHashCode();
                 if (this.Binding != null)
                     hashCode = hashCode * 59 + this.Binding.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this._Version != null)
+                    hashCode = hashCode * 59 + this._Version.GetHashCode();
                 return hashCode;
             }
         }

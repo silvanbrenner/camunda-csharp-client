@@ -21,6 +21,7 @@ Adds an identity link to a task by id. Can be used to link any user or group to 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -33,7 +34,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskIdentityLinkApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskIdentityLinkApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to add a link to.
             var identityLinkDto = new IdentityLinkDto(); // IdentityLinkDto |  (optional) 
 
@@ -94,6 +98,7 @@ Removes an identity link from a task by id
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -106,7 +111,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskIdentityLinkApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskIdentityLinkApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to remove a link from.
             var identityLinkDto = new IdentityLinkDto(); // IdentityLinkDto |  (optional) 
 
@@ -167,6 +175,7 @@ Gets the identity links for a task by id, which are the users and groups that ar
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -179,7 +188,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new TaskIdentityLinkApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TaskIdentityLinkApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the task to retrieve the identity links for.
             var type = type_example;  // string | Filter by the type of links to include. (optional) 
 

@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
+using FileParameter = Camunda.OpenApi.Client.Client.FileParameter;
 using OpenAPIDateConverter = Camunda.OpenApi.Client.Client.OpenAPIDateConverter;
 
 namespace Camunda.OpenApi.Client.Model
@@ -70,6 +71,7 @@ namespace Camunda.OpenApi.Client.Model
 
         }
 
+
         /// <summary>
         /// Sort the results lexicographically by a given criterion. Must be used in conjunction with the sortOrder parameter.
         /// </summary>
@@ -96,6 +98,7 @@ namespace Camunda.OpenApi.Client.Model
             Desc = 2
 
         }
+
 
         /// <summary>
         /// Sort the results in a given order. Values may be &#x60;asc&#x60; for ascending order or &#x60;desc&#x60; for descending order. Must be used in conjunction with the sortBy parameter.

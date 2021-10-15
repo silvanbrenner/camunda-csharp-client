@@ -23,6 +23,7 @@ Delete multiple historic decision instances asynchronously (batch). At least `hi
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -35,7 +36,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricDecisionInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricDecisionInstanceApi(httpClient, config, httpClientHandler);
             var deleteHistoricDecisionInstancesDto = new DeleteHistoricDecisionInstancesDto(); // DeleteHistoricDecisionInstancesDto |  (optional) 
 
             try
@@ -95,6 +99,7 @@ Retrieves a historic decision instance by id, according to the  `HistoricDecisio
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -107,7 +112,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricDecisionInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricDecisionInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the historic decision instance to be retrieved.
             var includeInputs = true;  // bool? | Include input values in the result. Value may only be `true`, as `false` is the default behavior. (optional) 
             var includeOutputs = true;  // bool? | Include output values in the result. Value may only be `true`, as `false` is the default behavior. (optional) 
@@ -175,6 +183,7 @@ Queries for historic decision instances that fulfill the given parameters.  The 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -187,7 +196,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricDecisionInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricDecisionInstanceApi(httpClient, config, httpClientHandler);
             var decisionInstanceId = decisionInstanceId_example;  // string | Filter by decision instance id. (optional) 
             var decisionInstanceIdIn = decisionInstanceIdIn_example;  // string | Filter by decision instance ids. Must be a comma-separated list of decision instance ids. (optional) 
             var decisionDefinitionId = decisionDefinitionId_example;  // string | Filter by the decision definition the instances belongs to. (optional) 
@@ -311,6 +323,7 @@ Queries for the number of historic decision instances that fulfill the given par
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -323,7 +336,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricDecisionInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricDecisionInstanceApi(httpClient, config, httpClientHandler);
             var decisionInstanceId = decisionInstanceId_example;  // string | Filter by decision instance id. (optional) 
             var decisionInstanceIdIn = decisionInstanceIdIn_example;  // string | Filter by decision instance ids. Must be a comma-separated list of decision instance ids. (optional) 
             var decisionDefinitionId = decisionDefinitionId_example;  // string | Filter by the decision definition the instances belongs to. (optional) 
@@ -431,6 +447,7 @@ Sets the removal time to multiple historic decision instances asynchronously (ba
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -443,7 +460,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricDecisionInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricDecisionInstanceApi(httpClient, config, httpClientHandler);
             var setRemovalTimeToHistoricDecisionInstancesDto = new SetRemovalTimeToHistoricDecisionInstancesDto(); // SetRemovalTimeToHistoricDecisionInstancesDto |  (optional) 
 
             try

@@ -24,6 +24,7 @@ Retrieves the corresponding error details of the passed historic external task l
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -36,7 +37,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricExternalTaskLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricExternalTaskLogApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the historic external task log to get the error details for.
 
             try
@@ -96,6 +100,7 @@ Retrieves a historic external task log by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -108,7 +113,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricExternalTaskLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricExternalTaskLogApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the log entry.
 
             try
@@ -168,6 +176,7 @@ Queries for historic external task logs that fulfill the given parameters. The s
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -180,7 +189,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricExternalTaskLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricExternalTaskLogApi(httpClient, config, httpClientHandler);
             var logId = logId_example;  // string | Filter by historic external task log id. (optional) 
             var externalTaskId = externalTaskId_example;  // string | Filter by external task id. (optional) 
             var topicName = topicName_example;  // string | Filter by an external task topic. (optional) 
@@ -284,6 +296,7 @@ Queries for the number of historic external task logs that fulfill the given par
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -296,7 +309,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricExternalTaskLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricExternalTaskLogApi(httpClient, config, httpClientHandler);
             var logId = logId_example;  // string | Filter by historic external task log id. (optional) 
             var externalTaskId = externalTaskId_example;  // string | Filter by external task id. (optional) 
             var topicName = topicName_example;  // string | Filter by an external task topic. (optional) 
@@ -392,6 +408,7 @@ Queries for historic external task logs that fulfill the given parameters. This 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -404,7 +421,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricExternalTaskLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricExternalTaskLogApi(httpClient, config, httpClientHandler);
             var historicExternalTaskLogQueryDto = new HistoricExternalTaskLogQueryDto(); // HistoricExternalTaskLogQueryDto |  (optional) 
 
             try
@@ -464,6 +484,7 @@ Queries for the number of historic external task logs that fulfill the given par
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -476,7 +497,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricExternalTaskLogApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricExternalTaskLogApi(httpClient, config, httpClientHandler);
             var historicExternalTaskLogQueryDto = new HistoricExternalTaskLogQueryDto(); // HistoricExternalTaskLogQueryDto |  (optional) 
 
             try

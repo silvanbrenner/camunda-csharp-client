@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Net.Mime;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -41,7 +42,7 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="deploymentActivationTime">Sets the date on which the process definitions contained in this deployment will be activated. This means that all process definitions will be deployed as usual, but they will be suspended from the start until the given activation date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. (optional)</param>
         /// <param name="data">The binary data to create the deployment resource. It is possible to have more than one form part with different form part names for the binary data to create a deployment. (optional)</param>
         /// <returns>DeploymentWithDefinitionsDto</returns>
-        DeploymentWithDefinitionsDto CreateDeployment(string tenantId = default(string), string deploymentSource = default(string), bool? deployChangedOnly = default(bool?), bool? enableDuplicateFiltering = default(bool?), string deploymentName = default(string), DateTime? deploymentActivationTime = default(DateTime?), System.IO.Stream data = default(System.IO.Stream));
+        DeploymentWithDefinitionsDto CreateDeployment(string tenantId = default(string), string deploymentSource = default(string), bool? deployChangedOnly = default(bool?), bool? enableDuplicateFiltering = default(bool?), string deploymentName = default(string), DateTime? deploymentActivationTime = default(DateTime?), FileParameter data = default(FileParameter));
 
         /// <summary>
         /// Create
@@ -58,7 +59,7 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="deploymentActivationTime">Sets the date on which the process definitions contained in this deployment will be activated. This means that all process definitions will be deployed as usual, but they will be suspended from the start until the given activation date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. (optional)</param>
         /// <param name="data">The binary data to create the deployment resource. It is possible to have more than one form part with different form part names for the binary data to create a deployment. (optional)</param>
         /// <returns>ApiResponse of DeploymentWithDefinitionsDto</returns>
-        ApiResponse<DeploymentWithDefinitionsDto> CreateDeploymentWithHttpInfo(string tenantId = default(string), string deploymentSource = default(string), bool? deployChangedOnly = default(bool?), bool? enableDuplicateFiltering = default(bool?), string deploymentName = default(string), DateTime? deploymentActivationTime = default(DateTime?), System.IO.Stream data = default(System.IO.Stream));
+        ApiResponse<DeploymentWithDefinitionsDto> CreateDeploymentWithHttpInfo(string tenantId = default(string), string deploymentSource = default(string), bool? deployChangedOnly = default(bool?), bool? enableDuplicateFiltering = default(bool?), string deploymentName = default(string), DateTime? deploymentActivationTime = default(DateTime?), FileParameter data = default(FileParameter));
         /// <summary>
         /// Delete
         /// </summary>
@@ -139,8 +140,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The id of the deployment.</param>
         /// <param name="resourceId">The id of the deployment resource.</param>
-        /// <returns>System.IO.Stream</returns>
-        System.IO.Stream GetDeploymentResourceData(string id, string resourceId);
+        /// <returns>FileParameter</returns>
+        FileParameter GetDeploymentResourceData(string id, string resourceId);
 
         /// <summary>
         /// Get Resource (Binary)
@@ -151,8 +152,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The id of the deployment.</param>
         /// <param name="resourceId">The id of the deployment resource.</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> GetDeploymentResourceDataWithHttpInfo(string id, string resourceId);
+        /// <returns>ApiResponse of FileParameter</returns>
+        ApiResponse<FileParameter> GetDeploymentResourceDataWithHttpInfo(string id, string resourceId);
         /// <summary>
         /// Get Resources
         /// </summary>
@@ -308,7 +309,7 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="data">The binary data to create the deployment resource. It is possible to have more than one form part with different form part names for the binary data to create a deployment. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeploymentWithDefinitionsDto</returns>
-        System.Threading.Tasks.Task<DeploymentWithDefinitionsDto> CreateDeploymentAsync(string tenantId = default(string), string deploymentSource = default(string), bool? deployChangedOnly = default(bool?), bool? enableDuplicateFiltering = default(bool?), string deploymentName = default(string), DateTime? deploymentActivationTime = default(DateTime?), System.IO.Stream data = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DeploymentWithDefinitionsDto> CreateDeploymentAsync(string tenantId = default(string), string deploymentSource = default(string), bool? deployChangedOnly = default(bool?), bool? enableDuplicateFiltering = default(bool?), string deploymentName = default(string), DateTime? deploymentActivationTime = default(DateTime?), FileParameter data = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create
@@ -326,7 +327,7 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="data">The binary data to create the deployment resource. It is possible to have more than one form part with different form part names for the binary data to create a deployment. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeploymentWithDefinitionsDto)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeploymentWithDefinitionsDto>> CreateDeploymentWithHttpInfoAsync(string tenantId = default(string), string deploymentSource = default(string), bool? deployChangedOnly = default(bool?), bool? enableDuplicateFiltering = default(bool?), string deploymentName = default(string), DateTime? deploymentActivationTime = default(DateTime?), System.IO.Stream data = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DeploymentWithDefinitionsDto>> CreateDeploymentWithHttpInfoAsync(string tenantId = default(string), string deploymentSource = default(string), bool? deployChangedOnly = default(bool?), bool? enableDuplicateFiltering = default(bool?), string deploymentName = default(string), DateTime? deploymentActivationTime = default(DateTime?), FileParameter data = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete
         /// </summary>
@@ -414,8 +415,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="id">The id of the deployment.</param>
         /// <param name="resourceId">The id of the deployment resource.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> GetDeploymentResourceDataAsync(string id, string resourceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of FileParameter</returns>
+        System.Threading.Tasks.Task<FileParameter> GetDeploymentResourceDataAsync(string id, string resourceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Resource (Binary)
@@ -427,8 +428,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="id">The id of the deployment.</param>
         /// <param name="resourceId">The id of the deployment resource.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetDeploymentResourceDataWithHttpInfoAsync(string id, string resourceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (FileParameter)</returns>
+        System.Threading.Tasks.Task<ApiResponse<FileParameter>> GetDeploymentResourceDataWithHttpInfoAsync(string id, string resourceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Resources
         /// </summary>
@@ -581,12 +582,14 @@ namespace Camunda.OpenApi.Client.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class DeploymentApi : IDeploymentApi
+    public partial class DeploymentApi : IDisposable, IDeploymentApi
     {
         private Camunda.OpenApi.Client.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DeploymentApi"/> class.
+        /// **IMPORTANT** This will also create an istance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHander</see>.
         /// </summary>
         /// <returns></returns>
         public DeploymentApi() : this((string)null)
@@ -595,24 +598,31 @@ namespace Camunda.OpenApi.Client.Api
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DeploymentApi"/> class.
+        /// **IMPORTANT** This will also create an istance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHander</see>.
         /// </summary>
+        /// <param name="basePath">The target service's base path in URL format.</param>
+        /// <exception cref="ArgumentException"></exception>
         /// <returns></returns>
-        public DeploymentApi(String basePath)
+        public DeploymentApi(string basePath)
         {
             this.Configuration = Camunda.OpenApi.Client.Client.Configuration.MergeConfigurations(
                 Camunda.OpenApi.Client.Client.GlobalConfiguration.Instance,
                 new Camunda.OpenApi.Client.Client.Configuration { BasePath = basePath }
             );
-            this.Client = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.Client =  this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
             this.ExceptionFactory = Camunda.OpenApi.Client.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DeploymentApi"/> class
-        /// using Configuration object
+        /// Initializes a new instance of the <see cref="DeploymentApi"/> class using Configuration object.
+        /// **IMPORTANT** This will also create an istance of HttpClient, which is less than ideal.
+        /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHander</see>.
         /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
+        /// <param name="configuration">An instance of Configuration.</param>
+        /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
         public DeploymentApi(Camunda.OpenApi.Client.Client.Configuration configuration)
         {
@@ -622,8 +632,78 @@ namespace Camunda.OpenApi.Client.Api
                 Camunda.OpenApi.Client.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Camunda.OpenApi.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.Client = this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
+            ExceptionFactory = Camunda.OpenApi.Client.Client.Configuration.DefaultExceptionFactory;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentApi"/> class.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public DeploymentApi(HttpClient client, HttpClientHandler handler = null) : this(client, (string)null, handler)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentApi"/> class.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="basePath">The target service's base path in URL format.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public DeploymentApi(HttpClient client, string basePath, HttpClientHandler handler = null)
+        {
+            if (client == null) throw new ArgumentNullException("client");
+
+            this.Configuration = Camunda.OpenApi.Client.Client.Configuration.MergeConfigurations(
+                Camunda.OpenApi.Client.Client.GlobalConfiguration.Instance,
+                new Camunda.OpenApi.Client.Client.Configuration { BasePath = basePath }
+            );
+            this.ApiClient = new Camunda.OpenApi.Client.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.Client =  this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
+            this.ExceptionFactory = Camunda.OpenApi.Client.Client.Configuration.DefaultExceptionFactory;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentApi"/> class using Configuration object.
+        /// </summary>
+        /// <param name="client">An instance of HttpClient.</param>
+        /// <param name="configuration">An instance of Configuration.</param>
+        /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <returns></returns>
+        /// <remarks>
+        /// Some configuration settings will not be applied without passing an HttpClientHandler.
+        /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
+        /// </remarks>
+        public DeploymentApi(HttpClient client, Camunda.OpenApi.Client.Client.Configuration configuration, HttpClientHandler handler = null)
+        {
+            if (configuration == null) throw new ArgumentNullException("configuration");
+            if (client == null) throw new ArgumentNullException("client");
+
+            this.Configuration = Camunda.OpenApi.Client.Client.Configuration.MergeConfigurations(
+                Camunda.OpenApi.Client.Client.GlobalConfiguration.Instance,
+                configuration
+            );
+            this.ApiClient = new Camunda.OpenApi.Client.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.Client = this.ApiClient;
+            this.AsynchronousClient = this.ApiClient;
             ExceptionFactory = Camunda.OpenApi.Client.Client.Configuration.DefaultExceptionFactory;
         }
 
@@ -634,6 +714,7 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public DeploymentApi(Camunda.OpenApi.Client.Client.ISynchronousClient client, Camunda.OpenApi.Client.Client.IAsynchronousClient asyncClient, Camunda.OpenApi.Client.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
@@ -645,6 +726,19 @@ namespace Camunda.OpenApi.Client.Api
             this.Configuration = configuration;
             this.ExceptionFactory = Camunda.OpenApi.Client.Client.Configuration.DefaultExceptionFactory;
         }
+
+        /// <summary>
+        /// Disposes resources if they were created by us
+        /// </summary>
+        public void Dispose()
+        {
+            this.ApiClient?.Dispose();
+        }
+
+        /// <summary>
+        /// Holds the ApiClient if created
+        /// </summary>
+        public Camunda.OpenApi.Client.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
@@ -660,7 +754,7 @@ namespace Camunda.OpenApi.Client.Api
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        public String GetBasePath()
+        public string GetBasePath()
         {
             return this.Configuration.BasePath;
         }
@@ -699,7 +793,7 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="deploymentActivationTime">Sets the date on which the process definitions contained in this deployment will be activated. This means that all process definitions will be deployed as usual, but they will be suspended from the start until the given activation date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. (optional)</param>
         /// <param name="data">The binary data to create the deployment resource. It is possible to have more than one form part with different form part names for the binary data to create a deployment. (optional)</param>
         /// <returns>DeploymentWithDefinitionsDto</returns>
-        public DeploymentWithDefinitionsDto CreateDeployment(string tenantId = default(string), string deploymentSource = default(string), bool? deployChangedOnly = default(bool?), bool? enableDuplicateFiltering = default(bool?), string deploymentName = default(string), DateTime? deploymentActivationTime = default(DateTime?), System.IO.Stream data = default(System.IO.Stream))
+        public DeploymentWithDefinitionsDto CreateDeployment(string tenantId = default(string), string deploymentSource = default(string), bool? deployChangedOnly = default(bool?), bool? enableDuplicateFiltering = default(bool?), string deploymentName = default(string), DateTime? deploymentActivationTime = default(DateTime?), FileParameter data = default(FileParameter))
         {
             Camunda.OpenApi.Client.Client.ApiResponse<DeploymentWithDefinitionsDto> localVarResponse = CreateDeploymentWithHttpInfo(tenantId, deploymentSource, deployChangedOnly, enableDuplicateFiltering, deploymentName, deploymentActivationTime, data);
             return localVarResponse.Data;
@@ -717,16 +811,16 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="deploymentActivationTime">Sets the date on which the process definitions contained in this deployment will be activated. This means that all process definitions will be deployed as usual, but they will be suspended from the start until the given activation date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. (optional)</param>
         /// <param name="data">The binary data to create the deployment resource. It is possible to have more than one form part with different form part names for the binary data to create a deployment. (optional)</param>
         /// <returns>ApiResponse of DeploymentWithDefinitionsDto</returns>
-        public Camunda.OpenApi.Client.Client.ApiResponse<DeploymentWithDefinitionsDto> CreateDeploymentWithHttpInfo(string tenantId = default(string), string deploymentSource = default(string), bool? deployChangedOnly = default(bool?), bool? enableDuplicateFiltering = default(bool?), string deploymentName = default(string), DateTime? deploymentActivationTime = default(DateTime?), System.IO.Stream data = default(System.IO.Stream))
+        public Camunda.OpenApi.Client.Client.ApiResponse<DeploymentWithDefinitionsDto> CreateDeploymentWithHttpInfo(string tenantId = default(string), string deploymentSource = default(string), bool? deployChangedOnly = default(bool?), bool? enableDuplicateFiltering = default(bool?), string deploymentName = default(string), DateTime? deploymentActivationTime = default(DateTime?), FileParameter data = default(FileParameter))
         {
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "multipart/form-data"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -791,7 +885,7 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="data">The binary data to create the deployment resource. It is possible to have more than one form part with different form part names for the binary data to create a deployment. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeploymentWithDefinitionsDto</returns>
-        public async System.Threading.Tasks.Task<DeploymentWithDefinitionsDto> CreateDeploymentAsync(string tenantId = default(string), string deploymentSource = default(string), bool? deployChangedOnly = default(bool?), bool? enableDuplicateFiltering = default(bool?), string deploymentName = default(string), DateTime? deploymentActivationTime = default(DateTime?), System.IO.Stream data = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DeploymentWithDefinitionsDto> CreateDeploymentAsync(string tenantId = default(string), string deploymentSource = default(string), bool? deployChangedOnly = default(bool?), bool? enableDuplicateFiltering = default(bool?), string deploymentName = default(string), DateTime? deploymentActivationTime = default(DateTime?), FileParameter data = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Camunda.OpenApi.Client.Client.ApiResponse<DeploymentWithDefinitionsDto> localVarResponse = await CreateDeploymentWithHttpInfoAsync(tenantId, deploymentSource, deployChangedOnly, enableDuplicateFiltering, deploymentName, deploymentActivationTime, data, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -810,17 +904,17 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="data">The binary data to create the deployment resource. It is possible to have more than one form part with different form part names for the binary data to create a deployment. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeploymentWithDefinitionsDto)</returns>
-        public async System.Threading.Tasks.Task<Camunda.OpenApi.Client.Client.ApiResponse<DeploymentWithDefinitionsDto>> CreateDeploymentWithHttpInfoAsync(string tenantId = default(string), string deploymentSource = default(string), bool? deployChangedOnly = default(bool?), bool? enableDuplicateFiltering = default(bool?), string deploymentName = default(string), DateTime? deploymentActivationTime = default(DateTime?), System.IO.Stream data = default(System.IO.Stream), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Camunda.OpenApi.Client.Client.ApiResponse<DeploymentWithDefinitionsDto>> CreateDeploymentWithHttpInfoAsync(string tenantId = default(string), string deploymentSource = default(string), bool? deployChangedOnly = default(bool?), bool? enableDuplicateFiltering = default(bool?), string deploymentName = default(string), DateTime? deploymentActivationTime = default(DateTime?), FileParameter data = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "multipart/form-data"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -905,11 +999,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -980,11 +1074,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1049,11 +1143,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1107,11 +1201,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1170,11 +1264,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1235,11 +1329,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1273,10 +1367,10 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The id of the deployment.</param>
         /// <param name="resourceId">The id of the deployment resource.</param>
-        /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream GetDeploymentResourceData(string id, string resourceId)
+        /// <returns>FileParameter</returns>
+        public FileParameter GetDeploymentResourceData(string id, string resourceId)
         {
-            Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream> localVarResponse = GetDeploymentResourceDataWithHttpInfo(id, resourceId);
+            Camunda.OpenApi.Client.Client.ApiResponse<FileParameter> localVarResponse = GetDeploymentResourceDataWithHttpInfo(id, resourceId);
             return localVarResponse.Data;
         }
 
@@ -1286,8 +1380,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <exception cref="Camunda.OpenApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The id of the deployment.</param>
         /// <param name="resourceId">The id of the deployment resource.</param>
-        /// <returns>ApiResponse of System.IO.Stream</returns>
-        public Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream> GetDeploymentResourceDataWithHttpInfo(string id, string resourceId)
+        /// <returns>ApiResponse of FileParameter</returns>
+        public Camunda.OpenApi.Client.Client.ApiResponse<FileParameter> GetDeploymentResourceDataWithHttpInfo(string id, string resourceId)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1299,11 +1393,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/octet-stream",
                 "*/*",
                 "application/json"
@@ -1320,7 +1414,7 @@ namespace Camunda.OpenApi.Client.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<System.IO.Stream>("/deployment/{id}/resources/{resourceId}/data", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<FileParameter>("/deployment/{id}/resources/{resourceId}/data", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1338,10 +1432,10 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="id">The id of the deployment.</param>
         /// <param name="resourceId">The id of the deployment resource.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> GetDeploymentResourceDataAsync(string id, string resourceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of FileParameter</returns>
+        public async System.Threading.Tasks.Task<FileParameter> GetDeploymentResourceDataAsync(string id, string resourceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream> localVarResponse = await GetDeploymentResourceDataWithHttpInfoAsync(id, resourceId, cancellationToken).ConfigureAwait(false);
+            Camunda.OpenApi.Client.Client.ApiResponse<FileParameter> localVarResponse = await GetDeploymentResourceDataWithHttpInfoAsync(id, resourceId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1352,8 +1446,8 @@ namespace Camunda.OpenApi.Client.Api
         /// <param name="id">The id of the deployment.</param>
         /// <param name="resourceId">The id of the deployment resource.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<Camunda.OpenApi.Client.Client.ApiResponse<System.IO.Stream>> GetDeploymentResourceDataWithHttpInfoAsync(string id, string resourceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (FileParameter)</returns>
+        public async System.Threading.Tasks.Task<Camunda.OpenApi.Client.Client.ApiResponse<FileParameter>> GetDeploymentResourceDataWithHttpInfoAsync(string id, string resourceId, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1366,11 +1460,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/octet-stream",
                 "*/*",
                 "application/json"
@@ -1389,7 +1483,7 @@ namespace Camunda.OpenApi.Client.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<System.IO.Stream>("/deployment/{id}/resources/{resourceId}/data", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<FileParameter>("/deployment/{id}/resources/{resourceId}/data", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1426,11 +1520,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1484,11 +1578,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1563,11 +1657,11 @@ namespace Camunda.OpenApi.Client.Api
         {
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1698,11 +1792,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1824,11 +1918,11 @@ namespace Camunda.OpenApi.Client.Api
         {
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -1935,11 +2029,11 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2033,12 +2127,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 
@@ -2095,12 +2189,12 @@ namespace Camunda.OpenApi.Client.Api
 
             Camunda.OpenApi.Client.Client.RequestOptions localVarRequestOptions = new Camunda.OpenApi.Client.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
                 "application/json"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/json"
             };
 

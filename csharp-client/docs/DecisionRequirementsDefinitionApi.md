@@ -29,6 +29,7 @@ Retrieves a decision requirements definition according to the `DecisionRequireme
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -41,7 +42,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionRequirementsDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionRequirementsDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the decision requirements definition to be retrieved.
 
             try
@@ -101,6 +105,7 @@ Retrieves a decision requirements definition according to the `DecisionRequireme
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -113,7 +118,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionRequirementsDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionRequirementsDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the decision requirements definition (the latest version thereof) to be retrieved.
 
             try
@@ -173,6 +181,7 @@ Retrieves a decision requirements definition according to the `DecisionRequireme
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -185,7 +194,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionRequirementsDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionRequirementsDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the decision requirements definition (the latest version thereof) to be retrieved.
             var tenantId = tenantId_example;  // string | The id of the tenant to which the decision requirements definition belongs to.
 
@@ -237,7 +249,7 @@ No authorization required
 
 <a name="getdecisionrequirementsdefinitiondiagrambyid"></a>
 # **GetDecisionRequirementsDefinitionDiagramById**
-> System.IO.Stream GetDecisionRequirementsDefinitionDiagramById (string id)
+> FileParameter GetDecisionRequirementsDefinitionDiagramById (string id)
 
 Get Decision Requirements Diagram by ID
 
@@ -247,6 +259,7 @@ Retrieves the diagram of a decision requirements definition.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -259,13 +272,16 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionRequirementsDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionRequirementsDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the decision requirements definition.
 
             try
             {
                 // Get Decision Requirements Diagram by ID
-                System.IO.Stream result = apiInstance.GetDecisionRequirementsDefinitionDiagramById(id);
+                FileParameter result = apiInstance.GetDecisionRequirementsDefinitionDiagramById(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -287,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -310,7 +326,7 @@ No authorization required
 
 <a name="getdecisionrequirementsdefinitiondiagrambykey"></a>
 # **GetDecisionRequirementsDefinitionDiagramByKey**
-> System.IO.Stream GetDecisionRequirementsDefinitionDiagramByKey (string key)
+> FileParameter GetDecisionRequirementsDefinitionDiagramByKey (string key)
 
 Get Decision Requirements Diagram by Key
 
@@ -320,6 +336,7 @@ Retrieves the diagram of a decision requirements definition. Returns the diagram
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -332,13 +349,16 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionRequirementsDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionRequirementsDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the decision requirements definition (the latest version thereof) to be retrieved.
 
             try
             {
                 // Get Decision Requirements Diagram by Key
-                System.IO.Stream result = apiInstance.GetDecisionRequirementsDefinitionDiagramByKey(key);
+                FileParameter result = apiInstance.GetDecisionRequirementsDefinitionDiagramByKey(key);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -360,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -383,7 +403,7 @@ No authorization required
 
 <a name="getdecisionrequirementsdefinitiondiagrambykeyandtenantid"></a>
 # **GetDecisionRequirementsDefinitionDiagramByKeyAndTenantId**
-> System.IO.Stream GetDecisionRequirementsDefinitionDiagramByKeyAndTenantId (string key, string tenantId)
+> FileParameter GetDecisionRequirementsDefinitionDiagramByKeyAndTenantId (string key, string tenantId)
 
 Get Decision Requirements Diagram by Key and Tenant ID
 
@@ -393,6 +413,7 @@ Retrieves the diagram of a decision requirements definition. Returns the diagram
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -405,14 +426,17 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionRequirementsDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionRequirementsDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the decision requirements definition (the latest version thereof) to be retrieved.
             var tenantId = tenantId_example;  // string | The id of the tenant to which the decision requirements definition belongs to.
 
             try
             {
                 // Get Decision Requirements Diagram by Key and Tenant ID
-                System.IO.Stream result = apiInstance.GetDecisionRequirementsDefinitionDiagramByKeyAndTenantId(key, tenantId);
+                FileParameter result = apiInstance.GetDecisionRequirementsDefinitionDiagramByKeyAndTenantId(key, tenantId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -435,7 +459,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**System.IO.Stream**
+[**FileParameter**](FileParameter.md)
 
 ### Authorization
 
@@ -468,6 +492,7 @@ Retrieves the DMN XML of a decision requirements definition.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -480,7 +505,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionRequirementsDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionRequirementsDefinitionApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the decision requirements definition.
 
             try
@@ -540,6 +568,7 @@ Retrieves the DMN XML of a decision requirements definition. Returns the XML for
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -552,7 +581,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionRequirementsDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionRequirementsDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the decision requirements definition (the latest version thereof) to be retrieved.
 
             try
@@ -612,6 +644,7 @@ Retrieves the DMN XML of a decision requirements definition. Returns the XML of 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -624,7 +657,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionRequirementsDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionRequirementsDefinitionApi(httpClient, config, httpClientHandler);
             var key = key_example;  // string | The key of the decision requirements definition (the latest version thereof) to be retrieved.
             var tenantId = tenantId_example;  // string | The id of the tenant to which the decision requirements definition belongs to.
 
@@ -686,6 +722,7 @@ Queries for decision requirements definitions that fulfill given parameters. Par
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -698,7 +735,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionRequirementsDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionRequirementsDefinitionApi(httpClient, config, httpClientHandler);
             var decisionRequirementsDefinitionId = decisionRequirementsDefinitionId_example;  // string | Filter by decision requirements definition id. (optional) 
             var decisionRequirementsDefinitionIdIn = decisionRequirementsDefinitionIdIn_example;  // string | Filter by decision requirements definition ids. (optional) 
             var name = name_example;  // string | Filter by decision requirements definition name. (optional) 
@@ -796,6 +836,7 @@ Requests the number of decision requirements definitions that fulfill the query 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -808,7 +849,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new DecisionRequirementsDefinitionApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new DecisionRequirementsDefinitionApi(httpClient, config, httpClientHandler);
             var decisionRequirementsDefinitionId = decisionRequirementsDefinitionId_example;  // string | Filter by decision requirements definition id. (optional) 
             var decisionRequirementsDefinitionIdIn = decisionRequirementsDefinitionIdIn_example;  // string | Filter by decision requirements definition ids. (optional) 
             var name = name_example;  // string | Filter by decision requirements definition name. (optional) 

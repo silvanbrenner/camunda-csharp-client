@@ -28,6 +28,7 @@ Deletes a process instance from the history by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -40,7 +41,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricProcessInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the historic process instance to be deleted.
             var failIfNotExists = true;  // bool? | If set to `false`, the request will still be successful if the process id is not found. (optional) 
 
@@ -101,6 +105,7 @@ Delete multiple historic process instances asynchronously (batch). At least `his
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -113,7 +118,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricProcessInstanceApi(httpClient, config, httpClientHandler);
             var deleteHistoricProcessInstancesDto = new DeleteHistoricProcessInstancesDto(); // DeleteHistoricProcessInstancesDto |  (optional) 
 
             try
@@ -173,6 +181,7 @@ Deletes all variables of a process instance from the history by id.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -185,7 +194,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricProcessInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the process instance for which all historic variables are to be deleted.
 
             try
@@ -244,6 +256,7 @@ Retrieves a historic process instance by id, according to the `HistoricProcessIn
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -256,7 +269,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricProcessInstanceApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | The id of the historic process instance to be retrieved.
 
             try
@@ -316,6 +332,7 @@ Retrieves a report about the duration of completed process instances, grouped by
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -328,7 +345,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricProcessInstanceApi(httpClient, config, httpClientHandler);
             var reportType = reportType_example;  // string | **Mandatory.** Specifies the type of the report to retrieve. To retrieve a report about the duration of process instances, the value must be set to `duration`.
             var periodUnit = periodUnit_example;  // string | **Mandatory.** Specifies the granularity of the report. Valid values are `month` and `quarter`.
             var processDefinitionIdIn = processDefinitionIdIn_example;  // string | Filter by process definition ids. Must be a comma-separated list of process definition ids. (optional) 
@@ -399,6 +419,7 @@ Queries for historic process instances that fulfill the given parameters. The si
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -411,7 +432,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricProcessInstanceApi(httpClient, config, httpClientHandler);
             var sortBy = sortBy_example;  // string | Sort the results lexicographically by a given criterion. Must be used in conjunction with the sortOrder parameter. (optional) 
             var sortOrder = sortOrder_example;  // string | Sort the results in a given order. Values may be asc for ascending order or desc for descending order. Must be used in conjunction with the sortBy parameter. (optional) 
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
@@ -567,6 +591,7 @@ Queries for the number of historic process instances that fulfill the given para
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -579,7 +604,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricProcessInstanceApi(httpClient, config, httpClientHandler);
             var processInstanceId = processInstanceId_example;  // string | Filter by process instance id. (optional) 
             var processInstanceIds = processInstanceIds_example;  // string | Filter by process instance ids. Filter by a comma-separated list of `Strings`. (optional) 
             var processDefinitionId = processDefinitionId_example;  // string | Filter by the process definition the instances run on. (optional) 
@@ -727,6 +755,7 @@ Queries for historic process instances that fulfill the given parameters. This m
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -739,7 +768,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricProcessInstanceApi(httpClient, config, httpClientHandler);
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
             var maxResults = 56;  // int? | Pagination of results. Specifies the maximum number of results to return. Will return less results if there are no more results left. (optional) 
             var historicProcessInstanceQueryDto = new HistoricProcessInstanceQueryDto(); // HistoricProcessInstanceQueryDto |  (optional) 
@@ -803,6 +835,7 @@ Queries for the number of historic process instances that fulfill the given para
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -815,7 +848,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricProcessInstanceApi(httpClient, config, httpClientHandler);
             var historicProcessInstanceQueryDto = new HistoricProcessInstanceQueryDto(); // HistoricProcessInstanceQueryDto |  (optional) 
 
             try
@@ -875,6 +911,7 @@ Sets the removal time to multiple historic process instances asynchronously (bat
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using Camunda.OpenApi.Client.Api;
 using Camunda.OpenApi.Client.Client;
 using Camunda.OpenApi.Client.Model;
@@ -887,7 +924,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080/engine-rest";
-            var apiInstance = new HistoricProcessInstanceApi(config);
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new HistoricProcessInstanceApi(httpClient, config, httpClientHandler);
             var setRemovalTimeToHistoricProcessInstancesDto = new SetRemovalTimeToHistoricProcessInstancesDto(); // SetRemovalTimeToHistoricProcessInstancesDto |  (optional) 
 
             try
