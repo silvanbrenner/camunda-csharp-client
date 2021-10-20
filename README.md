@@ -4,11 +4,12 @@ Generated C# OpenApi Client for Camunda
 Nuget package: https://www.nuget.org/packages/Camunda.OpenApi.Client/
 
 ## Versions
-| Camunda Version | Camunda.OpenApi.Client Version |
-|-----------------|--------------------------------|
-| 7.14.0          | 1.0.1                          |
-| 7.15.0          | 1.1.0                          |
-| 7.16.0          | 1.2.0                          |
+| Camunda Version | Camunda.OpenApi.Client Version | HTTP library   |
+|-----------------|--------------------------------|----------------|
+| 7.14.0          | 1.0.1                          | RestSharp      |
+| 7.15.0          | 1.1.0                          | RestSharp      |
+| 7.16.0          | 1.2.0                          | RestSharp      |
+| 7.16.0          | 1.2.1                          | HttpClient     |
 
 ## Example
 ```csharp
@@ -18,7 +19,7 @@ config.BasePath = "http://localhost:8080/engine-rest";
 var apiInstance = new TaskApi(config);
 try
 {
-    var result = apiInstance.QueryTasks();
+    var result = apiInstance.GetTasks();
     result.ForEach(item => Console.WriteLine(item.ToString()));
 }
 catch (ApiException e)
@@ -88,7 +89,7 @@ public class ExampleController : ControllerBase
     [HttpGet]
     public IEnumerable<TaskDto> Get()
     {
-        return _taskApi.QueryTasks();
+        return _taskApi.GetTasks();
     }
 }
 ```
