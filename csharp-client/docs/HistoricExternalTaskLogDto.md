@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **FailureLog** | **bool?** | A flag indicating whether this log represents the failed execution of the associated external task. | [optional] 
 **SuccessLog** | **bool?** | A flag indicating whether this log represents the successful execution of the associated external task. | [optional] 
 **DeletionLog** | **bool?** | A flag indicating whether this log represents the deletion of the associated external task. | [optional] 
-**RemovalTime** | **DateTime?** | The time after which this log should be removed by the History Cleanup job. Default format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;.  For further information, please see the [documentation](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/) | [optional] 
+**RemovalTime** | **DateTime?** | The time after which this log should be removed by the History Cleanup job. Default format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;.  For further information, please see the [documentation](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/) | [optional] 
 **RootProcessInstanceId** | **string** | The process instance id of the root process instance that initiated the process containing this log. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

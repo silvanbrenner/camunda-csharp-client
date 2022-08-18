@@ -87,7 +87,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **404** | Job definition with given id does not exist.  See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Job definition with given id does not exist.  See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -97,7 +97,7 @@ No authorization required
 
 Get Job Definitions
 
-Queries for job definitions that fulfill given parameters. The size of the result set can be retrieved by using the [Get Job Definition Count](https://docs.camunda.org/manual/7.16/reference/rest/job-definition/get-query-count/) method.
+Queries for job definitions that fulfill given parameters. The size of the result set can be retrieved by using the [Get Job Definition Count](https://docs.camunda.org/manual/7.17/reference/rest/job-definition/get-query-count/) method.
 
 ### Example
 ```csharp
@@ -124,7 +124,7 @@ namespace Example
             var activityIdIn = activityIdIn_example;  // string | Only include job definitions which belong to one of the passed and comma-separated activity ids. (optional) 
             var processDefinitionId = processDefinitionId_example;  // string | Only include job definitions which exist for the given process definition id. (optional) 
             var processDefinitionKey = processDefinitionKey_example;  // string | Only include job definitions which exist for the given process definition key. (optional) 
-            var jobType = jobType_example;  // string | Only include job definitions which exist for the given job type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/the-job-executor/#job-creation) for more information about job types. (optional) 
+            var jobType = jobType_example;  // string | Only include job definitions which exist for the given job type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/the-job-executor/#job-creation) for more information about job types. (optional) 
             var jobConfiguration = jobConfiguration_example;  // string | Only include job definitions which exist for the given job configuration. For example: for timer jobs it is the timer configuration. (optional) 
             var active = true;  // bool? | Only include active job definitions. Value may only be `true`, as `false` is the default behavior. (optional) 
             var suspended = true;  // bool? | Only include suspended job definitions. Value may only be `true`, as `false` is the default behavior. (optional) 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
  **activityIdIn** | **string**| Only include job definitions which belong to one of the passed and comma-separated activity ids. | [optional] 
  **processDefinitionId** | **string**| Only include job definitions which exist for the given process definition id. | [optional] 
  **processDefinitionKey** | **string**| Only include job definitions which exist for the given process definition key. | [optional] 
- **jobType** | **string**| Only include job definitions which exist for the given job type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/the-job-executor/#job-creation) for more information about job types. | [optional] 
+ **jobType** | **string**| Only include job definitions which exist for the given job type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/the-job-executor/#job-creation) for more information about job types. | [optional] 
  **jobConfiguration** | **string**| Only include job definitions which exist for the given job configuration. For example: for timer jobs it is the timer configuration. | [optional] 
  **active** | **bool?**| Only include active job definitions. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
  **suspended** | **bool?**| Only include suspended job definitions. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
@@ -193,7 +193,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -203,7 +203,7 @@ No authorization required
 
 Get Job Definition Count
 
-Queries for the number of job definitions that fulfill given parameters. Takes the same parameters as the [Get Job Definitions](https://docs.camunda.org/manual/7.16/reference/rest/job-definition/get-query/) method.
+Queries for the number of job definitions that fulfill given parameters. Takes the same parameters as the [Get Job Definitions](https://docs.camunda.org/manual/7.17/reference/rest/job-definition/get-query/) method.
 
 ### Example
 ```csharp
@@ -230,7 +230,7 @@ namespace Example
             var activityIdIn = activityIdIn_example;  // string | Only include job definitions which belong to one of the passed and comma-separated activity ids. (optional) 
             var processDefinitionId = processDefinitionId_example;  // string | Only include job definitions which exist for the given process definition id. (optional) 
             var processDefinitionKey = processDefinitionKey_example;  // string | Only include job definitions which exist for the given process definition key. (optional) 
-            var jobType = jobType_example;  // string | Only include job definitions which exist for the given job type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/the-job-executor/#job-creation) for more information about job types. (optional) 
+            var jobType = jobType_example;  // string | Only include job definitions which exist for the given job type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/the-job-executor/#job-creation) for more information about job types. (optional) 
             var jobConfiguration = jobConfiguration_example;  // string | Only include job definitions which exist for the given job configuration. For example: for timer jobs it is the timer configuration. (optional) 
             var active = true;  // bool? | Only include active job definitions. Value may only be `true`, as `false` is the default behavior. (optional) 
             var suspended = true;  // bool? | Only include suspended job definitions. Value may only be `true`, as `false` is the default behavior. (optional) 
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
  **activityIdIn** | **string**| Only include job definitions which belong to one of the passed and comma-separated activity ids. | [optional] 
  **processDefinitionId** | **string**| Only include job definitions which exist for the given process definition id. | [optional] 
  **processDefinitionKey** | **string**| Only include job definitions which exist for the given process definition key. | [optional] 
- **jobType** | **string**| Only include job definitions which exist for the given job type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/the-job-executor/#job-creation) for more information about job types. | [optional] 
+ **jobType** | **string**| Only include job definitions which exist for the given job type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/the-job-executor/#job-creation) for more information about job types. | [optional] 
  **jobConfiguration** | **string**| Only include job definitions which exist for the given job configuration. For example: for timer jobs it is the timer configuration. | [optional] 
  **active** | **bool?**| Only include active job definitions. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
  **suspended** | **bool?**| Only include suspended job definitions. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
@@ -291,7 +291,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -301,7 +301,7 @@ No authorization required
 
 Get Job Definitions (POST)
 
-Queries for job definitions that fulfill given parameters. This method is slightly more powerful than the [Get Job Definitions](https://docs.camunda.org/manual/7.16/reference/rest/job-definition/get-query/) method because it allows filtering by multiple job definitions of types `String`, `Number` or `Boolean`.
+Queries for job definitions that fulfill given parameters. This method is slightly more powerful than the [Get Job Definitions](https://docs.camunda.org/manual/7.17/reference/rest/job-definition/get-query/) method because it allows filtering by multiple job definitions of types `String`, `Number` or `Boolean`.
 
 ### Example
 ```csharp
@@ -371,7 +371,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -381,7 +381,7 @@ No authorization required
 
 Get Job Definition Count (POST)
 
-Queries for the number of job definitions that fulfill given parameters. This method takes the same message body as the [Get Job Definitions (POST)](https://docs.camunda.org/manual/7.16/reference/rest/job-definition/post-query/) method and therefore it is slightly more powerful than the [Get Job Definition Count](https://docs.camunda.org/manual/7.16/reference/rest/job-definition/get-query-count/) method.
+Queries for the number of job definitions that fulfill given parameters. This method takes the same message body as the [Get Job Definitions (POST)](https://docs.camunda.org/manual/7.17/reference/rest/job-definition/post-query/) method and therefore it is slightly more powerful than the [Get Job Definition Count](https://docs.camunda.org/manual/7.17/reference/rest/job-definition/get-query-count/) method.
 
 ### Example
 ```csharp
@@ -447,7 +447,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -457,7 +457,7 @@ No authorization required
 
 Set Job Definition Priority by Id
 
-Sets an overriding execution priority for jobs with the given definition id. Optionally, the priorities of all the definitions' existing jobs are updated accordingly. The priority can be reset by setting it to `null`, meaning that a new job's priority will not be determined based on its definition's priority any longer. See the [user guide on job prioritization](https://docs.camunda.org/manual/7.16/user-guide/process-engine/the-job-executor/#set-job-definition-priorities-via-managementservice-api) for details.
+Sets an overriding execution priority for jobs with the given definition id. Optionally, the priorities of all the definitions' existing jobs are updated accordingly. The priority can be reset by setting it to `null`, meaning that a new job's priority will not be determined based on its definition's priority any longer. See the [user guide on job prioritization](https://docs.camunda.org/manual/7.17/user-guide/process-engine/the-job-executor/#set-job-definition-priorities-via-managementservice-api) for details.
 
 ### Example
 ```csharp
@@ -524,8 +524,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. This method returns no content. |  -  |
-| **404** | Job definition with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **500** | The retries could not be set successfully. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Job definition with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **500** | The retries could not be set successfully. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -602,7 +602,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. This method returns no content. |  -  |
-| **500** | The retries could not be set successfully. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **500** | The retries could not be set successfully. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -679,7 +679,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. This method returns no content. |  -  |
-| **400** | Returned if some of the request parameters are invalid, for example if the provided &#x60;executionDate&#x60; parameter doesn&#39;t have the expected format. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the request parameters are invalid, for example if the provided &#x60;executionDate&#x60; parameter doesn&#39;t have the expected format. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -754,7 +754,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. This method returns no content. |  -  |
-| **400** | Returned if some of the request parameters are invalid, for example if the provided &#x60;executionDate&#x60; parameter doesn&#39;t have the expected format. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the request parameters are invalid, for example if the provided &#x60;executionDate&#x60; parameter doesn&#39;t have the expected format. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

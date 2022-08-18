@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Resource** | **string** | The file name of the case definition. | [optional] 
 **DeploymentId** | **string** | The deployment id of the case definition. | [optional] 
 **TenantId** | **string** | The tenant id of the case definition. | [optional] 
-**HistoryTimeToLive** | **int?** | History time to live value of the case definition. Is used within [History cleanup](https://docs.camunda.org/manual/7.16/user-guide/process-engine/history/#history-cleanup). | [optional] 
+**HistoryTimeToLive** | **int?** | History time to live value of the case definition. Is used within [History cleanup](https://docs.camunda.org/manual/7.17/user-guide/process-engine/history/#history-cleanup). | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

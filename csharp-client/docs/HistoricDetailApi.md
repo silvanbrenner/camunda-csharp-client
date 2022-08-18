@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Get Historic Details
 
-Queries for historic details that fulfill the given parameters. The size of the result set can be retrieved by using the [Get Historic Detail Count](https://docs.camunda.org/manual/7.16/reference/rest/history/detail/get-detail-query-count/) method.
+Queries for historic details that fulfill the given parameters. The size of the result set can be retrieved by using the [Get Historic Detail Count](https://docs.camunda.org/manual/7.17/reference/rest/history/detail/get-detail-query-count/) method.
 
 ### Example
 ```csharp
@@ -48,7 +48,7 @@ namespace Example
             var caseInstanceId = caseInstanceId_example;  // string | Filter by case instance id. (optional) 
             var caseExecutionId = caseExecutionId_example;  // string | Filter by case execution id. (optional) 
             var variableInstanceId = variableInstanceId_example;  // string | Filter by variable instance id. (optional) 
-            var variableTypeIn = variableTypeIn_example;  // string | Only include historic details where the variable updates belong to one of the passed comma-separated list of variable types. A list of all supported variable types can be found [here](https://docs.camunda.org/manual/7.16/user-guide/process-engine/variables/#supported-variable-values). **Note:** All non-primitive variables are associated with the type `serializable`. (optional) 
+            var variableTypeIn = variableTypeIn_example;  // string | Only include historic details where the variable updates belong to one of the passed comma-separated list of variable types. A list of all supported variable types can be found [here](https://docs.camunda.org/manual/7.17/user-guide/process-engine/variables/#supported-variable-values). **Note:** All non-primitive variables are associated with the type `serializable`. (optional) 
             var tenantIdIn = tenantIdIn_example;  // string | Filter by a comma-separated list of tenant ids. (optional) 
             var withoutTenantId = true;  // bool? | Only include historic details that belong to no tenant. Value may only be `true`, as `false` is the default behavior. (optional) 
             var userOperationId = userOperationId_example;  // string | Filter by a user operation id. (optional) 
@@ -56,8 +56,8 @@ namespace Example
             var variableUpdates = true;  // bool? | Only include `HistoricVariableUpdates`. Value may only be `true`, as `false` is the default behavior. (optional) 
             var excludeTaskDetails = true;  // bool? | Excludes all task-related `HistoricDetails`, so only items which have no task id set will be selected. When this parameter is used together with `taskId`, this call is ignored and task details are not excluded. Value may only be `true`, as `false` is the default behavior. (optional) 
             var initial = true;  // bool? | Restrict to historic variable updates that contain only initial variable values. Value may only be `true`, as `false` is the default behavior. (optional) 
-            var occurredBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to historic details that occured before the given date (including the date). Default [format](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/) `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., 2013-01-23T14:42:45.000+0200. (optional) 
-            var occurredAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to historic details that occured after the given date (including the date). Default [format](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/) `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., 2013-01-23T14:42:45.000+0200. (optional) 
+            var occurredBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to historic details that occured before the given date (including the date). Default [format](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/) `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., 2013-01-23T14:42:45.000+0200. (optional) 
+            var occurredAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to historic details that occured after the given date (including the date). Default [format](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/) `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., 2013-01-23T14:42:45.000+0200. (optional) 
             var sortBy = sortBy_example;  // string | Sort the results lexicographically by a given criterion. Must be used in conjunction with the sortOrder parameter. (optional) 
             var sortOrder = sortOrder_example;  // string | Sort the results in a given order. Values may be asc for ascending order or desc for descending order. Must be used in conjunction with the sortBy parameter. (optional) 
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
  **caseInstanceId** | **string**| Filter by case instance id. | [optional] 
  **caseExecutionId** | **string**| Filter by case execution id. | [optional] 
  **variableInstanceId** | **string**| Filter by variable instance id. | [optional] 
- **variableTypeIn** | **string**| Only include historic details where the variable updates belong to one of the passed comma-separated list of variable types. A list of all supported variable types can be found [here](https://docs.camunda.org/manual/7.16/user-guide/process-engine/variables/#supported-variable-values). **Note:** All non-primitive variables are associated with the type &#x60;serializable&#x60;. | [optional] 
+ **variableTypeIn** | **string**| Only include historic details where the variable updates belong to one of the passed comma-separated list of variable types. A list of all supported variable types can be found [here](https://docs.camunda.org/manual/7.17/user-guide/process-engine/variables/#supported-variable-values). **Note:** All non-primitive variables are associated with the type &#x60;serializable&#x60;. | [optional] 
  **tenantIdIn** | **string**| Filter by a comma-separated list of tenant ids. | [optional] 
  **withoutTenantId** | **bool?**| Only include historic details that belong to no tenant. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
  **userOperationId** | **string**| Filter by a user operation id. | [optional] 
@@ -101,8 +101,8 @@ Name | Type | Description  | Notes
  **variableUpdates** | **bool?**| Only include &#x60;HistoricVariableUpdates&#x60;. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
  **excludeTaskDetails** | **bool?**| Excludes all task-related &#x60;HistoricDetails&#x60;, so only items which have no task id set will be selected. When this parameter is used together with &#x60;taskId&#x60;, this call is ignored and task details are not excluded. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
  **initial** | **bool?**| Restrict to historic variable updates that contain only initial variable values. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
- **occurredBefore** | **DateTime?**| Restrict to historic details that occured before the given date (including the date). Default [format](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/) &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., 2013-01-23T14:42:45.000+0200. | [optional] 
- **occurredAfter** | **DateTime?**| Restrict to historic details that occured after the given date (including the date). Default [format](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/) &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., 2013-01-23T14:42:45.000+0200. | [optional] 
+ **occurredBefore** | **DateTime?**| Restrict to historic details that occured before the given date (including the date). Default [format](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/) &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., 2013-01-23T14:42:45.000+0200. | [optional] 
+ **occurredAfter** | **DateTime?**| Restrict to historic details that occured after the given date (including the date). Default [format](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/) &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., 2013-01-23T14:42:45.000+0200. | [optional] 
  **sortBy** | **string**| Sort the results lexicographically by a given criterion. Must be used in conjunction with the sortOrder parameter. | [optional] 
  **sortOrder** | **string**| Sort the results in a given order. Values may be asc for ascending order or desc for descending order. Must be used in conjunction with the sortBy parameter. | [optional] 
  **firstResult** | **int?**| Pagination of results. Specifies the index of the first result to return. | [optional] 
@@ -127,7 +127,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -137,7 +137,7 @@ No authorization required
 
 Get Historic Detail Count
 
-Queries for the number of historic details that fulfill the given parameters. Takes the same parameters as the [Get Historic Details](https://docs.camunda.org/manual/7.16/reference/rest/history/detail/get-detail-query/) method.
+Queries for the number of historic details that fulfill the given parameters. Takes the same parameters as the [Get Historic Details](https://docs.camunda.org/manual/7.17/reference/rest/history/detail/get-detail-query/) method.
 
 ### Example
 ```csharp
@@ -168,7 +168,7 @@ namespace Example
             var caseInstanceId = caseInstanceId_example;  // string | Filter by case instance id. (optional) 
             var caseExecutionId = caseExecutionId_example;  // string | Filter by case execution id. (optional) 
             var variableInstanceId = variableInstanceId_example;  // string | Filter by variable instance id. (optional) 
-            var variableTypeIn = variableTypeIn_example;  // string | Only include historic details where the variable updates belong to one of the passed comma-separated list of variable types. A list of all supported variable types can be found [here](https://docs.camunda.org/manual/7.16/user-guide/process-engine/variables/#supported-variable-values). **Note:** All non-primitive variables are associated with the type `serializable`. (optional) 
+            var variableTypeIn = variableTypeIn_example;  // string | Only include historic details where the variable updates belong to one of the passed comma-separated list of variable types. A list of all supported variable types can be found [here](https://docs.camunda.org/manual/7.17/user-guide/process-engine/variables/#supported-variable-values). **Note:** All non-primitive variables are associated with the type `serializable`. (optional) 
             var tenantIdIn = tenantIdIn_example;  // string | Filter by a comma-separated list of tenant ids. (optional) 
             var withoutTenantId = true;  // bool? | Only include historic details that belong to no tenant. Value may only be `true`, as `false` is the default behavior. (optional) 
             var userOperationId = userOperationId_example;  // string | Filter by a user operation id. (optional) 
@@ -176,8 +176,8 @@ namespace Example
             var variableUpdates = true;  // bool? | Only include `HistoricVariableUpdates`. Value may only be `true`, as `false` is the default behavior. (optional) 
             var excludeTaskDetails = true;  // bool? | Excludes all task-related `HistoricDetails`, so only items which have no task id set will be selected. When this parameter is used together with `taskId`, this call is ignored and task details are not excluded. Value may only be `true`, as `false` is the default behavior. (optional) 
             var initial = true;  // bool? | Restrict to historic variable updates that contain only initial variable values. Value may only be `true`, as `false` is the default behavior. (optional) 
-            var occurredBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to historic details that occured before the given date (including the date). Default [format](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/) `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., 2013-01-23T14:42:45.000+0200. (optional) 
-            var occurredAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to historic details that occured after the given date (including the date). Default [format](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/) `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., 2013-01-23T14:42:45.000+0200. (optional) 
+            var occurredBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to historic details that occured before the given date (including the date). Default [format](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/) `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., 2013-01-23T14:42:45.000+0200. (optional) 
+            var occurredAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to historic details that occured after the given date (including the date). Default [format](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/) `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., 2013-01-23T14:42:45.000+0200. (optional) 
 
             try
             {
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
  **caseInstanceId** | **string**| Filter by case instance id. | [optional] 
  **caseExecutionId** | **string**| Filter by case execution id. | [optional] 
  **variableInstanceId** | **string**| Filter by variable instance id. | [optional] 
- **variableTypeIn** | **string**| Only include historic details where the variable updates belong to one of the passed comma-separated list of variable types. A list of all supported variable types can be found [here](https://docs.camunda.org/manual/7.16/user-guide/process-engine/variables/#supported-variable-values). **Note:** All non-primitive variables are associated with the type &#x60;serializable&#x60;. | [optional] 
+ **variableTypeIn** | **string**| Only include historic details where the variable updates belong to one of the passed comma-separated list of variable types. A list of all supported variable types can be found [here](https://docs.camunda.org/manual/7.17/user-guide/process-engine/variables/#supported-variable-values). **Note:** All non-primitive variables are associated with the type &#x60;serializable&#x60;. | [optional] 
  **tenantIdIn** | **string**| Filter by a comma-separated list of tenant ids. | [optional] 
  **withoutTenantId** | **bool?**| Only include historic details that belong to no tenant. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
  **userOperationId** | **string**| Filter by a user operation id. | [optional] 
@@ -216,8 +216,8 @@ Name | Type | Description  | Notes
  **variableUpdates** | **bool?**| Only include &#x60;HistoricVariableUpdates&#x60;. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
  **excludeTaskDetails** | **bool?**| Excludes all task-related &#x60;HistoricDetails&#x60;, so only items which have no task id set will be selected. When this parameter is used together with &#x60;taskId&#x60;, this call is ignored and task details are not excluded. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
  **initial** | **bool?**| Restrict to historic variable updates that contain only initial variable values. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
- **occurredBefore** | **DateTime?**| Restrict to historic details that occured before the given date (including the date). Default [format](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/) &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., 2013-01-23T14:42:45.000+0200. | [optional] 
- **occurredAfter** | **DateTime?**| Restrict to historic details that occured after the given date (including the date). Default [format](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/) &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., 2013-01-23T14:42:45.000+0200. | [optional] 
+ **occurredBefore** | **DateTime?**| Restrict to historic details that occured before the given date (including the date). Default [format](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/) &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., 2013-01-23T14:42:45.000+0200. | [optional] 
+ **occurredAfter** | **DateTime?**| Restrict to historic details that occured after the given date (including the date). Default [format](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/) &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., 2013-01-23T14:42:45.000+0200. | [optional] 
 
 ### Return type
 
@@ -315,7 +315,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **404** | Variable with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Variable with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -391,8 +391,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Detail with given id exists but is not a binary variable. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **404** | Detail with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Detail with given id exists but is not a binary variable. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Detail with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -402,7 +402,7 @@ No authorization required
 
 Get Historic Details (POST)
 
-Queries for historic details that fulfill the given parameters. This method is slightly more powerful than the [Get Historic Details](https://docs.camunda.org/manual/7.16/reference/rest/history/detail/get-detail-query/) method because it allows sorting by multiple parameters. The size of the result set can be retrieved by using the [Get Historic Detail Count](https://docs.camunda.org/manual/7.16/reference/rest/history/detail/get-detail-query-count/) method.
+Queries for historic details that fulfill the given parameters. This method is slightly more powerful than the [Get Historic Details](https://docs.camunda.org/manual/7.17/reference/rest/history/detail/get-detail-query/) method because it allows sorting by multiple parameters. The size of the result set can be retrieved by using the [Get Historic Detail Count](https://docs.camunda.org/manual/7.17/reference/rest/history/detail/get-detail-query-count/) method.
 
 ### Example
 ```csharp
@@ -474,7 +474,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

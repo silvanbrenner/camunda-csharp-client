@@ -104,7 +104,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
 | **400** | Bad Request * If none of &#x60;processInstanceIds&#x60;, &#x60;processInstanceQuery&#x60;, and &#x60;historicProcessInstanceQuery&#x60; is given * If no process instance ids where found |  -  |
-| **403** | Returned if the user is not allowed to create the batch.  See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **403** | Returned if the user is not allowed to create the batch.  See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -567,7 +567,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **404** | Process instance with given id does not exist. See the  [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format.  |  -  |
+| **404** | Process instance with given id does not exist. See the  [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format.  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -858,7 +858,7 @@ namespace Example
             var suspended = true;  // bool? | Only include suspended process instances. Value may only be true, as false is the default behavior. (optional)  (default to false)
             var withIncident = true;  // bool? | Filter by presence of incidents. Selects only process instances that have an incident. (optional)  (default to false)
             var incidentId = incidentId_example;  // string | Filter by the incident id. (optional) 
-            var incidentType = incidentType_example;  // string | Filter by the incident type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/incidents/#incident-types) for a list of incident types. (optional) 
+            var incidentType = incidentType_example;  // string | Filter by the incident type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/incidents/#incident-types) for a list of incident types. (optional) 
             var incidentMessage = incidentMessage_example;  // string | Filter by the incident message. Exact match. (optional) 
             var incidentMessageLike = incidentMessageLike_example;  // string | Filter by the incident message that the parameter is a substring of. (optional) 
             var tenantIdIn = tenantIdIn_example;  // string | Filter by a comma-separated list of tenant ids. A process instance must have one of the given tenant ids. (optional) 
@@ -913,7 +913,7 @@ Name | Type | Description  | Notes
  **suspended** | **bool?**| Only include suspended process instances. Value may only be true, as false is the default behavior. | [optional] [default to false]
  **withIncident** | **bool?**| Filter by presence of incidents. Selects only process instances that have an incident. | [optional] [default to false]
  **incidentId** | **string**| Filter by the incident id. | [optional] 
- **incidentType** | **string**| Filter by the incident type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/incidents/#incident-types) for a list of incident types. | [optional] 
+ **incidentType** | **string**| Filter by the incident type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/incidents/#incident-types) for a list of incident types. | [optional] 
  **incidentMessage** | **string**| Filter by the incident message. Exact match. | [optional] 
  **incidentMessageLike** | **string**| Filter by the incident message that the parameter is a substring of. | [optional] 
  **tenantIdIn** | **string**| Filter by a comma-separated list of tenant ids. A process instance must have one of the given tenant ids. | [optional] 
@@ -994,7 +994,7 @@ namespace Example
             var suspended = true;  // bool? | Only include suspended process instances. Value may only be true, as false is the default behavior. (optional)  (default to false)
             var withIncident = true;  // bool? | Filter by presence of incidents. Selects only process instances that have an incident. (optional)  (default to false)
             var incidentId = incidentId_example;  // string | Filter by the incident id. (optional) 
-            var incidentType = incidentType_example;  // string | Filter by the incident type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/incidents/#incident-types) for a list of incident types. (optional) 
+            var incidentType = incidentType_example;  // string | Filter by the incident type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/incidents/#incident-types) for a list of incident types. (optional) 
             var incidentMessage = incidentMessage_example;  // string | Filter by the incident message. Exact match. (optional) 
             var incidentMessageLike = incidentMessageLike_example;  // string | Filter by the incident message that the parameter is a substring of. (optional) 
             var tenantIdIn = tenantIdIn_example;  // string | Filter by a comma-separated list of tenant ids. A process instance must have one of the given tenant ids. (optional) 
@@ -1045,7 +1045,7 @@ Name | Type | Description  | Notes
  **suspended** | **bool?**| Only include suspended process instances. Value may only be true, as false is the default behavior. | [optional] [default to false]
  **withIncident** | **bool?**| Filter by presence of incidents. Selects only process instances that have an incident. | [optional] [default to false]
  **incidentId** | **string**| Filter by the incident id. | [optional] 
- **incidentType** | **string**| Filter by the incident type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/incidents/#incident-types) for a list of incident types. | [optional] 
+ **incidentType** | **string**| Filter by the incident type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/incidents/#incident-types) for a list of incident types. | [optional] 
  **incidentMessage** | **string**| Filter by the incident message. Exact match. | [optional] 
  **incidentMessageLike** | **string**| Filter by the incident message that the parameter is a substring of. | [optional] 
  **tenantIdIn** | **string**| Filter by a comma-separated list of tenant ids. A process instance must have one of the given tenant ids. | [optional] 
@@ -1164,7 +1164,7 @@ No authorization required
 
 Modify Process Instance Execution State Async
 
-Submits a list of modification instructions to change a process instance's execution state async. A modification instruction is one of the following:  * Starting execution before an activity * Starting execution after an activity on its single outgoing sequence flow * Starting execution on a specific sequence flow * Cancelling an activity instance, transition instance, or all instances (activity or transition) for an activity  Instructions are executed asynchronous and in the order they are provided in this request's body. Variables can be provided with every starting instruction.  The exact semantics of modification can be read about in the [User guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/process-instance-modification/).
+Submits a list of modification instructions to change a process instance's execution state async. A modification instruction is one of the following:  * Starting execution before an activity * Starting execution after an activity on its single outgoing sequence flow * Starting execution on a specific sequence flow * Cancelling an activity instance, transition instance, or all instances (activity or transition) for an activity  Instructions are executed asynchronous and in the order they are provided in this request's body. Variables can be provided with every starting instruction.  The exact semantics of modification can be read about in the [User guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/process-instance-modification/).
 
 ### Example
 ```csharp
@@ -1857,7 +1857,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
 | **400** | Bad Request * The variable value or type is invalid, for example if the value could not be parsed to an Integer value or the passed variable type is not supported * If none of &#x60;processInstanceIds&#x60;, &#x60;processInstanceQuery&#x60; and &#x60;historicProcessInstanceQuery&#x60; is given * If no or an empty array of &#x60;variables&#x60; is given * If no process instance ids where found * If a transient variable is set * If the engine config flag &#x60;javaSerializationFormatEnabled&#x60; is &#x60;false&#x60; and a Java serialized variable is given |  -  |
-| **403** | Returned if the user is not allowed to create the batch.  See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **403** | Returned if the user is not allowed to create the batch.  See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

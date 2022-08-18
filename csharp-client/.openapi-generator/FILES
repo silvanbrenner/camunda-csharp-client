@@ -3,6 +3,7 @@ Camunda.OpenApi.Client.sln
 README.md
 appveyor.yml
 docs/AbstractSetRemovalTimeDto.md
+docs/AbstractVendorVersionInformationDto.md
 docs/ActivityInstanceDto.md
 docs/ActivityInstanceIncidentDto.md
 docs/ActivityStatisticsResultDto.md
@@ -260,6 +261,11 @@ docs/TaskQueryDtoSorting.md
 docs/TaskVariableApi.md
 docs/TelemetryApi.md
 docs/TelemetryConfigurationDto.md
+docs/TelemetryCountDto.md
+docs/TelemetryDataDto.md
+docs/TelemetryInternalsDto.md
+docs/TelemetryLicenseKeyDto.md
+docs/TelemetryProductDto.md
 docs/TenantApi.md
 docs/TenantDto.md
 docs/TransitionInstanceDto.md
@@ -353,6 +359,7 @@ src/Camunda.OpenApi.Client/Client/RetryConfiguration.cs
 src/Camunda.OpenApi.Client/Client/WebRequestPathBuilder.cs
 src/Camunda.OpenApi.Client/Model/AbstractOpenAPISchema.cs
 src/Camunda.OpenApi.Client/Model/AbstractSetRemovalTimeDto.cs
+src/Camunda.OpenApi.Client/Model/AbstractVendorVersionInformationDto.cs
 src/Camunda.OpenApi.Client/Model/ActivityInstanceDto.cs
 src/Camunda.OpenApi.Client/Model/ActivityInstanceIncidentDto.cs
 src/Camunda.OpenApi.Client/Model/ActivityStatisticsResultDto.cs
@@ -563,6 +570,11 @@ src/Camunda.OpenApi.Client/Model/TaskEscalationDto.cs
 src/Camunda.OpenApi.Client/Model/TaskQueryDto.cs
 src/Camunda.OpenApi.Client/Model/TaskQueryDtoSorting.cs
 src/Camunda.OpenApi.Client/Model/TelemetryConfigurationDto.cs
+src/Camunda.OpenApi.Client/Model/TelemetryCountDto.cs
+src/Camunda.OpenApi.Client/Model/TelemetryDataDto.cs
+src/Camunda.OpenApi.Client/Model/TelemetryInternalsDto.cs
+src/Camunda.OpenApi.Client/Model/TelemetryLicenseKeyDto.cs
+src/Camunda.OpenApi.Client/Model/TelemetryProductDto.cs
 src/Camunda.OpenApi.Client/Model/TenantDto.cs
 src/Camunda.OpenApi.Client/Model/TransitionInstanceDto.cs
 src/Camunda.OpenApi.Client/Model/TriggerVariableValueDto.cs

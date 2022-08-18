@@ -193,7 +193,7 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MetricsApi(httpClient, config, httpClientHandler);
             var name = name_example;  // string | The name of the metric. (optional) 
-            var reporter = reporter_example;  // string | The name of the reporter (host), on which the metrics was logged. This will have value provided by the [hostname configuration property](https://docs.camunda.org/manual/7.16/reference/deployment-descriptors/tags/process-engine/#hostname). (optional) 
+            var reporter = reporter_example;  // string | The name of the reporter (host), on which the metrics was logged. This will have value provided by the [hostname configuration property](https://docs.camunda.org/manual/7.17/reference/deployment-descriptors/tags/process-engine/#hostname). (optional) 
             var startDate = 2013-10-20T19:20:30+01:00;  // DateTime? | The start date (inclusive). (optional) 
             var endDate = 2013-10-20T19:20:30+01:00;  // DateTime? | The end date (exclusive). (optional) 
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
@@ -223,7 +223,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| The name of the metric. | [optional] 
- **reporter** | **string**| The name of the reporter (host), on which the metrics was logged. This will have value provided by the [hostname configuration property](https://docs.camunda.org/manual/7.16/reference/deployment-descriptors/tags/process-engine/#hostname). | [optional] 
+ **reporter** | **string**| The name of the reporter (host), on which the metrics was logged. This will have value provided by the [hostname configuration property](https://docs.camunda.org/manual/7.17/reference/deployment-descriptors/tags/process-engine/#hostname). | [optional] 
  **startDate** | **DateTime?**| The start date (inclusive). | [optional] 
  **endDate** | **DateTime?**| The end date (exclusive). | [optional] 
  **firstResult** | **int?**| Pagination of results. Specifies the index of the first result to return. | [optional] 

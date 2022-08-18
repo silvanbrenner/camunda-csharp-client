@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | The id of the log entry. | [optional] 
 **Timestamp** | **DateTime?** | The time when the log entry has been written. | [optional] 
-**RemovalTime** | **DateTime?** | The time after which the log entry should be removed by the History Cleanup job. Default format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;. For further info see the [docs](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/) | [optional] 
+**RemovalTime** | **DateTime?** | The time after which the log entry should be removed by the History Cleanup job. Default format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;. For further info see the [docs](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/) | [optional] 
 **JobId** | **string** | The id of the associated job. | [optional] 
 **JobDueDate** | **DateTime?** | The date on which the associated job is supposed to be processed. | [optional] 
 **JobRetries** | **int?** | The number of retries the associated job has left. | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **JobExceptionMessage** | **string** | The message of the exception that occurred by executing the associated job. | [optional] 
 **FailedActivityId** | **string** | The id of the activity on which the last exception occurred by executing the associated job. | [optional] 
 **JobDefinitionId** | **string** | The id of the job definition on which the associated job was created. | [optional] 
-**JobDefinitionType** | **string** | The job definition type of the associated job. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/the-job-executor/#job-creation) for more information about job definition types. | [optional] 
+**JobDefinitionType** | **string** | The job definition type of the associated job. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/the-job-executor/#job-creation) for more information about job definition types. | [optional] 
 **JobDefinitionConfiguration** | **string** | The job definition configuration type of the associated job. | [optional] 
 **ActivityId** | **string** | The id of the activity on which the associated job was created. | [optional] 
 **ExecutionId** | **string** | The execution id on which the associated job was created. | [optional] 

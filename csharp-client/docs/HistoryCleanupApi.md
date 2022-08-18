@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Clean up history (POST)
 
-Schedules asynchronous history cleanup (See [History cleanup](https://docs.camunda.org/manual/7.16/user-guide/process-engine/history/#history-cleanup)).  **Note:** This endpoint will return at most a single history cleanup job. Since version `7.9.0` it is possible to configure multiple [parallel history cleanup jobs](https://docs.camunda.org/manual/7.16/user-guide/process-engine/history/#parallel-execution). Use [`GET /history/cleanup/jobs`](https://docs.camunda.org/manual/7.16/reference/rest/history/history-cleanup/get-history-cleanup-jobs) to find all the available history cleanup jobs.
+Schedules asynchronous history cleanup (See [History cleanup](https://docs.camunda.org/manual/7.17/user-guide/process-engine/history/#history-cleanup)).  **Note:** This endpoint will return at most a single history cleanup job. Since version `7.9.0` it is possible to configure multiple [parallel history cleanup jobs](https://docs.camunda.org/manual/7.17/user-guide/process-engine/history/#parallel-execution). Use [`GET /history/cleanup/jobs`](https://docs.camunda.org/manual/7.17/reference/rest/history/history-cleanup/get-history-cleanup-jobs) to find all the available history cleanup jobs.
 
 ### Example
 ```csharp
@@ -82,7 +82,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid or the engine does not participate in history cleanup. See [Cleanup Execution Participation per Node](https://docs.camunda.org/manual/7.16/user-guide/process-engine/history/#cleanup-execution-participation-per-node). |  -  |
+| **400** | Returned if some of the query parameters are invalid or the engine does not participate in history cleanup. See [Cleanup Execution Participation per Node](https://docs.camunda.org/manual/7.17/user-guide/process-engine/history/#cleanup-execution-participation-per-node). |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -92,7 +92,7 @@ No authorization required
 
 Find clean up history job (GET)
 
-**Deprecated!** Use `GET /history/cleanup/jobs` instead.  Finds history cleanup job (See [History cleanup](https://docs.camunda.org/manual/7.16/user-guide/process-engine/history/#history-cleanup)).
+**Deprecated!** Use `GET /history/cleanup/jobs` instead.  Finds history cleanup job (See [History cleanup](https://docs.camunda.org/manual/7.17/user-guide/process-engine/history/#history-cleanup)).
 
 ### Example
 ```csharp
@@ -164,7 +164,7 @@ No authorization required
 
 Find clean up history jobs (GET)
 
-Finds history cleanup jobs (See [History cleanup](https://docs.camunda.org/manual/7.16/user-guide/process-engine/history/#history-cleanup)).
+Finds history cleanup jobs (See [History cleanup](https://docs.camunda.org/manual/7.17/user-guide/process-engine/history/#history-cleanup)).
 
 ### Example
 ```csharp
@@ -236,7 +236,7 @@ No authorization required
 
 Get History Cleanup Configuration
 
-Retrieves history cleanup batch window configuration (See [History cleanup](https://docs.camunda.org/manual/7.16/user-guide/process-engine/history/#history-cleanup)).
+Retrieves history cleanup batch window configuration (See [History cleanup](https://docs.camunda.org/manual/7.17/user-guide/process-engine/history/#history-cleanup)).
 
 ### Example
 ```csharp

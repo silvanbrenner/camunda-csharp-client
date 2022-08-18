@@ -84,7 +84,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **404** | Historic job log with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Historic job log with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -94,7 +94,7 @@ No authorization required
 
 Get Job Logs
 
-Queries for historic job logs that fulfill the given parameters. The size of the result set can be retrieved by using the [Get Job Log Count](https://docs.camunda.org/manual/7.16/reference/rest/history/job-log/get-job-log-query-count/) method.
+Queries for historic job logs that fulfill the given parameters. The size of the result set can be retrieved by using the [Get Job Log Count](https://docs.camunda.org/manual/7.17/reference/rest/history/job-log/get-job-log-query-count/) method.
 
 ### Example
 ```csharp
@@ -121,7 +121,7 @@ namespace Example
             var jobId = jobId_example;  // string | Filter by job id. (optional) 
             var jobExceptionMessage = jobExceptionMessage_example;  // string | Filter by job exception message. (optional) 
             var jobDefinitionId = jobDefinitionId_example;  // string | Filter by job definition id. (optional) 
-            var jobDefinitionType = jobDefinitionType_example;  // string | Filter by job definition type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/the-job-executor/#job-creation) for more information about job definition types. (optional) 
+            var jobDefinitionType = jobDefinitionType_example;  // string | Filter by job definition type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/the-job-executor/#job-creation) for more information about job definition types. (optional) 
             var jobDefinitionConfiguration = jobDefinitionConfiguration_example;  // string | Filter by job definition configuration. (optional) 
             var activityIdIn = activityIdIn_example;  // string | Only include historic job logs which belong to one of the passed activity ids. (optional) 
             var failedActivityIdIn = failedActivityIdIn_example;  // string | Only include historic job logs which belong to failures of one of the passed activity ids. (optional) 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
  **jobId** | **string**| Filter by job id. | [optional] 
  **jobExceptionMessage** | **string**| Filter by job exception message. | [optional] 
  **jobDefinitionId** | **string**| Filter by job definition id. | [optional] 
- **jobDefinitionType** | **string**| Filter by job definition type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/the-job-executor/#job-creation) for more information about job definition types. | [optional] 
+ **jobDefinitionType** | **string**| Filter by job definition type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/the-job-executor/#job-creation) for more information about job definition types. | [optional] 
  **jobDefinitionConfiguration** | **string**| Filter by job definition configuration. | [optional] 
  **activityIdIn** | **string**| Only include historic job logs which belong to one of the passed activity ids. | [optional] 
  **failedActivityIdIn** | **string**| Only include historic job logs which belong to failures of one of the passed activity ids. | [optional] 
@@ -210,7 +210,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -220,7 +220,7 @@ No authorization required
 
 Get Job Log Count
 
-Queries for the number of historic job logs that fulfill the given parameters. Takes the same parameters as the [Get Job Logs](https://docs.camunda.org/manual/7.16/reference/rest/history/job-log/get-job-log-query/) method.
+Queries for the number of historic job logs that fulfill the given parameters. Takes the same parameters as the [Get Job Logs](https://docs.camunda.org/manual/7.17/reference/rest/history/job-log/get-job-log-query/) method.
 
 ### Example
 ```csharp
@@ -247,7 +247,7 @@ namespace Example
             var jobId = jobId_example;  // string | Filter by job id. (optional) 
             var jobExceptionMessage = jobExceptionMessage_example;  // string | Filter by job exception message. (optional) 
             var jobDefinitionId = jobDefinitionId_example;  // string | Filter by job definition id. (optional) 
-            var jobDefinitionType = jobDefinitionType_example;  // string | Filter by job definition type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/the-job-executor/#job-creation) for more information about job definition types. (optional) 
+            var jobDefinitionType = jobDefinitionType_example;  // string | Filter by job definition type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/the-job-executor/#job-creation) for more information about job definition types. (optional) 
             var jobDefinitionConfiguration = jobDefinitionConfiguration_example;  // string | Filter by job definition configuration. (optional) 
             var activityIdIn = activityIdIn_example;  // string | Only include historic job logs which belong to one of the passed activity ids. (optional) 
             var failedActivityIdIn = failedActivityIdIn_example;  // string | Only include historic job logs which belong to failures of one of the passed activity ids. (optional) 
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
  **jobId** | **string**| Filter by job id. | [optional] 
  **jobExceptionMessage** | **string**| Filter by job exception message. | [optional] 
  **jobDefinitionId** | **string**| Filter by job definition id. | [optional] 
- **jobDefinitionType** | **string**| Filter by job definition type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/the-job-executor/#job-creation) for more information about job definition types. | [optional] 
+ **jobDefinitionType** | **string**| Filter by job definition type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/the-job-executor/#job-creation) for more information about job definition types. | [optional] 
  **jobDefinitionConfiguration** | **string**| Filter by job definition configuration. | [optional] 
  **activityIdIn** | **string**| Only include historic job logs which belong to one of the passed activity ids. | [optional] 
  **failedActivityIdIn** | **string**| Only include historic job logs which belong to failures of one of the passed activity ids. | [optional] 
@@ -404,7 +404,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **404** | Historic job log with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Historic job log with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -414,7 +414,7 @@ No authorization required
 
 Get Job Logs (POST)
 
-Queries for historic job logs that fulfill the given parameters. This method is slightly more powerful than the [Get Job Logs](https://docs.camunda.org/manual/7.16/reference/rest/history/job-log/get-job-log-query/) method because it allows filtering by historic job logs values of the different types `String`, `Number` or `Boolean`.
+Queries for historic job logs that fulfill the given parameters. This method is slightly more powerful than the [Get Job Logs](https://docs.camunda.org/manual/7.17/reference/rest/history/job-log/get-job-log-query/) method because it allows filtering by historic job logs values of the different types `String`, `Number` or `Boolean`.
 
 ### Example
 ```csharp
@@ -484,7 +484,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -494,7 +494,7 @@ No authorization required
 
 Get Job Log Count (POST)
 
-Queries for the number of historic job logs that fulfill the given parameters. This method takes the same message body as the [Get Job Logs (POST)](https://docs.camunda.org/manual/7.16/reference/rest/history/job-log/post-job-log-query/) method and therefore it is slightly more powerful than the [Get Job Log Count](https://docs.camunda.org/manual/7.16/reference/rest/history/job-log/get-job-log-query-count/) method.
+Queries for the number of historic job logs that fulfill the given parameters. This method takes the same message body as the [Get Job Logs (POST)](https://docs.camunda.org/manual/7.17/reference/rest/history/job-log/post-job-log-query/) method and therefore it is slightly more powerful than the [Get Job Log Count](https://docs.camunda.org/manual/7.17/reference/rest/history/job-log/get-job-log-query-count/) method.
 
 ### Example
 ```csharp
@@ -560,7 +560,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

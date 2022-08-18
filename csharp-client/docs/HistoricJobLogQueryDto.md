@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **JobId** | **string** | Filter by job id. | [optional] 
 **JobExceptionMessage** | **string** | Filter by job exception message. | [optional] 
 **JobDefinitionId** | **string** | Filter by job definition id. | [optional] 
-**JobDefinitionType** | **string** | Filter by job definition type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/the-job-executor/#job-creation) for more information about job definition types. | [optional] 
+**JobDefinitionType** | **string** | Filter by job definition type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/the-job-executor/#job-creation) for more information about job definition types. | [optional] 
 **JobDefinitionConfiguration** | **string** | Filter by job definition configuration. | [optional] 
 **ActivityIdIn** | **List&lt;string&gt;** | Only include historic job logs which belong to one of the passed activity ids. | [optional] 
 **FailedActivityIdIn** | **List&lt;string&gt;** | Only include historic job logs which belong to failures of one of the passed activity ids. | [optional] 

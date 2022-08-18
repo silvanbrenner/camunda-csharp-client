@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Get Incidents
 
-Queries for historic incidents that fulfill given parameters. The size of the result set can be retrieved by using the [Get Incident Count](https://docs.camunda.org/manual/7.16/reference/rest/history/incident/get-incident-query-count/) method.
+Queries for historic incidents that fulfill given parameters. The size of the result set can be retrieved by using the [Get Incident Count](https://docs.camunda.org/manual/7.17/reference/rest/history/incident/get-incident-query-count/) method.
 
 ### Example
 ```csharp
@@ -46,10 +46,10 @@ namespace Example
             var processDefinitionKeyIn = processDefinitionKeyIn_example;  // string | Restricts to incidents that have one of the given process definition keys. (optional) 
             var processInstanceId = processInstanceId_example;  // string | Restricts to incidents that belong to a process instance with the given id. (optional) 
             var executionId = executionId_example;  // string | Restricts to incidents that belong to an execution with the given id. (optional) 
-            var createTimeBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restricts to incidents that have a createTime date before the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
-            var createTimeAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restricts to incidents that have a createTime date after the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
-            var endTimeBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restricts to incidents that have an endTimeBefore date before the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
-            var endTimeAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restricts to incidents that have an endTimeAfter date after the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
+            var createTimeBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restricts to incidents that have a createTime date before the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
+            var createTimeAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restricts to incidents that have a createTime date after the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
+            var endTimeBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restricts to incidents that have an endTimeBefore date before the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
+            var endTimeAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restricts to incidents that have an endTimeAfter date after the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
             var activityId = activityId_example;  // string | Restricts to incidents that belong to an activity with the given id. (optional) 
             var failedActivityId = failedActivityId_example;  // string | Restricts to incidents that were created due to the failure of an activity with the given id. (optional) 
             var causeIncidentId = causeIncidentId_example;  // string | Restricts to incidents that have the given incident id as cause incident. (optional) 
@@ -95,10 +95,10 @@ Name | Type | Description  | Notes
  **processDefinitionKeyIn** | **string**| Restricts to incidents that have one of the given process definition keys. | [optional] 
  **processInstanceId** | **string**| Restricts to incidents that belong to a process instance with the given id. | [optional] 
  **executionId** | **string**| Restricts to incidents that belong to an execution with the given id. | [optional] 
- **createTimeBefore** | **DateTime?**| Restricts to incidents that have a createTime date before the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
- **createTimeAfter** | **DateTime?**| Restricts to incidents that have a createTime date after the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
- **endTimeBefore** | **DateTime?**| Restricts to incidents that have an endTimeBefore date before the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
- **endTimeAfter** | **DateTime?**| Restricts to incidents that have an endTimeAfter date after the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+ **createTimeBefore** | **DateTime?**| Restricts to incidents that have a createTime date before the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+ **createTimeAfter** | **DateTime?**| Restricts to incidents that have a createTime date after the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+ **endTimeBefore** | **DateTime?**| Restricts to incidents that have an endTimeBefore date before the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+ **endTimeAfter** | **DateTime?**| Restricts to incidents that have an endTimeAfter date after the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
  **activityId** | **string**| Restricts to incidents that belong to an activity with the given id. | [optional] 
  **failedActivityId** | **string**| Restricts to incidents that were created due to the failure of an activity with the given id. | [optional] 
  **causeIncidentId** | **string**| Restricts to incidents that have the given incident id as cause incident. | [optional] 
@@ -132,7 +132,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -142,7 +142,7 @@ No authorization required
 
 Get Incident Count
 
-Queries for the number of historic incidents that fulfill the given parameters. Takes the same parameters as the [Get Incidents](https://docs.camunda.org/manual/7.16/reference/rest/history/incident/get-incident-query/) method.
+Queries for the number of historic incidents that fulfill the given parameters. Takes the same parameters as the [Get Incidents](https://docs.camunda.org/manual/7.17/reference/rest/history/incident/get-incident-query/) method.
 
 ### Example
 ```csharp
@@ -174,10 +174,10 @@ namespace Example
             var processDefinitionKeyIn = processDefinitionKeyIn_example;  // string | Restricts to incidents that have one of the given process definition keys. (optional) 
             var processInstanceId = processInstanceId_example;  // string | Restricts to incidents that belong to a process instance with the given id. (optional) 
             var executionId = executionId_example;  // string | Restricts to incidents that belong to an execution with the given id. (optional) 
-            var createTimeBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restricts to incidents that have a createTime date before the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
-            var createTimeAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restricts to incidents that have a createTime date after the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
-            var endTimeBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restricts to incidents that have an endTimeBefore date before the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
-            var endTimeAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restricts to incidents that have an endTimeAfter date after the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
+            var createTimeBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restricts to incidents that have a createTime date before the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
+            var createTimeAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restricts to incidents that have a createTime date after the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
+            var endTimeBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restricts to incidents that have an endTimeBefore date before the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
+            var endTimeAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restricts to incidents that have an endTimeAfter date after the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
             var activityId = activityId_example;  // string | Restricts to incidents that belong to an activity with the given id. (optional) 
             var failedActivityId = failedActivityId_example;  // string | Restricts to incidents that were created due to the failure of an activity with the given id. (optional) 
             var causeIncidentId = causeIncidentId_example;  // string | Restricts to incidents that have the given incident id as cause incident. (optional) 
@@ -223,10 +223,10 @@ Name | Type | Description  | Notes
  **processDefinitionKeyIn** | **string**| Restricts to incidents that have one of the given process definition keys. | [optional] 
  **processInstanceId** | **string**| Restricts to incidents that belong to a process instance with the given id. | [optional] 
  **executionId** | **string**| Restricts to incidents that belong to an execution with the given id. | [optional] 
- **createTimeBefore** | **DateTime?**| Restricts to incidents that have a createTime date before the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
- **createTimeAfter** | **DateTime?**| Restricts to incidents that have a createTime date after the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
- **endTimeBefore** | **DateTime?**| Restricts to incidents that have an endTimeBefore date before the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
- **endTimeAfter** | **DateTime?**| Restricts to incidents that have an endTimeAfter date after the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+ **createTimeBefore** | **DateTime?**| Restricts to incidents that have a createTime date before the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+ **createTimeAfter** | **DateTime?**| Restricts to incidents that have a createTime date after the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+ **endTimeBefore** | **DateTime?**| Restricts to incidents that have an endTimeBefore date before the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+ **endTimeAfter** | **DateTime?**| Restricts to incidents that have an endTimeAfter date after the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
  **activityId** | **string**| Restricts to incidents that belong to an activity with the given id. | [optional] 
  **failedActivityId** | **string**| Restricts to incidents that were created due to the failure of an activity with the given id. | [optional] 
  **causeIncidentId** | **string**| Restricts to incidents that have the given incident id as cause incident. | [optional] 
@@ -260,7 +260,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **BatchId** | **string** | If not &#x60;null&#x60;, the operation is restricted to entities in relation to this batch. | [optional] 
 **JobId** | **string** | If not &#x60;null&#x60;, the operation is restricted to entities in relation to this job. | [optional] 
 **JobDefinitionId** | **string** | If not &#x60;null&#x60;, the operation is restricted to entities in relation to this job definition. | [optional] 
-**RemovalTime** | **DateTime?** | The time after which the entry should be removed by the History Cleanup job. [Default format](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/) &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;. | [optional] 
+**RemovalTime** | **DateTime?** | The time after which the entry should be removed by the History Cleanup job. [Default format](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/) &#x60;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;. | [optional] 
 **RootProcessInstanceId** | **string** | The process instance id of the root process instance that initiated the process containing this entry. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -233,9 +233,9 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the properties in the request body are invalid, for example if a permission parameter is not valid for the provided resourceType. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **403** | The authenticated user is unauthorized to create an instance of this resource. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **500** | The authorization could not be updated due to an internal server error. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the properties in the request body are invalid, for example if a permission parameter is not valid for the provided resourceType. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **403** | The authenticated user is unauthorized to create an instance of this resource. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **500** | The authorization could not be updated due to an internal server error. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -310,8 +310,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. This method returns no content. |  -  |
-| **403** | If the authenticated user is unauthorized to delete the resource instance. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **404** | Authorization cannot be found. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **403** | If the authenticated user is unauthorized to delete the resource instance. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Authorization cannot be found. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -387,7 +387,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **404** | Authorization with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Authorization with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -421,10 +421,10 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AuthorizationApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | Filter by the id of the authorization. (optional) 
-            var type = 56;  // int? | Filter by authorization type. (0=global, 1=grant, 2=revoke). See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/authorization-service/#authorization-type) for more information about authorization types. (optional) 
+            var type = 56;  // int? | Filter by authorization type. (0=global, 1=grant, 2=revoke). See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/authorization-service/#authorization-type) for more information about authorization types. (optional) 
             var userIdIn = userIdIn_example;  // string | Filter by a comma-separated list of userIds. (optional) 
             var groupIdIn = groupIdIn_example;  // string | Filter by a comma-separated list of groupIds. (optional) 
-            var resourceType = 56;  // int? | Filter by an integer representation of the resource type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/authorization-service/#resources) for a list of integer representations of resource types. (optional) 
+            var resourceType = 56;  // int? | Filter by an integer representation of the resource type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/authorization-service/#resources) for a list of integer representations of resource types. (optional) 
             var resourceId = resourceId_example;  // string | Filter by resource id. (optional) 
 
             try
@@ -449,10 +449,10 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Filter by the id of the authorization. | [optional] 
- **type** | **int?**| Filter by authorization type. (0&#x3D;global, 1&#x3D;grant, 2&#x3D;revoke). See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/authorization-service/#authorization-type) for more information about authorization types. | [optional] 
+ **type** | **int?**| Filter by authorization type. (0&#x3D;global, 1&#x3D;grant, 2&#x3D;revoke). See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/authorization-service/#authorization-type) for more information about authorization types. | [optional] 
  **userIdIn** | **string**| Filter by a comma-separated list of userIds. | [optional] 
  **groupIdIn** | **string**| Filter by a comma-separated list of groupIds. | [optional] 
- **resourceType** | **int?**| Filter by an integer representation of the resource type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/authorization-service/#resources) for a list of integer representations of resource types. | [optional] 
+ **resourceType** | **int?**| Filter by an integer representation of the resource type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/authorization-service/#resources) for a list of integer representations of resource types. | [optional] 
  **resourceId** | **string**| Filter by resource id. | [optional] 
 
 ### Return type
@@ -473,7 +473,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60; is specified. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60; is specified. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -508,7 +508,7 @@ namespace Example
             var apiInstance = new AuthorizationApi(httpClient, config, httpClientHandler);
             var permissionName = permissionName_example;  // string | String value representing the permission name to check for.
             var resourceName = resourceName_example;  // string | String value for the name of the resource to check permissions for.
-            var resourceType = 56;  // int | An integer representing the resource type to check permissions for. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/authorization-service/#resources) for a list of integer representations of resource types.
+            var resourceType = 56;  // int | An integer representing the resource type to check permissions for. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/authorization-service/#resources) for a list of integer representations of resource types.
             var resourceId = resourceId_example;  // string | The id of the resource to check permissions for. If left blank, a check for global permissions on the resource is performed. (optional) 
             var userId = userId_example;  // string | The id of the user to check permissions for. The currently authenticated user must have a READ permission for the Authorization resource. If `userId` is blank, a check for the currently authenticated user is performed. (optional) 
 
@@ -535,7 +535,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **permissionName** | **string**| String value representing the permission name to check for. | 
  **resourceName** | **string**| String value for the name of the resource to check permissions for. | 
- **resourceType** | **int**| An integer representing the resource type to check permissions for. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/authorization-service/#resources) for a list of integer representations of resource types. | 
+ **resourceType** | **int**| An integer representing the resource type to check permissions for. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/authorization-service/#resources) for a list of integer representations of resource types. | 
  **resourceId** | **string**| The id of the resource to check permissions for. If left blank, a check for global permissions on the resource is performed. | [optional] 
  **userId** | **string**| The id of the user to check permissions for. The currently authenticated user must have a READ permission for the Authorization resource. If &#x60;userId&#x60; is blank, a check for the currently authenticated user is performed. | [optional] 
 
@@ -557,10 +557,10 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a permission parameterName is not valid for the provided resourceType. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **401** | The user is not authenticated. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **403** | When a &#x60;userId&#x60; is passed and the user does not possess a READ permission for the Authorization resource. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **404** | Authorization with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a permission parameterName is not valid for the provided resourceType. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **401** | The user is not authenticated. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **403** | When a &#x60;userId&#x60; is passed and the user does not possess a READ permission for the Authorization resource. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Authorization with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -570,7 +570,7 @@ No authorization required
 
 Get Authorizations
 
-Queries for a list of authorizations using a list of parameters. The size of the result set can be retrieved by using the [Get Authorization Count](https://docs.camunda.org/manual/7.16/reference/rest/authorization/get-query-count/) method.
+Queries for a list of authorizations using a list of parameters. The size of the result set can be retrieved by using the [Get Authorization Count](https://docs.camunda.org/manual/7.17/reference/rest/authorization/get-query-count/) method.
 
 ### Example
 ```csharp
@@ -594,10 +594,10 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AuthorizationApi(httpClient, config, httpClientHandler);
             var id = id_example;  // string | Filter by the id of the authorization. (optional) 
-            var type = 56;  // int? | Filter by authorization type. (0=global, 1=grant, 2=revoke). See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/authorization-service/#authorization-type) for more information about authorization types. (optional) 
+            var type = 56;  // int? | Filter by authorization type. (0=global, 1=grant, 2=revoke). See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/authorization-service/#authorization-type) for more information about authorization types. (optional) 
             var userIdIn = userIdIn_example;  // string | Filter by a comma-separated list of userIds. (optional) 
             var groupIdIn = groupIdIn_example;  // string | Filter by a comma-separated list of groupIds. (optional) 
-            var resourceType = 56;  // int? | Filter by an integer representation of the resource type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/authorization-service/#resources) for a list of integer representations of resource types. (optional) 
+            var resourceType = 56;  // int? | Filter by an integer representation of the resource type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/authorization-service/#resources) for a list of integer representations of resource types. (optional) 
             var resourceId = resourceId_example;  // string | Filter by resource id. (optional) 
             var sortBy = sortBy_example;  // string | Sort the results lexicographically by a given criterion. Must be used in conjunction with the sortOrder parameter. (optional) 
             var sortOrder = sortOrder_example;  // string | Sort the results in a given order. Values may be asc for ascending order or desc for descending order. Must be used in conjunction with the sortBy parameter. (optional) 
@@ -626,10 +626,10 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Filter by the id of the authorization. | [optional] 
- **type** | **int?**| Filter by authorization type. (0&#x3D;global, 1&#x3D;grant, 2&#x3D;revoke). See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/authorization-service/#authorization-type) for more information about authorization types. | [optional] 
+ **type** | **int?**| Filter by authorization type. (0&#x3D;global, 1&#x3D;grant, 2&#x3D;revoke). See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/authorization-service/#authorization-type) for more information about authorization types. | [optional] 
  **userIdIn** | **string**| Filter by a comma-separated list of userIds. | [optional] 
  **groupIdIn** | **string**| Filter by a comma-separated list of groupIds. | [optional] 
- **resourceType** | **int?**| Filter by an integer representation of the resource type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/authorization-service/#resources) for a list of integer representations of resource types. | [optional] 
+ **resourceType** | **int?**| Filter by an integer representation of the resource type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/authorization-service/#resources) for a list of integer representations of resource types. | [optional] 
  **resourceId** | **string**| Filter by resource id. | [optional] 
  **sortBy** | **string**| Sort the results lexicographically by a given criterion. Must be used in conjunction with the sortOrder parameter. | [optional] 
  **sortOrder** | **string**| Sort the results in a given order. Values may be asc for ascending order or desc for descending order. Must be used in conjunction with the sortBy parameter. | [optional] 
@@ -654,7 +654,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60; is specified. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60; is specified. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -731,10 +731,10 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. This method returns no content. |  -  |
-| **400** | Returned if some of the properties in the request body are invalid, for example if a permission parameter is not valid for the provided resourceType. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **403** | The authenticated user is unauthorized to update this resource. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the properties in the request body are invalid, for example if a permission parameter is not valid for the provided resourceType. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **403** | The authenticated user is unauthorized to update this resource. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 | **404** | The authorization with the requested Id cannot be found. |  -  |
-| **500** | The authorization could not be updated due to an internal server error. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **500** | The authorization could not be updated due to an internal server error. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

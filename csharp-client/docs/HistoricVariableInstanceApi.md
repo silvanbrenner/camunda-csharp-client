@@ -84,7 +84,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Request successful. This method returns no content. |  -  |
-| **404** | Variable with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Variable with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -162,7 +162,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **404** | Variable with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Variable with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -238,18 +238,18 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Variable with given id exists but is not a binary variable. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
-| **404** | Variable with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Variable with given id exists but is not a binary variable. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Variable with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="gethistoricvariableinstances"></a>
 # **GetHistoricVariableInstances**
-> List&lt;HistoricVariableInstanceDto&gt; GetHistoricVariableInstances (string variableName = null, string variableNameLike = null, Object variableValue = null, bool? variableNamesIgnoreCase = null, bool? variableValuesIgnoreCase = null, string variableTypeIn = null, bool? includeDeleted = null, string processInstanceId = null, string processInstanceIdIn = null, string processDefinitionId = null, string processDefinitionKey = null, string executionIdIn = null, string caseInstanceId = null, string caseExecutionIdIn = null, string caseActivityIdIn = null, string taskIdIn = null, string activityInstanceIdIn = null, string tenantIdIn = null, bool? withoutTenantId = null, string sortBy = null, string sortOrder = null, int? firstResult = null, int? maxResults = null, bool? deserializeValues = null)
+> List&lt;HistoricVariableInstanceDto&gt; GetHistoricVariableInstances (string variableName = null, string variableNameLike = null, Object variableValue = null, bool? variableNamesIgnoreCase = null, bool? variableValuesIgnoreCase = null, string variableTypeIn = null, bool? includeDeleted = null, string processInstanceId = null, string processInstanceIdIn = null, string processDefinitionId = null, string processDefinitionKey = null, string executionIdIn = null, string caseInstanceId = null, string caseExecutionIdIn = null, string caseActivityIdIn = null, string taskIdIn = null, string activityInstanceIdIn = null, string tenantIdIn = null, bool? withoutTenantId = null, string variableNameIn = null, string sortBy = null, string sortOrder = null, int? firstResult = null, int? maxResults = null, bool? deserializeValues = null)
 
 Get Variable Instances
 
-Queries for historic variable instances that fulfill the given parameters. The size of the result set can be retrieved by using the [Get Variable Instance Count](https://docs.camunda.org/manual/7.16/reference/rest/history/variable-instance/get-variable-instance-query-count/) method.
+Queries for historic variable instances that fulfill the given parameters. The size of the result set can be retrieved by using the [Get Variable Instance Count](https://docs.camunda.org/manual/7.17/reference/rest/history/variable-instance/get-variable-instance-query-count/) method.
 
 ### Example
 ```csharp
@@ -277,7 +277,7 @@ namespace Example
             var variableValue = new Object(); // Object | Filter by variable value. Is treated as a `String` object on server side. (optional) 
             var variableNamesIgnoreCase = true;  // bool? | Match the variable name provided in `variableName` and `variableNameLike` case- insensitively. If set to `true` **variableName** and **variablename** are treated as equal. (optional) 
             var variableValuesIgnoreCase = true;  // bool? | Match the variable value provided in `variableValue` case-insensitively. If set to `true` **variableValue** and **variablevalue** are treated as equal. (optional) 
-            var variableTypeIn = variableTypeIn_example;  // string | Only include historic variable instances which belong to one of the passed and comma- separated variable types. A list of all supported variable types can be found [here](https://docs.camunda.org/manual/7.16/user-guide/process-engine/variables/#supported-variable-values). **Note:** All non-primitive variables are associated with the type 'serializable'. (optional) 
+            var variableTypeIn = variableTypeIn_example;  // string | Only include historic variable instances which belong to one of the passed and comma- separated variable types. A list of all supported variable types can be found [here](https://docs.camunda.org/manual/7.17/user-guide/process-engine/variables/#supported-variable-values). **Note:** All non-primitive variables are associated with the type 'serializable'. (optional) 
             var includeDeleted = true;  // bool? | Include variables that has already been deleted during the execution. (optional) 
             var processInstanceId = processInstanceId_example;  // string | Filter by the process instance the variable belongs to. (optional) 
             var processInstanceIdIn = processInstanceIdIn_example;  // string | Only include historic variable instances which belong to one of the passed and comma-separated process instance ids. (optional) 
@@ -291,6 +291,7 @@ namespace Example
             var activityInstanceIdIn = activityInstanceIdIn_example;  // string | Only include historic variable instances which belong to one of the passed and and comma-separated activity instance ids. (optional) 
             var tenantIdIn = tenantIdIn_example;  // string | Only include historic variable instances which belong to one of the passed and comma- separated tenant ids. (optional) 
             var withoutTenantId = true;  // bool? | Only include historic variable instances that belong to no tenant. Value may only be `true`, as `false` is the default behavior. (optional) 
+            var variableNameIn = variableNameIn_example;  // string | Only include historic variable instances which belong to one of the passed and comma-separated variable names. (optional) 
             var sortBy = sortBy_example;  // string | Sort the results lexicographically by a given criterion. Must be used in conjunction with the sortOrder parameter. (optional) 
             var sortOrder = sortOrder_example;  // string | Sort the results in a given order. Values may be asc for ascending order or desc for descending order. Must be used in conjunction with the sortBy parameter. (optional) 
             var firstResult = 56;  // int? | Pagination of results. Specifies the index of the first result to return. (optional) 
@@ -300,7 +301,7 @@ namespace Example
             try
             {
                 // Get Variable Instances
-                List<HistoricVariableInstanceDto> result = apiInstance.GetHistoricVariableInstances(variableName, variableNameLike, variableValue, variableNamesIgnoreCase, variableValuesIgnoreCase, variableTypeIn, includeDeleted, processInstanceId, processInstanceIdIn, processDefinitionId, processDefinitionKey, executionIdIn, caseInstanceId, caseExecutionIdIn, caseActivityIdIn, taskIdIn, activityInstanceIdIn, tenantIdIn, withoutTenantId, sortBy, sortOrder, firstResult, maxResults, deserializeValues);
+                List<HistoricVariableInstanceDto> result = apiInstance.GetHistoricVariableInstances(variableName, variableNameLike, variableValue, variableNamesIgnoreCase, variableValuesIgnoreCase, variableTypeIn, includeDeleted, processInstanceId, processInstanceIdIn, processDefinitionId, processDefinitionKey, executionIdIn, caseInstanceId, caseExecutionIdIn, caseActivityIdIn, taskIdIn, activityInstanceIdIn, tenantIdIn, withoutTenantId, variableNameIn, sortBy, sortOrder, firstResult, maxResults, deserializeValues);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -323,7 +324,7 @@ Name | Type | Description  | Notes
  **variableValue** | [**Object**](Object.md)| Filter by variable value. Is treated as a &#x60;String&#x60; object on server side. | [optional] 
  **variableNamesIgnoreCase** | **bool?**| Match the variable name provided in &#x60;variableName&#x60; and &#x60;variableNameLike&#x60; case- insensitively. If set to &#x60;true&#x60; **variableName** and **variablename** are treated as equal. | [optional] 
  **variableValuesIgnoreCase** | **bool?**| Match the variable value provided in &#x60;variableValue&#x60; case-insensitively. If set to &#x60;true&#x60; **variableValue** and **variablevalue** are treated as equal. | [optional] 
- **variableTypeIn** | **string**| Only include historic variable instances which belong to one of the passed and comma- separated variable types. A list of all supported variable types can be found [here](https://docs.camunda.org/manual/7.16/user-guide/process-engine/variables/#supported-variable-values). **Note:** All non-primitive variables are associated with the type &#39;serializable&#39;. | [optional] 
+ **variableTypeIn** | **string**| Only include historic variable instances which belong to one of the passed and comma- separated variable types. A list of all supported variable types can be found [here](https://docs.camunda.org/manual/7.17/user-guide/process-engine/variables/#supported-variable-values). **Note:** All non-primitive variables are associated with the type &#39;serializable&#39;. | [optional] 
  **includeDeleted** | **bool?**| Include variables that has already been deleted during the execution. | [optional] 
  **processInstanceId** | **string**| Filter by the process instance the variable belongs to. | [optional] 
  **processInstanceIdIn** | **string**| Only include historic variable instances which belong to one of the passed and comma-separated process instance ids. | [optional] 
@@ -337,6 +338,7 @@ Name | Type | Description  | Notes
  **activityInstanceIdIn** | **string**| Only include historic variable instances which belong to one of the passed and and comma-separated activity instance ids. | [optional] 
  **tenantIdIn** | **string**| Only include historic variable instances which belong to one of the passed and comma- separated tenant ids. | [optional] 
  **withoutTenantId** | **bool?**| Only include historic variable instances that belong to no tenant. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
+ **variableNameIn** | **string**| Only include historic variable instances which belong to one of the passed and comma-separated variable names. | [optional] 
  **sortBy** | **string**| Sort the results lexicographically by a given criterion. Must be used in conjunction with the sortOrder parameter. | [optional] 
  **sortOrder** | **string**| Sort the results in a given order. Values may be asc for ascending order or desc for descending order. Must be used in conjunction with the sortBy parameter. | [optional] 
  **firstResult** | **int?**| Pagination of results. Specifies the index of the first result to return. | [optional] 
@@ -361,17 +363,17 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="gethistoricvariableinstancescount"></a>
 # **GetHistoricVariableInstancesCount**
-> CountResultDto GetHistoricVariableInstancesCount (string variableName = null, string variableNameLike = null, Object variableValue = null, bool? variableNamesIgnoreCase = null, bool? variableValuesIgnoreCase = null, string variableTypeIn = null, bool? includeDeleted = null, string processInstanceId = null, string processInstanceIdIn = null, string processDefinitionId = null, string processDefinitionKey = null, string executionIdIn = null, string caseInstanceId = null, string caseExecutionIdIn = null, string caseActivityIdIn = null, string taskIdIn = null, string activityInstanceIdIn = null, string tenantIdIn = null, bool? withoutTenantId = null)
+> CountResultDto GetHistoricVariableInstancesCount (string variableName = null, string variableNameLike = null, Object variableValue = null, bool? variableNamesIgnoreCase = null, bool? variableValuesIgnoreCase = null, string variableTypeIn = null, bool? includeDeleted = null, string processInstanceId = null, string processInstanceIdIn = null, string processDefinitionId = null, string processDefinitionKey = null, string executionIdIn = null, string caseInstanceId = null, string caseExecutionIdIn = null, string caseActivityIdIn = null, string taskIdIn = null, string activityInstanceIdIn = null, string tenantIdIn = null, bool? withoutTenantId = null, string variableNameIn = null)
 
 Get Variable Instance Count
 
-Queries for the number of historic variable instances that fulfill the given parameters. Takes the same parameters as the [Get Variable Instances](https://docs.camunda.org/manual/7.16/reference/rest/history/variable-instance/get-variable-instance-query/) method.
+Queries for the number of historic variable instances that fulfill the given parameters. Takes the same parameters as the [Get Variable Instances](https://docs.camunda.org/manual/7.17/reference/rest/history/variable-instance/get-variable-instance-query/) method.
 
 ### Example
 ```csharp
@@ -399,7 +401,7 @@ namespace Example
             var variableValue = new Object(); // Object | Filter by variable value. Is treated as a `String` object on server side. (optional) 
             var variableNamesIgnoreCase = true;  // bool? | Match the variable name provided in `variableName` and `variableNameLike` case- insensitively. If set to `true` **variableName** and **variablename** are treated as equal. (optional) 
             var variableValuesIgnoreCase = true;  // bool? | Match the variable value provided in `variableValue` case-insensitively. If set to `true` **variableValue** and **variablevalue** are treated as equal. (optional) 
-            var variableTypeIn = variableTypeIn_example;  // string | Only include historic variable instances which belong to one of the passed and comma- separated variable types. A list of all supported variable types can be found [here](https://docs.camunda.org/manual/7.16/user-guide/process-engine/variables/#supported-variable-values). **Note:** All non-primitive variables are associated with the type 'serializable'. (optional) 
+            var variableTypeIn = variableTypeIn_example;  // string | Only include historic variable instances which belong to one of the passed and comma- separated variable types. A list of all supported variable types can be found [here](https://docs.camunda.org/manual/7.17/user-guide/process-engine/variables/#supported-variable-values). **Note:** All non-primitive variables are associated with the type 'serializable'. (optional) 
             var includeDeleted = true;  // bool? | Include variables that has already been deleted during the execution. (optional) 
             var processInstanceId = processInstanceId_example;  // string | Filter by the process instance the variable belongs to. (optional) 
             var processInstanceIdIn = processInstanceIdIn_example;  // string | Only include historic variable instances which belong to one of the passed and comma-separated process instance ids. (optional) 
@@ -413,11 +415,12 @@ namespace Example
             var activityInstanceIdIn = activityInstanceIdIn_example;  // string | Only include historic variable instances which belong to one of the passed and and comma-separated activity instance ids. (optional) 
             var tenantIdIn = tenantIdIn_example;  // string | Only include historic variable instances which belong to one of the passed and comma- separated tenant ids. (optional) 
             var withoutTenantId = true;  // bool? | Only include historic variable instances that belong to no tenant. Value may only be `true`, as `false` is the default behavior. (optional) 
+            var variableNameIn = variableNameIn_example;  // string | Only include historic variable instances which belong to one of the passed and comma-separated variable names. (optional) 
 
             try
             {
                 // Get Variable Instance Count
-                CountResultDto result = apiInstance.GetHistoricVariableInstancesCount(variableName, variableNameLike, variableValue, variableNamesIgnoreCase, variableValuesIgnoreCase, variableTypeIn, includeDeleted, processInstanceId, processInstanceIdIn, processDefinitionId, processDefinitionKey, executionIdIn, caseInstanceId, caseExecutionIdIn, caseActivityIdIn, taskIdIn, activityInstanceIdIn, tenantIdIn, withoutTenantId);
+                CountResultDto result = apiInstance.GetHistoricVariableInstancesCount(variableName, variableNameLike, variableValue, variableNamesIgnoreCase, variableValuesIgnoreCase, variableTypeIn, includeDeleted, processInstanceId, processInstanceIdIn, processDefinitionId, processDefinitionKey, executionIdIn, caseInstanceId, caseExecutionIdIn, caseActivityIdIn, taskIdIn, activityInstanceIdIn, tenantIdIn, withoutTenantId, variableNameIn);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -440,7 +443,7 @@ Name | Type | Description  | Notes
  **variableValue** | [**Object**](Object.md)| Filter by variable value. Is treated as a &#x60;String&#x60; object on server side. | [optional] 
  **variableNamesIgnoreCase** | **bool?**| Match the variable name provided in &#x60;variableName&#x60; and &#x60;variableNameLike&#x60; case- insensitively. If set to &#x60;true&#x60; **variableName** and **variablename** are treated as equal. | [optional] 
  **variableValuesIgnoreCase** | **bool?**| Match the variable value provided in &#x60;variableValue&#x60; case-insensitively. If set to &#x60;true&#x60; **variableValue** and **variablevalue** are treated as equal. | [optional] 
- **variableTypeIn** | **string**| Only include historic variable instances which belong to one of the passed and comma- separated variable types. A list of all supported variable types can be found [here](https://docs.camunda.org/manual/7.16/user-guide/process-engine/variables/#supported-variable-values). **Note:** All non-primitive variables are associated with the type &#39;serializable&#39;. | [optional] 
+ **variableTypeIn** | **string**| Only include historic variable instances which belong to one of the passed and comma- separated variable types. A list of all supported variable types can be found [here](https://docs.camunda.org/manual/7.17/user-guide/process-engine/variables/#supported-variable-values). **Note:** All non-primitive variables are associated with the type &#39;serializable&#39;. | [optional] 
  **includeDeleted** | **bool?**| Include variables that has already been deleted during the execution. | [optional] 
  **processInstanceId** | **string**| Filter by the process instance the variable belongs to. | [optional] 
  **processInstanceIdIn** | **string**| Only include historic variable instances which belong to one of the passed and comma-separated process instance ids. | [optional] 
@@ -454,6 +457,7 @@ Name | Type | Description  | Notes
  **activityInstanceIdIn** | **string**| Only include historic variable instances which belong to one of the passed and and comma-separated activity instance ids. | [optional] 
  **tenantIdIn** | **string**| Only include historic variable instances which belong to one of the passed and comma- separated tenant ids. | [optional] 
  **withoutTenantId** | **bool?**| Only include historic variable instances that belong to no tenant. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
+ **variableNameIn** | **string**| Only include historic variable instances which belong to one of the passed and comma-separated variable names. | [optional] 
 
 ### Return type
 
@@ -473,7 +477,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -483,7 +487,7 @@ No authorization required
 
 Get Variable Instances (POST)
 
-Queries for historic variable instances that fulfill the given parameters. This method is slightly more powerful than the [Get Variable Instances](https://docs.camunda.org/manual/7.16/reference/rest/history/variable-instance/get-variable-instance-query/) method because it allows filtering by variable values of the different types `String`, `Number` or `Boolean`.
+Queries for historic variable instances that fulfill the given parameters. This method is slightly more powerful than the [Get Variable Instances](https://docs.camunda.org/manual/7.17/reference/rest/history/variable-instance/get-variable-instance-query/) method because it allows filtering by variable values of the different types `String`, `Number` or `Boolean`.
 
 ### Example
 ```csharp
@@ -555,7 +559,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -565,7 +569,7 @@ No authorization required
 
 Get Variable Instance Count (POST)
 
-Queries for historic variable instances that fulfill the given parameters. This method takes the same message body as the [Get Variable Instances (POST)](https://docs.camunda.org/manual/7.16/reference/rest/history/variable-instance/post-variable-instance-query/) method and therefore it is more powerful regarding variable values than the [Get Variable Instance Count](https://docs.camunda.org/manual/7.16/reference/rest/history/variable-instance/get-variable-instance-query-count/) method.
+Queries for historic variable instances that fulfill the given parameters. This method takes the same message body as the [Get Variable Instances (POST)](https://docs.camunda.org/manual/7.17/reference/rest/history/variable-instance/post-variable-instance-query/) method and therefore it is more powerful regarding variable values than the [Get Variable Instance Count](https://docs.camunda.org/manual/7.17/reference/rest/history/variable-instance/get-variable-instance-query-count/) method.
 
 ### Example
 ```csharp
@@ -631,7 +635,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ProcessDefinitionId** | **string** | The id of the process definition this job definition is associated with. | [optional] 
 **ProcessDefinitionKey** | **string** | The key of the process definition this job definition is associated with. | [optional] 
 **ActivityId** | **string** | The id of the activity this job definition is associated with. | [optional] 
-**JobType** | **string** | The type of the job which is running for this job definition. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/the-job-executor/#job-creation) for more information about job types. | [optional] 
+**JobType** | **string** | The type of the job which is running for this job definition. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/the-job-executor/#job-creation) for more information about job types. | [optional] 
 **JobConfiguration** | **string** | The configuration of a job definition provides details about the jobs which will be created. For example: for timer jobs it is the timer configuration. | [optional] 
 **OverridingJobPriority** | **long?** | The execution priority defined for jobs that are created based on this definition. May be &#x60;null&#x60; when the priority has not been overridden on the job definition level. | [optional] 
 **Suspended** | **bool?** | Indicates whether this job definition is suspended or not. | [optional] 

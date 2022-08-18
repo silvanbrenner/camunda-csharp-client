@@ -6,10 +6,11 @@ Nuget package: https://www.nuget.org/packages/Camunda.OpenApi.Client/
 ## Versions
 | Camunda Version | Camunda.OpenApi.Client Version | HTTP library   |
 |-----------------|--------------------------------|----------------|
-| 7.14.0          | 1.0.1                          | RestSharp      |
-| 7.15.0          | 1.1.0                          | RestSharp      |
-| 7.16.0          | 1.2.0                          | RestSharp      |
+| 7.17.0          | 1.3.0                          | HttpClient     |
 | 7.16.0          | 1.2.1                          | HttpClient     |
+| 7.16.0          | 1.2.0                          | RestSharp      |
+| 7.15.0          | 1.1.0                          | RestSharp      |
+| 7.14.0          | 1.0.1                          | RestSharp      |
 
 ## Example
 ```csharp

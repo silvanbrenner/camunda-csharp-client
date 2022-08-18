@@ -6,7 +6,7 @@ Query for the historic batches to set the removal time for.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BatchId** | **string** | Filter by batch id. | [optional] 
-**Type** | **string** | Filter by batch type. See the [User Guide](https://docs.camunda.org/manual/7.16/user-guide/process-engine/batch/#creating-a-batch) for more information about batch types. | [optional] 
+**Type** | **string** | Filter by batch type. See the [User Guide](https://docs.camunda.org/manual/7.17/user-guide/process-engine/batch/#creating-a-batch) for more information about batch types. | [optional] 
 **Completed** | **bool?** |  Filter completed or not completed batches. If the value is &#x60;true&#x60;, only completed batches, i.e., end time is set, are returned. Otherwise, if the value is &#x60;false&#x60;, only running batches, i.e., end time is null, are returned. | [optional] 
 **TenantIdIn** | **List&lt;string&gt;** | Filter by a comma-separated list of tenant ids. A batch matches if it has one of the given tenant ids. | [optional] 
 **WithoutTenantId** | **bool?** | Only include batches which belong to no tenant. Value can effectively only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 

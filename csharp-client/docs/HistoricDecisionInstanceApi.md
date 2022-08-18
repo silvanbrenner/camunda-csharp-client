@@ -83,7 +83,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, i.e. neither &#x60;historicDecisionInstanceIds&#x60; nor &#x60;historicDecisionInstanceQuery&#x60; is present. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling)  for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, i.e. neither &#x60;historicDecisionInstanceIds&#x60; nor &#x60;historicDecisionInstanceQuery&#x60; is present. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling)  for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -167,7 +167,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **404** | Historic decision instance with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **404** | Historic decision instance with given id does not exist. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -177,7 +177,7 @@ No authorization required
 
 Get Historic Decision Instances
 
-Queries for historic decision instances that fulfill the given parameters.  The size of the result set can be retrieved by using the  [Get Historic Decision Instance Count](https://docs.camunda.org/manual/7.16/reference/rest/history/decision-instance/get-decision-instance-query-count/)  method.
+Queries for historic decision instances that fulfill the given parameters.  The size of the result set can be retrieved by using the  [Get Historic Decision Instance Count](https://docs.camunda.org/manual/7.17/reference/rest/history/decision-instance/get-decision-instance-query-count/)  method.
 
 ### Example
 ```csharp
@@ -218,8 +218,8 @@ namespace Example
             var activityInstanceIdIn = activityInstanceIdIn_example;  // string | Filter by the activity instance ids the instances belongs to. Must be a comma-separated list of acitvity instance ids. (optional) 
             var tenantIdIn = tenantIdIn_example;  // string | Filter by a comma-separated list of tenant ids. A historic decision instance must have one of the given tenant ids. (optional) 
             var withoutTenantId = true;  // bool? | Only include historic decision instances that belong to no tenant. Value may only be `true`, as `false` is the default behavior. (optional) 
-            var evaluatedBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to instances that were evaluated before the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format `yyyy-MM- dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
-            var evaluatedAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to instances that were evaluated after the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format `yyyy-MM- dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
+            var evaluatedBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to instances that were evaluated before the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format `yyyy-MM- dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
+            var evaluatedAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to instances that were evaluated after the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format `yyyy-MM- dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
             var userId = userId_example;  // string | Restrict to instances that were evaluated by the given user. (optional) 
             var rootDecisionInstanceId = rootDecisionInstanceId_example;  // string | Restrict to instances that have a given root decision instance id. This also includes the decision instance with the given id. (optional) 
             var rootDecisionInstancesOnly = true;  // bool? | Restrict to instances those are the root decision instance of an evaluation. Value may only be `true`, as `false` is the default behavior. (optional) 
@@ -273,8 +273,8 @@ Name | Type | Description  | Notes
  **activityInstanceIdIn** | **string**| Filter by the activity instance ids the instances belongs to. Must be a comma-separated list of acitvity instance ids. | [optional] 
  **tenantIdIn** | **string**| Filter by a comma-separated list of tenant ids. A historic decision instance must have one of the given tenant ids. | [optional] 
  **withoutTenantId** | **bool?**| Only include historic decision instances that belong to no tenant. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
- **evaluatedBefore** | **DateTime?**| Restrict to instances that were evaluated before the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM- dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
- **evaluatedAfter** | **DateTime?**| Restrict to instances that were evaluated after the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM- dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+ **evaluatedBefore** | **DateTime?**| Restrict to instances that were evaluated before the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM- dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+ **evaluatedAfter** | **DateTime?**| Restrict to instances that were evaluated after the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM- dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
  **userId** | **string**| Restrict to instances that were evaluated by the given user. | [optional] 
  **rootDecisionInstanceId** | **string**| Restrict to instances that have a given root decision instance id. This also includes the decision instance with the given id. | [optional] 
  **rootDecisionInstancesOnly** | **bool?**| Restrict to instances those are the root decision instance of an evaluation. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
@@ -307,7 +307,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid, for example if a &#x60;sortOrder&#x60; parameter is supplied, but no &#x60;sortBy&#x60;. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -317,7 +317,7 @@ No authorization required
 
 Get Historic Decision Instance Count
 
-Queries for the number of historic decision instances that fulfill the given parameters.  Takes the same parameters as the  [Get Historic Decision Instances](https://docs.camunda.org/manual/7.16/reference/rest/history/decision-instance/get-decision-instance-query/)  method.
+Queries for the number of historic decision instances that fulfill the given parameters.  Takes the same parameters as the  [Get Historic Decision Instances](https://docs.camunda.org/manual/7.17/reference/rest/history/decision-instance/get-decision-instance-query/)  method.
 
 ### Example
 ```csharp
@@ -358,8 +358,8 @@ namespace Example
             var activityInstanceIdIn = activityInstanceIdIn_example;  // string | Filter by the activity instance ids the instances belongs to. Must be a comma-separated list of acitvity instance ids. (optional) 
             var tenantIdIn = tenantIdIn_example;  // string | Filter by a comma-separated list of tenant ids. A historic decision instance must have one of the given tenant ids. (optional) 
             var withoutTenantId = true;  // bool? | Only include historic decision instances that belong to no tenant. Value may only be `true`, as `false` is the default behavior. (optional) 
-            var evaluatedBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to instances that were evaluated before the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format `yyyy-MM- dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
-            var evaluatedAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to instances that were evaluated after the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format `yyyy-MM- dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
+            var evaluatedBefore = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to instances that were evaluated before the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format `yyyy-MM- dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
+            var evaluatedAfter = 2013-10-20T19:20:30+01:00;  // DateTime? | Restrict to instances that were evaluated after the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format `yyyy-MM- dd'T'HH:mm:ss.SSSZ`, e.g., `2013-01-23T14:42:45.000+0200`. (optional) 
             var userId = userId_example;  // string | Restrict to instances that were evaluated by the given user. (optional) 
             var rootDecisionInstanceId = rootDecisionInstanceId_example;  // string | Restrict to instances that have a given root decision instance id. This also includes the decision instance with the given id. (optional) 
             var rootDecisionInstancesOnly = true;  // bool? | Restrict to instances those are the root decision instance of an evaluation. Value may only be `true`, as `false` is the default behavior. (optional) 
@@ -405,8 +405,8 @@ Name | Type | Description  | Notes
  **activityInstanceIdIn** | **string**| Filter by the activity instance ids the instances belongs to. Must be a comma-separated list of acitvity instance ids. | [optional] 
  **tenantIdIn** | **string**| Filter by a comma-separated list of tenant ids. A historic decision instance must have one of the given tenant ids. | [optional] 
  **withoutTenantId** | **bool?**| Only include historic decision instances that belong to no tenant. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
- **evaluatedBefore** | **DateTime?**| Restrict to instances that were evaluated before the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM- dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
- **evaluatedAfter** | **DateTime?**| Restrict to instances that were evaluated after the given date. By [default](https://docs.camunda.org/manual/7.16/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM- dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+ **evaluatedBefore** | **DateTime?**| Restrict to instances that were evaluated before the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM- dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
+ **evaluatedAfter** | **DateTime?**| Restrict to instances that were evaluated after the given date. By [default](https://docs.camunda.org/manual/7.17/reference/rest/overview/date-format/), the date must have the format &#x60;yyyy-MM- dd&#39;T&#39;HH:mm:ss.SSSZ&#x60;, e.g., &#x60;2013-01-23T14:42:45.000+0200&#x60;. | [optional] 
  **userId** | **string**| Restrict to instances that were evaluated by the given user. | [optional] 
  **rootDecisionInstanceId** | **string**| Restrict to instances that have a given root decision instance id. This also includes the decision instance with the given id. | [optional] 
  **rootDecisionInstancesOnly** | **bool?**| Restrict to instances those are the root decision instance of an evaluation. Value may only be &#x60;true&#x60;, as &#x60;false&#x60; is the default behavior. | [optional] 
@@ -431,7 +431,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Returned if some of the query parameters are invalid. See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Returned if some of the query parameters are invalid. See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -507,7 +507,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Request successful. |  -  |
-| **400** | Request was unsuccessfull due to a bad user request. This occurs if some of the query parameters are invalid, e. g. if neither historicDecisionInstances nor historicDecisionInstanceQuery is present or if no mode is specified.  See the [Introduction](https://docs.camunda.org/manual/7.16/reference/rest/overview/#error-handling) for the error response format. |  -  |
+| **400** | Request was unsuccessfull due to a bad user request. This occurs if some of the query parameters are invalid, e. g. if neither historicDecisionInstances nor historicDecisionInstanceQuery is present or if no mode is specified.  See the [Introduction](https://docs.camunda.org/manual/7.17/reference/rest/overview/#error-handling) for the error response format. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
