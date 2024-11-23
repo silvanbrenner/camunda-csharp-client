@@ -32,6 +32,8 @@ namespace Camunda.OpenApi.Client.Model
     [DataContract(Name = "VariableQueryParameterDto")]
     public partial class VariableQueryParameterDto : IValidatableObject
     {
+[JsonConstructor]
+    public VariableQueryParameterDto(){}
         /// <summary>
         /// Comparison operator to be used. &#x60;notLike&#x60; is not supported by all endpoints.
         /// </summary>
